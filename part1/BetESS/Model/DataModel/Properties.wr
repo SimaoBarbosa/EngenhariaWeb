@@ -1,0 +1,153 @@
+<DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
+  <Entity id="User" name="User" duration="persistent" gr:x="230" gr:y="630" gr:hideAttributes="false" attributeOrder="userOID userName password email" db:database="db1" db:table="user">
+    <Attribute name="oid" id="userOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="userName" id="userName" type="string" db:column="username"/>
+    <Attribute name="password" id="password" type="password" db:column="password"/>
+    <Attribute name="email" id="email" type="string" db:column="email"/>
+  </Entity>
+  <Entity id="Group" name="Group" duration="persistent" gr:x="470" gr:y="650" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db1" db:table="group">
+    <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="groupName" id="groupName" type="string" db:column="groupname"/>
+  </Entity>
+  <Entity id="Module" name="Module" duration="persistent" gr:x="685" gr:y="640" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db1" db:table="module">
+    <Attribute name="oid" id="moduleOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="moduleID" id="moduleID" type="string" db:column="moduleid"/>
+    <Attribute name="moduleName" id="moduleName" type="string" db:column="modulename"/>
+  </Entity>
+  <Relationship id="User2Group_Group2User" name="User_Group" sourceEntity="User" targetEntity="Group" db:database="db1" db:table="user_group">
+    <RelationshipRole1 id="User2Group" name="groups" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="Group2User" name="users" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="group_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="User2DefaultGroup_DefaultGroup2User" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" gr:bendpoints="113,42,-112,44" db:database="db1" db:table="user">
+    <RelationshipRole1 id="User2DefaultGroup" name="defaultGroup" maxCard="1">
+      <db:JoinColumn attribute="userOID" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="DefaultGroup2User" name="defaultUsers" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="group_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Group2DefaultModule_DefaultModule2Group" name="Group_DefaultModule" sourceEntity="Group" targetEntity="Module" db:database="db1" db:table="group">
+    <RelationshipRole1 id="Group2DefaultModule" name="defaultModule" maxCard="1">
+      <db:JoinColumn attribute="groupOID" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="DefaultModule2Group" name="defaultGroups" maxCard="N">
+      <db:JoinColumn attribute="moduleOID" name="module_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Group2Module_Module2Group" name="Group_Module" sourceEntity="Group" targetEntity="Module" gr:bendpoints="110,41,-115,41" db:database="db1" db:table="group_module">
+    <RelationshipRole1 id="Group2Module" name="modules" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="group_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="Module2Group" name="groups" maxCard="N">
+      <db:JoinColumn attribute="moduleOID" name="module_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <db:Database id="db1" name="Database1" type="MySQL" url="jdbc:mysql://localhost:3306/betess" username="root" cryptedPassword="true" password="cGFzc3dvcmQ=">
+  </db:Database>
+  <Entity gr:x="425" gr:y="510" id="ent1" name="Evento" duration="persistent" attributeOrder="ent1#att1 ent1#att14 ent1#att15" db:database="db1" db:table="evento">
+    <Attribute id="ent1#att1" key="true" name="id_evento" type="integer" db:column="id_evento"/>
+    <Attribute id="ent1#att14" name="titulo" type="string" db:column="titulo"/>
+    <Attribute id="ent1#att15" name="disponibilidade" type="boolean" db:column="disponibilidade"/>
+  </Entity>
+  <Entity gr:x="60" gr:y="470" id="ent2" name="Equipa" duration="persistent" attributeOrder="ent2#att3 ent2#att4" db:database="db1" db:table="equipa">
+    <Attribute id="ent2#att3" key="true" name="id_equipa" type="integer" db:column="id_equipa"/>
+    <Attribute id="ent2#att4" name="nome" type="string" db:column="nome"/>
+  </Entity>
+  <Entity id="ent3" name="Competicao" duration="persistent" attributeOrder="ent3#att5 ent3#att6" gr:x="410" gr:y="240" db:database="db1" db:table="competicao">
+    <Attribute id="ent3#att5" name="id_competicao" key="true" type="integer" db:column="id_competicao"/>
+    <Attribute id="ent3#att6" name="nome" type="string" db:column="nome"/>
+  </Entity>
+  <Entity id="ent4" name="Regi&#227;o" duration="persistent" attributeOrder="ent4#att7 ent4#att8" gr:x="420" gr:y="125" db:database="db1" db:table="regiao">
+    <Attribute id="ent4#att7" name="id_regiao" key="true" type="integer" db:column="id_regiao"/>
+    <Attribute id="ent4#att8" name="nome" type="string" db:column="nome"/>
+  </Entity>
+  <Entity id="ent5" name="Fase" duration="persistent" attributeOrder="ent5#att9 ent5#att10" gr:x="430" gr:y="370" db:database="db1" db:table="fase">
+    <Attribute id="ent5#att9" name="id_fase" key="true" type="integer" db:column="id_fase"/>
+    <Attribute id="ent5#att10" name="nome" type="string" db:column="nome"/>
+  </Entity>
+  <Entity id="ent6" name="Desporto" duration="persistent" attributeOrder="ent6#att11 ent6#att12" gr:x="410" gr:y="10" db:database="db1" db:table="desporto">
+    <Attribute id="ent6#att11" name="id_desporto" key="true" type="integer" db:column="id_desporto"/>
+    <Attribute id="ent6#att12" name="nome" type="string" db:column="nome"/>
+  </Entity>
+  <Relationship id="rel1" name="Fase_Competicao" sourceEntity="ent5" targetEntity="ent3" db:database="db1" db:table="fase">
+    <RelationshipRole1 id="rel1#role1" name="FaseToCompeticao" maxCard="1">
+      <db:JoinColumn attribute="ent5#att9" name="id_fase"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel1#role2" name="CompeticaoToFase" maxCard="N">
+      <db:JoinColumn attribute="ent3#att5" name="competicao_id_competicao"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel2" name="Regi&#227;o_Competicao" sourceEntity="ent4" targetEntity="ent3" db:database="db1" db:table="competicao">
+    <RelationshipRole1 id="rel2#role3" name="Regi&#227;oToCompeticao" maxCard="N">
+      <db:JoinColumn attribute="ent4#att7" name="regiao_id_regiao"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel2#role4" name="CompeticaoToRegi&#227;o" maxCard="1">
+      <db:JoinColumn attribute="ent3#att5" name="id_competicao"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel3" name="Desporto_Regi&#227;o" sourceEntity="ent6" targetEntity="ent4" db:database="db1" db:table="desporto_regiao">
+    <RelationshipRole1 id="rel3#role5" name="DesportoToRegi&#227;o" maxCard="N">
+      <db:JoinColumn attribute="ent6#att11" name="desporto_id_desporto"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel3#role6" name="Regi&#227;oToDesporto" maxCard="N">
+      <db:JoinColumn attribute="ent4#att7" name="regiao_id_regiao"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel4" name="Evento_Equipa" sourceEntity="ent1" targetEntity="ent2" db:database="db1" db:table="evento_equipa">
+    <RelationshipRole1 id="rel4#role7" name="EventoToEquipa" maxCard="N">
+      <db:JoinColumn attribute="ent1#att1" name="evento_id_evento"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel4#role8" name="EquipaToEvento" maxCard="N">
+      <db:JoinColumn attribute="ent2#att3" name="equipa_id_equipa"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel5" name="Evento_Fase" sourceEntity="ent1" targetEntity="ent5" db:database="db1" db:table="evento">
+    <RelationshipRole1 id="rel5#role9" name="EventoToFase" maxCard="1">
+      <db:JoinColumn attribute="ent1#att1" name="id_evento"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel5#role10" name="FaseToEvento" maxCard="N">
+      <db:JoinColumn attribute="ent5#att9" name="fase_id_fase"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel6" name="Equipa_Competicao" sourceEntity="ent2" targetEntity="ent3" db:database="db1" db:table="equipa_competicao">
+    <RelationshipRole1 id="rel6#role11" name="EquipaToCompeticao" maxCard="N">
+      <db:JoinColumn attribute="ent2#att3" name="equipa_id_equipa"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel6#role12" name="CompeticaoToEquipa" maxCard="N">
+      <db:JoinColumn attribute="ent3#att5" name="competicao_id_competicao"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel7" name="Equipa_Regi&#227;o" sourceEntity="ent2" targetEntity="ent4" db:database="db1" db:table="equipa_regiao">
+    <RelationshipRole1 id="rel7#role13" name="EquipaToRegi&#227;o" maxCard="N">
+      <db:JoinColumn attribute="ent2#att3" name="equipa_id_equipa"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel7#role14" name="Regi&#227;oToEquipa" maxCard="N">
+      <db:JoinColumn attribute="ent4#att7" name="regiao_id_regiao"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel8" name="Equipa_Fase" sourceEntity="ent2" targetEntity="ent5" db:database="db1" db:table="equipa_fase">
+    <RelationshipRole1 id="rel8#role15" name="EquipaToFase" maxCard="N">
+      <db:JoinColumn attribute="ent2#att3" name="equipa_id_equipa"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel8#role16" name="FaseToEquipa" maxCard="N">
+      <db:JoinColumn attribute="ent5#att9" name="fase_id_fase"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="750" gr:y="405" id="ent7" name="DataHora" duration="persistent" attributeOrder="ent7#att13 ent7#att16 ent7#att17" db:database="db1" db:table="datahora">
+    <Attribute id="ent7#att13" key="true" name="datahora_id" type="integer" db:column="datahora_id"/>
+    <Attribute id="ent7#att16" name="data" type="date" db:column="data"/>
+    <Attribute id="ent7#att17" name="hora" type="time" db:column="hora"/>
+  </Entity>
+  <Relationship id="rel9" name="Evento_DataHora" sourceEntity="ent1" targetEntity="ent7" db:database="db1" db:table="evento">
+    <RelationshipRole1 id="rel9#role17" name="EventoToDataHora" maxCard="1">
+      <db:JoinColumn attribute="ent1#att1" name="id_evento"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel9#role18" name="DataHoraToEvento" maxCard="N">
+      <db:JoinColumn attribute="ent7#att13" name="datahora_datahora_id"/>
+    </RelationshipRole2>
+  </Relationship>
+</DataModel>
