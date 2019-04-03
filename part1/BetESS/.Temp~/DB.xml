@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <DBMetaData driverMajorVersion="5" driverMinorVersion="1" driverVersion="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )" productVersion="5.7.25-0ubuntu0.16.04.2" identifierQuoteString="`" transactionLevel="Repeatable read" driverName="MySQL Connector Java" productName="MySQL">
+  <Table schema="" ignoreIndexes="false" name="aposta_concreta" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="id_aposta_concreta" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="22" decimalDigits="0" name="quantia" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="22" decimalDigits="0" name="odd_fixada" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="aposta_disponivel_id_aposta_di" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="id_opcao" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="" ignoreIndexes="false" name="aposta_disponivel" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="id_aposta_disponivel" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="titulo" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="evento_id_evento" primaryKey="false" notNull="false"/>
+  </Table>
   <Table schema="" ignoreIndexes="false" name="competicao" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="id_competicao" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="nome" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="regiao_id_regiao" primaryKey="false" notNull="false"/>
   </Table>
   <Table schema="" ignoreIndexes="false" name="datahora" type="TABLE" refreshed="true">
-    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="datahora_id" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="id_datahora" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="91" indexed="unknown" autoIncrement="false" type="DATE" size="10" decimalDigits="0" name="data" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="92" indexed="unknown" autoIncrement="false" type="TIME" size="8" decimalDigits="0" name="hora" primaryKey="false" notNull="false"/>
   </Table>
@@ -64,6 +76,12 @@
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="oid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="moduleid" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="modulename" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="" ignoreIndexes="false" name="opcao" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="id_opcao" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="opcao" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="22" decimalDigits="0" name="odd" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="aposta_disponivel_id_aposta_di" primaryKey="false" notNull="false"/>
   </Table>
   <Table schema="" ignoreIndexes="false" name="regiao" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="id_regiao" primaryKey="true" notNull="true"/>

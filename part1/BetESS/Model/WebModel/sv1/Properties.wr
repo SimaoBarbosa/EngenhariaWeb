@@ -1,3 +1,8 @@
-<SiteView id="sv1" name="View" landmarks="sv1#area1" homePage="sv1#area1#page1">
-  <OperationUnits/>
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="View" landmarks="sv1#area1" homePage="sv1#area1#page1">
+  <OperationUnits>
+    <CreateUnit gr:x="1095" gr:y="550" id="sv1#cru1" name="Criar Aposta" entity="ent10">
+      <OKLink id="sv1#cru1#oln1" name="OKFlow1" to="sv1#area1#page3#inu6" automaticCoupling="true"/>
+      <KOLink id="sv1#cru1#kln3" name="KOFlow1" to="sv1#area1#page4#enu2" automaticCoupling="true" gr:bendpoints="68,-115,-42,125"/>
+    </CreateUnit>
+  </OperationUnits>
 </SiteView>

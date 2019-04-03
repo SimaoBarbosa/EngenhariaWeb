@@ -33,10 +33,11 @@
         <RelationshipRoleCondition id="sv1#area1#page1#inu4#su4#rcond4" name="RoleCondition4" predicate="in" implied="false" role="rel1#role2"/>
       </Selector>
     </IndexUnit>
-    <IndexUnit gr:x="770" gr:y="0" id="sv1#area1#page1#inu5" name="Eventos" entity="ent1" displayAttributes="ent1#att14 ent1#att15">
+    <IndexUnit gr:x="770" gr:y="0" id="sv1#area1#page1#inu5" name="Eventos" entity="ent1" displayAttributes="ent1#att14" linkOrder="sv1#area1#page1#inu5#ln5">
       <Selector id="sv1#area1#page1#inu5#su5" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#area1#page1#inu5#su5#rcond5" name="RoleCondition5" predicate="in" implied="false" role="rel5#role10"/>
       </Selector>
+      <Link id="sv1#area1#page1#inu5#ln5" name="Ver Apostas" to="sv1#area1#page3#inu6" automaticCoupling="true" type="normal" validate="true"/>
     </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
@@ -119,8 +120,8 @@
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv1#area1#page1#inu5">
+          <layout:Link link="sv1#area1#page1#inu5#ln5"/>
           <layout:Attribute attribute="ent1#att14"/>
-          <layout:Attribute attribute="ent1#att15"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

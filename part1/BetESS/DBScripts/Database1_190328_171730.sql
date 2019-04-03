@@ -95,7 +95,6 @@ create table `datahora` (
 -- Aposta_Disponivel [ent8]
 create table `aposta_disponivel` (
    `id_aposta_disponivel`  integer  not null,
-   `titulo`  varchar(255),
   primary key (`id_aposta_disponivel`)
 );
 
@@ -160,8 +159,8 @@ alter table `aposta_concreta`   add index fk_aposta_concreta_aposta_disp (`apost
 
 
 -- Aposta_Concreta_Opcao [rel13]
-alter table `aposta_concreta`  add column  `id_opcao`  integer;
-alter table `aposta_concreta`   add index fk_aposta_concreta_opcao (`id_opcao`), add constraint fk_aposta_concreta_opcao foreign key (`id_opcao`) references `opcao` (`id_opcao`);
+alter table `opcao`  add column  `aposta_concreta_id_aposta_conc`  integer;
+alter table `opcao`   add index fk_opcao_aposta_concreta (`aposta_concreta_id_aposta_conc`), add constraint fk_opcao_aposta_concreta foreign key (`aposta_concreta_id_aposta_conc`) references `aposta_concreta` (`id_aposta_concreta`);
 
 
 -- Região_Competicao [rel2]

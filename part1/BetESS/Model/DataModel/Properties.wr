@@ -53,7 +53,7 @@
     <Attribute id="ent1#att14" name="titulo" type="string" db:column="titulo"/>
     <Attribute id="ent1#att15" name="disponibilidade" type="boolean" db:column="disponibilidade"/>
   </Entity>
-  <Entity gr:x="60" gr:y="470" id="ent2" name="Equipa" duration="persistent" attributeOrder="ent2#att3 ent2#att4" db:database="db1" db:table="equipa">
+  <Entity gr:x="70" gr:y="335" id="ent2" name="Equipa" duration="persistent" attributeOrder="ent2#att3 ent2#att4" db:database="db1" db:table="equipa">
     <Attribute id="ent2#att3" key="true" name="id_equipa" type="integer" db:column="id_equipa"/>
     <Attribute id="ent2#att4" name="nome" type="string" db:column="nome"/>
   </Entity>
@@ -137,8 +137,8 @@
       <db:JoinColumn attribute="ent5#att9" name="fase_id_fase"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="750" gr:y="405" id="ent7" name="DataHora" duration="persistent" attributeOrder="ent7#att13 ent7#att16 ent7#att17" db:database="db1" db:table="datahora">
-    <Attribute id="ent7#att13" key="true" name="datahora_id" type="integer" db:column="datahora_id"/>
+  <Entity gr:x="65" gr:y="470" id="ent7" name="DataHora" duration="persistent" attributeOrder="ent7#att13 ent7#att16 ent7#att17" db:database="db1" db:table="datahora">
+    <Attribute id="ent7#att13" key="true" name="id_datahora" type="integer" db:column="id_datahora"/>
     <Attribute id="ent7#att16" name="data" type="date" db:column="data"/>
     <Attribute id="ent7#att17" name="hora" type="time" db:column="hora"/>
   </Entity>
@@ -148,6 +148,52 @@
     </RelationshipRole1>
     <RelationshipRole2 id="rel9#role18" name="DataHoraToEvento" maxCard="N">
       <db:JoinColumn attribute="ent7#att13" name="datahora_datahora_id"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="795" gr:y="400" id="ent8" name="Aposta_Disponivel" duration="persistent" attributeOrder="ent8#att2 ent8#att25" db:database="db1" db:table="aposta_disponivel">
+    <Attribute id="ent8#att2" key="true" name="id_aposta_disponivel" type="integer" db:column="id_aposta_disponivel"/>
+    <Attribute id="ent8#att25" name="titulo" type="string" db:column="titulo"/>
+  </Entity>
+  <Entity gr:x="1195" gr:y="385" id="ent9" name="Opcao" duration="persistent" attributeOrder="ent9#att19 ent9#att20 ent9#att21" db:database="db1" db:table="opcao">
+    <Attribute id="ent9#att19" key="true" name="id_opcao" type="integer" db:column="id_opcao"/>
+    <Attribute id="ent9#att20" name="opcao" type="string" db:column="opcao"/>
+    <Attribute id="ent9#att21" name="odd" type="float" db:column="odd"/>
+  </Entity>
+  <Relationship id="rel10" name="Aposta_Disponivel_Opcao" sourceEntity="ent8" targetEntity="ent9" db:database="db1" db:table="opcao">
+    <RelationshipRole1 id="rel10#role19" name="Aposta_DisponivelToOpcao" maxCard="N">
+      <db:JoinColumn attribute="ent8#att2" name="aposta_disponivel_id_aposta_di"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel10#role20" name="OpcaoToAposta_Disponivel" maxCard="1">
+      <db:JoinColumn attribute="ent9#att19" name="id_opcao"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel11" name="Evento_Aposta_Disponivel" sourceEntity="ent1" targetEntity="ent8" db:database="db1" db:table="aposta_disponivel">
+    <RelationshipRole1 id="rel11#role21" name="EventoToAposta_Disponivel" maxCard="N">
+      <db:JoinColumn attribute="ent1#att1" name="evento_id_evento"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel11#role22" name="Aposta_DisponivelToEvento" maxCard="1">
+      <db:JoinColumn attribute="ent8#att2" name="id_aposta_disponivel"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="905" gr:y="540" id="ent10" name="Aposta_Concreta" duration="persistent" attributeOrder="ent10#att22 ent10#att23 ent10#att24" db:database="db1" db:table="aposta_concreta">
+    <Attribute id="ent10#att22" key="true" name="id_aposta_concreta" type="integer" db:column="id_aposta_concreta"/>
+    <Attribute id="ent10#att23" name="quantia" type="float" db:column="quantia"/>
+    <Attribute id="ent10#att24" name="odd_fixada" type="float" db:column="odd_fixada"/>
+  </Entity>
+  <Relationship id="rel12" name="Aposta_Disponivel_Aposta_Concreta" sourceEntity="ent8" targetEntity="ent10" db:database="db1" db:table="aposta_concreta">
+    <RelationshipRole1 id="rel12#role23" name="Aposta_DisponivelToAposta_Concreta" maxCard="N">
+      <db:JoinColumn attribute="ent8#att2" name="aposta_disponivel_id_aposta_di"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel12#role24" name="Aposta_ConcretaToAposta_Disponivel" maxCard="1">
+      <db:JoinColumn attribute="ent10#att22" name="id_aposta_concreta"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel13" name="Aposta_Concreta_Opcao" sourceEntity="ent10" targetEntity="ent9" db:database="db1" db:table="aposta_concreta">
+    <RelationshipRole1 id="rel13#role25" name="Aposta_ConcretaToOpcao" maxCard="1">
+      <db:JoinColumn attribute="ent10#att22" name="aposta_concreta_id_aposta_conc"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel13#role26" name="OpcaoToAposta_Concreta" maxCard="N">
+      <db:JoinColumn attribute="ent9#att19" name="id_opcao"/>
     </RelationshipRole2>
   </Relationship>
 </DataModel>

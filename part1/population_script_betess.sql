@@ -93,3 +93,18 @@ INSERT INTO desporto_regiao values
 -- equipa_competição
 -- equipa_fase
 -- equipa_regiao
+
+INSERT INTO aposta_disponivel values
+	(1, 'Resultado Final', 1), -- Rio Ave x Portimonense
+	(2, '1º jogador a marcar', 1);
+
+INSERT INTO opcao values
+	(1, 'Rio Ave', 1.5, 1), -- Resultado Final
+	(2, 'Empate,', 2, 1),
+	(3, 'Portimonense', 2.5, 1),
+
+	(4, 'Tarantini', 7, 2), -- 1º jogador a marcar
+	(5, 'Nakajima', 9, 2),
+	(6, 'Gabrielzinho', 7, 2),
+	(7, 'Paulinho', 8, 2);
+
