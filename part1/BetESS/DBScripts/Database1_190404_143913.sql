@@ -144,24 +144,24 @@ alter table `fase`  add column  `competicao_id_competicao`  integer;
 alter table `fase`   add index fk_fase_competicao (`competicao_id_competicao`), add constraint fk_fase_competicao foreign key (`competicao_id_competicao`) references `competicao` (`id_competicao`);
 
 
+-- Aposta_Disponivel_Opcao [rel10]
+alter table `opcao`  add column  `aposta_disponivel_id_aposta_di`  integer;
+alter table `opcao`   add index fk_opcao_aposta_disponivel (`aposta_disponivel_id_aposta_di`), add constraint fk_opcao_aposta_disponivel foreign key (`aposta_disponivel_id_aposta_di`) references `aposta_disponivel` (`id_aposta_disponivel`);
+
+
 -- Evento_Aposta_Disponivel [rel11]
 alter table `aposta_disponivel`  add column  `evento_id_evento`  integer;
 alter table `aposta_disponivel`   add index fk_aposta_disponivel_evento (`evento_id_evento`), add constraint fk_aposta_disponivel_evento foreign key (`evento_id_evento`) references `evento` (`id_evento`);
 
 
--- Aposta_Disponivel_Opcao [rel15]
-alter table `opcao`  add column  `aposta_disponivel_id_aposta_di`  integer;
-alter table `opcao`   add index fk_opcao_aposta_disponivel (`aposta_disponivel_id_aposta_di`), add constraint fk_opcao_aposta_disponivel foreign key (`aposta_disponivel_id_aposta_di`) references `aposta_disponivel` (`id_aposta_disponivel`);
-
-
--- Aposta_Concreta_Opcao [rel16]
-alter table `aposta_concreta`  add column  `opcao_id_opcao`  integer;
-alter table `aposta_concreta`   add index fk_aposta_concreta_opcao (`opcao_id_opcao`), add constraint fk_aposta_concreta_opcao foreign key (`opcao_id_opcao`) references `opcao` (`id_opcao`);
-
-
--- Aposta_Concreta_Aposta_Disponivel [rel17]
+-- Aposta_Disponivel_Aposta_Concreta [rel12]
 alter table `aposta_concreta`  add column  `aposta_disponivel_id_aposta_di`  integer;
 alter table `aposta_concreta`   add index fk_aposta_concreta_aposta_disp (`aposta_disponivel_id_aposta_di`), add constraint fk_aposta_concreta_aposta_disp foreign key (`aposta_disponivel_id_aposta_di`) references `aposta_disponivel` (`id_aposta_disponivel`);
+
+
+-- Aposta_Concreta_Opcao [rel13]
+alter table `aposta_concreta`  add column  `id_opcao`  integer;
+alter table `aposta_concreta`   add index fk_aposta_concreta_opcao (`id_opcao`), add constraint fk_aposta_concreta_opcao foreign key (`id_opcao`) references `opcao` (`id_opcao`);
 
 
 -- Região_Competicao [rel2]

@@ -4,7 +4,7 @@
       <Selector id="sv1#area1#page3#inu6#su1" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#area1#page3#inu6#su1#rcond1" name="RoleCondition1" predicate="in" implied="false" role="rel11#role21"/>
       </Selector>
-      <Link id="sv1#area1#page3#inu6#ln10" name="Flow10" to="sv1#area1#page3#inu11" type="normal" validate="true">
+      <Link id="sv1#area1#page3#inu6#ln10" name="Ver Op&#231;&#245;es" to="sv1#area1#page3#inu11" type="normal" validate="true">
         <LinkParameter id="sv1#area1#page3#inu6#ln10#par21" name="id_aposta_disponivel_PASSING" source="data[].ent8#att2" passing="true"/>
         <LinkParameter id="sv1#area1#page3#inu6#ln10#par26" name="id_aposta_disponivel_RoleCondition6 [id_aposta_disponivel]" source="data[].ent8#att2" target="sv1#area1#page3#inu11#su6#rcond6.ent8#att2"/>
       </Link>
@@ -23,7 +23,7 @@
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
-      <layout:Cell colspan="12">
+      <layout:Cell colspan="5">
         <layout:Unit unitId="sv1#area1#page3#inu6">
           <layout:Attribute attribute="ent8#att25"/>
           <layout:Link link="sv1#area1#page3#inu6#ln10"/>
@@ -33,16 +33,7 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-    </layout:Row>
-    <layout:Row>
-      <layout:Cell colspan="12">
+      <layout:Cell colspan="5">
         <layout:Unit unitId="sv1#area1#page3#inu11">
           <layout:Attribute attribute="ent9#att20"/>
           <layout:Attribute attribute="ent9#att21"/>
@@ -50,6 +41,15 @@
           <layout:Link link="sv1#area1#page3#inu11#ln18"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="2"/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

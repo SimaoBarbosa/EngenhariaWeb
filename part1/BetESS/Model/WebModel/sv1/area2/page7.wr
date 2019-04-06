@@ -1,0 +1,30 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area2#page7" name="Minhas apostas">
+  <ContentUnits>
+    <MultiDataUnit gr:x="0" gr:y="0" id="sv1#area2#page7#mdu3" name="Apostas" entity="ent10" displayAttributes="ent10#att22 ent10#att23 ent10#att24 rel16#role31.ent9#att20 rel17#role33.ent8#att25 rel17#role33.rel11#role22.ent1#att14"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area2#page7#mdu3">
+          <layout:Attribute attribute="ent10#att22"/>
+          <layout:Attribute attribute="ent10#att23"/>
+          <layout:Attribute attribute="ent10#att24"/>
+          <layout:Attribute attribute="rel16#role31.ent9#att20"/>
+          <layout:Attribute attribute="rel17#role33.ent8#att25"/>
+          <layout:Attribute attribute="rel17#role33.rel11#role22.ent1#att14"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

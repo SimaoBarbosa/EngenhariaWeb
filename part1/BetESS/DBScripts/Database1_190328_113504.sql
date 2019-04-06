@@ -34,15 +34,6 @@ create table `evento` (
 );
 
 
--- Aposta_Concreta [ent10]
-create table `aposta_concreta` (
-   `id_aposta_concreta`  integer  not null,
-   `quantia`  double precision,
-   `odd_fixada`  double precision,
-  primary key (`id_aposta_concreta`)
-);
-
-
 -- Equipa [ent2]
 create table `equipa` (
    `id_equipa`  integer  not null,
@@ -85,27 +76,10 @@ create table `desporto` (
 
 -- DataHora [ent7]
 create table `datahora` (
-   `id_datahora`  integer  not null,
+   `datahora_id`  integer  not null,
    `data`  date,
    `hora`  time,
-  primary key (`id_datahora`)
-);
-
-
--- Aposta_Disponivel [ent8]
-create table `aposta_disponivel` (
-   `id_aposta_disponivel`  integer  not null,
-   `titulo`  varchar(255),
-  primary key (`id_aposta_disponivel`)
-);
-
-
--- Opcao [ent9]
-create table `opcao` (
-   `id_opcao`  integer  not null,
-   `opcao`  varchar(255),
-   `odd`  double precision,
-  primary key (`id_opcao`)
+  primary key (`datahora_id`)
 );
 
 
@@ -142,26 +116,6 @@ alter table `user_group`   add index fk_user_group_group (`group_oid`), add cons
 -- Fase_Competicao [rel1]
 alter table `fase`  add column  `competicao_id_competicao`  integer;
 alter table `fase`   add index fk_fase_competicao (`competicao_id_competicao`), add constraint fk_fase_competicao foreign key (`competicao_id_competicao`) references `competicao` (`id_competicao`);
-
-
--- Evento_Aposta_Disponivel [rel11]
-alter table `aposta_disponivel`  add column  `evento_id_evento`  integer;
-alter table `aposta_disponivel`   add index fk_aposta_disponivel_evento (`evento_id_evento`), add constraint fk_aposta_disponivel_evento foreign key (`evento_id_evento`) references `evento` (`id_evento`);
-
-
--- Aposta_Disponivel_Opcao [rel15]
-alter table `opcao`  add column  `aposta_disponivel_id_aposta_di`  integer;
-alter table `opcao`   add index fk_opcao_aposta_disponivel (`aposta_disponivel_id_aposta_di`), add constraint fk_opcao_aposta_disponivel foreign key (`aposta_disponivel_id_aposta_di`) references `aposta_disponivel` (`id_aposta_disponivel`);
-
-
--- Aposta_Concreta_Opcao [rel16]
-alter table `aposta_concreta`  add column  `opcao_id_opcao`  integer;
-alter table `aposta_concreta`   add index fk_aposta_concreta_opcao (`opcao_id_opcao`), add constraint fk_aposta_concreta_opcao foreign key (`opcao_id_opcao`) references `opcao` (`id_opcao`);
-
-
--- Aposta_Concreta_Aposta_Disponivel [rel17]
-alter table `aposta_concreta`  add column  `aposta_disponivel_id_aposta_di`  integer;
-alter table `aposta_concreta`   add index fk_aposta_concreta_aposta_disp (`aposta_disponivel_id_aposta_di`), add constraint fk_aposta_concreta_aposta_disp foreign key (`aposta_disponivel_id_aposta_di`) references `aposta_disponivel` (`id_aposta_disponivel`);
 
 
 -- Região_Competicao [rel2]
@@ -226,6 +180,6 @@ alter table `equipa_fase`   add index fk_equipa_fase_fase (`fase_id_fase`), add 
 
 -- Evento_DataHora [rel9]
 alter table `evento`  add column  `datahora_datahora_id`  integer;
-alter table `evento`   add index fk_evento_datahora (`datahora_datahora_id`), add constraint fk_evento_datahora foreign key (`datahora_datahora_id`) references `datahora` (`id_datahora`);
+alter table `evento`   add index fk_evento_datahora (`datahora_datahora_id`), add constraint fk_evento_datahora foreign key (`datahora_datahora_id`) references `datahora` (`datahora_id`);
 
 

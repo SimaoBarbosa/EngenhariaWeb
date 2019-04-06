@@ -24,7 +24,19 @@
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
-      <layout:Cell colspan="12">
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area1#page4#dau1">
+          <layout:Attribute attribute="ent9#att19"/>
+          <layout:Attribute attribute="ent9#att20"/>
+          <layout:Attribute attribute="ent9#att21"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
         <layout:Unit unitId="sv1#area1#page4#enu2">
           <layout:Field field="sv1#area1#page4#enu2#fld4"/>
           <layout:Link link="sv1#area1#page4#enu2#ln17"/>
@@ -35,21 +47,9 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv1#area1#page4#dau1">
-          <layout:Attribute attribute="ent9#att19"/>
-          <layout:Attribute attribute="ent9#att20"/>
-          <layout:Attribute attribute="ent9#att21"/>
-        </layout:Unit>
-      </layout:Cell>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
