@@ -100,7 +100,7 @@ INSERT INTO aposta_disponivel values
 
 INSERT INTO opcao values
 	(1, 'Rio Ave', 1.5, 1), -- Resultado Final
-	(2, 'Empate,', 2, 1),
+	(2, 'Empate', 2, 1),
 	(3, 'Portimonense', 2.5, 1),
 
 	(4, 'Tarantini', 7, 2), -- 1º jogador a marcar
