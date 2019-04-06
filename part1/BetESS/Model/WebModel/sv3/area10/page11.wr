@@ -1,0 +1,74 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv3#area10#page11" name="Login">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="5" id="sv3#area10#page11#enu3" name="Login" entity="User" linkOrder="sv3#area10#page11#enu3#ln16" fieldOrder="sv3#area10#page11#enu3#fld5 sv3#area10#page11#enu3#fld3">
+      <Field id="sv3#area10#page11#enu3#fld3" name="Password" type="password" modifiable="true"/>
+      <Field id="sv3#area10#page11#enu3#fld5" name="Username" type="string" modifiable="true"/>
+      <Link id="sv3#area10#page11#enu3#ln16" name="Login" to="sv3#lgu3" type="normal" validate="true">
+        <LinkParameter id="sv3#area10#page11#enu3#ln16#par45" name="Username_Username" source="sv3#area10#page11#enu3#fld5" target="sv3#lgu3.username"/>
+        <LinkParameter id="sv3#area10#page11#enu3#ln16#par46" name="Password_Password" source="sv3#area10#page11#enu3#fld3" target="sv3#lgu3.password"/>
+      </Link>
+    </EntryUnit>
+    <EntryUnit id="sv3#area10#page11#enu5" name="Registar" linkOrder="sv3#area10#page11#enu5#ln24" gr:x="90" gr:y="0" entity="User" fieldOrder="sv3#area10#page11#enu5#fld12 sv3#area10#page11#enu5#fld13 sv3#area10#page11#enu5#fld11 sv3#area10#page11#enu5#fld10 sv3#area10#page11#enu5#fld14">
+      <Field id="sv3#area10#page11#enu5#fld10" name="Password" type="password" modifiable="true"/>
+      <Field id="sv3#area10#page11#enu5#fld11" name="Username" type="string" modifiable="true"/>
+      <Link id="sv3#area10#page11#enu5#ln24" name="Registar" to="sv3#cru3" type="normal" validate="true">
+        <LinkParameter id="sv3#area10#page11#enu5#ln24#par72" name="Email_email" source="sv3#area10#page11#enu5#fld13" target="sv3#cru3.email"/>
+        <LinkParameter id="sv3#area10#page11#enu5#ln24#par73" name="1_Group.oid(defaultGroup)" target="sv3#cru3.User2DefaultGroup.groupOID" sourceValue="1"/>
+        <LinkParameter id="sv3#area10#page11#enu5#ln24#par74" name="Key [oid]_oid" source="key.userOID" target="sv3#cru3.userOID"/>
+        <LinkParameter id="sv3#area10#page11#enu5#ln24#par75" name="Password_password" source="sv3#area10#page11#enu5#fld10" target="sv3#cru3.password"/>
+        <LinkParameter id="sv3#area10#page11#enu5#ln24#par76" name="0_saldo" target="sv3#cru3.User#att29" sourceValue="0"/>
+        <LinkParameter id="sv3#area10#page11#enu5#ln24#par77" name="User Object_User Object" source="entityBean" target="sv3#cru3.entityBeans"/>
+        <LinkParameter id="sv3#area10#page11#enu5#ln24#par78" name="Username_userName" source="sv3#area10#page11#enu5#fld11" target="sv3#cru3.userName"/>
+        <LinkParameter id="sv3#area10#page11#enu5#ln24#par79" name="1_Group.oid(groups)" target="sv3#cru3.User2Group.groupOID" sourceValue="1"/>
+      </Link>
+      <Field id="sv3#area10#page11#enu5#fld12" name="Nome" type="string" modifiable="true"/>
+      <Field id="sv3#area10#page11#enu5#fld13" name="Email" type="string" modifiable="true"/>
+      <Field id="sv3#area10#page11#enu5#fld14" name="Saldo" type="float" modifiable="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area10#page11#enu3">
+          <layout:Link link="sv3#area10#page11#enu3#ln16"/>
+          <layout:Field field="sv3#area10#page11#enu3#fld5"/>
+          <layout:Field field="sv3#area10#page11#enu3#fld3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area10#page11#enu5">
+          <layout:Link link="sv3#area10#page11#enu5#ln24"/>
+          <layout:Field field="sv3#area10#page11#enu5#fld12"/>
+          <layout:Field field="sv3#area10#page11#enu5#fld13"/>
+          <layout:Field field="sv3#area10#page11#enu5#fld11"/>
+          <layout:Field field="sv3#area10#page11#enu5#fld10"/>
+          <layout:Field field="sv3#area10#page11#enu5#fld14"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

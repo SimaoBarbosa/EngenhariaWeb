@@ -1,9 +1,10 @@
 <DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
-  <Entity id="User" name="User" duration="persistent" gr:x="230" gr:y="630" gr:hideAttributes="false" attributeOrder="userOID userName password email" db:database="db1" db:table="user">
+  <Entity id="User" name="User" duration="persistent" gr:x="230" gr:y="630" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att29" db:database="db1" db:table="user">
     <Attribute name="oid" id="userOID" type="integer" key="true" db:column="oid"/>
     <Attribute name="userName" id="userName" type="string" db:column="username"/>
     <Attribute name="password" id="password" type="password" db:column="password"/>
     <Attribute name="email" id="email" type="string" db:column="email"/>
+    <Attribute id="User#att29" name="saldo" type="float" db:column="saldo"/>
   </Entity>
   <Entity id="Group" name="Group" duration="persistent" gr:x="470" gr:y="650" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db1" db:table="group">
     <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="oid"/>
@@ -150,9 +151,10 @@
       <db:JoinColumn attribute="ent7#att13" name="datahora_datahora_id"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="795" gr:y="400" id="ent8" name="Aposta_Disponivel" duration="persistent" attributeOrder="ent8#att2 ent8#att25" db:database="db1" db:table="aposta_disponivel">
+  <Entity gr:x="795" gr:y="400" id="ent8" name="Aposta_Disponivel" duration="persistent" attributeOrder="ent8#att2 ent8#att25 ent8#att27" db:database="db1" db:table="aposta_disponivel">
     <Attribute id="ent8#att2" key="true" name="id_aposta_disponivel" type="integer" db:column="id_aposta_disponivel"/>
     <Attribute id="ent8#att25" name="titulo" type="string" db:column="titulo"/>
+    <Attribute id="ent8#att27" name="resultado_final" type="integer" db:column="resultado_final"/>
   </Entity>
   <Entity gr:x="1195" gr:y="385" id="ent9" name="Opcao" duration="persistent" attributeOrder="ent9#att19 ent9#att20 ent9#att21" db:database="db1" db:table="opcao">
     <Attribute id="ent9#att19" key="true" name="id_opcao" type="integer" db:column="id_opcao"/>
@@ -167,10 +169,11 @@
       <db:JoinColumn attribute="ent8#att2" name="id_aposta_disponivel"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="905" gr:y="540" id="ent10" name="Aposta_Concreta" duration="persistent" attributeOrder="ent10#att22 ent10#att23 ent10#att24" db:database="db1" db:table="aposta_concreta">
+  <Entity gr:x="850" gr:y="765" id="ent10" name="Aposta_Concreta" duration="persistent" attributeOrder="ent10#att22 ent10#att23 ent10#att24 ent10#att28" db:database="db1" db:table="aposta_concreta">
     <Attribute id="ent10#att22" key="true" name="id_aposta_concreta" type="integer" db:column="id_aposta_concreta"/>
     <Attribute id="ent10#att23" name="quantia" type="float" db:column="quantia"/>
     <Attribute id="ent10#att24" name="odd_fixada" type="float" db:column="odd_fixada"/>
+    <Attribute id="ent10#att28" name="resultado" type="integer" db:column="resultado"/>
   </Entity>
   <Relationship id="rel15" name="Aposta_Disponivel_Opcao" sourceEntity="ent8" targetEntity="ent9" db:database="db1" db:table="opcao">
     <RelationshipRole1 id="rel15#role29" name="Aposta_DisponivelToOpcao" maxCard="N">
@@ -194,6 +197,26 @@
     </RelationshipRole1>
     <RelationshipRole2 id="rel17#role34" name="Aposta_DisponivelToAposta_Concreta" maxCard="N">
       <db:JoinColumn attribute="ent8#att2" name="aposta_disponivel_id_aposta_di"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="15" gr:y="650" id="ent11" name="Notificacao" duration="persistent" attributeOrder="ent11#att18 ent11#att26" db:database="db1" db:table="notificacao">
+    <Attribute id="ent11#att18" key="true" name="id_notificacao" type="integer" db:column="id_notificacao"/>
+    <Attribute id="ent11#att26" name="notificacao" type="string" db:column="notificacao"/>
+  </Entity>
+  <Relationship id="rel10" name="User_Aposta_Concreta" sourceEntity="User" targetEntity="ent10" gr:bendpoints="2,136,-638,1" db:database="db1" db:table="aposta_concreta">
+    <RelationshipRole1 id="rel10#role19" name="UserToAposta_Concreta" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel10#role20" name="Aposta_ConcretaToUser" maxCard="1">
+      <db:JoinColumn attribute="ent10#att22" name="id_aposta_concreta"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel12" name="Notificacao_User" sourceEntity="ent11" targetEntity="User" db:database="db1" db:table="notificacao">
+    <RelationshipRole1 id="rel12#role23" name="NotificacaoToUser" maxCard="1">
+      <db:JoinColumn attribute="ent11#att18" name="id_notificacao"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel12#role24" name="UserToNotificacao" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
     </RelationshipRole2>
   </Relationship>
 </DataModel>

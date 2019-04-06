@@ -9,6 +9,9 @@
         <LinkParameter id="sv1#area1#page4#enu2#ln17#par19" name="odd_PASSING_odd_fixada" sourceLinkParameter="sv1#area1#page4#dau1#ln19#par60" target="sv1#cru1.ent10#att24"/>
         <LinkParameter id="sv1#area1#page4#enu2#ln17#par24" name="id_aposta_disponivel_PASSING_Aposta_Disponivel.id_aposta_disponivel(Aposta_ConcretaToAposta_Disponivel)" sourceLinkParameter="sv1#area1#page4#dau1#ln19#par23" target="sv1#cru1.rel17#role33.ent8#att2"/>
         <LinkParameter id="sv1#area1#page4#enu2#ln17#par25" name="id_opcao_PASSING_Opcao.id_opcao(Aposta_ConcretaToOpcao)" sourceLinkParameter="sv1#area1#page4#dau1#ln19#par57" target="sv1#cru1.rel16#role31.ent9#att19"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln17#par9" name="-1_resultado" sourceValue="-1" target="sv1#cru1.ent10#att28"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln17#par83" name="UserCtxParam.oid_PASSING_User.oid(Aposta_ConcretaToUser)" sourceLinkParameter="sv1#area1#page4#gtu4#ln28#par82" target="sv1#cru1.rel10#role20.userOID"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln17#par84" name="UserCtxParam.oid_PASSING" sourceLinkParameter="sv1#area1#page4#gtu4#ln28#par82" passing="true"/>
       </Link>
     </EntryUnit>
     <DataUnit gr:x="150" gr:y="0" id="sv1#area1#page4#dau1" name="Aposta" entity="ent9" displayAttributes="ent9#att19 ent9#att20 ent9#att21">
@@ -21,6 +24,11 @@
         <LinkParameter id="sv1#area1#page4#dau1#ln19#par23" name="id_aposta_disponivel_PASSING" sourceLinkParameter="sv1#area1#page3#inu11#ln18#par22" passing="true"/>
       </Link>
     </DataUnit>
+    <GetUnit id="sv1#area1#page4#gtu4" name="Get" gr:x="180" gr:y="120" contextParameters="UserCtxParam">
+      <Link id="sv1#area1#page4#gtu4#ln28" name="Flow27" to="sv1#area1#page4#enu2" type="transport" validate="true">
+        <LinkParameter id="sv1#area1#page4#gtu4#ln28#par82" name="UserCtxParam.oid_PASSING" source="sv1#area1#page4#gtu4.UserCtxParam" passing="true"/>
+      </Link>
+    </GetUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>

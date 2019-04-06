@@ -21,6 +21,7 @@ create table `user` (
    `username`  varchar(255),
    `password`  varchar(255),
    `email`  varchar(255),
+   `saldo`  double precision,
   primary key (`oid`)
 );
 
@@ -39,7 +40,16 @@ create table `aposta_concreta` (
    `id_aposta_concreta`  integer  not null,
    `quantia`  double precision,
    `odd_fixada`  double precision,
+   `resultado`  integer,
   primary key (`id_aposta_concreta`)
+);
+
+
+-- Notificacao [ent11]
+create table `notificacao` (
+   `id_notificacao`  integer  not null,
+   `notificacao`  varchar(255),
+  primary key (`id_notificacao`)
 );
 
 
@@ -96,6 +106,7 @@ create table `datahora` (
 create table `aposta_disponivel` (
    `id_aposta_disponivel`  integer  not null,
    `titulo`  varchar(255),
+   `resultado_final`  integer,
   primary key (`id_aposta_disponivel`)
 );
 
@@ -144,9 +155,19 @@ alter table `fase`  add column  `competicao_id_competicao`  integer;
 alter table `fase`   add index fk_fase_competicao (`competicao_id_competicao`), add constraint fk_fase_competicao foreign key (`competicao_id_competicao`) references `competicao` (`id_competicao`);
 
 
+-- User_Aposta_Concreta [rel10]
+alter table `aposta_concreta`  add column  `user_oid`  integer;
+alter table `aposta_concreta`   add index fk_aposta_concreta_user (`user_oid`), add constraint fk_aposta_concreta_user foreign key (`user_oid`) references `user` (`oid`);
+
+
 -- Evento_Aposta_Disponivel [rel11]
 alter table `aposta_disponivel`  add column  `evento_id_evento`  integer;
 alter table `aposta_disponivel`   add index fk_aposta_disponivel_evento (`evento_id_evento`), add constraint fk_aposta_disponivel_evento foreign key (`evento_id_evento`) references `evento` (`id_evento`);
+
+
+-- Notificacao_User [rel12]
+alter table `notificacao`  add column  `user_oid`  integer;
+alter table `notificacao`   add index fk_notificacao_user (`user_oid`), add constraint fk_notificacao_user foreign key (`user_oid`) references `user` (`oid`);
 
 
 -- Aposta_Disponivel_Opcao [rel15]
