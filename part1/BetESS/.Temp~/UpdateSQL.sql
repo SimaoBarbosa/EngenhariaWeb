@@ -69,7 +69,7 @@ create table `competicao` (
 );
 
 
--- Regi„o [ent4]
+-- Regi√£o [ent4]
 create table `regiao` (
    `id_regiao`  integer  not null,
    `nome`  varchar(255),
@@ -185,12 +185,12 @@ alter table `aposta_concreta`  add column  `aposta_disponivel_id_aposta_di`  int
 alter table `aposta_concreta`   add index fk_aposta_concreta_aposta_disp (`aposta_disponivel_id_aposta_di`), add constraint fk_aposta_concreta_aposta_disp foreign key (`aposta_disponivel_id_aposta_di`) references `aposta_disponivel` (`id_aposta_disponivel`);
 
 
--- Regi„o_Competicao [rel2]
+-- Regi√£o_Competicao [rel2]
 alter table `competicao`  add column  `regiao_id_regiao`  integer;
 alter table `competicao`   add index fk_competicao_regiao (`regiao_id_regiao`), add constraint fk_competicao_regiao foreign key (`regiao_id_regiao`) references `regiao` (`id_regiao`);
 
 
--- Desporto_Regi„o [rel3]
+-- Desporto_Regi√£o [rel3]
 create table `desporto_regiao` (
    `desporto_id_desporto`  integer not null,
    `regiao_id_regiao`  integer not null,
@@ -225,7 +225,7 @@ alter table `equipa_competicao`   add index fk_equipa_competicao_equipa (`equipa
 alter table `equipa_competicao`   add index fk_equipa_competicao_competica (`competicao_id_competicao`), add constraint fk_equipa_competicao_competica foreign key (`competicao_id_competicao`) references `competicao` (`id_competicao`);
 
 
--- Equipa_Regi„o [rel7]
+-- Equipa_Regi√£o [rel7]
 create table `equipa_regiao` (
    `equipa_id_equipa`  integer not null,
    `regiao_id_regiao`  integer not null,

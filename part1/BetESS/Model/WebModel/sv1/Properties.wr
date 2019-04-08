@@ -4,6 +4,13 @@
       <KOLink id="sv1#cru1#kln3" name="KOFlow1" to="sv1#area1#page4#enu2" automaticCoupling="true" gr:bendpoints="68,-115,-42,125"/>
       <OKLink id="sv1#cru1#oln6" name="OKFlow6" to="sv1#area2#page7" automaticCoupling="true"/>
     </CreateUnit>
-    <LogoutUnit gr:x="0" gr:y="535" id="sv1#lou2" name="Logout" siteView="sv3" landmark="true"/>
+    <LogoutUnit gr:x="5" gr:y="560" id="sv1#lou2" name="Logout" siteView="sv3" landmark="true"/>
+    <QueryUnit gr:x="485" gr:y="940" id="sv1#qu1" name="Carregar saldo" mode="update" language="HQL" db="db1">
+      <QueryText xml:space="preserve">update User set saldo = saldo + (:valor) where oid = (:userId);</QueryText>
+      <OKLink id="sv1#qu1#oln1" name="OKFlow1" to="sv1#area3#page19" automaticCoupling="true" gr:bendpoints="112,-57,102,143"/>
+      <KOLink id="sv1#qu1#kln1" name="KOFlow1" to="sv1#area3#page19" automaticCoupling="true" gr:bendpoints="-112,-57,-122,143"/>
+      <QueryInput id="sv1#qu1#qi1" name="valor" required="true" type="float"/>
+      <QueryInput id="sv1#qu1#qi2" name="userId" required="true" type="integer"/>
+    </QueryUnit>
   </OperationUnits>
 </SiteView>
