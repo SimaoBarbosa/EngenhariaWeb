@@ -30,7 +30,6 @@ create table `user` (
 create table `evento` (
    `id_evento`  integer  not null,
    `titulo`  varchar(255),
-   `disponibilidade`  bit,
   primary key (`id_evento`)
 );
 
@@ -107,6 +106,7 @@ create table `aposta_disponivel` (
    `id_aposta_disponivel`  integer  not null,
    `titulo`  varchar(255),
    `resultado_final`  integer,
+   `disponibilidade`  bit,
   primary key (`id_aposta_disponivel`)
 );
 

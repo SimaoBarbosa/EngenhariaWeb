@@ -39,16 +39,16 @@ INSERT INTO datahora values
 	(4, '2019-03-31', '20:00:00');
 
 INSERT INTO evento values
-	(1, 'Rio Ave x Portimonense', true, 1, 1), -- 1a jornada Liga NOS
-	(2, 'Nacional x Marítimo', true, 2, 1), -- 2a jornada Liga NOS
-	(3, 'Sporting x Moreirense', false, 3, 2), -- oitavos Taça de Portugal
-	(4, 'Vitória Setúbal x Vitória Guimarães', true, 4, 3), -- quartos Taça de Portugal
-	(5, 'Barcelona x Real Madrid', true, 5, 4), -- 3a jornada La Liga
-	(6, 'Atlético Madrid x Valência', true, 6, 1), -- 4a jornada La Liga
-	(7, 'Bayern Munique x Liverpool', true, 7, 2), -- meia final Liga dos Campeões
-	(8, 'Napoli x Inter', true, 8, 3), -- final Liga Europa
-	(9, 'Portugal x Sérvia', true, 9, 4), -- Qualificação Euro
-	(10, 'Brasil x Alemanha', true, 10, 1); -- final Mundial
+	(1, 'Rio Ave x Portimonense', 1, 1), -- 1a jornada Liga NOS
+	(2, 'Nacional x Marítimo', 2, 1), -- 2a jornada Liga NOS
+	(3, 'Sporting x Moreirense', 3, 2), -- oitavos Taça de Portugal
+	(4, 'Vitória Setúbal x Vitória Guimarães', 4, 3), -- quartos Taça de Portugal
+	(5, 'Barcelona x Real Madrid', 5, 4), -- 3a jornada La Liga
+	(6, 'Atlético Madrid x Valência', 6, 1), -- 4a jornada La Liga
+	(7, 'Bayern Munique x Liverpool', 7, 2), -- meia final Liga dos Campeões
+	(8, 'Napoli x Inter', 8, 3), -- final Liga Europa
+	(9, 'Portugal x Sérvia', 9, 4), -- Qualificação Euro
+	(10, 'Brasil x Alemanha', 10, 1); -- final Mundial
 
 INSERT INTO equipa values
 	(1, 'Rio Ave'),
@@ -95,8 +95,8 @@ INSERT INTO desporto_regiao values
 -- equipa_regiao
 
 INSERT INTO aposta_disponivel values
-	(1, 'Resultado Final', 0,1), -- Rio Ave x Portimonense
-	(2, '1º jogador a marcar', 0,1);
+	(1, 'Resultado Final', 0, true, 1), -- Rio Ave x Portimonense
+	(2, '1º jogador a marcar', 0, true, 1);
 
 INSERT INTO opcao values
 	(1, 'Rio Ave', 1.5, 1), -- Resultado Final

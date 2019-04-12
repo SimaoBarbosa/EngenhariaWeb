@@ -1,0 +1,77 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area7#page12" name="Apostas" gr:x="925" gr:y="0">
+  <ContentUnits>
+    <IndexUnit id="sv2#area7#page12#inu16" name="Apostas Dispon&#237;veis" gr:x="0" gr:y="0" entity="ent8" displayAttributes="ent8#att25" linkOrder="sv2#area7#page12#inu16#ln52">
+      <Selector id="sv2#area7#page12#inu16#su17" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area7#page12#inu16#su17#rcond15" name="RoleCondition1" predicate="in" implied="false" role="rel11#role21"/>
+      </Selector>
+      <Link id="sv2#area7#page12#inu16#ln52" name="Flow52" to="sv2#area7#page12#inu25" type="normal" validate="true">
+        <LinkParameter id="sv2#area7#page12#inu16#ln52#par196" name="id_aposta_disponivel_RoleCondition24 [id_aposta_disponivel]" source="data[].ent8#att2" target="sv2#area7#page12#inu25#su31#rcond24.ent8#att2"/>
+        <LinkParameter id="sv2#area7#page12#inu16#ln52#par197" name="id_aposta_disponivel_PASSING" source="data[].ent8#att2" passing="true"/>
+      </Link>
+    </IndexUnit>
+    <IndexUnit gr:x="220" gr:y="10" id="sv2#area7#page12#inu25" name="Op&#231;&#245;es" entity="ent9" linkOrder="sv2#area7#page12#inu25#ln53" displayAttributes="ent9#att19 ent9#att20 ent9#att21">
+      <Selector id="sv2#area7#page12#inu25#su31" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area7#page12#inu25#su31#rcond24" name="RoleCondition24" predicate="in" implied="false" role="rel15#role29"/>
+      </Selector>
+      <Link id="sv2#area7#page12#inu25#ln53" name="Terminar Aposta" to="sv2#area9#page16#inu24" type="normal" validate="true">
+        <LinkParameter id="sv2#area7#page12#inu25#ln53#par198" name="id_aposta_disponivel_PASSING_RoleCondition23 [id_aposta_disponivel]" sourceLinkParameter="sv2#area7#page12#inu16#ln52#par197" target="sv2#area9#page16#inu24#su30#rcond23.ent8#att2"/>
+      </Link>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="5">
+        <layout:Unit unitId="sv2#area7#page12#inu16">
+          <layout:Attribute attribute="ent8#att25"/>
+          <layout:Link link="sv2#area7#page12#inu16#ln52"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="7"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area7#page12#inu25">
+          <layout:Link link="sv2#area7#page12#inu25#ln53"/>
+          <layout:Attribute attribute="ent9#att19"/>
+          <layout:Attribute attribute="ent9#att20"/>
+          <layout:Attribute attribute="ent9#att21"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

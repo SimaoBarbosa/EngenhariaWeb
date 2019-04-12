@@ -1,16 +1,34 @@
 <SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Apostador" landmarks="sv1#area1 sv1#area2 sv1#area3 sv1#area4 sv1#lou2" protected="true" homePage="sv1#area1#page1">
   <OperationUnits>
     <CreateUnit gr:x="910" gr:y="505" id="sv1#cru1" name="Criar Aposta" entity="ent10">
-      <KOLink id="sv1#cru1#kln3" name="KOFlow1" to="sv1#area1#page4#enu2" automaticCoupling="true" gr:bendpoints="68,-115,-42,125"/>
+      <KOLink id="sv1#cru1#kln3" name="KOFlow1" to="sv1#area1#page4" automaticCoupling="true" gr:bendpoints="68,-115,-42,125"/>
       <OKLink id="sv1#cru1#oln6" name="OKFlow6" to="sv1#area2#page7" automaticCoupling="true"/>
     </CreateUnit>
-    <LogoutUnit gr:x="5" gr:y="560" id="sv1#lou2" name="Logout" siteView="sv3" landmark="true"/>
-    <QueryUnit gr:x="485" gr:y="940" id="sv1#qu1" name="Carregar saldo" mode="update" language="HQL" db="db1">
+    <LogoutUnit gr:x="755" gr:y="735" id="sv1#lou2" name="Logout" siteView="sv3" landmark="true"/>
+    <QueryUnit gr:x="485" gr:y="975" id="sv1#qu1" name="Carregar saldo" mode="update" language="HQL" db="db1">
       <QueryText xml:space="preserve">update User set saldo = saldo + (:valor) where oid = (:userId);</QueryText>
       <OKLink id="sv1#qu1#oln1" name="OKFlow1" to="sv1#area3#page19" automaticCoupling="true" gr:bendpoints="112,-57,102,143"/>
       <KOLink id="sv1#qu1#kln1" name="KOFlow1" to="sv1#area3#page19" automaticCoupling="true" gr:bendpoints="-112,-57,-122,143"/>
       <QueryInput id="sv1#qu1#qi1" name="valor" required="true" type="float"/>
       <QueryInput id="sv1#qu1#qi2" name="userId" required="true" type="integer"/>
+    </QueryUnit>
+    <QueryUnit id="sv1#qu2" name="Query2" gr:x="855" gr:y="425" mode="select" language="SQL" db="db1">
+      <QueryText xml:space="preserve">select saldo from user where oid=(:idUser) and saldo &gt;= (:valor);</QueryText>
+      <QueryInput id="sv1#qu2#qi4" name="idUser" required="true" type="integer"/>
+      <QueryOutput id="sv1#qu2#qo2" name="saldo" type="float"/>
+      <QueryInput id="sv1#qu2#qi5" name="valor" required="true" type="float"/>
+      <OKLink id="sv1#qu2#oln2" name="OKFlow2" to="sv1#area1#inn1">
+        <LinkParameter id="sv1#qu2#oln2#par18" name="saldo_Input" source="data[].saldo" target="sv1#area1#inn1.isnotnull"/>
+        <LinkParameter id="sv1#qu2#oln2#par33" name="Aposta_Concreta Object_PASSING" sourceLinkParameter="sv1#area1#page4#enu2#ln6#par28" passing="true"/>
+        <LinkParameter id="sv1#qu2#oln2#par34" name="id_aposta_disponivel_PASSING" sourceLinkParameter="sv1#area1#page4#enu2#ln6#par29" passing="true"/>
+        <LinkParameter id="sv1#qu2#oln2#par35" name="id_opcao_PASSING" sourceLinkParameter="sv1#area1#page4#enu2#ln6#par30" passing="true"/>
+        <LinkParameter id="sv1#qu2#oln2#par36" name="Key [id_aposta_concreta]_PASSING" sourceLinkParameter="sv1#area1#page4#enu2#ln6#par31" passing="true"/>
+        <LinkParameter id="sv1#qu2#oln2#par37" name="odd_PASSING" sourceLinkParameter="sv1#area1#page4#enu2#ln6#par32" passing="true"/>
+        <LinkParameter id="sv1#qu2#oln2#par38" name="Quantia a apostar_PASSING" sourceLinkParameter="sv1#area1#page4#enu2#ln6#par15" passing="true"/>
+        <LinkParameter id="sv1#qu2#oln2#par39" name="saldo_PASSING" source="data[].saldo" passing="true"/>
+        <LinkParameter id="sv1#qu2#oln2#par40" name="UserCtxParam.oid_PASSING" sourceLinkParameter="sv1#area1#page4#enu2#ln6#par16" passing="true"/>
+      </OKLink>
+      <KOLink id="sv1#qu2#kln2" name="KOFlow2" to="sv1#area1#page4" automaticCoupling="true" gr:bendpoints="152,19,-178,9"/>
     </QueryUnit>
   </OperationUnits>
 </SiteView>

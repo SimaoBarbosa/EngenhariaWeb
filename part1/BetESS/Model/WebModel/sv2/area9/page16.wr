@@ -1,0 +1,64 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area9#page16" name="Terminar aposta">
+  <ContentUnits>
+    <IndexUnit gr:x="330" gr:y="0" id="sv2#area9#page16#inu23" name="users" entity="User" displayAttributes="userName email User#att29" linkOrder="sv2#area9#page16#inu23#ln54">
+      <Selector id="sv2#area9#page16#inu23#su29" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area9#page16#inu23#su29#rcond22" name="RoleCondition22" predicate="in" implied="false" role="rel10#role20"/>
+      </Selector>
+      <Link id="sv2#area9#page16#inu23#ln54" name="Flow54" to="sv2#mfu1" type="normal" validate="true">
+        <LinkParameter id="sv2#area9#page16#inu23#ln54#par199" name="oid_KeyCondition9 [oid]" source="data[].userOID" target="sv2#mfu1#su32#kcond9.userOID"/>
+        <LinkParameter id="sv2#area9#page16#inu23#ln54#par200" name="20_saldo" sourceValue="20" target="sv2#mfu1.User#att29"/>
+      </Link>
+    </IndexUnit>
+    <IndexUnit gr:x="0" gr:y="0" id="sv2#area9#page16#inu24" name="Apostas concretas" entity="ent10" displayAttributes="ent10#att22 ent10#att23 ent10#att24 ent10#att28" linkOrder="sv2#area9#page16#inu24#ln51">
+      <Selector id="sv2#area9#page16#inu24#su30" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area9#page16#inu24#su30#rcond23" name="RoleCondition23" predicate="in" implied="false" role="rel17#role34"/>
+      </Selector>
+      <Link id="sv2#area9#page16#inu24#ln51" name="Flow51" to="sv2#area9#page16#inu23" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area9#page16#inu23">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="User#att29"/>
+          <layout:Link link="sv2#area9#page16#inu23#ln54"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area9#page16#inu24">
+          <layout:Attribute attribute="ent10#att22"/>
+          <layout:Attribute attribute="ent10#att23"/>
+          <layout:Attribute attribute="ent10#att24"/>
+          <layout:Attribute attribute="ent10#att28"/>
+          <layout:Link link="sv2#area9#page16#inu24#ln51"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

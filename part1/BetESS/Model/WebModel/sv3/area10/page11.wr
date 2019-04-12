@@ -16,7 +16,7 @@
         <LinkParameter id="sv3#area10#page11#enu5#ln24#par73" name="1_Group.oid(defaultGroup)" target="sv3#cru3.User2DefaultGroup.groupOID" sourceValue="1"/>
         <LinkParameter id="sv3#area10#page11#enu5#ln24#par74" name="Key [oid]_oid" source="key.userOID" target="sv3#cru3.userOID"/>
         <LinkParameter id="sv3#area10#page11#enu5#ln24#par75" name="Password_password" source="sv3#area10#page11#enu5#fld10" target="sv3#cru3.password"/>
-        <LinkParameter id="sv3#area10#page11#enu5#ln24#par76" name="0_saldo" target="sv3#cru3.User#att29" sourceValue="0"/>
+        <LinkParameter id="sv3#area10#page11#enu5#ln24#par76" name="0_saldo" target="sv3#cru3.User#att29" source="sv3#area10#page11#enu5#fld14"/>
         <LinkParameter id="sv3#area10#page11#enu5#ln24#par77" name="User Object_User Object" source="entityBean" target="sv3#cru3.entityBeans"/>
         <LinkParameter id="sv3#area10#page11#enu5#ln24#par78" name="Username_userName" source="sv3#area10#page11#enu5#fld11" target="sv3#cru3.userName"/>
         <LinkParameter id="sv3#area10#page11#enu5#ln24#par79" name="1_Group.oid(groups)" target="sv3#cru3.User2Group.groupOID" sourceValue="1"/>

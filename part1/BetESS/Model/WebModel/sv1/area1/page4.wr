@@ -1,20 +1,20 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1140" gr:y="155" id="sv1#area1#page4" name="Confirmar aposta">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1130" gr:y="155" id="sv1#area1#page4" name="Confirmar aposta">
   <ContentUnits>
-    <EntryUnit id="sv1#area1#page4#enu2" name="Fazer Aposta" linkOrder="sv1#area1#page4#enu2#ln17" gr:x="0" gr:y="65" entity="ent10">
+    <EntryUnit id="sv1#area1#page4#enu2" name="Fazer Aposta" linkOrder="sv1#area1#page4#enu2#ln6" gr:x="10" gr:y="65" entity="ent10">
       <Field id="sv1#area1#page4#enu2#fld4" name="Quantia a apostar" type="float" modifiable="true" attribute="ent10#att23"/>
-      <Link id="sv1#area1#page4#enu2#ln17" name="Confirmar" to="sv1#cru1" type="normal" validate="true">
-        <LinkParameter id="sv1#area1#page4#enu2#ln17#par42" name="Aposta_Concreta Object_Aposta_Concreta Object" source="entityBean" target="sv1#cru1.entityBeans"/>
-        <LinkParameter id="sv1#area1#page4#enu2#ln17#par44" name="Key [id_aposta_concreta]_id_aposta_concreta" source="key.ent10#att22" target="sv1#cru1.ent10#att22"/>
-        <LinkParameter id="sv1#area1#page4#enu2#ln17#par47" name="Quantia a apostar_quantia" source="sv1#area1#page4#enu2#fld4" target="sv1#cru1.ent10#att23"/>
-        <LinkParameter id="sv1#area1#page4#enu2#ln17#par19" name="odd_PASSING_odd_fixada" sourceLinkParameter="sv1#area1#page4#dau1#ln19#par60" target="sv1#cru1.ent10#att24"/>
-        <LinkParameter id="sv1#area1#page4#enu2#ln17#par24" name="id_aposta_disponivel_PASSING_Aposta_Disponivel.id_aposta_disponivel(Aposta_ConcretaToAposta_Disponivel)" sourceLinkParameter="sv1#area1#page4#dau1#ln19#par23" target="sv1#cru1.rel17#role33.ent8#att2"/>
-        <LinkParameter id="sv1#area1#page4#enu2#ln17#par25" name="id_opcao_PASSING_Opcao.id_opcao(Aposta_ConcretaToOpcao)" sourceLinkParameter="sv1#area1#page4#dau1#ln19#par57" target="sv1#cru1.rel16#role31.ent9#att19"/>
-        <LinkParameter id="sv1#area1#page4#enu2#ln17#par9" name="-1_resultado" sourceValue="-1" target="sv1#cru1.ent10#att28"/>
-        <LinkParameter id="sv1#area1#page4#enu2#ln17#par83" name="UserCtxParam.oid_PASSING_User.oid(Aposta_ConcretaToUser)" sourceLinkParameter="sv1#area1#page4#gtu4#ln28#par82" target="sv1#cru1.rel10#role20.userOID"/>
-        <LinkParameter id="sv1#area1#page4#enu2#ln17#par84" name="UserCtxParam.oid_PASSING" sourceLinkParameter="sv1#area1#page4#gtu4#ln28#par82" passing="true"/>
+      <Link id="sv1#area1#page4#enu2#ln6" name="Apostar" to="sv1#qu2" type="normal" validate="true">
+        <LinkParameter id="sv1#area1#page4#enu2#ln6#par14" name="UserCtxParam.oid_PASSING_idUser" sourceLinkParameter="sv1#area1#page4#gtu4#ln28#par82" target="sv1#qu2.sv1#qu2#qi4"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln6#par15" name="Quantia a apostar_PASSING" source="sv1#area1#page4#enu2#fld4" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln6#par16" name="UserCtxParam.oid_PASSING" sourceLinkParameter="sv1#area1#page4#gtu4#ln28#par82" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln6#par17" name="Quantia a apostar_valor" source="sv1#area1#page4#enu2#fld4" target="sv1#qu2.sv1#qu2#qi5"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln6#par28" name="Aposta_Concreta Object_PASSING" source="entityBean" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln6#par29" name="id_aposta_disponivel_PASSING" sourceLinkParameter="sv1#area1#page4#dau1#ln19#par23" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln6#par30" name="id_opcao_PASSING" sourceLinkParameter="sv1#area1#page4#dau1#ln19#par57" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln6#par31" name="Key [id_aposta_concreta]_PASSING" source="key.ent10#att22" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln6#par32" name="odd_PASSING" sourceLinkParameter="sv1#area1#page4#dau1#ln19#par60" passing="true"/>
       </Link>
     </EntryUnit>
-    <DataUnit gr:x="150" gr:y="0" id="sv1#area1#page4#dau1" name="Aposta" entity="ent9" displayAttributes="ent9#att19 ent9#att20 ent9#att21">
+    <DataUnit gr:x="160" gr:y="0" id="sv1#area1#page4#dau1" name="Aposta" entity="ent9" displayAttributes="ent9#att19 ent9#att20 ent9#att21">
       <Selector id="sv1#area1#page4#dau1#su10" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#area1#page4#dau1#su10#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
       </Selector>
@@ -24,11 +24,17 @@
         <LinkParameter id="sv1#area1#page4#dau1#ln19#par23" name="id_aposta_disponivel_PASSING" sourceLinkParameter="sv1#area1#page3#inu11#ln18#par22" passing="true"/>
       </Link>
     </DataUnit>
-    <GetUnit id="sv1#area1#page4#gtu4" name="Get" gr:x="180" gr:y="120" contextParameters="UserCtxParam">
+    <GetUnit id="sv1#area1#page4#gtu4" name="Get" gr:x="190" gr:y="120" contextParameters="UserCtxParam">
       <Link id="sv1#area1#page4#gtu4#ln28" name="Flow27" to="sv1#area1#page4#enu2" type="transport" validate="true">
         <LinkParameter id="sv1#area1#page4#gtu4#ln28#par82" name="UserCtxParam.oid_PASSING" source="sv1#area1#page4#gtu4.UserCtxParam" passing="true"/>
       </Link>
+      <Link id="sv1#area1#page4#gtu4#ln15" name="Flow15" to="sv1#area1#page4#dau2" type="transport" validate="true" automaticCoupling="true"/>
     </GetUnit>
+    <DataUnit gr:x="0" gr:y="200" id="sv1#area1#page4#dau2" name="Saldo Dispon&#237;vel" entity="User" displayAttributes="User#att29">
+      <Selector id="sv1#area1#page4#dau2#su7" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area1#page4#dau2#su7#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -47,7 +53,7 @@
       <layout:Cell colspan="6">
         <layout:Unit unitId="sv1#area1#page4#enu2">
           <layout:Field field="sv1#area1#page4#enu2#fld4"/>
-          <layout:Link link="sv1#area1#page4#enu2#ln17"/>
+          <layout:Link link="sv1#area1#page4#enu2#ln6"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -57,13 +63,17 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="12"/>
+      <layout:Cell colspan="6"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area1#page4#dau2">
+          <layout:Attribute attribute="User#att29"/>
+        </layout:Unit>
+      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

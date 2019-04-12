@@ -1,0 +1,154 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area7#page13" name="Desportos" landmark="true" gr:x="0" gr:y="0">
+  <ContentUnits>
+    <IndexUnit id="sv2#area7#page13#inu18" name="Desportos" linkOrder="sv2#area7#page13#inu18#ln38" gr:x="0" gr:y="5" entity="ent6" displayAttributes="ent6#att12">
+      <Link id="sv2#area7#page13#inu18#ln38" name="Ver regi&#245;es" to="sv2#area7#page13#inu19" type="normal" validate="true">
+        <LinkParameter id="sv2#area7#page13#inu18#ln38#par170" name="id_desporto_PASSING" source="data[].ent6#att11" passing="true"/>
+        <LinkParameter id="sv2#area7#page13#inu18#ln38#par171" name="id_desporto_RoleCondition2 [id_desporto]" source="data[].ent6#att11" target="sv2#area7#page13#inu19#su22#rcond17.ent6#att11"/>
+      </Link>
+    </IndexUnit>
+    <IndexUnit id="sv2#area7#page13#inu19" name="Regi&#245;es" linkOrder="sv2#area7#page13#inu19#ln39" gr:x="150" gr:y="5" entity="ent4" displayAttributes="ent4#att8">
+      <Link id="sv2#area7#page13#inu19#ln39" name="Ver competi&#231;&#245;es" to="sv2#area7#page13#inu20" type="normal" validate="true">
+        <LinkParameter id="sv2#area7#page13#inu19#ln39#par172" name="id_regiao_PASSING" source="data[].ent4#att7" passing="true"/>
+        <LinkParameter id="sv2#area7#page13#inu19#ln39#par173" name="id_regiao_RoleCondition3 [id_regiao]" source="data[].ent4#att7" target="sv2#area7#page13#inu20#su23#rcond18.ent4#att7"/>
+      </Link>
+      <Selector id="sv2#area7#page13#inu19#su22" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area7#page13#inu19#su22#rcond17" name="RoleCondition2" predicate="in" implied="false" role="rel3#role5"/>
+      </Selector>
+    </IndexUnit>
+    <IndexUnit id="sv2#area7#page13#inu20" name="Competi&#231;&#245;es" linkOrder="sv2#area7#page13#inu20#ln40" gr:x="330" gr:y="0" entity="ent3" displayAttributes="ent3#att6">
+      <Link id="sv2#area7#page13#inu20#ln40" name="Ver fases" to="sv2#area7#page13#inu21" type="normal" validate="true">
+        <LinkParameter id="sv2#area7#page13#inu20#ln40#par174" name="id_competicao_PASSING" source="data[].ent3#att5" passing="true"/>
+        <LinkParameter id="sv2#area7#page13#inu20#ln40#par175" name="id_competicao_RoleCondition4 [id_competicao]" source="data[].ent3#att5" target="sv2#area7#page13#inu21#su24#rcond19.ent3#att5"/>
+      </Link>
+      <Selector id="sv2#area7#page13#inu20#su23" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area7#page13#inu20#su23#rcond18" name="RoleCondition3" predicate="in" implied="false" role="rel2#role3"/>
+      </Selector>
+    </IndexUnit>
+    <IndexUnit id="sv2#area7#page13#inu21" name="Fases" linkOrder="sv2#area7#page13#inu21#ln41" gr:x="535" gr:y="0" entity="ent5" displayAttributes="ent5#att10">
+      <Link id="sv2#area7#page13#inu21#ln41" name="Ver eventos" to="sv2#area7#page13#inu22" type="normal" validate="true">
+        <LinkParameter id="sv2#area7#page13#inu21#ln41#par176" name="id_fase_PASSING" source="data[].ent5#att9" passing="true"/>
+        <LinkParameter id="sv2#area7#page13#inu21#ln41#par177" name="id_fase_RoleCondition5 [id_fase]" source="data[].ent5#att9" target="sv2#area7#page13#inu22#su25#rcond20.ent5#att9"/>
+      </Link>
+      <Selector id="sv2#area7#page13#inu21#su24" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area7#page13#inu21#su24#rcond19" name="RoleCondition4" predicate="in" implied="false" role="rel1#role2"/>
+      </Selector>
+    </IndexUnit>
+    <IndexUnit id="sv2#area7#page13#inu22" name="Eventos" linkOrder="sv2#area7#page13#inu22#ln42" gr:x="770" gr:y="0" entity="ent1" displayAttributes="ent1#att14">
+      <Selector id="sv2#area7#page13#inu22#su25" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area7#page13#inu22#su25#rcond20" name="RoleCondition5" predicate="in" implied="false" role="rel5#role10"/>
+      </Selector>
+      <Link id="sv2#area7#page13#inu22#ln42" name="Ver Apostas" to="sv2#area7#page12#inu16" type="normal" automaticCoupling="true" validate="true"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="4">
+        <layout:Unit unitId="sv2#area7#page13#inu18">
+          <layout:Attribute attribute="ent6#att12"/>
+          <layout:Link link="sv2#area7#page13#inu18#ln38"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4">
+        <layout:Unit unitId="sv2#area7#page13#inu19">
+          <layout:Attribute attribute="ent4#att8"/>
+          <layout:Link link="sv2#area7#page13#inu19#ln39"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4">
+        <layout:Unit unitId="sv2#area7#page13#inu20">
+          <layout:Attribute attribute="ent3#att6"/>
+          <layout:Link link="sv2#area7#page13#inu20#ln40"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="4">
+        <layout:Unit unitId="sv2#area7#page13#inu21">
+          <layout:Attribute attribute="ent5#att10"/>
+          <layout:Link link="sv2#area7#page13#inu21#ln41"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv2#area7#page13#inu22">
+          <layout:Link link="sv2#area7#page13#inu22#ln42"/>
+          <layout:Attribute attribute="ent1#att14"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="2"/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
