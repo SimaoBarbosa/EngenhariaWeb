@@ -1,0 +1,52 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area5#page2" name="Notifica&#231;&#245;es - alt.">
+  <ContentUnits>
+    <QueryUnit gr:x="200" gr:y="10" id="sv1#area5#page2#qu5" name="Notifica&#231;&#245;es" mode="select" language="SQL" db="db1" outputsOrder="sv1#area5#page2#qu5#qo3 sv1#area5#page2#qu5#qo1" linkOrder="sv1#area5#page2#qu5#ln14">
+      <QueryText xml:space="preserve">select id_notificacao, notificacao from notificacao where user_oid = (:userId) order by id_notificacao DESC;</QueryText>
+      <QueryOutput id="sv1#area5#page2#qu5#qo1" name="notificacao" type="string"/>
+      <QueryInput id="sv1#area5#page2#qu5#qi9" name="userId" required="true" type="integer"/>
+      <QueryOutput id="sv1#area5#page2#qu5#qo3" name="id_notificacao" type="integer"/>
+      <Link id="sv1#area5#page2#qu5#ln14" name="Limpar" to="sv1#dlu1" type="normal" validate="true">
+        <LinkParameter id="sv1#area5#page2#qu5#ln14#par20" name="id_notificacao_KeyCondition3 [id_notificacao]" source="data[].idNotificacao" target="sv1#dlu1#su8#kcond3.ent11#att18"/>
+      </Link>
+    </QueryUnit>
+    <GetUnit gr:x="0" gr:y="0" id="sv1#area5#page2#gtu1" name="Get1" contextParameters="UserCtxParam">
+      <Link id="sv1#area5#page2#gtu1#ln12" name="Flow12" to="sv1#area5#page2#qu5" type="transport" validate="true">
+        <LinkParameter id="sv1#area5#page2#gtu1#ln12#par19" name="UserCtxParam.oid_userId" source="sv1#area5#page2#gtu1.UserCtxParam" target="sv1#area5#page2#qu5.sv1#area5#page2#qu5#qi9"/>
+      </Link>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area5#page2#qu5">
+          <layout:Link link="sv1#area5#page2#qu5#ln14"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

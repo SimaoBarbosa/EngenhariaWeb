@@ -47,7 +47,8 @@
       <db:JoinColumn attribute="moduleOID" name="module_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="Database1" type="MySQL" url="jdbc:mysql://localhost:3306/betess" username="root" password="cGFzc3dvcmQ=" cryptedPassword="true"/>
+  <db:Database id="db1" name="Database1" type="MySQL" url="jdbc:mysql://localhost:3306/betess" username="root" password="cGFzc3dvcmQ=" cryptedPassword="true">
+  </db:Database>
   <Entity gr:x="425" gr:y="510" id="ent1" name="Evento" duration="persistent" attributeOrder="ent1#att1 ent1#att14" db:database="db1" db:table="evento">
     <Attribute id="ent1#att1" key="true" name="id_evento" type="integer" db:column="id_evento"/>
     <Attribute id="ent1#att14" name="titulo" type="string" db:column="titulo"/>
@@ -153,7 +154,7 @@
     <Attribute id="ent8#att2" key="true" name="id_aposta_disponivel" type="integer" db:column="id_aposta_disponivel"/>
     <Attribute id="ent8#att25" name="titulo" type="string" db:column="titulo"/>
     <Attribute id="ent8#att27" name="resultado_final" type="integer" db:column="resultado_final"/>
-    <Attribute id="ent8#att30" name="disponibilidade" type="string"/>
+    <Attribute id="ent8#att30" name="disponibilidade" type="boolean" db:column="disponibilidade"/>
   </Entity>
   <Entity gr:x="1195" gr:y="385" id="ent9" name="Opcao" duration="persistent" attributeOrder="ent9#att19 ent9#att20 ent9#att21" db:database="db1" db:table="opcao">
     <Attribute id="ent9#att19" key="true" name="id_opcao" type="integer" db:column="id_opcao"/>

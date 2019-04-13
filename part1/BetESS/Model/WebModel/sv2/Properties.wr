@@ -6,5 +6,16 @@
         <KeyCondition id="sv2#mfu1#su32#kcond9" name="KeyCondition9" predicate="in" implied="false"/>
       </Selector>
     </ModifyUnit>
+    <QueryUnit gr:x="1195" gr:y="320" id="sv2#qu4" name="Atualizar apostas" mode="update" language="SQL" db="db1">
+      <QueryInput id="sv2#qu4#qi3" name="idApostaDisponivel" required="true" type="integer"/>
+      <QueryInput id="sv2#qu4#qi8" name="idOpcao" required="true" type="integer"/>
+      <QueryText xml:space="preserve">update user
+	inner join aposta_concreta on oid = user_oid 
+		set saldo = case when opcao_id_opcao = (:idOpcao) then saldo + quantia * odd_fixada else saldo end,
+			resultado = case when opcao_id_opcao = (:idOpcao) then 1 else 0 end
+where aposta_disponivel_id_aposta_di = (:idApostaDisponivel);</QueryText>
+      <OKLink id="sv2#qu4#oln4" name="OKFlow4" to="sv2#area7#page13" automaticCoupling="true"/>
+      <KOLink id="sv2#qu4#kln5" name="KOFlow5" to="sv2#area7#page12" automaticCoupling="true"/>
+    </QueryUnit>
   </OperationUnits>
 </SiteView>

@@ -1,61 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Warnings> 
-  <Warning xpath="id('sv2#area7#page13#inu18#ln38#par170')" rootXPath="id('sv2')" key="UNUSED_PASSING_PARAMETER" label="id_desporto_PASSING"> 
+  <Warning xpath="id('sv1#area1#page3#inu11#ln18#par55')" rootXPath="id('sv1')" key="UNUSED_PASSING_PARAMETER" label="opcao_PASSING"> 
+    <Message>The passing parameter 'opcao_PASSING' is declared but never used</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.RemoveElementResolutionGenerator">Remove the invalid link parameter 'sv1#area1#page3#inu11#ln18#par55'</Resolution> 
+  </Warning>  
+  <Warning xpath="id('sv1#area1#page1#inu1#ln1#par1')" rootXPath="id('sv1')" key="UNUSED_PASSING_PARAMETER" label="id_desporto_PASSING"> 
     <Message>The passing parameter 'id_desporto_PASSING' is declared but never used</Message>  
-    <Resolution class="com.webratio.ide.ui.resources.RemoveElementResolutionGenerator">Remove the invalid link parameter 'sv2#area7#page13#inu18#ln38#par170'</Resolution> 
+    <Resolution class="com.webratio.ide.ui.resources.RemoveElementResolutionGenerator">Remove the invalid link parameter 'sv1#area1#page1#inu1#ln1#par1'</Resolution> 
   </Warning>  
-  <Warning xpath="id('sv2#area7#page13#inu19#ln39#par172')" rootXPath="id('sv2')" key="UNUSED_PASSING_PARAMETER" label="id_regiao_PASSING"> 
+  <Warning xpath="id('sv1#area1#page1#inu2#ln2#par3')" rootXPath="id('sv1')" key="UNUSED_PASSING_PARAMETER" label="id_regiao_PASSING"> 
     <Message>The passing parameter 'id_regiao_PASSING' is declared but never used</Message>  
-    <Resolution class="com.webratio.ide.ui.resources.RemoveElementResolutionGenerator">Remove the invalid link parameter 'sv2#area7#page13#inu19#ln39#par172'</Resolution> 
+    <Resolution class="com.webratio.ide.ui.resources.RemoveElementResolutionGenerator">Remove the invalid link parameter 'sv1#area1#page1#inu2#ln2#par3'</Resolution> 
   </Warning>  
-  <Warning xpath="id('sv2#area7#page13#inu20#ln40#par174')" rootXPath="id('sv2')" key="UNUSED_PASSING_PARAMETER" label="id_competicao_PASSING"> 
+  <Warning xpath="id('sv1#area1#page1#inu3#ln3#par4')" rootXPath="id('sv1')" key="UNUSED_PASSING_PARAMETER" label="id_competicao_PASSING"> 
     <Message>The passing parameter 'id_competicao_PASSING' is declared but never used</Message>  
-    <Resolution class="com.webratio.ide.ui.resources.RemoveElementResolutionGenerator">Remove the invalid link parameter 'sv2#area7#page13#inu20#ln40#par174'</Resolution> 
+    <Resolution class="com.webratio.ide.ui.resources.RemoveElementResolutionGenerator">Remove the invalid link parameter 'sv1#area1#page1#inu3#ln3#par4'</Resolution> 
   </Warning>  
-  <Warning xpath="id('sv2#area7#page13#inu21#ln41#par176')" rootXPath="id('sv2')" key="UNUSED_PASSING_PARAMETER" label="id_fase_PASSING"> 
+  <Warning xpath="id('sv1#area1#page1#inu4#ln4#par5')" rootXPath="id('sv1')" key="UNUSED_PASSING_PARAMETER" label="id_fase_PASSING"> 
     <Message>The passing parameter 'id_fase_PASSING' is declared but never used</Message>  
-    <Resolution class="com.webratio.ide.ui.resources.RemoveElementResolutionGenerator">Remove the invalid link parameter 'sv2#area7#page13#inu21#ln41#par176'</Resolution> 
+    <Resolution class="com.webratio.ide.ui.resources.RemoveElementResolutionGenerator">Remove the invalid link parameter 'sv1#area1#page1#inu4#ln4#par5'</Resolution> 
   </Warning>  
-  <Warning xpath="id('sv2#lou3')" rootXPath="id('sv2')" error="false" label="Logout" key="NO_OUTGOING_KO_LINKS"> 
+  <Warning xpath="id('sv1#area1#inn1#oln3#par56')" rootXPath="id('sv1')" key="UNUSED_PASSING_PARAMETER" label="saldo_PASSING"> 
+    <Message>The passing parameter 'saldo_PASSING' is declared but never used</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.RemoveElementResolutionGenerator">Remove the invalid link parameter 'sv1#area1#inn1#oln3#par56'</Resolution> 
+  </Warning>  
+  <Warning xpath="id('sv1#lou2')" rootXPath="id('sv1')" error="false" label="Logout" key="NO_OUTGOING_KO_LINKS"> 
     <Message>No outgoing KO flow(s) for the operation 'Logout'</Message> 
   </Warning>  
-  <Warning error="false" xpath="id('sv2#lou3')" rootXPath="id('sv2')" key="" label="Logout"> 
+  <Warning error="false" xpath="id('sv1#lou2')" rootXPath="id('sv1')" key="" label="Logout"> 
     <Message>Security Warning: the Logout operation 'Logout' does not have the 'Invalidate Session' flag enabled.</Message>  
     <Resolution message="Set Invalidate Session" class="com.webratio.ide.ui.resources.ChangeAttributeResolutionGenerator" attribute="invalidateSession" value="true">Set Invalidate Session</Resolution> 
   </Warning>  
-  <Warning xpath="id('sv2#mfu1')" rootXPath="id('sv2')" error="false" label="Update1" key="NO_OUTGOING_OK_LINKS"> 
-    <Message>No outgoing OK flow(s) for the operation 'Update1'</Message> 
-  </Warning>  
-  <Warning xpath="id('sv2#mfu1')" rootXPath="id('sv2')" error="false" label="Update1" key="NO_OUTGOING_KO_LINKS"> 
-    <Message>No outgoing KO flow(s) for the operation 'Update1'</Message> 
-  </Warning>  
-  <Warning error="false" xpath="id('sv2#area7#page13#inu18')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Desportos"> 
-    <Message>Sorting attribute are unspecified for the component 'Desportos'</Message> 
-  </Warning>  
-  <Warning error="false" xpath="id('sv2#area7#page13#inu19')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Regi&#245;es"> 
-    <Message>Sorting attribute are unspecified for the component 'Regi&#245;es'</Message> 
-  </Warning>  
-  <Warning error="false" xpath="id('sv2#area7#page13#inu20')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Competi&#231;&#245;es"> 
-    <Message>Sorting attribute are unspecified for the component 'Competi&#231;&#245;es'</Message> 
-  </Warning>  
-  <Warning error="false" xpath="id('sv2#area7#page13#inu21')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Fases"> 
-    <Message>Sorting attribute are unspecified for the component 'Fases'</Message> 
-  </Warning>  
-  <Warning error="false" xpath="id('sv2#area7#page13#inu22')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Eventos"> 
-    <Message>Sorting attribute are unspecified for the component 'Eventos'</Message> 
-  </Warning>  
-  <Warning error="false" xpath="id('sv2#area7#page12#inu16')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Apostas Dispon&#237;veis"> 
+  <Warning error="false" xpath="id('sv1#area1#page3#inu6')" rootXPath="id('sv1')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Apostas Dispon&#237;veis"> 
     <Message>Sorting attribute are unspecified for the component 'Apostas Dispon&#237;veis'</Message> 
   </Warning>  
-  <Warning error="false" xpath="id('sv2#area7#page12#inu25')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Op&#231;&#245;es"> 
-    <Message>Sorting attribute are unspecified for the component 'Op&#231;&#245;es'</Message> 
+  <Warning error="false" xpath="id('sv1#area1#page3#inu11')" rootXPath="id('sv1')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Opc&#245;es"> 
+    <Message>Sorting attribute are unspecified for the component 'Opc&#245;es'</Message> 
   </Warning>  
-  <Warning error="false" xpath="id('sv2#area9#page16#inu23')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="users"> 
-    <Message>Sorting attribute are unspecified for the component 'users'</Message> 
+  <Warning error="false" xpath="id('sv1#area1#page1#inu1')" rootXPath="id('sv1')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Desportos"> 
+    <Message>Sorting attribute are unspecified for the component 'Desportos'</Message> 
   </Warning>  
-  <Warning error="false" xpath="id('sv2#area9#page16#inu24')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Apostas concretas"> 
-    <Message>Sorting attribute are unspecified for the component 'Apostas concretas'</Message> 
+  <Warning error="false" xpath="id('sv1#area1#page1#inu2')" rootXPath="id('sv1')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Regi&#245;es"> 
+    <Message>Sorting attribute are unspecified for the component 'Regi&#245;es'</Message> 
+  </Warning>  
+  <Warning error="false" xpath="id('sv1#area1#page1#inu3')" rootXPath="id('sv1')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Competi&#231;&#245;es"> 
+    <Message>Sorting attribute are unspecified for the component 'Competi&#231;&#245;es'</Message> 
+  </Warning>  
+  <Warning error="false" xpath="id('sv1#area1#page1#inu4')" rootXPath="id('sv1')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Fases"> 
+    <Message>Sorting attribute are unspecified for the component 'Fases'</Message> 
+  </Warning>  
+  <Warning error="false" xpath="id('sv1#area1#page1#inu5')" rootXPath="id('sv1')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Eventos"> 
+    <Message>Sorting attribute are unspecified for the component 'Eventos'</Message> 
+  </Warning>  
+  <Warning error="false" xpath="id('sv1#area2#page7#mdu3')" rootXPath="id('sv1')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Minhas Apostas"> 
+    <Message>Sorting attribute are unspecified for the component 'Minhas Apostas'</Message> 
+  </Warning>  
+  <Warning xpath="id('sv1#area4#page20#dau6')" rootXPath="id('sv1')" key="MISSING_MANDATORY_INPUT_PARAMETER" label="User"> 
+    <Message>The mandatory input parameter 'KeyCondition7 [id_notificacao]' is not provided to the component 'User'</Message> 
+  </Warning>  
+  <Warning xpath="id('sv1#area3#page19#dau5')" rootXPath="id('sv1')" label="User"> 
+    <Message>Security Warning: the component 'User' shows the password attributes</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.RemoveShownPasswordAttributesResolutionGenerator">Remove the attribute from the display attributes</Resolution> 
   </Warning>  
   <Warning xpath="/WebProject" rootXPath="/WebProject" key="" label="WebProject" tab="security"> 
     <Message>Security Warning: the project contains a protected resource but the 'Protect URL' property is missing</Message>  

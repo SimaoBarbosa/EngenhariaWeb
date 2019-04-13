@@ -1,190 +1,190 @@
-[10 Abr 2019 17:57:45] Building database metadata model
-[10 Abr 2019 17:57:45] Properties: {partialRefresh=false, processColumnsUsingSelect=, includePrimaryKeys=true, eventSocketClient=com.webratio.commons.net.EventSocketClient@5386b31c, includeTables=true, username=root, outputLogPath=/home/jonasv/4ºAno 2º Semestre/Engenharia Web/WebRatio_Community_Platform_7.2.18.Linux/WebRatio/workspace/BetESS/.Temp~/DB.xml.log, readIndexes=null, driverClass=com.mysql.jdbc.Driver, includeSynonyms=true, metaDataProviderClass=com.webratio.commons.db.metadata.MySQLMetaDataProvider, outputPath=/home/jonasv/4ºAno 2º Semestre/Engenharia Web/WebRatio_Community_Platform_7.2.18.Linux/WebRatio/workspace/BetESS/.Temp~/DB.xml, schemaRegex=null, readProcedures=null, includeViews=true, derby.system.home=/home/jonasv/4ºAno 2º Semestre/Engenharia Web/WebRatio_Community_Platform_7.2.18.Linux/WebRatio/workspace/.metadata/.plugins/com.webratio.commons.db/derby, url=jdbc:mysql://localhost:3306/betess, tableRegex=null, readSQLDefinitions=true, includeForeignKeys=false, retrieveAllNames=false, tablesToRefresh=, eventSocketPort=39875}
-[10 Abr 2019 17:57:45] URL: jdbc:mysql://localhost:3306/betess
-[10 Abr 2019 17:57:45] Product name: MySQL
-[10 Abr 2019 17:57:45] Product version: 5.7.25-0ubuntu0.16.04.2
-[10 Abr 2019 17:57:45] Driver name: MySQL Connector Java
-[10 Abr 2019 17:57:45] Driver version: mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )
-[10 Abr 2019 17:57:45] Driver major version: 5
-[10 Abr 2019 17:57:45] Driver minor version: 1
-[10 Abr 2019 17:57:45] Identifier quote string: 1
-[10 Abr 2019 17:57:45] Retrieving schemas
-[10 Abr 2019 17:57:45] Retrieving [TABLE, VIEW, SYNONYM] for schema ''
-[10 Abr 2019 17:57:45]   Found 'aposta_concreta' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'aposta_disponivel' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'competicao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'datahora' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'desporto' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'desporto_regiao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'equipa' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'equipa_competicao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'equipa_fase' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'equipa_regiao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'evento' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'evento_equipa' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'fase' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'group' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'group_module' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'module' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'notificacao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'opcao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'regiao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'user' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found 'user_group' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving columns for 'aposta_concreta' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: id_aposta_concreta [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: quantia [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: odd_fixada [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: resultado [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: user_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: opcao_id_opcao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: aposta_disponivel_id_aposta_di [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'aposta_concreta' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: id_aposta_concreta
-[10 Abr 2019 17:57:45] Retrieving columns for 'aposta_disponivel' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: id_aposta_disponivel [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: titulo [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: resultado_final [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: disponibilidade [type = BIT][SQL/XOPEN type = -7][size = 1][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: evento_id_evento [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'aposta_disponivel' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: id_aposta_disponivel
-[10 Abr 2019 17:57:45] Retrieving columns for 'competicao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: id_competicao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: nome [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: regiao_id_regiao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'competicao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: id_competicao
-[10 Abr 2019 17:57:45] Retrieving columns for 'datahora' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: id_datahora [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: data [type = DATE][SQL/XOPEN type = 91][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: hora [type = TIME][SQL/XOPEN type = 92][size = 8][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'datahora' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: id_datahora
-[10 Abr 2019 17:57:45] Retrieving columns for 'desporto' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: id_desporto [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: nome [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'desporto' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: id_desporto
-[10 Abr 2019 17:57:45] Retrieving columns for 'desporto_regiao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: desporto_id_desporto [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: regiao_id_regiao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'desporto_regiao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: desporto_id_desporto
-[10 Abr 2019 17:57:45]   Found primary key column: regiao_id_regiao
-[10 Abr 2019 17:57:45] Retrieving columns for 'equipa' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: id_equipa [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: nome [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'equipa' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: id_equipa
-[10 Abr 2019 17:57:45] Retrieving columns for 'equipa_competicao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: equipa_id_equipa [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: competicao_id_competicao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'equipa_competicao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: equipa_id_equipa
-[10 Abr 2019 17:57:45]   Found primary key column: competicao_id_competicao
-[10 Abr 2019 17:57:45] Retrieving columns for 'equipa_fase' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: equipa_id_equipa [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: fase_id_fase [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'equipa_fase' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: equipa_id_equipa
-[10 Abr 2019 17:57:45]   Found primary key column: fase_id_fase
-[10 Abr 2019 17:57:45] Retrieving columns for 'equipa_regiao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: equipa_id_equipa [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: regiao_id_regiao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'equipa_regiao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: equipa_id_equipa
-[10 Abr 2019 17:57:45]   Found primary key column: regiao_id_regiao
-[10 Abr 2019 17:57:45] Retrieving columns for 'evento' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: id_evento [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: titulo [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: fase_id_fase [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: datahora_datahora_id [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'evento' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: id_evento
-[10 Abr 2019 17:57:45] Retrieving columns for 'evento_equipa' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: evento_id_evento [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: equipa_id_equipa [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'evento_equipa' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: evento_id_evento
-[10 Abr 2019 17:57:45]   Found primary key column: equipa_id_equipa
-[10 Abr 2019 17:57:45] Retrieving columns for 'fase' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: id_fase [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: nome [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: competicao_id_competicao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'fase' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: id_fase
-[10 Abr 2019 17:57:45] Retrieving columns for 'group' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: groupname [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: module_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'group' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: oid
-[10 Abr 2019 17:57:45] Retrieving columns for 'group_module' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: module_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'group_module' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: group_oid
-[10 Abr 2019 17:57:45]   Found primary key column: module_oid
-[10 Abr 2019 17:57:45] Retrieving columns for 'module' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: moduleid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: modulename [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'module' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: oid
-[10 Abr 2019 17:57:45] Retrieving columns for 'notificacao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: id_notificacao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: notificacao [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: user_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'notificacao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: id_notificacao
-[10 Abr 2019 17:57:45] Retrieving columns for 'opcao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: id_opcao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: opcao [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: odd [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: aposta_disponivel_id_aposta_di [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'opcao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: id_opcao
-[10 Abr 2019 17:57:45] Retrieving columns for 'regiao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: id_regiao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: nome [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'regiao' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: id_regiao
-[10 Abr 2019 17:57:45] Retrieving columns for 'user' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: username [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: password [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: email [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: saldo [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'user' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: oid
-[10 Abr 2019 17:57:45] Retrieving columns for 'user_group' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found column: user_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[10 Abr 2019 17:57:45] Retrieving primary keys for 'user_group' [type = TABLE]
-[10 Abr 2019 17:57:45]   Found primary key column: user_oid
-[10 Abr 2019 17:57:45]   Found primary key column: group_oid
-[10 Abr 2019 17:57:45] Database metadata retrieved (131 ms)
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'aposta_concreta' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'aposta_disponivel' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'competicao' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'datahora' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'desporto' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'desporto_regiao' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'equipa' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'equipa_competicao' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'equipa_fase' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'equipa_regiao' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'evento' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'evento_equipa' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'fase' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'group' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'group_module' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'module' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'notificacao' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'opcao' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'regiao' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'user' [type = TABLE]
-[10 Abr 2019 17:57:45] Retrieving auto-increment columns for 'user_group' [type = TABLE]
-[10 Abr 2019 17:57:45] Database connection closed
+[13 Abr 2019 16:19:49] Building database metadata model
+[13 Abr 2019 16:19:49] Properties: {partialRefresh=false, processColumnsUsingSelect=, includePrimaryKeys=true, eventSocketClient=com.webratio.commons.net.EventSocketClient@30591e1b, includeTables=true, username=root, outputLogPath=/home/jonasv/4ºAno 2º Semestre/Engenharia Web/WebRatio_Community_Platform_7.2.18.Linux/WebRatio/workspace/BetESS/.Temp~/DB.xml.log, readIndexes=null, driverClass=com.mysql.jdbc.Driver, includeSynonyms=true, metaDataProviderClass=com.webratio.commons.db.metadata.MySQLMetaDataProvider, outputPath=/home/jonasv/4ºAno 2º Semestre/Engenharia Web/WebRatio_Community_Platform_7.2.18.Linux/WebRatio/workspace/BetESS/.Temp~/DB.xml, schemaRegex=null, readProcedures=null, includeViews=true, derby.system.home=/home/jonasv/4ºAno 2º Semestre/Engenharia Web/WebRatio_Community_Platform_7.2.18.Linux/WebRatio/workspace/.metadata/.plugins/com.webratio.commons.db/derby, url=jdbc:mysql://localhost:3306/betess, tableRegex=null, readSQLDefinitions=true, includeForeignKeys=false, retrieveAllNames=false, tablesToRefresh=, eventSocketPort=33833}
+[13 Abr 2019 16:19:49] URL: jdbc:mysql://localhost:3306/betess
+[13 Abr 2019 16:19:49] Product name: MySQL
+[13 Abr 2019 16:19:49] Product version: 5.7.25-0ubuntu0.16.04.2
+[13 Abr 2019 16:19:49] Driver name: MySQL Connector Java
+[13 Abr 2019 16:19:49] Driver version: mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )
+[13 Abr 2019 16:19:49] Driver major version: 5
+[13 Abr 2019 16:19:49] Driver minor version: 1
+[13 Abr 2019 16:19:49] Identifier quote string: 1
+[13 Abr 2019 16:19:49] Retrieving schemas
+[13 Abr 2019 16:19:49] Retrieving [TABLE, VIEW, SYNONYM] for schema ''
+[13 Abr 2019 16:19:49]   Found 'aposta_concreta' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'aposta_disponivel' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'competicao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'datahora' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'desporto' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'desporto_regiao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'equipa' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'equipa_competicao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'equipa_fase' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'equipa_regiao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'evento' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'evento_equipa' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'fase' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'group' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'group_module' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'module' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'notificacao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'opcao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'regiao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'user' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found 'user_group' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving columns for 'aposta_concreta' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: id_aposta_concreta [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: quantia [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: odd_fixada [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: resultado [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: user_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: opcao_id_opcao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: aposta_disponivel_id_aposta_di [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'aposta_concreta' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: id_aposta_concreta
+[13 Abr 2019 16:19:49] Retrieving columns for 'aposta_disponivel' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: id_aposta_disponivel [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: titulo [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: resultado_final [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: disponibilidade [type = BIT][SQL/XOPEN type = -7][size = 1][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: evento_id_evento [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'aposta_disponivel' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: id_aposta_disponivel
+[13 Abr 2019 16:19:49] Retrieving columns for 'competicao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: id_competicao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: nome [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: regiao_id_regiao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'competicao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: id_competicao
+[13 Abr 2019 16:19:49] Retrieving columns for 'datahora' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: id_datahora [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: data [type = DATE][SQL/XOPEN type = 91][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: hora [type = TIME][SQL/XOPEN type = 92][size = 8][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'datahora' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: id_datahora
+[13 Abr 2019 16:19:49] Retrieving columns for 'desporto' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: id_desporto [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: nome [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'desporto' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: id_desporto
+[13 Abr 2019 16:19:49] Retrieving columns for 'desporto_regiao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: desporto_id_desporto [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: regiao_id_regiao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'desporto_regiao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: desporto_id_desporto
+[13 Abr 2019 16:19:49]   Found primary key column: regiao_id_regiao
+[13 Abr 2019 16:19:49] Retrieving columns for 'equipa' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: id_equipa [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: nome [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'equipa' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: id_equipa
+[13 Abr 2019 16:19:49] Retrieving columns for 'equipa_competicao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: equipa_id_equipa [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: competicao_id_competicao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'equipa_competicao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: equipa_id_equipa
+[13 Abr 2019 16:19:49]   Found primary key column: competicao_id_competicao
+[13 Abr 2019 16:19:49] Retrieving columns for 'equipa_fase' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: equipa_id_equipa [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: fase_id_fase [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'equipa_fase' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: equipa_id_equipa
+[13 Abr 2019 16:19:49]   Found primary key column: fase_id_fase
+[13 Abr 2019 16:19:49] Retrieving columns for 'equipa_regiao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: equipa_id_equipa [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: regiao_id_regiao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'equipa_regiao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: equipa_id_equipa
+[13 Abr 2019 16:19:49]   Found primary key column: regiao_id_regiao
+[13 Abr 2019 16:19:49] Retrieving columns for 'evento' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: id_evento [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: titulo [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: fase_id_fase [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: datahora_datahora_id [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'evento' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: id_evento
+[13 Abr 2019 16:19:49] Retrieving columns for 'evento_equipa' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: evento_id_evento [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: equipa_id_equipa [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'evento_equipa' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: evento_id_evento
+[13 Abr 2019 16:19:49]   Found primary key column: equipa_id_equipa
+[13 Abr 2019 16:19:49] Retrieving columns for 'fase' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: id_fase [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: nome [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: competicao_id_competicao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'fase' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: id_fase
+[13 Abr 2019 16:19:49] Retrieving columns for 'group' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: groupname [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: module_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'group' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: oid
+[13 Abr 2019 16:19:49] Retrieving columns for 'group_module' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: module_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'group_module' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: group_oid
+[13 Abr 2019 16:19:49]   Found primary key column: module_oid
+[13 Abr 2019 16:19:49] Retrieving columns for 'module' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: moduleid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: modulename [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'module' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: oid
+[13 Abr 2019 16:19:49] Retrieving columns for 'notificacao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: id_notificacao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: notificacao [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: user_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'notificacao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: id_notificacao
+[13 Abr 2019 16:19:49] Retrieving columns for 'opcao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: id_opcao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: opcao [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: odd [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: aposta_disponivel_id_aposta_di [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'opcao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: id_opcao
+[13 Abr 2019 16:19:49] Retrieving columns for 'regiao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: id_regiao [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: nome [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'regiao' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: id_regiao
+[13 Abr 2019 16:19:49] Retrieving columns for 'user' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: username [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: password [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: email [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: saldo [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'user' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: oid
+[13 Abr 2019 16:19:49] Retrieving columns for 'user_group' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found column: user_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[13 Abr 2019 16:19:49] Retrieving primary keys for 'user_group' [type = TABLE]
+[13 Abr 2019 16:19:49]   Found primary key column: user_oid
+[13 Abr 2019 16:19:49]   Found primary key column: group_oid
+[13 Abr 2019 16:19:49] Database metadata retrieved (90 ms)
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'aposta_concreta' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'aposta_disponivel' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'competicao' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'datahora' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'desporto' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'desporto_regiao' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'equipa' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'equipa_competicao' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'equipa_fase' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'equipa_regiao' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'evento' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'evento_equipa' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'fase' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'group' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'group_module' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'module' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'notificacao' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'opcao' [type = TABLE]
+[13 Abr 2019 16:19:49] Retrieving auto-increment columns for 'regiao' [type = TABLE]
+[13 Abr 2019 16:19:50] Retrieving auto-increment columns for 'user' [type = TABLE]
+[13 Abr 2019 16:19:50] Retrieving auto-increment columns for 'user_group' [type = TABLE]
+[13 Abr 2019 16:19:50] Database connection closed
