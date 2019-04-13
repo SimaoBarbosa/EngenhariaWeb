@@ -13,9 +13,11 @@
       <Selector id="sv2#area7#page12#inu25#su31" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#area7#page12#inu25#su31#rcond24" name="RoleCondition24" predicate="in" implied="false" role="rel15#role29"/>
       </Selector>
-      <Link id="sv2#area7#page12#inu25#ln9" name="Flow9" to="sv2#qu4" type="normal" validate="true">
+      <Link id="sv2#area7#page12#inu25#ln9" name="Resultado final" to="sv2#qu4" type="normal" validate="true">
         <LinkParameter id="sv2#area7#page12#inu25#ln9#par9" name="id_aposta_disponivel_PASSING_idApostaDisponivel" sourceLinkParameter="sv2#area7#page12#inu16#ln52#par197" target="sv2#qu4.sv2#qu4#qi3"/>
         <LinkParameter id="sv2#area7#page12#inu25#ln9#par13" name="id_opcao_idOpcao" source="data[].ent9#att19" target="sv2#qu4.sv2#qu4#qi8"/>
+        <LinkParameter id="sv2#area7#page12#inu25#ln9#par24" name="id_aposta_disponivel_PASSING" sourceLinkParameter="sv2#area7#page12#inu16#ln52#par197" passing="true"/>
+        <LinkParameter id="sv2#area7#page12#inu25#ln9#par25" name="id_opcao_PASSING" source="data[].ent9#att19" passing="true"/>
       </Link>
     </IndexUnit>
   </ContentUnits>

@@ -1,0 +1,128 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="0" id="mov2#opm2" name="Action 2">
+  <OperationUnits>
+    <InputCollectorUnit gr:x="0" gr:y="150" id="mov2#opm2#icu2">
+      <InputCollectorParameter id="mov2#opm2#icu2#icp3" name="id_aposta_disponivel_PASSING"/>
+      <InputCollectorParameter id="mov2#opm2#icu2#icp4" name="id_opcao_PASSING"/>
+      <OKLink id="mov2#opm2#icu2#oln16" name="OKFlow16" to="mov2#opm2#seu1">
+        <LinkParameter id="mov2#opm2#icu2#oln16#par89" name="id_aposta_disponivel_PASSING_RoleCondition7 [id_aposta_disponivel]" source="mov2#opm2#icu2#icp3" target="mov2#opm2#seu1#su9#rcond7.ent8#att2"/>
+        <LinkParameter id="mov2#opm2#icu2#oln16#par183" name="1_AttCondition2" sourceValue="1" target="mov2#opm2#seu1#su9#acond2"/>
+        <LinkParameter id="mov2#opm2#icu2#oln16#par187" name="id_aposta_disponivel_PASSING" source="mov2#opm2#icu2#icp3" passing="true"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="685" gr:y="215" id="mov2#opm2#okcu2" name="OK Port2"/>
+    <KOCollectorUnit gr:x="685" gr:y="345" id="mov2#opm2#kocu2" name="KO Port2"/>
+    <SelectorUnit gr:x="310" gr:y="375" id="mov2#opm2#seu1" name="Apostas concretas" entity="ent10" distinctAttributes="ent10#att22 ent10#att23 ent10#att24 ent10#att28">
+      <Selector id="mov2#opm2#seu1#su9" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm2#seu1#su9#rcond7" name="RoleCondition7" predicate="in" implied="false" role="rel17#role34"/>
+        <AttributesCondition id="mov2#opm2#seu1#su9#acond2" name="resultado" predicate="eq" booleanOperator="or" implied="false" attributes="ent10#att28"/>
+      </Selector>
+      <OKLink id="mov2#opm2#seu1#oln17" name="OKFlow17" to="mov2#opm2#lpu1">
+        <LinkParameter id="mov2#opm2#seu1#oln17#par90" name="id_aposta_concreta_Input Array" source="ent10#att22Array" target="mov2#opm2#lpu1.array"/>
+        <LinkParameter id="mov2#opm2#seu1#oln17#par97" name="odd_fixada_odd" source="ent10#att24Array" target="mov2#opm2#lpu1#lsa2"/>
+        <LinkParameter id="mov2#opm2#seu1#oln17#par98" name="quantia_quantia" source="ent10#att23Array" target="mov2#opm2#lpu1#lsa3"/>
+        <LinkParameter id="mov2#opm2#seu1#oln17#par188" name="id_aposta_disponivel_PASSING" sourceLinkParameter="mov2#opm2#icu2#oln16#par187" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <LoopUnit gr:x="315" gr:y="570" id="mov2#opm2#lpu1" name="iterate apostas concretas ">
+      <OKLink id="mov2#opm2#lpu1#oln18" name="OKFlow18" to="mov2#opm2#seu3" code="next">
+        <LinkParameter id="mov2#opm2#lpu1#oln18#par94" name="Next Element_PASSING" source="next" passing="true"/>
+        <LinkParameter id="mov2#opm2#lpu1#oln18#par99" name="Next Element (odd)_PASSING" source="mov2#opm2#lpu1#lsa2" passing="true"/>
+        <LinkParameter id="mov2#opm2#lpu1#oln18#par100" name="Next Element (quantia)_PASSING" source="mov2#opm2#lpu1#lsa3" passing="true"/>
+        <LinkParameter id="mov2#opm2#lpu1#oln18#par189" name="id_aposta_disponivel_PASSING" sourceLinkParameter="mov2#opm2#seu1#oln17#par188" passing="true"/>
+      </OKLink>
+      <OKLink id="mov2#opm2#lpu1#oln19" name="OKFlow19" to="mov2#opm2#seu5" code="end">
+        <LinkParameter id="mov2#opm2#lpu1#oln19#par193" name="0_resultado" sourceValue="0" target="mov2#opm2#seu5#su12#acond3"/>
+        <LinkParameter id="mov2#opm2#lpu1#oln19#par194" name="id_aposta_disponivel_PASSING_RoleCondition7 [id_aposta_disponivel]" sourceLinkParameter="mov2#opm2#qu9#oln39#par192" target="mov2#opm2#seu5#su12#rcond9.ent8#att2"/>
+      </OKLink>
+      <SecondaryArray id="mov2#opm2#lpu1#lsa2" name="odd"/>
+      <SecondaryArray id="mov2#opm2#lpu1#lsa3" name="quantia"/>
+    </LoopUnit>
+    <SelectorUnit gr:x="350" gr:y="660" id="mov2#opm2#seu2" name="user da aposta concreta" entity="User" distinctAttributes="userOID userName password email User#att29">
+      <Selector id="mov2#opm2#seu2#su11" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm2#seu2#su11#rcond8" name="RoleCondition8" predicate="in" implied="false" role="rel10#role20"/>
+      </Selector>
+      <OKLink id="mov2#opm2#seu2#oln41" name="OKFlow41" to="mov2#opm2#qu9">
+        <LinkParameter id="mov2#opm2#seu2#oln41#par178" name="Next Element_PASSING_aposta" sourceLinkParameter="mov2#opm2#seu3#oln24#par107" target="mov2#opm2#qu9.mov2#opm2#qu9#qi18"/>
+        <LinkParameter id="mov2#opm2#seu2#oln41#par179" name="Data Size_PASSING_idNoti" sourceLinkParameter="mov2#opm2#seu3#oln24#par104" target="mov2#opm2#qu9.mov2#opm2#qu9#qi15"/>
+        <LinkParameter id="mov2#opm2#seu2#oln41#par180" name="oid_idUser" source="userOIDArray" target="mov2#opm2#qu9.mov2#opm2#qu9#qi16"/>
+        <LinkParameter id="mov2#opm2#seu2#oln41#par181" name="Next Element (odd)_PASSING_odd" sourceLinkParameter="mov2#opm2#seu3#oln24#par105" target="mov2#opm2#qu9.mov2#opm2#qu9#qi17"/>
+        <LinkParameter id="mov2#opm2#seu2#oln41#par182" name="Next Element (quantia)_PASSING_quantia" sourceLinkParameter="mov2#opm2#seu3#oln24#par106" target="mov2#opm2#qu9.mov2#opm2#qu9#qi20"/>
+        <LinkParameter id="mov2#opm2#seu2#oln41#par191" name="id_aposta_disponivel_PASSING" sourceLinkParameter="mov2#opm2#seu3#oln24#par190" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit gr:x="75" gr:y="590" id="mov2#opm2#seu3" name="all notificacoes" entity="ent11" distinctAttributes="ent11#att18 ent11#att26">
+      <OKLink id="mov2#opm2#seu3#oln24" name="OKFlow24" to="mov2#opm2#seu2">
+        <LinkParameter id="mov2#opm2#seu3#oln24#par103" name="Next Element_PASSING_RoleCondition8 [id_aposta_concreta]" sourceLinkParameter="mov2#opm2#lpu1#oln18#par94" target="mov2#opm2#seu2#su11#rcond8.ent10#att22"/>
+        <LinkParameter id="mov2#opm2#seu3#oln24#par104" name="Data Size_PASSING" source="dataSize" passing="true"/>
+        <LinkParameter id="mov2#opm2#seu3#oln24#par105" name="Next Element (odd)_PASSING" sourceLinkParameter="mov2#opm2#lpu1#oln18#par99" passing="true"/>
+        <LinkParameter id="mov2#opm2#seu3#oln24#par106" name="Next Element (quantia)_PASSING" sourceLinkParameter="mov2#opm2#lpu1#oln18#par100" passing="true"/>
+        <LinkParameter id="mov2#opm2#seu3#oln24#par107" name="Next Element_PASSING" sourceLinkParameter="mov2#opm2#lpu1#oln18#par94" passing="true"/>
+        <LinkParameter id="mov2#opm2#seu3#oln24#par190" name="id_aposta_disponivel_PASSING" sourceLinkParameter="mov2#opm2#lpu1#oln18#par189" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <QueryUnit id="mov2#opm2#qu9" name="ganhou" gr:x="630" gr:y="560" mode="update" language="SQL" db="db1">
+      <QueryText xml:space="preserve">insert into notificacao values
+	 ((:idNoti)+1,CONCAT('Ganhou ',((:odd)*(:quantia)) ,' com  a aposta ',(:aposta)),(:idUser));</QueryText>
+      <KOLink id="mov2#opm2#qu9#kln23" name="KOFlow23" to="mov2#opm2#kocu2" automaticCoupling="true"/>
+      <OKLink id="mov2#opm2#qu9#oln39" name="OKFlow39" to="mov2#opm2#lpu1">
+        <LinkParameter id="mov2#opm2#qu9#oln39#par192" name="id_aposta_disponivel_PASSING" sourceLinkParameter="mov2#opm2#seu2#oln41#par191" passing="true"/>
+      </OKLink>
+      <QueryInput id="mov2#opm2#qu9#qi15" name="idNoti" required="true" type="integer"/>
+      <QueryInput id="mov2#opm2#qu9#qi16" name="idUser" required="true" type="integer"/>
+      <QueryInput id="mov2#opm2#qu9#qi17" name="odd" required="true" type="float"/>
+      <QueryInput id="mov2#opm2#qu9#qi18" name="aposta" required="true" type="integer"/>
+      <QueryInput id="mov2#opm2#qu9#qi20" name="quantia" required="true" type="float"/>
+    </QueryUnit>
+    <SelectorUnit id="mov2#opm2#seu5" name="Apostas concretas" gr:x="255" gr:y="40" entity="ent10" distinctAttributes="ent10#att22 ent10#att23 ent10#att24 ent10#att28">
+      <Selector id="mov2#opm2#seu5#su12" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm2#seu5#su12#rcond9" name="RoleCondition7" predicate="in" implied="false" role="rel17#role34"/>
+        <AttributesCondition id="mov2#opm2#seu5#su12#acond3" name="resultado" predicate="eq" booleanOperator="or" implied="false" attributes="ent10#att28"/>
+      </Selector>
+      <OKLink id="mov2#opm2#seu5#oln44" name="OKFlow44" to="mov2#opm2#lpu2">
+        <LinkParameter id="mov2#opm2#seu5#oln44#par195" name="id_aposta_concreta_Input Array" source="ent10#att22Array" target="mov2#opm2#lpu2.array"/>
+        <LinkParameter id="mov2#opm2#seu5#oln44#par198" name="odd_fixada_odd" source="ent10#att24Array" target="mov2#opm2#lpu2#lsa4"/>
+        <LinkParameter id="mov2#opm2#seu5#oln44#par201" name="quantia_quantia" source="ent10#att23Array" target="mov2#opm2#lpu2#lsa5"/>
+      </OKLink>
+    </SelectorUnit>
+    <LoopUnit id="mov2#opm2#lpu2" name="iterate apostas concretas " gr:x="525" gr:y="-5">
+      <SecondaryArray id="mov2#opm2#lpu2#lsa4" name="odd"/>
+      <SecondaryArray id="mov2#opm2#lpu2#lsa5" name="quantia"/>
+      <OKLink id="mov2#opm2#lpu2#oln45" name="OKFlow45" to="mov2#opm2#seu6" code="next">
+        <LinkParameter id="mov2#opm2#lpu2#oln45#par208" name="Next Element_PASSING" source="next" passing="true"/>
+        <LinkParameter id="mov2#opm2#lpu2#oln45#par209" name="Next Element (odd)_PASSING" source="mov2#opm2#lpu2#lsa4" passing="true"/>
+        <LinkParameter id="mov2#opm2#lpu2#oln45#par210" name="Next Element (quantia)_PASSING" source="mov2#opm2#lpu2#lsa5" passing="true"/>
+      </OKLink>
+      <OKLink id="mov2#opm2#lpu2#oln46" name="OKFlow46" to="mov2#opm2#okcu2" automaticCoupling="true" code="end"/>
+    </LoopUnit>
+    <SelectorUnit id="mov2#opm2#seu6" name="all notificacoes" gr:x="505" gr:y="110" entity="ent11" distinctAttributes="ent11#att18 ent11#att26">
+      <OKLink id="mov2#opm2#seu6#oln48" name="OKFlow48" to="mov2#opm2#seu8">
+        <LinkParameter id="mov2#opm2#seu6#oln48#par211" name="Next Element_PASSING_RoleCondition8 [id_aposta_concreta]" sourceLinkParameter="mov2#opm2#lpu2#oln45#par208" target="mov2#opm2#seu8#su14#rcond11.ent10#att22"/>
+        <LinkParameter id="mov2#opm2#seu6#oln48#par212" name="Data Size_PASSING" source="dataSize" passing="true"/>
+        <LinkParameter id="mov2#opm2#seu6#oln48#par213" name="Next Element (odd)_PASSING" sourceLinkParameter="mov2#opm2#lpu2#oln45#par209" passing="true"/>
+        <LinkParameter id="mov2#opm2#seu6#oln48#par214" name="Next Element (quantia)_PASSING" sourceLinkParameter="mov2#opm2#lpu2#oln45#par210" passing="true"/>
+        <LinkParameter id="mov2#opm2#seu6#oln48#par215" name="Next Element_PASSING" sourceLinkParameter="mov2#opm2#lpu2#oln45#par208" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm2#seu8" name="user da aposta concreta" gr:x="430" gr:y="220" entity="User" distinctAttributes="userOID userName password email User#att29">
+      <Selector id="mov2#opm2#seu8#su14" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm2#seu8#su14#rcond11" name="RoleCondition8" predicate="in" implied="false" role="rel10#role20"/>
+      </Selector>
+      <OKLink id="mov2#opm2#seu8#oln49" name="OKFlow49" to="mov2#opm2#qu10">
+        <LinkParameter id="mov2#opm2#seu8#oln49#par216" name="Next Element_PASSING_aposta" sourceLinkParameter="mov2#opm2#seu6#oln48#par215" target="mov2#opm2#qu10.mov2#opm2#qu10#qi24"/>
+        <LinkParameter id="mov2#opm2#seu8#oln49#par217" name="Data Size_PASSING_idNoti" sourceLinkParameter="mov2#opm2#seu6#oln48#par212" target="mov2#opm2#qu10.mov2#opm2#qu10#qi21"/>
+        <LinkParameter id="mov2#opm2#seu8#oln49#par218" name="oid_idUser" source="userOIDArray" target="mov2#opm2#qu10.mov2#opm2#qu10#qi22"/>
+        <LinkParameter id="mov2#opm2#seu8#oln49#par220" name="Next Element (quantia)_PASSING_quantia" sourceLinkParameter="mov2#opm2#seu6#oln48#par214" target="mov2#opm2#qu10.mov2#opm2#qu10#qi25"/>
+      </OKLink>
+    </SelectorUnit>
+    <QueryUnit id="mov2#opm2#qu10" name="perdeu" gr:x="605" gr:y="315" mode="update" language="SQL" db="db1">
+      <QueryText xml:space="preserve">insert into notificacao values
+	 ((:idNoti)+1,CONCAT('Perdeu ',(:quantia) ,' com  a aposta ',(:aposta)),(:idUser));</QueryText>
+      <QueryInput id="mov2#opm2#qu10#qi21" name="idNoti" required="true" type="integer"/>
+      <QueryInput id="mov2#opm2#qu10#qi22" name="idUser" required="true" type="integer"/>
+      <QueryInput id="mov2#opm2#qu10#qi24" name="aposta" required="true" type="integer"/>
+      <QueryInput id="mov2#opm2#qu10#qi25" name="quantia" required="true" type="float"/>
+      <KOLink id="mov2#opm2#qu10#kln24" name="KOFlow24" to="mov2#opm2#kocu2" automaticCoupling="true"/>
+      <OKLink id="mov2#opm2#qu10#oln50" name="OKFlow50" to="mov2#opm2#lpu2" automaticCoupling="true"/>
+    </QueryUnit>
+  </OperationUnits>
+</OperationModule>

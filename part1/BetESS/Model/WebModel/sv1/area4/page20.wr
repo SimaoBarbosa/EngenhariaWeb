@@ -1,8 +1,7 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area4#page20" name="Notifica&#231;&#245;es" gr:x="0" gr:y="0">
   <ContentUnits>
-    <DataUnit id="sv1#area4#page20#dau6" name="User" gr:x="170" gr:y="0" entity="ent11" displayAll="true">
+    <DataUnit id="sv1#area4#page20#dau6" name="User" gr:x="170" gr:y="0" entity="ent11" displayAttributes="ent11#att18 ent11#att26">
       <Selector id="sv1#area4#page20#dau6#su21" defaultPolicy="fill" booleanOperator="and">
-        <KeyCondition id="sv1#area4#page20#dau6#su21#kcond8" name="KeyCondition7" predicate="in" implied="false"/>
         <RelationshipRoleCondition id="sv1#area4#page20#dau6#su21#rcond14" name="RoleCondition14" role="rel12#role24" predicate="in" implied="false"/>
       </Selector>
     </DataUnit>
@@ -14,6 +13,7 @@
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv1#area4#page20#dau6">
+          <layout:Attribute attribute="ent11#att18"/>
           <layout:Attribute attribute="ent11#att26"/>
         </layout:Unit>
       </layout:Cell>

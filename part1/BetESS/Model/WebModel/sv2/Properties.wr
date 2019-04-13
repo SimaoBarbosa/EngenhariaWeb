@@ -1,4 +1,4 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Funcionario" protected="true" landmarks="sv2#lou3 sv2#area7 sv2#area9" homePage="sv2#area7#page13">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Funcionario" protected="true" landmarks="sv2#lou3 sv2#area7 sv2#area9 sv2#area6" homePage="sv2#area7#page13">
   <OperationUnits>
     <LogoutUnit gr:x="65" gr:y="560" id="sv2#lou3" name="Logout" siteView="sv3" landmark="true"/>
     <ModifyUnit gr:x="960" gr:y="675" id="sv2#mfu1" name="Update1" entity="User">
@@ -6,16 +6,29 @@
         <KeyCondition id="sv2#mfu1#su32#kcond9" name="KeyCondition9" predicate="in" implied="false"/>
       </Selector>
     </ModifyUnit>
-    <QueryUnit gr:x="1195" gr:y="320" id="sv2#qu4" name="Atualizar apostas" mode="update" language="SQL" db="db1">
+    <QueryUnit gr:x="895" gr:y="240" id="sv2#qu4" name="Atualizar apostas" mode="update" language="SQL" db="db1">
       <QueryInput id="sv2#qu4#qi3" name="idApostaDisponivel" required="true" type="integer"/>
       <QueryInput id="sv2#qu4#qi8" name="idOpcao" required="true" type="integer"/>
       <QueryText xml:space="preserve">update user
 	inner join aposta_concreta on oid = user_oid 
-		set saldo = case when opcao_id_opcao = (:idOpcao) then saldo + quantia * odd_fixada else saldo end,
+		set saldo = case when opcao_id_opcao = (:idOpcao) then saldo + (quantia * odd_fixada) else saldo end,
 			resultado = case when opcao_id_opcao = (:idOpcao) then 1 else 0 end
 where aposta_disponivel_id_aposta_di = (:idApostaDisponivel);</QueryText>
-      <OKLink id="sv2#qu4#oln4" name="OKFlow4" to="sv2#area7#page13" automaticCoupling="true"/>
+      <OKLink id="sv2#qu4#oln4" name="OKFlow4" to="sv2#miu4">
+        <LinkParameter id="sv2#qu4#oln4#par117" name="id_aposta_disponivel_PASSING_id_aposta_disponivel_PASSING" sourceLinkParameter="sv2#area7#page12#inu25#ln9#par24" target="sv2#miu4.mov2#opm2#icu2#icp3"/>
+        <LinkParameter id="sv2#qu4#oln4#par118" name="id_opcao_PASSING_id_opcao_PASSING" sourceLinkParameter="sv2#area7#page12#inu25#ln9#par25" target="sv2#miu4.mov2#opm2#icu2#icp4"/>
+      </OKLink>
       <KOLink id="sv2#qu4#kln5" name="KOFlow5" to="sv2#area7#page12" automaticCoupling="true"/>
+    </QueryUnit>
+    <ModuleInstanceUnit gr:x="990" gr:y="355" id="sv2#miu4" moduleId="mov2#opm2">
+      <KOLink id="sv2#miu4#kln12" to="sv2#area7#page12" name="KOFlow8"/>
+      <OKLink id="sv2#miu4#oln13" to="sv2#area7#page13" name="OKFlow9"/>
+    </ModuleInstanceUnit>
+    <QueryUnit gr:x="340" gr:y="365" id="sv2#qu8" name="teste" mode="update" language="SQL" db="db1">
+      <OKLink id="sv2#qu8#oln36" name="OKFlow36" to="sv2#area6#page6" automaticCoupling="true" gr:bendpoints="-105,3,120,28"/>
+      <KOLink id="sv2#qu8#kln22" name="KOFlow22" to="sv2#area6#page6" automaticCoupling="true" gr:bendpoints="-101,-27,124,-2"/>
+      <QueryText xml:space="preserve">insert into notificacao values
+	 (9,'testeinsert',1);</QueryText>
     </QueryUnit>
   </OperationUnits>
 </SiteView>
