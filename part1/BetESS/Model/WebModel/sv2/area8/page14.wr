@@ -1,0 +1,42 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="160" id="sv2#area8#page14" name="Datahora">
+  <ContentUnits>
+    <EntryUnit id="sv2#area8#page14#enu8" name="Data Hora" gr:x="59" gr:y="45" entity="ent7" linkOrder="sv2#area8#page14#enu8#ln35">
+      <Field id="sv2#area8#page14#enu8#fld15" name="data" type="date" modifiable="true"/>
+      <Field id="sv2#area8#page14#enu8#fld16" name="hora" type="time" modifiable="true"/>
+      <Link id="sv2#area8#page14#enu8#ln35" name="Adicionar" to="sv2#seu4" type="normal" validate="true">
+        <LinkParameter id="sv2#area8#page14#enu8#ln35#par206" name="data_PASSING" source="sv2#area8#page14#enu8#fld15" passing="true"/>
+        <LinkParameter id="sv2#area8#page14#enu8#ln35#par207" name="DataHora Object_PASSING" source="entityBean" passing="true"/>
+        <LinkParameter id="sv2#area8#page14#enu8#ln35#par219" name="Evento Object_PASSING" sourceLinkParameter="sv2#area8#page8#enu4#ln36#par228" passing="true"/>
+        <LinkParameter id="sv2#area8#page14#enu8#ln35#par221" name="hora_PASSING" source="sv2#area8#page14#enu8#fld16" passing="true"/>
+        <LinkParameter id="sv2#area8#page14#enu8#ln35#par222" name="id_fase_PASSING" sourceLinkParameter="sv2#area8#page8#enu4#ln36#par229" passing="true"/>
+        <LinkParameter id="sv2#area8#page14#enu8#ln35#par223" name="Key [id_datahora]_PASSING" source="key.ent7#att13" passing="true"/>
+        <LinkParameter id="sv2#area8#page14#enu8#ln35#par224" name="Key [id_evento]_PASSING" sourceLinkParameter="sv2#area8#page8#enu4#ln36#par230" passing="true"/>
+        <LinkParameter id="sv2#area8#page14#enu8#ln35#par225" name="Titulo do evento_PASSING" sourceLinkParameter="sv2#area8#page8#enu4#ln36#par231" passing="true"/>
+        <LinkParameter id="sv2#area8#page14#enu8#ln35#par226" name="data_data" source="sv2#area8#page14#enu8#fld15" target="sv2#seu4#su16#acond1"/>
+        <LinkParameter id="sv2#area8#page14#enu8#ln35#par227" name="hora_hora" source="sv2#area8#page14#enu8#fld16" target="sv2#seu4#su16#acond4"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area8#page14#enu8">
+          <layout:Field field="sv2#area8#page14#enu8#fld15"/>
+          <layout:Field field="sv2#area8#page14#enu8#fld16"/>
+          <layout:Link link="sv2#area8#page14#enu8#ln35"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

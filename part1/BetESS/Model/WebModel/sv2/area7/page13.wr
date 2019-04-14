@@ -24,7 +24,7 @@
         <RelationshipRoleCondition id="sv2#area7#page13#inu20#su23#rcond18" name="RoleCondition3" predicate="in" implied="false" role="rel2#role3"/>
       </Selector>
     </IndexUnit>
-    <IndexUnit id="sv2#area7#page13#inu21" name="Fases" linkOrder="sv2#area7#page13#inu21#ln41" gr:x="535" gr:y="0" entity="ent5" displayAttributes="ent5#att10">
+    <IndexUnit id="sv2#area7#page13#inu21" name="Fases" linkOrder="sv2#area7#page13#inu21#ln41 sv2#area7#page13#inu21#ln20" gr:x="535" gr:y="0" entity="ent5" displayAttributes="ent5#att10">
       <Link id="sv2#area7#page13#inu21#ln41" name="Ver eventos" to="sv2#area7#page13#inu22" type="normal" validate="true">
         <LinkParameter id="sv2#area7#page13#inu21#ln41#par176" name="id_fase_PASSING" source="data[].ent5#att9" passing="true"/>
         <LinkParameter id="sv2#area7#page13#inu21#ln41#par177" name="id_fase_RoleCondition5 [id_fase]" source="data[].ent5#att9" target="sv2#area7#page13#inu22#su25#rcond20.ent5#att9"/>
@@ -32,12 +32,18 @@
       <Selector id="sv2#area7#page13#inu21#su24" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#area7#page13#inu21#su24#rcond19" name="RoleCondition4" predicate="in" implied="false" role="rel1#role2"/>
       </Selector>
+      <Link id="sv2#area7#page13#inu21#ln20" name="Adicionar evento" to="sv2#area8#page8#enu4" type="normal" validate="true">
+        <LinkParameter id="sv2#area7#page13#inu21#ln20#par47" name="id_fase_PASSING" source="data[].ent5#att9" passing="true"/>
+      </Link>
     </IndexUnit>
-    <IndexUnit id="sv2#area7#page13#inu22" name="Eventos" linkOrder="sv2#area7#page13#inu22#ln42" gr:x="770" gr:y="0" entity="ent1" displayAttributes="ent1#att14">
+    <IndexUnit id="sv2#area7#page13#inu22" name="Eventos" linkOrder="sv2#area7#page13#inu22#ln42 sv2#area7#page13#inu22#ln21" gr:x="770" gr:y="0" entity="ent1" displayAttributes="ent1#att14">
       <Selector id="sv2#area7#page13#inu22#su25" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#area7#page13#inu22#su25#rcond20" name="RoleCondition5" predicate="in" implied="false" role="rel5#role10"/>
       </Selector>
       <Link id="sv2#area7#page13#inu22#ln42" name="Ver Apostas" to="sv2#area7#page12#inu16" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv2#area7#page13#inu22#ln21" name="Adicionar apostas" to="sv2#area11#page9#enu6" type="normal" validate="true">
+        <LinkParameter id="sv2#area7#page13#inu22#ln21#par332" name="id_evento_PASSING" source="data[].ent1#att1" passing="true"/>
+      </Link>
     </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
@@ -75,6 +81,7 @@
         <layout:Unit unitId="sv2#area7#page13#inu21">
           <layout:Attribute attribute="ent5#att10"/>
           <layout:Link link="sv2#area7#page13#inu21#ln41"/>
+          <layout:Link link="sv2#area7#page13#inu21#ln20"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -82,8 +89,9 @@
       <layout:Cell/>
       <layout:Cell colspan="6">
         <layout:Unit unitId="sv2#area7#page13#inu22">
-          <layout:Link link="sv2#area7#page13#inu22#ln42"/>
           <layout:Attribute attribute="ent1#att14"/>
+          <layout:Link link="sv2#area7#page13#inu22#ln42"/>
+          <layout:Link link="sv2#area7#page13#inu22#ln21"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

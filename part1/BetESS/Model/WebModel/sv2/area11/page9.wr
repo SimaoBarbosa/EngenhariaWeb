@@ -1,0 +1,36 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area11#page9" name="Adicionar aposta">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv2#area11#page9#enu6" name="Nova aposta" entity="ent8" linkOrder="sv2#area11#page9#enu6#ln44">
+      <Field id="sv2#area11#page9#enu6#fld17" name="Titulo da nova aposta" type="string" modifiable="true" attribute="ent8#att25"/>
+      <Link id="sv2#area11#page9#enu6#ln44" name="Adicionar op&#231;&#245;es" to="sv2#cru4" type="normal" validate="true" gr:bendpoints="-6,90,34,-85">
+        <LinkParameter id="sv2#area11#page9#enu6#ln44#par327" name="Aposta_Disponivel Object_Aposta_Disponivel Object" source="entityBean" target="sv2#cru4.entityBeans"/>
+        <LinkParameter id="sv2#area11#page9#enu6#ln44#par328" name="false_disponibilidade" sourceValue="true" target="sv2#cru4.ent8#att30"/>
+        <LinkParameter id="sv2#area11#page9#enu6#ln44#par329" name="Key [id_aposta_disponivel]_id_aposta_disponivel" source="key.ent8#att2" target="sv2#cru4.ent8#att2"/>
+        <LinkParameter id="sv2#area11#page9#enu6#ln44#par330" name="-1_resultado_final" sourceValue="-1" target="sv2#cru4.ent8#att27"/>
+        <LinkParameter id="sv2#area11#page9#enu6#ln44#par331" name="Titulo da nova aposta_titulo" source="sv2#area11#page9#enu6#fld17" target="sv2#cru4.ent8#att25"/>
+        <LinkParameter id="sv2#area11#page9#enu6#ln44#par333" name="id_evento_PASSING_Evento.id_evento(Aposta_DisponivelToEvento)" sourceLinkParameter="sv2#area7#page13#inu22#ln21#par332" target="sv2#cru4.rel11#role22.ent1#att1"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area11#page9#enu6">
+          <layout:Field field="sv2#area11#page9#enu6#fld17"/>
+          <layout:Link link="sv2#area11#page9#enu6#ln44"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

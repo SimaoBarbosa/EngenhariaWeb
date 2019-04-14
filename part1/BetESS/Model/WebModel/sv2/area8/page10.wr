@@ -1,0 +1,32 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="250" gr:y="5" id="sv2#area8#page10" name="Relacionar equipas a evento">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv2#area8#page10#inu7" name="Equipas" entity="ent2" linkOrder="sv2#area8#page10#inu7#ln33" displayAttributes="ent2#att4">
+      <Link id="sv2#area8#page10#inu7#ln33" name="Adicionar equipa ao evento" to="sv2#cnu1" type="normal" validate="true">
+        <LinkParameter id="sv2#area8#page10#inu7#ln33#par132" name="id_evento_PASSING_KeyCondition4 [id_evento] [Evento] [Source]" sourceLinkParameter="sv2#cru2#oln9#par131" target="sv2#cnu1#su13#kcond4.ent1#att1"/>
+        <LinkParameter id="sv2#area8#page10#inu7#ln33#par133" name="id_equipa_KeyCondition5 [id_equipa] [Equipa] [Target]" source="data[].ent2#att3" target="sv2#cnu1#su15#kcond5.ent2#att3"/>
+        <LinkParameter id="sv2#area8#page10#inu7#ln33#par134" name="id_evento_PASSING" sourceLinkParameter="sv2#cru2#oln9#par131" passing="true"/>
+      </Link>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area8#page10#inu7">
+          <layout:Link link="sv2#area8#page10#inu7#ln33"/>
+          <layout:Attribute attribute="ent2#att4"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
