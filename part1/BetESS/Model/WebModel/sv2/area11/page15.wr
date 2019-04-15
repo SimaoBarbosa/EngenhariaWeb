@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="170" gr:y="5" id="sv2#area11#page15" name="Adicionar opc&#245;es">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="230" gr:y="5" id="sv2#area11#page15" name="Adicionar opc&#245;es">
   <ContentUnits>
     <EntryUnit gr:x="0" gr:y="0" id="sv2#area11#page15#enu9" name="Nova opc&#227;o" entity="ent9" linkOrder="sv2#area11#page15#enu9#ln46 sv2#area11#page15#enu9#ln48">
       <Link id="sv2#area11#page15#enu9#ln46" name="Adicionar op&#231;&#227;o" to="sv2#cru6" type="normal" validate="true">

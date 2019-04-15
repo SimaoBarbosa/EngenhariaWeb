@@ -1,0 +1,62 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area15#page24" name="Op&#231;&#245;es" linkOrder="sv2#area15#page24#ln56">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv2#area15#page24#inu10" name="Op&#231;&#245;es" entity="ent9" displayAttributes="ent9#att20 ent9#att21" linkOrder="sv2#area15#page24#inu10#ln54">
+      <Selector id="sv2#area15#page24#inu10#su36" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area15#page24#inu10#su36#rcond21" name="RoleCondition21" predicate="in" implied="false" role="rel15#role29"/>
+      </Selector>
+      <Link id="sv2#area15#page24#inu10#ln54" name="Atualizar odd" to="sv2#area15#page24#enu13" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
+    <EntryUnit gr:x="35" gr:y="150" id="sv2#area15#page24#enu13" name="Mudar odd" entity="ent9" fieldOrder="sv2#area15#page24#enu13#fld19 sv2#area15#page24#enu13#fld18" linkOrder="sv2#area15#page24#enu13#ln55">
+      <Field id="sv2#area15#page24#enu13#fld18" name="odd" type="float" modifiable="true" attribute="ent9#att21"/>
+      <Field id="sv2#area15#page24#enu13#fld19" name="nome" type="string" modifiable="false" attribute="ent9#att20" preloaded="true"/>
+      <Link id="sv2#area15#page24#enu13#ln55" name="Guardar" to="sv2#mfu1" type="normal" validate="true">
+        <LinkParameter id="sv2#area15#page24#enu13#ln55#par124" name="Key [id_opcao]_KeyCondition13 [id_opcao]" source="key.ent9#att19" target="sv2#mfu1#su37#kcond13.ent9#att19"/>
+        <LinkParameter id="sv2#area15#page24#enu13#ln55#par125" name="odd_odd" source="sv2#area15#page24#enu13#fld18" target="sv2#mfu1.ent9#att21"/>
+        <LinkParameter id="sv2#area15#page24#enu13#ln55#par127" name="Opcao Object_Opcao Object" source="entityBean" target="sv2#mfu1.entityBeans"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area15#page24#inu10">
+          <layout:Attribute attribute="ent9#att20"/>
+          <layout:Attribute attribute="ent9#att21"/>
+          <layout:Link link="sv2#area15#page24#inu10#ln54"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area15#page24#enu13">
+          <layout:Field field="sv2#area15#page24#enu13#fld19"/>
+          <layout:Field field="sv2#area15#page24#enu13#fld18"/>
+          <layout:Link link="sv2#area15#page24#enu13#ln55"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv2#area15#page24#ln56" name="Concluir edi&#231;&#227;o" to="sv2#area7#page13" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-164,-202,851,123"/>
+</Page>

@@ -1,0 +1,31 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area6#page6" name="Adicionar desporto">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv2#area6#page6#enu7" name="Novo desporto" linkOrder="sv2#area6#page6#enu7#ln17" entity="ent6">
+      <Field id="sv2#area6#page6#enu7#fld6" name="nome" type="string" modifiable="true"/>
+      <Link id="sv2#area6#page6#enu7#ln17" name="Adicionar desporto" to="sv2#cru7" type="normal" validate="true">
+        <LinkParameter id="sv2#area6#page6#enu7#ln17#par27" name="nome_nome" source="sv2#area6#page6#enu7#fld6" target="sv2#cru7.ent6#att12"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area6#page6#enu7">
+          <layout:Field field="sv2#area6#page6#enu7#fld6"/>
+          <layout:Link link="sv2#area6#page6#enu7#ln17"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,61 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area14#page22" name="Equipas">
+  <ContentUnits>
+    <MultiDataUnit gr:x="10" gr:y="0" id="sv2#area14#page22#mdu1" name="Equipas atuais" entity="ent2" displayAttributes="ent2#att4">
+      <Selector id="sv2#area14#page22#mdu1#su29" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area14#page22#mdu1#su29#rcond12" name="RoleCondition12" predicate="in" implied="false" role="rel6#role12"/>
+      </Selector>
+      <Link id="sv2#area14#page22#mdu1#ln47" name="Flow47" to="sv2#area14#page22#inu9" type="transport" validate="true">
+        <LinkParameter id="sv2#area14#page22#mdu1#ln47#par120" name="id_competicao_PASSING_RoleCondition16 [id_competicao]" sourceLinkParameter="sv2#area7#page13#inu20#ln43#par119" target="sv2#area14#page22#inu9#su30#rcond16.ent3#att5"/>
+        <LinkParameter id="sv2#area14#page22#mdu1#ln47#par121" name="id_competicao_PASSING" sourceLinkParameter="sv2#area7#page13#inu20#ln43#par119" passing="true"/>
+      </Link>
+    </MultiDataUnit>
+    <IndexUnit gr:x="0" gr:y="160" id="sv2#area14#page22#inu9" name="Adicionar equipas" entity="ent2" linkOrder="sv2#area14#page22#inu9#ln49" displayAttributes="ent2#att4">
+      <Selector id="sv2#area14#page22#inu9#su30" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area14#page22#inu9#su30#rcond16" name="RoleCondition16" predicate="notIn" implied="false" role="rel6#role12"/>
+      </Selector>
+      <Link id="sv2#area14#page22#inu9#ln49" name="Adicionar" to="sv2#cnu3" type="normal" validate="true">
+        <LinkParameter id="sv2#area14#page22#inu9#ln49#par122" name="id_competicao_PASSING_KeyCondition10 [id_competicao] [Competicao] [Target]" sourceLinkParameter="sv2#area14#page22#mdu1#ln47#par121" target="sv2#cnu3#su33#kcond10.ent3#att5"/>
+        <LinkParameter id="sv2#area14#page22#inu9#ln49#par123" name="id_equipa_KeyCondition9 [id_equipa] [Equipa] [Source]" source="data[].ent2#att3" target="sv2#cnu3#su32#kcond9.ent2#att3"/>
+      </Link>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area14#page22#mdu1">
+          <layout:Attribute attribute="ent2#att4"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area14#page22#inu9">
+          <layout:Link link="sv2#area14#page22#inu9#ln49"/>
+          <layout:Attribute attribute="ent2#att4"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

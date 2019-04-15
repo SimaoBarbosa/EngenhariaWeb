@@ -1,0 +1,34 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area12#page18" name="Adicionar competi&#231;&#227;o">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv2#area12#page18#enu11" name="Nova competi&#231;&#227;o" entity="ent3" linkOrder="sv2#area12#page18#enu11#ln31">
+      <Field id="sv2#area12#page18#enu11#fld8" name="nome" type="string" modifiable="true"/>
+      <Link id="sv2#area12#page18#enu11#ln31" name="Adicionar competi&#231;&#227;o" to="sv2#cru9" type="normal" validate="true">
+        <LinkParameter id="sv2#area12#page18#enu11#ln31#par109" name="Competicao Object_Competicao Object" source="entityBean" target="sv2#cru9.entityBeans"/>
+        <LinkParameter id="sv2#area12#page18#enu11#ln31#par110" name="id_desporto_PASSING_Desporto.id_desporto(CompeticaoToDesporto)" sourceLinkParameter="sv2#area7#page13#inu19#ln26#par102" target="sv2#cru9.rel13#role25.ent6#att11"/>
+        <LinkParameter id="sv2#area12#page18#enu11#ln31#par111" name="nome_nome" source="sv2#area12#page18#enu11#fld8" target="sv2#cru9.ent3#att6"/>
+        <LinkParameter id="sv2#area12#page18#enu11#ln31#par112" name="id_regiao_PASSING_Regi&#227;o.id_regiao(CompeticaoToRegi&#227;o)" sourceLinkParameter="sv2#area7#page13#inu19#ln26#par108" target="sv2#cru9.rel2#role4.ent4#att7"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area12#page18#enu11">
+          <layout:Field field="sv2#area12#page18#enu11#fld8"/>
+          <layout:Link link="sv2#area12#page18#enu11#ln31"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

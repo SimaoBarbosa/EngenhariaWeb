@@ -1,6 +1,6 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area7#page12" name="Apostas" gr:x="925" gr:y="0">
   <ContentUnits>
-    <IndexUnit id="sv2#area7#page12#inu16" name="Apostas Dispon&#237;veis" gr:x="0" gr:y="0" entity="ent8" displayAttributes="ent8#att25" linkOrder="sv2#area7#page12#inu16#ln52">
+    <IndexUnit id="sv2#area7#page12#inu16" name="Apostas Dispon&#237;veis" gr:x="0" gr:y="0" entity="ent8" displayAttributes="ent8#att25" linkOrder="sv2#area7#page12#inu16#ln52 sv2#area7#page12#inu16#ln53">
       <Selector id="sv2#area7#page12#inu16#su17" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#area7#page12#inu16#su17#rcond15" name="RoleCondition1" predicate="in" implied="false" role="rel11#role21"/>
       </Selector>
@@ -8,6 +8,7 @@
         <LinkParameter id="sv2#area7#page12#inu16#ln52#par196" name="id_aposta_disponivel_RoleCondition24 [id_aposta_disponivel]" source="data[].ent8#att2" target="sv2#area7#page12#inu25#su31#rcond24.ent8#att2"/>
         <LinkParameter id="sv2#area7#page12#inu16#ln52#par197" name="id_aposta_disponivel_PASSING" source="data[].ent8#att2" passing="true"/>
       </Link>
+      <Link id="sv2#area7#page12#inu16#ln53" name="Gerir op&#231;&#245;es" to="sv2#area15#page24#inu10" automaticCoupling="true" type="normal" validate="true"/>
     </IndexUnit>
     <IndexUnit gr:x="220" gr:y="10" id="sv2#area7#page12#inu25" name="Op&#231;&#245;es" entity="ent9" displayAttributes="ent9#att19 ent9#att20 ent9#att21" linkOrder="sv2#area7#page12#inu25#ln9">
       <Selector id="sv2#area7#page12#inu25#su31" defaultPolicy="fill" booleanOperator="and">
@@ -27,6 +28,7 @@
         <layout:Unit unitId="sv2#area7#page12#inu16">
           <layout:Attribute attribute="ent8#att25"/>
           <layout:Link link="sv2#area7#page12#inu16#ln52"/>
+          <layout:Link link="sv2#area7#page12#inu16#ln53"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

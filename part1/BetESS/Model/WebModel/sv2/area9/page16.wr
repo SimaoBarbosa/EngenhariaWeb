@@ -1,0 +1,33 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area9#page16" name="Adicionar regi&#227;o">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv2#area9#page16#enu10" name="Nova regi&#227;o" entity="ent4" linkOrder="sv2#area9#page16#enu10#ln23">
+      <Field id="sv2#area9#page16#enu10#fld7" name="nome" type="string" modifiable="true"/>
+      <Link id="sv2#area9#page16#enu10#ln23" name="Adicionar regi&#227;o" to="sv2#seu7" type="normal" validate="true">
+        <LinkParameter id="sv2#area9#page16#enu10#ln23#par42" name="nome_nome" source="sv2#area9#page16#enu10#fld7" target="sv2#seu7#su18#acond5"/>
+        <LinkParameter id="sv2#area9#page16#enu10#ln23#par84" name="id_desporto_PASSING" sourceLinkParameter="sv2#area7#page13#inu18#ln22#par83" passing="true"/>
+        <LinkParameter id="sv2#area9#page16#enu10#ln23#par96" name="nome_PASSING" source="sv2#area9#page16#enu10#fld7" passing="true"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area9#page16#enu10">
+          <layout:Field field="sv2#area9#page16#enu10#fld7"/>
+          <layout:Link link="sv2#area9#page16#enu10#ln23"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

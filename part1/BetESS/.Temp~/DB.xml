@@ -20,6 +20,7 @@
   <Table schema="" ignoreIndexes="false" name="competicao" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="id_competicao" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="nome" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="desporto_id_desporto" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="regiao_id_regiao" primaryKey="false" notNull="false"/>
   </Table>
   <Table schema="" ignoreIndexes="false" name="datahora" type="TABLE" refreshed="true">
@@ -42,14 +43,6 @@
   <Table schema="" ignoreIndexes="false" name="equipa_competicao" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="equipa_id_equipa" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="competicao_id_competicao" primaryKey="true" notNull="true"/>
-  </Table>
-  <Table schema="" ignoreIndexes="false" name="equipa_fase" type="TABLE" refreshed="true">
-    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="equipa_id_equipa" primaryKey="true" notNull="true"/>
-    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="fase_id_fase" primaryKey="true" notNull="true"/>
-  </Table>
-  <Table schema="" ignoreIndexes="false" name="equipa_regiao" type="TABLE" refreshed="true">
-    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="equipa_id_equipa" primaryKey="true" notNull="true"/>
-    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="regiao_id_regiao" primaryKey="true" notNull="true"/>
   </Table>
   <Table schema="" ignoreIndexes="false" name="evento" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="id_evento" primaryKey="true" notNull="true"/>

@@ -1,0 +1,32 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area13#page21" name="Adicionar fase">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv2#area13#page21#enu12" name="Nova fase" linkOrder="sv2#area13#page21#enu12#ln34">
+      <Field id="sv2#area13#page21#enu12#fld9" name="nome" type="string" modifiable="true"/>
+      <Link id="sv2#area13#page21#enu12#ln34" name="Adicionar fase" to="sv2#cru10" type="normal" validate="true">
+        <LinkParameter id="sv2#area13#page21#enu12#ln34#par114" name="id_competicao_PASSING_Competicao.id_competicao(FaseToCompeticao)" sourceLinkParameter="sv2#area7#page13#inu20#ln32#par113" target="sv2#cru10.rel1#role1.ent3#att5"/>
+        <LinkParameter id="sv2#area13#page21#enu12#ln34#par115" name="nome_nome" source="sv2#area13#page21#enu12#fld9" target="sv2#cru10.ent5#att10"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area13#page21#enu12">
+          <layout:Field field="sv2#area13#page21#enu12#fld9"/>
+          <layout:Link link="sv2#area13#page21#enu12#ln34"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

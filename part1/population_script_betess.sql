@@ -12,13 +12,13 @@ INSERT INTO regiao values
 	(4, 'Internacional');
 
 INSERT INTO competicao values
-	(1, 'Liga NOS', 1),
-	(2, 'Taça de Portugal', 1),
-	(3, 'La Liga', 2),
-	(4, 'Liga dos Campeões', 3),
-	(5, 'Liga Europa', 3),
-	(6, 'Qualificação Euro 2020', 3),
-	(7, 'Mundial 2022', 4);
+	(1, 'Liga NOS', 1, 1),
+	(2, 'Taça de Portugal', 1, 1),
+	(3, 'La Liga', 1, 2),
+	(4, 'Liga dos Campeões', 1, 3),
+	(5, 'Liga Europa', 1, 3),
+	(6, 'Qualificação Euro 2020', 1, 3),
+	(7, 'Mundial 2022', 1, 4);
 
 INSERT INTO fase values 
 	(1, '1ª jornada', 1), -- Liga NOS

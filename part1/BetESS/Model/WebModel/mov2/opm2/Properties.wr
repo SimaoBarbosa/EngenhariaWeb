@@ -1,4 +1,4 @@
-<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="0" id="mov2#opm2" name="Action 2">
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="160" gr:y="110" id="mov2#opm2" name="Action 2">
   <OperationUnits>
     <InputCollectorUnit gr:x="0" gr:y="150" id="mov2#opm2#icu2">
       <InputCollectorParameter id="mov2#opm2#icu2#icp3" name="id_aposta_disponivel_PASSING"/>

@@ -170,6 +170,11 @@ alter table `notificacao`  add column  `user_oid`  integer;
 alter table `notificacao`   add index fk_notificacao_user (`user_oid`), add constraint fk_notificacao_user foreign key (`user_oid`) references `user` (`oid`);
 
 
+-- Competicao_Desporto [rel13]
+alter table `competicao`  add column  `desporto_id_desporto`  integer;
+alter table `competicao`   add index fk_competicao_desporto (`desporto_id_desporto`), add constraint fk_competicao_desporto foreign key (`desporto_id_desporto`) references `desporto` (`id_desporto`);
+
+
 -- Aposta_Disponivel_Opcao [rel15]
 alter table `opcao`  add column  `aposta_disponivel_id_aposta_di`  integer;
 alter table `opcao`   add index fk_opcao_aposta_disponivel (`aposta_disponivel_id_aposta_di`), add constraint fk_opcao_aposta_disponivel foreign key (`aposta_disponivel_id_aposta_di`) references `aposta_disponivel` (`id_aposta_disponivel`);
@@ -223,26 +228,6 @@ create table `equipa_competicao` (
 );
 alter table `equipa_competicao`   add index fk_equipa_competicao_equipa (`equipa_id_equipa`), add constraint fk_equipa_competicao_equipa foreign key (`equipa_id_equipa`) references `equipa` (`id_equipa`);
 alter table `equipa_competicao`   add index fk_equipa_competicao_competica (`competicao_id_competicao`), add constraint fk_equipa_competicao_competica foreign key (`competicao_id_competicao`) references `competicao` (`id_competicao`);
-
-
--- Equipa_Região [rel7]
-create table `equipa_regiao` (
-   `equipa_id_equipa`  integer not null,
-   `regiao_id_regiao`  integer not null,
-  primary key (`equipa_id_equipa`, `regiao_id_regiao`)
-);
-alter table `equipa_regiao`   add index fk_equipa_regiao_equipa (`equipa_id_equipa`), add constraint fk_equipa_regiao_equipa foreign key (`equipa_id_equipa`) references `equipa` (`id_equipa`);
-alter table `equipa_regiao`   add index fk_equipa_regiao_regiao (`regiao_id_regiao`), add constraint fk_equipa_regiao_regiao foreign key (`regiao_id_regiao`) references `regiao` (`id_regiao`);
-
-
--- Equipa_Fase [rel8]
-create table `equipa_fase` (
-   `equipa_id_equipa`  integer not null,
-   `fase_id_fase`  integer not null,
-  primary key (`equipa_id_equipa`, `fase_id_fase`)
-);
-alter table `equipa_fase`   add index fk_equipa_fase_equipa (`equipa_id_equipa`), add constraint fk_equipa_fase_equipa foreign key (`equipa_id_equipa`) references `equipa` (`id_equipa`);
-alter table `equipa_fase`   add index fk_equipa_fase_fase (`fase_id_fase`), add constraint fk_equipa_fase_fase foreign key (`fase_id_fase`) references `fase` (`id_fase`);
 
 
 -- Evento_DataHora [rel9]
