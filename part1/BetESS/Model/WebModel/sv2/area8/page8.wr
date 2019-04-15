@@ -1,12 +1,13 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area8#page8" name="Adicionar evento">
   <ContentUnits>
     <EntryUnit gr:x="0" gr:y="0" id="sv2#area8#page8#enu4" name="Novo evento" entity="ent1" linkOrder="sv2#area8#page8#enu4#ln36">
-      <Field id="sv2#area8#page8#enu4#fld2" name="Titulo do evento" type="string" modifiable="true" attribute="ent1#att14"/>
+      <Field id="sv2#area8#page8#enu4#fld2" name="Titulo do evento" type="string" modifiable="true" attribute="ent1#att14" contentType="text/plain"/>
       <Link id="sv2#area8#page8#enu4#ln36" name="Ok" to="sv2#area8#page14#enu8" type="normal" validate="true">
         <LinkParameter id="sv2#area8#page8#enu4#ln36#par228" name="Evento Object_PASSING" source="entityBean" passing="true"/>
         <LinkParameter id="sv2#area8#page8#enu4#ln36#par229" name="id_fase_PASSING" sourceLinkParameter="sv2#area7#page13#inu21#ln20#par47" passing="true"/>
         <LinkParameter id="sv2#area8#page8#enu4#ln36#par230" name="Key [id_evento]_PASSING" source="key.ent1#att1" passing="true"/>
         <LinkParameter id="sv2#area8#page8#enu4#ln36#par231" name="Titulo do evento_PASSING" source="sv2#area8#page8#enu4#fld2" passing="true"/>
+        <LinkParameter id="sv2#area8#page8#enu4#ln36#par163" name="id_competicao_PASSING" sourceLinkParameter="sv2#area7#page13#inu21#ln20#par162" passing="true"/>
       </Link>
     </EntryUnit>
   </ContentUnits>

@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area11#page9" name="Adicionar aposta">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="5" id="sv2#area11#page9" name="Adicionar aposta">
   <ContentUnits>
     <EntryUnit gr:x="0" gr:y="0" id="sv2#area11#page9#enu6" name="Nova aposta" entity="ent8" linkOrder="sv2#area11#page9#enu6#ln44">
       <Field id="sv2#area11#page9#enu6#fld17" name="Titulo da nova aposta" type="string" modifiable="true" attribute="ent8#att25"/>

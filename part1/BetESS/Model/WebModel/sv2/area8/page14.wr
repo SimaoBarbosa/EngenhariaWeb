@@ -14,6 +14,7 @@
         <LinkParameter id="sv2#area8#page14#enu8#ln35#par225" name="Titulo do evento_PASSING" sourceLinkParameter="sv2#area8#page8#enu4#ln36#par231" passing="true"/>
         <LinkParameter id="sv2#area8#page14#enu8#ln35#par226" name="data_data" source="sv2#area8#page14#enu8#fld15" target="sv2#seu4#su16#acond1"/>
         <LinkParameter id="sv2#area8#page14#enu8#ln35#par227" name="hora_hora" source="sv2#area8#page14#enu8#fld16" target="sv2#seu4#su16#acond4"/>
+        <LinkParameter id="sv2#area8#page14#enu8#ln35#par164" name="id_competicao_PASSING" sourceLinkParameter="sv2#area8#page8#enu4#ln36#par163" passing="true"/>
       </Link>
     </EntryUnit>
   </ContentUnits>

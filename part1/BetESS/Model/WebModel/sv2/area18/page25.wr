@@ -1,0 +1,57 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area18#page25" name="Ver todas" landmark="true">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv2#area18#page25#inu26" name="Equipas" entity="ent2" linkOrder="sv2#area18#page25#inu26#ln75 sv2#area18#page25#inu26#ln82" displayAttributes="ent2#att4">
+      <Link id="sv2#area18#page25#inu26#ln75" name="Eliminar" to="sv2#dlu3" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#area18#page25#inu26#ln82" name="Ver eventos" to="sv2#area18#page27#inu29" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="152,98,-222,-68"/>
+    </IndexUnit>
+    <EntryUnit gr:x="105" gr:y="5" id="sv2#area18#page25#enu15" name="Adicionar equipa" entity="ent2" linkOrder="sv2#area18#page25#enu15#ln79">
+      <Field id="sv2#area18#page25#enu15#fld23" name="nome" type="string" modifiable="true"/>
+      <Link id="sv2#area18#page25#enu15#ln79" name="Adicionar" to="sv2#cru11" type="normal" validate="true">
+        <LinkParameter id="sv2#area18#page25#enu15#ln79#par240" name="Equipa Object_Equipa Object" source="entityBean" target="sv2#cru11.entityBeans"/>
+        <LinkParameter id="sv2#area18#page25#enu15#ln79#par241" name="Key [id_equipa]_id_equipa" source="key.ent2#att3" target="sv2#cru11.ent2#att3"/>
+        <LinkParameter id="sv2#area18#page25#enu15#ln79#par242" name="nome_nome" source="sv2#area18#page25#enu15#fld23" target="sv2#cru11.ent2#att4"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="9" rowspan="2">
+        <layout:Unit unitId="sv2#area18#page25#inu26">
+          <layout:Attribute attribute="ent2#att4"/>
+          <layout:Link link="sv2#area18#page25#inu26#ln75"/>
+          <layout:Link link="sv2#area18#page25#inu26#ln82"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="3" rowspan="2">
+        <layout:Unit unitId="sv2#area18#page25#enu15">
+          <layout:Field field="sv2#area18#page25#enu15#fld23"/>
+          <layout:Link link="sv2#area18#page25#enu15#ln79"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

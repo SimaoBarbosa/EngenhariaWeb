@@ -1,0 +1,69 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area17#page23" name="Gerir equipas">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv2#area17#page23#inu17" name="Equipas atuais" entity="ent2" linkOrder="sv2#area17#page23#inu17#ln69" displayAttributes="ent2#att4">
+      <Selector id="sv2#area17#page23#inu17#su42" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area17#page23#inu17#su42#rcond32" name="RoleCondition32" predicate="in" implied="false" role="rel4#role7"/>
+      </Selector>
+      <Link id="sv2#area17#page23#inu17#ln68" name="Flow68" to="sv2#area17#page23#inu23" type="transport" validate="true">
+        <LinkParameter id="sv2#area17#page23#inu17#ln68#par204" name="id_evento_PASSING_RoleCondition33 [id_evento]" sourceLinkParameter="sv2#area7#page13#inu22#ln66#par203" target="sv2#area17#page23#inu23#su43#rcond33.ent1#att1"/>
+        <LinkParameter id="sv2#area17#page23#inu17#ln68#par205" name="id_competicao_PASSING_RoleCondition34 [id_competicao]" sourceLinkParameter="sv2#area7#page13#inu22#ln66#par202" target="sv2#area17#page23#inu23#su43#rcond34.ent3#att5"/>
+        <LinkParameter id="sv2#area17#page23#inu17#ln68#par234" name="id_evento_PASSING" sourceLinkParameter="sv2#area7#page13#inu22#ln66#par203" passing="true"/>
+      </Link>
+      <Link id="sv2#area17#page23#inu17#ln69" name="Remover equipa" to="sv2#dcnu3" type="normal" validate="true">
+        <LinkParameter id="sv2#area17#page23#inu17#ln69#par232" name="id_evento_PASSING_KeyCondition16 [id_evento] [Evento] [Source]" sourceLinkParameter="sv2#area7#page13#inu22#ln66#par203" target="sv2#dcnu3#su44#kcond16.ent1#att1"/>
+        <LinkParameter id="sv2#area17#page23#inu17#ln69#par233" name="id_equipa_KeyCondition17 [id_equipa] [Equipa] [Target]" source="data[].ent2#att3" target="sv2#dcnu3#su45#kcond17.ent2#att3"/>
+      </Link>
+    </IndexUnit>
+    <IndexUnit gr:x="0" gr:y="155" id="sv2#area17#page23#inu23" name="Adicionar equipas" entity="ent2" linkOrder="sv2#area17#page23#inu23#ln70" displayAttributes="ent2#att4">
+      <Selector id="sv2#area17#page23#inu23#su43" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area17#page23#inu23#su43#rcond33" name="RoleCondition33" predicate="notIn" implied="false" role="rel4#role7"/>
+        <RelationshipRoleCondition id="sv2#area17#page23#inu23#su43#rcond34" name="RoleCondition34" predicate="in" implied="false" role="rel6#role12"/>
+      </Selector>
+      <Link id="sv2#area17#page23#inu23#ln70" name="Flow70" to="sv2#cnu4" type="normal" validate="true">
+        <LinkParameter id="sv2#area17#page23#inu23#ln70#par235" name="id_equipa_KeyCondition19 [id_equipa] [Equipa] [Target]" source="data[].ent2#att3" target="sv2#cnu4#su47#kcond19.ent2#att3"/>
+        <LinkParameter id="sv2#area17#page23#inu23#ln70#par236" name="id_evento_PASSING" sourceLinkParameter="sv2#area17#page23#inu17#ln68#par234" passing="true"/>
+        <LinkParameter id="sv2#area17#page23#inu23#ln70#par243" name="id_evento_PASSING_KeyCondition18 [id_evento] [Evento] [Source]" sourceLinkParameter="sv2#area17#page23#inu17#ln68#par234" target="sv2#cnu4#su46#kcond18.ent1#att1"/>
+      </Link>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area17#page23#inu17">
+          <layout:Link link="sv2#area17#page23#inu17#ln69"/>
+          <layout:Attribute attribute="ent2#att4"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area17#page23#inu23">
+          <layout:Link link="sv2#area17#page23#inu23#ln70"/>
+          <layout:Attribute attribute="ent2#att4"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="230" gr:y="5" id="sv2#area11#page15" name="Adicionar opc&#245;es">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="230" gr:y="0" id="sv2#area11#page15" name="Adicionar opc&#245;es" linkOrder="sv2#area11#page15#ln72">
   <ContentUnits>
-    <EntryUnit gr:x="0" gr:y="0" id="sv2#area11#page15#enu9" name="Nova opc&#227;o" entity="ent9" linkOrder="sv2#area11#page15#enu9#ln46 sv2#area11#page15#enu9#ln48">
+    <EntryUnit gr:x="0" gr:y="5" id="sv2#area11#page15#enu9" name="Nova opc&#227;o" entity="ent9" linkOrder="sv2#area11#page15#enu9#ln46 sv2#area11#page15#enu9#ln48">
       <Link id="sv2#area11#page15#enu9#ln46" name="Adicionar op&#231;&#227;o" to="sv2#cru6" type="normal" validate="true">
         <LinkParameter id="sv2#area11#page15#enu9#ln46#par342" name="Key [id_opcao]_id_opcao" source="key.ent9#att19" target="sv2#cru6.ent9#att19"/>
         <LinkParameter id="sv2#area11#page15#enu9#ln46#par343" name="odd_odd" source="sv2#area11#page15#enu9#fld21" target="sv2#cru6.ent9#att21"/>
@@ -14,7 +14,16 @@
       <Link id="sv2#area11#page15#enu9#ln48" name="Ver todas as op&#231;&#245;es" to="sv2#area7#page12#inu25" type="normal" validate="true">
         <LinkParameter id="sv2#area11#page15#enu9#ln48#par351" name="id_aposta_disponivel_PASSING_RoleCondition24 [id_aposta_disponivel]" sourceLinkParameter="sv2#cru4#oln22#par340" target="sv2#area7#page12#inu25#su31#rcond24.ent8#att2"/>
       </Link>
+      <Link id="sv2#area11#page15#enu9#ln73" name="Flow73" to="sv2#area11#page15#inu24" type="transport" validate="true">
+        <LinkParameter id="sv2#area11#page15#enu9#ln73#par237" name="id_aposta_disponivel_PASSING_RoleCondition35 [id_aposta_disponivel]" sourceLinkParameter="sv2#cru6#oln21#par350" target="sv2#area11#page15#inu24#su48#rcond35.ent8#att2"/>
+      </Link>
     </EntryUnit>
+    <IndexUnit gr:x="130" gr:y="0" id="sv2#area11#page15#inu24" name="Op&#231;&#245;es" entity="ent9" displayAttributes="ent9#att20 ent9#att21" linkOrder="sv2#area11#page15#inu24#ln74">
+      <Selector id="sv2#area11#page15#inu24#su48" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area11#page15#inu24#su48#rcond35" name="RoleCondition35" predicate="in" implied="false" role="rel15#role29"/>
+      </Selector>
+      <Link id="sv2#area11#page15#inu24#ln74" name="Remover" to="sv2#dlu2" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -38,5 +47,26 @@
       <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area11#page15#inu24">
+          <layout:Attribute attribute="ent9#att20"/>
+          <layout:Attribute attribute="ent9#att21"/>
+          <layout:Link link="sv2#area11#page15#inu24#ln74"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
   </layout:Grid>
+  <Link id="sv2#area11#page15#ln72" name="Concluir" to="sv2#area7#page13" automaticCoupling="true" type="normal" validate="true"/>
 </Page>

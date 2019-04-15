@@ -1,10 +1,11 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area13#page21" name="Adicionar fase">
   <ContentUnits>
-    <EntryUnit gr:x="0" gr:y="0" id="sv2#area13#page21#enu12" name="Nova fase" linkOrder="sv2#area13#page21#enu12#ln34">
+    <EntryUnit gr:x="0" gr:y="0" id="sv2#area13#page21#enu12" name="Nova fase" linkOrder="sv2#area13#page21#enu12#ln34" entity="ent5">
       <Field id="sv2#area13#page21#enu12#fld9" name="nome" type="string" modifiable="true"/>
       <Link id="sv2#area13#page21#enu12#ln34" name="Adicionar fase" to="sv2#cru10" type="normal" validate="true">
         <LinkParameter id="sv2#area13#page21#enu12#ln34#par114" name="id_competicao_PASSING_Competicao.id_competicao(FaseToCompeticao)" sourceLinkParameter="sv2#area7#page13#inu20#ln32#par113" target="sv2#cru10.rel1#role1.ent3#att5"/>
         <LinkParameter id="sv2#area13#page21#enu12#ln34#par115" name="nome_nome" source="sv2#area13#page21#enu12#fld9" target="sv2#cru10.ent5#att10"/>
+        <LinkParameter id="sv2#area13#page21#enu12#ln34#par129" name="Key [id_fase]_id_fase" source="key.ent5#att9" target="sv2#cru10.ent5#att9"/>
       </Link>
     </EntryUnit>
   </ContentUnits>

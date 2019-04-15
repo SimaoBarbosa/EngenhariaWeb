@@ -1,21 +1,58 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="250" gr:y="5" id="sv2#area8#page10" name="Relacionar equipas a evento" linkOrder="sv2#area8#page10#ln51">
   <ContentUnits>
-    <IndexUnit gr:x="0" gr:y="0" id="sv2#area8#page10#inu7" name="Equipas" entity="ent2" linkOrder="sv2#area8#page10#inu7#ln33" displayAttributes="ent2#att4">
-      <Link id="sv2#area8#page10#inu7#ln33" name="Adicionar equipa ao evento" to="sv2#cnu1" type="normal" validate="true">
-        <LinkParameter id="sv2#area8#page10#inu7#ln33#par132" name="id_evento_PASSING_KeyCondition4 [id_evento] [Evento] [Source]" sourceLinkParameter="sv2#cru2#oln9#par131" target="sv2#cnu1#su13#kcond4.ent1#att1"/>
-        <LinkParameter id="sv2#area8#page10#inu7#ln33#par133" name="id_equipa_KeyCondition5 [id_equipa] [Equipa] [Target]" source="data[].ent2#att3" target="sv2#cnu1#su15#kcond5.ent2#att3"/>
-        <LinkParameter id="sv2#area8#page10#inu7#ln33#par134" name="id_evento_PASSING" sourceLinkParameter="sv2#cru2#oln9#par131" passing="true"/>
+    <IndexUnit gr:x="0" gr:y="0" id="sv2#area8#page10#inu12" name="Equipas atuais" entity="ent2" linkOrder="sv2#area8#page10#inu12#ln60" displayAttributes="ent2#att4">
+      <Selector id="sv2#area8#page10#inu12#su35" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area8#page10#inu12#su35#rcond25" name="RoleCondition25" predicate="in" implied="false" role="rel4#role7"/>
+      </Selector>
+      <Link id="sv2#area8#page10#inu12#ln58" name="Flow58" to="sv2#area8#page10#inu13" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page10#inu12#ln58#par155" name="id_evento_PASSING_RoleCondition26 [id_evento]" sourceLinkParameter="sv2#cru2#oln30#par154" target="sv2#area8#page10#inu13#su38#rcond26.ent1#att1"/>
+        <LinkParameter id="sv2#area8#page10#inu12#ln58#par156" name="id_equipa_PASSING" source="data[].ent2#att3" passing="true"/>
+        <LinkParameter id="sv2#area8#page10#inu12#ln58#par157" name="id_evento_PASSING" sourceLinkParameter="sv2#cru2#oln30#par154" passing="true"/>
+        <LinkParameter id="sv2#area8#page10#inu12#ln58#par185" name="id_competicao_PASSING_RoleCondition30 [id_competicao]" sourceLinkParameter="sv2#cru2#oln30#par169" target="sv2#area8#page10#inu13#su38#rcond30.ent3#att5"/>
+      </Link>
+      <Link id="sv2#area8#page10#inu12#ln60" name="Remover" to="sv2#dcnu2" type="normal" validate="true" gr:bendpoints="120,77,-220,-317">
+        <LinkParameter id="sv2#area8#page10#inu12#ln60#par160" name="id_evento_PASSING_KeyCondition14 [id_evento] [Evento] [Source]" sourceLinkParameter="sv2#cru2#oln30#par154" target="sv2#dcnu2#su39#kcond14.ent1#att1"/>
+        <LinkParameter id="sv2#area8#page10#inu12#ln60#par161" name="id_equipa_KeyCondition15 [id_equipa] [Equipa] [Target]" source="data[].ent2#att3" target="sv2#dcnu2#su40#kcond15.ent2#att3"/>
+      </Link>
+    </IndexUnit>
+    <IndexUnit gr:x="50" gr:y="180" id="sv2#area8#page10#inu13" name="Adicionar equipas" entity="ent2" linkOrder="sv2#area8#page10#inu13#ln59" displayAttributes="ent2#att4">
+      <Selector id="sv2#area8#page10#inu13#su38" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area8#page10#inu13#su38#rcond26" name="RoleCondition26" predicate="notIn" implied="false" role="rel4#role7"/>
+        <RelationshipRoleCondition id="sv2#area8#page10#inu13#su38#rcond30" name="RoleCondition30" predicate="in" implied="false" role="rel6#role12"/>
+      </Selector>
+      <Link id="sv2#area8#page10#inu13#ln59" name="Adicionar equipa" to="sv2#cnu1" type="normal" validate="true">
+        <LinkParameter id="sv2#area8#page10#inu13#ln59#par158" name="id_evento_PASSING_KeyCondition4 [id_evento] [Evento] [Source]" sourceLinkParameter="sv2#area8#page10#inu12#ln58#par157" target="sv2#cnu1#su13#kcond4.ent1#att1"/>
+        <LinkParameter id="sv2#area8#page10#inu13#ln59#par159" name="id_equipa_KeyCondition5 [id_equipa] [Equipa] [Target]" source="data[].ent2#att3" target="sv2#cnu1#su15#kcond5.ent2#att3"/>
       </Link>
     </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv2#area8#page10#inu7">
-          <layout:Link link="sv2#area8#page10#inu7#ln33"/>
+      <layout:Cell colspan="6" rowspan="2">
+        <layout:Unit unitId="sv2#area8#page10#inu12">
+          <layout:Attribute attribute="ent2#att4"/>
+          <layout:Link link="sv2#area8#page10#inu12#ln60"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6" rowspan="2">
+        <layout:Unit unitId="sv2#area8#page10#inu13">
+          <layout:Link link="sv2#area8#page10#inu13#ln59"/>
           <layout:Attribute attribute="ent2#att4"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
