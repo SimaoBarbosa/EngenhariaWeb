@@ -3,6 +3,7 @@
     <IndexUnit gr:x="0" gr:y="0" id="sv1#area1#page3#inu6" name="Apostas Dispon&#237;veis" entity="ent8" displayAttributes="ent8#att25" linkOrder="sv1#area1#page3#inu6#ln10">
       <Selector id="sv1#area1#page3#inu6#su1" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#area1#page3#inu6#su1#rcond1" name="RoleCondition1" predicate="in" implied="false" role="rel11#role21"/>
+        <AttributesCondition id="sv1#area1#page3#inu6#su1#acond7" name="AttCondition7" predicate="eq" booleanOperator="or" implied="false" attributes="ent8#att30"/>
       </Selector>
       <Link id="sv1#area1#page3#inu6#ln10" name="Ver Op&#231;&#245;es" to="sv1#area1#page3#inu11" type="normal" validate="true">
         <LinkParameter id="sv1#area1#page3#inu6#ln10#par21" name="id_aposta_disponivel_PASSING" source="data[].ent8#att2" passing="true"/>

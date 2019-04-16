@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area7#page13" name="Desportos" landmark="true" gr:x="0" gr:y="0" linkOrder="sv2#area7#page13#ln13">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area7#page13" name="Desportos" landmark="true" gr:x="0" gr:y="5" linkOrder="sv2#area7#page13#ln13">
   <ContentUnits>
     <IndexUnit id="sv2#area7#page13#inu18" name="Desportos" linkOrder="sv2#area7#page13#inu18#ln38 sv2#area7#page13#inu18#ln22" gr:x="0" gr:y="5" entity="ent6" displayAttributes="ent6#att12">
       <Link id="sv2#area7#page13#inu18#ln38" name="Ver regi&#245;es" to="sv2#area7#page13#inu19" type="normal" validate="true">
@@ -71,7 +71,10 @@
       <Selector id="sv2#area7#page13#inu22#su25" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#area7#page13#inu22#su25#rcond20" name="RoleCondition5" predicate="in" implied="false" role="rel5#role10"/>
       </Selector>
-      <Link id="sv2#area7#page13#inu22#ln42" name="Ver Apostas" to="sv2#area7#page12#inu16" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv2#area7#page13#inu22#ln42" name="Ver Apostas" to="sv2#area7#page12#inu16" type="normal" validate="true">
+        <LinkParameter id="sv2#area7#page13#inu22#ln42#par94" name="true_AttCondition6" sourceValue="true" target="sv2#area7#page12#inu16#su17#acond6"/>
+        <LinkParameter id="sv2#area7#page13#inu22#ln42#par99" name="id_evento_RoleCondition1 [id_evento]" source="data[].ent1#att1" target="sv2#area7#page12#inu16#su17#rcond15.ent1#att1"/>
+      </Link>
       <Link id="sv2#area7#page13#inu22#ln21" name="Adicionar apostas" to="sv2#area11#page9#enu6" type="normal" validate="true">
         <LinkParameter id="sv2#area7#page13#inu22#ln21#par332" name="id_evento_PASSING" source="data[].ent1#att1" passing="true"/>
       </Link>

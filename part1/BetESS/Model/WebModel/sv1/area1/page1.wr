@@ -39,7 +39,10 @@
       <Selector id="sv1#area1#page1#inu5#su5" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#area1#page1#inu5#su5#rcond5" name="RoleCondition5" predicate="in" implied="false" role="rel5#role10"/>
       </Selector>
-      <Link id="sv1#area1#page1#inu5#ln5" name="Ver Apostas" to="sv1#area1#page3#inu6" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv1#area1#page1#inu5#ln5" name="Ver Apostas" to="sv1#area1#page3#inu6" type="normal" validate="true">
+        <LinkParameter id="sv1#area1#page1#inu5#ln5#par285" name="true_AttCondition7" sourceValue="true" target="sv1#area1#page3#inu6#su1#acond7"/>
+        <LinkParameter id="sv1#area1#page1#inu5#ln5#par286" name="id_evento_RoleCondition1 [id_evento]" source="data[].ent1#att1" target="sv1#area1#page3#inu6#su1#rcond1.ent1#att1"/>
+      </Link>
     </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">

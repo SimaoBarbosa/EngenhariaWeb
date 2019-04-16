@@ -1,7 +1,7 @@
 <SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Funcionario" protected="true" landmarks="sv2#area7 sv2#lou3 sv2#area18" homePage="sv2#area7#page13">
   <OperationUnits>
     <LogoutUnit gr:x="1200" gr:y="610" id="sv2#lou3" name="Logout" siteView="sv3" landmark="true"/>
-    <QueryUnit gr:x="1080" gr:y="270" id="sv2#qu4" name="Atualizar apostas" mode="update" language="SQL" db="db1">
+    <QueryUnit gr:x="1055" gr:y="235" id="sv2#qu4" name="Atualizar apostas" mode="update" language="SQL" db="db1">
       <QueryInput id="sv2#qu4#qi3" name="idApostaDisponivel" required="true" type="integer"/>
       <QueryInput id="sv2#qu4#qi8" name="idOpcao" required="true" type="integer"/>
       <QueryText xml:space="preserve">update user
@@ -9,15 +9,18 @@
 		set saldo = case when opcao_id_opcao = (:idOpcao) then saldo + (quantia * odd_fixada) else saldo end,
 			resultado = case when opcao_id_opcao = (:idOpcao) then 1 else 0 end
 where aposta_disponivel_id_aposta_di = (:idApostaDisponivel);</QueryText>
-      <OKLink id="sv2#qu4#oln4" name="OKFlow4" to="sv2#miu4">
-        <LinkParameter id="sv2#qu4#oln4#par117" name="id_aposta_disponivel_PASSING_id_aposta_disponivel_PASSING" sourceLinkParameter="sv2#area7#page12#inu25#ln9#par24" target="sv2#miu4.mov2#opm2#icu2#icp3"/>
-        <LinkParameter id="sv2#qu4#oln4#par118" name="id_opcao_PASSING_id_opcao_PASSING" sourceLinkParameter="sv2#area7#page12#inu25#ln9#par25" target="sv2#miu4.mov2#opm2#icu2#icp4"/>
+      <OKLink id="sv2#qu4#oln4" name="OKFlow4" to="sv2#mfu2">
+        <LinkParameter id="sv2#qu4#oln4#par278" name="false_disponibilidade" sourceValue="false" target="sv2#mfu2.ent8#att30"/>
+        <LinkParameter id="sv2#qu4#oln4#par279" name="id_opcao_PASSING_resultado_final" sourceLinkParameter="sv2#area7#page12#inu25#ln9#par25" target="sv2#mfu2.ent8#att27"/>
+        <LinkParameter id="sv2#qu4#oln4#par280" name="id_aposta_disponivel_PASSING" sourceLinkParameter="sv2#area7#page12#inu25#ln9#par24" passing="true"/>
+        <LinkParameter id="sv2#qu4#oln4#par282" name="id_aposta_disponivel_PASSING_KeyCondition26 [id_aposta_disponivel]" sourceLinkParameter="sv2#area7#page12#inu25#ln9#par24" target="sv2#mfu2#su58#kcond26.ent8#att2"/>
+        <LinkParameter id="sv2#qu4#oln4#par283" name="id_opcao_PASSING" sourceLinkParameter="sv2#area7#page12#inu25#ln9#par25" passing="true"/>
       </OKLink>
       <KOLink id="sv2#qu4#kln5" name="KOFlow5" to="sv2#area7#page12" automaticCoupling="true"/>
     </QueryUnit>
-    <ModuleInstanceUnit gr:x="1200" gr:y="395" id="sv2#miu4" moduleId="mov2#opm2">
+    <ModuleInstanceUnit gr:x="1205" gr:y="430" id="sv2#miu4" moduleId="mov2#opm2">
       <KOLink id="sv2#miu4#kln12" to="sv2#area7#page12" name="KOFlow8"/>
-      <OKLink id="sv2#miu4#oln13" to="sv2#area7#page13" name="OKFlow9"/>
+      <OKLink id="sv2#miu4#oln34" name="OKFlow33" to="sv2#area7#page13" automaticCoupling="true"/>
     </ModuleInstanceUnit>
     <CreateUnit gr:x="380" gr:y="835" id="sv2#cru2" name="Criar evento" entity="ent1" skipBlankRecords="true" notBlankAttributes="ent1#att1 ent1#att14">
       <KOLink id="sv2#cru2#kln8" name="KOFlow8" to="sv2#area8#page8#enu4" automaticCoupling="true" gr:bendpoints="22,-77,7,78"/>
@@ -238,5 +241,15 @@ where aposta_disponivel_id_aposta_di = (:idApostaDisponivel);</QueryText>
         <KeyCondition id="sv2#cnu5#su55#kcond25" name="KeyCondition19" predicate="in" implied="false"/>
       </TargetSelector>
     </ConnectUnit>
+    <ModifyUnit gr:x="1195" gr:y="295" id="sv2#mfu2" name="Tornar Aposta indispon&#237;vel" entity="ent8">
+      <Selector id="sv2#mfu2#su58" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#mfu2#su58#kcond26" name="KeyCondition26" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="sv2#mfu2#kln27" name="KOFlow27" to="sv2#area7#page12" automaticCoupling="true" gr:bendpoints="15,-63,15,47"/>
+      <OKLink id="sv2#mfu2#oln35" name="OKFlow35" to="sv2#miu4">
+        <LinkParameter id="sv2#mfu2#oln35#par281" name="id_aposta_disponivel_PASSING_id_aposta_disponivel_PASSING" sourceLinkParameter="sv2#qu4#oln4#par280" target="sv2#miu4.mov2#opm2#icu2#icp3"/>
+        <LinkParameter id="sv2#mfu2#oln35#par284" name="id_opcao_PASSING_id_opcao_PASSING" sourceLinkParameter="sv2#qu4#oln4#par283" target="sv2#miu4.mov2#opm2#icu2#icp4"/>
+      </OKLink>
+    </ModifyUnit>
   </OperationUnits>
 </SiteView>
