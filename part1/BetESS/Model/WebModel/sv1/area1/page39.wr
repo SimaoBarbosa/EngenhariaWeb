@@ -1,0 +1,145 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area1#page39" name="Apostas" gr:x="755" gr:y="415" protected="true">
+  <ContentUnits>
+    <IndexUnit id="sv1#area1#page39#inu40" name="Apostas Dispon&#237;veis" linkOrder="sv1#area1#page39#inu40#ln109" gr:x="0" gr:y="0" entity="ent8" displayAttributes="ent8#att25">
+      <Selector id="sv1#area1#page39#inu40#su77" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area1#page39#inu40#su77#rcond46" name="RoleCondition1" predicate="in" implied="false" role="rel11#role21"/>
+        <AttributesCondition id="sv1#area1#page39#inu40#su77#acond24" name="disponibilidade" predicate="eq" booleanOperator="or" implied="false" attributes="ent8#att30"/>
+        <AttributesCondition id="sv1#area1#page39#inu40#su77#acond25" name="vip" predicate="eq" booleanOperator="or" implied="false" attributes="ent8#att15"/>
+      </Selector>
+      <Link id="sv1#area1#page39#inu40#ln109" name="Ver Op&#231;&#245;es" to="sv1#area1#page39#inu41" type="normal" validate="true">
+        <LinkParameter id="sv1#area1#page39#inu40#ln109#par393" name="id_aposta_disponivel_PASSING" source="data[].ent8#att2" passing="true"/>
+        <LinkParameter id="sv1#area1#page39#inu40#ln109#par394" name="id_aposta_disponivel_RoleCondition6 [id_aposta_disponivel]" source="data[].ent8#att2" target="sv1#area1#page39#inu41#su78#rcond47.ent8#att2"/>
+      </Link>
+      <Link id="sv1#area1#page39#inu40#ln110" name="Flow101" to="sv1#area1#page39#inu42" type="transport" validate="true">
+        <LinkParameter id="sv1#area1#page39#inu40#ln110#par395" name="true_disponibilidade" target="sv1#area1#page39#inu42#su79#acond26" sourceValue="true"/>
+        <LinkParameter id="sv1#area1#page39#inu40#ln110#par396" name="id_evento_PASSING_RoleCondition42 [id_evento]" sourceLinkParameter="sv1#area1#page1#inu5#ln114#par409" target="sv1#area1#page39#inu42#su79#rcond48.ent1#att1"/>
+        <LinkParameter id="sv1#area1#page39#inu40#ln110#par397" name="true_vip" target="sv1#area1#page39#inu42#su79#acond27" sourceValue="true"/>
+      </Link>
+    </IndexUnit>
+    <IndexUnit id="sv1#area1#page39#inu41" name="Opc&#245;es" linkOrder="sv1#area1#page39#inu41#ln112" gr:x="270" gr:y="140" entity="ent9" displayAttributes="ent9#att20 ent9#att21">
+      <Selector id="sv1#area1#page39#inu41#su78" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area1#page39#inu41#su78#rcond47" name="RoleCondition6" predicate="in" implied="false" role="rel15#role29"/>
+      </Selector>
+      <Link id="sv1#area1#page39#inu41#ln112" name="Apostar" to="sv1#area1#page4#dau1" type="normal" validate="true">
+        <LinkParameter id="sv1#area1#page39#inu41#ln112#par401" name="odd_PASSING" source="data[].ent9#att21" passing="true"/>
+        <LinkParameter id="sv1#area1#page39#inu41#ln112#par402" name="opcao_PASSING" source="data[].ent9#att20" passing="true"/>
+        <LinkParameter id="sv1#area1#page39#inu41#ln112#par404" name="id_aposta_disponivel_PASSING" sourceLinkParameter="sv1#area1#page39#inu40#ln109#par393" passing="true"/>
+        <LinkParameter id="sv1#area1#page39#inu41#ln112#par436" name="id_aposta_disponivel_PASSING" sourceLinkParameter="sv1#area1#page39#inu42#ln113#par406" passing="true"/>
+        <LinkParameter id="sv1#area1#page39#inu41#ln112#par403" name="id_opcao_KeyCondition1 [id_opcao]" source="data[].ent9#att19" target="sv1#area1#page4#dau1#su10#kcond1.ent9#att19"/>
+      </Link>
+    </IndexUnit>
+    <IndexUnit id="sv1#area1#page39#inu42" name="Apostas VIP" linkOrder="sv1#area1#page39#inu42#ln113" gr:x="5" gr:y="150" entity="ent8" displayAttributes="ent8#att25">
+      <Selector id="sv1#area1#page39#inu42#su79" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area1#page39#inu42#su79#rcond48" name="RoleCondition42" predicate="in" implied="false" role="rel11#role21"/>
+        <AttributesCondition id="sv1#area1#page39#inu42#su79#acond26" name="disponibilidade" predicate="eq" booleanOperator="or" implied="false" attributes="ent8#att30"/>
+        <AttributesCondition id="sv1#area1#page39#inu42#su79#acond27" name="vip" predicate="eq" booleanOperator="or" implied="false" attributes="ent8#att15"/>
+      </Selector>
+      <Link id="sv1#area1#page39#inu42#ln113" name="Ver Op&#231;&#245;es" to="sv1#area1#page39#inu41" type="normal" validate="true">
+        <LinkParameter id="sv1#area1#page39#inu42#ln113#par405" name="id_aposta_disponivel_RoleCondition6 [id_aposta_disponivel]" source="data[].ent8#att2" target="sv1#area1#page39#inu41#su78#rcond47.ent8#att2"/>
+        <LinkParameter id="sv1#area1#page39#inu42#ln113#par406" name="id_aposta_disponivel_PASSING" source="data[].ent8#att2" passing="true"/>
+      </Link>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="7">
+        <layout:Unit unitId="sv1#area1#page39#inu40">
+          <layout:Attribute attribute="ent8#att25"/>
+          <layout:Link link="sv1#area1#page39#inu40#ln109"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell rowspan="3" colspan="5">
+        <layout:Unit unitId="sv1#area1#page39#inu41">
+          <layout:Link link="sv1#area1#page39#inu41#ln112"/>
+          <layout:Attribute attribute="ent9#att20"/>
+          <layout:Attribute attribute="ent9#att21"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="7">
+        <layout:Unit unitId="sv1#area1#page39#inu42">
+          <layout:Link link="sv1#area1#page39#inu42#ln113"/>
+          <layout:Attribute attribute="ent8#att25"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="7"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

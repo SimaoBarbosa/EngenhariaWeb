@@ -1,0 +1,31 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area19#page36" name="Informa&#231;&#245;es VIP">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv1#area19#page36#inu15" name="Equipas do evento" entity="ent2" linkOrder="sv1#area19#page36#inu15#ln94" displayAttributes="ent2#att4">
+      <Selector id="sv1#area19#page36#inu15#su67" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area19#page36#inu15#su67#rcond38" name="RoleCondition38" predicate="in" implied="false" role="rel4#role7"/>
+      </Selector>
+      <Link id="sv1#area19#page36#inu15#ln94" name="Ver hist&#243;rico" to="sv1#area19#page37#inu27" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area19#page36#inu15">
+          <layout:Link link="sv1#area19#page36#inu15#ln94"/>
+          <layout:Attribute attribute="ent2#att4"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

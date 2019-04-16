@@ -1,6 +1,6 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area20#page31" name="Eventos de equipa" gr:x="145" gr:y="150">
   <ContentUnits>
-    <IndexUnit id="sv1#area20#page31#inu32" name="Eventos" gr:x="0" gr:y="0" entity="ent1" displayAttributes="ent1#att14 rel5#role9.ent5#att10 rel5#role9.rel1#role1.ent3#att6 rel5#role9.rel1#role1.rel13#role25.ent6#att12 rel5#role9.rel1#role1.rel2#role4.ent4#att8 rel5#role9.rel1#role1.ent3#att5 rel9#role17.ent7#att16 rel9#role17.ent7#att17" linkOrder="sv1#area20#page31#inu32#ln91">
+    <IndexUnit id="sv1#area20#page31#inu32" name="Eventos" gr:x="0" gr:y="0" entity="ent1" displayAttributes="ent1#att14 rel5#role9.ent5#att10 rel5#role9.rel1#role1.ent3#att6 rel5#role9.rel1#role1.rel13#role25.ent6#att12 rel5#role9.rel1#role1.rel2#role4.ent4#att8 rel5#role9.rel1#role1.ent3#att5 rel9#role17.ent7#att16 rel9#role17.ent7#att17" linkOrder="sv1#area20#page31#inu32#ln91 sv1#area20#page31#inu32#ln98 sv1#area20#page31#inu32#ln115">
       <Selector id="sv1#area20#page31#inu32#su64" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#area20#page31#inu32#su64#rcond31" name="RoleCondition36" predicate="in" implied="false" role="rel4#role8"/>
       </Selector>
@@ -10,13 +10,17 @@
       </Link>
       <SortAttribute attribute="rel9#role17.ent7#att16" order="ascending"/>
       <SortAttribute attribute="rel9#role17.ent7#att17" order="ascending"/>
+      <Link id="sv1#area20#page31#inu32#ln98" name="Informa&#231;&#245;es VIP" to="sv1#area19#page36#inu15" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv1#area20#page31#inu32#ln115" name="Ver eventos" to="sv1#area1#page39#inu40" type="normal" validate="true" gr:bendpoints="1304,0,524,1160;1304,-1352,524,-192;780,-1352,0,-192">
+        <LinkParameter id="sv1#area20#page31#inu32#ln115#par411" name="true_AttCondition7" target="sv1#area1#page39#inu40#su77#acond24" sourceValue="true"/>
+        <LinkParameter id="sv1#area20#page31#inu32#ln115#par412" name="id_evento_RoleCondition1 [id_evento]" source="data[].ent1#att1" target="sv1#area1#page39#inu40#su77#rcond46.ent1#att1"/>
+      </Link>
     </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv1#area20#page31#inu32">
-          <layout:Link link="sv1#area20#page31#inu32#ln91"/>
           <layout:Attribute attribute="ent1#att14"/>
           <layout:Attribute attribute="rel5#role9.ent5#att10"/>
           <layout:Attribute attribute="rel5#role9.rel1#role1.ent3#att6"/>
@@ -25,6 +29,9 @@
           <layout:Attribute attribute="rel5#role9.rel1#role1.ent3#att5"/>
           <layout:Attribute attribute="rel9#role17.ent7#att16"/>
           <layout:Attribute attribute="rel9#role17.ent7#att17"/>
+          <layout:Link link="sv1#area20#page31#inu32#ln91"/>
+          <layout:Link link="sv1#area20#page31#inu32#ln98"/>
+          <layout:Link link="sv1#area20#page31#inu32#ln115"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

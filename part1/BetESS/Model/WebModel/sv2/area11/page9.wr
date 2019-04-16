@@ -9,15 +9,18 @@
         <LinkParameter id="sv2#area11#page9#enu6#ln44#par330" name="-1_resultado_final" sourceValue="-1" target="sv2#cru4.ent8#att27"/>
         <LinkParameter id="sv2#area11#page9#enu6#ln44#par331" name="Titulo da nova aposta_titulo" source="sv2#area11#page9#enu6#fld17" target="sv2#cru4.ent8#att25"/>
         <LinkParameter id="sv2#area11#page9#enu6#ln44#par333" name="id_evento_PASSING_Evento.id_evento(Aposta_DisponivelToEvento)" sourceLinkParameter="sv2#area7#page13#inu22#ln21#par332" target="sv2#cru4.rel11#role22.ent1#att1"/>
+        <LinkParameter id="sv2#area11#page9#enu6#ln44#par392" name="vip_vip" source="sv2#area11#page9#enu6#sfld1" target="sv2#cru4.ent8#att15"/>
       </Link>
+      <SelectionField id="sv2#area11#page9#enu6#sfld1" name="vip" type="boolean" attribute="ent8#att15"/>
     </EntryUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv2#area11#page9#enu6">
-          <layout:Field field="sv2#area11#page9#enu6#fld17"/>
           <layout:Link link="sv2#area11#page9#enu6#ln44"/>
+          <layout:Field field="sv2#area11#page9#enu6#fld17"/>
+          <layout:Field field="sv2#area11#page9#enu6#sfld1"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

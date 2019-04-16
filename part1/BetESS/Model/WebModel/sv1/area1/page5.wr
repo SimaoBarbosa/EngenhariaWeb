@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="925" gr:y="180" id="sv1#area1#page5" name="Saldo insuficiente" linkOrder="sv1#area1#page5#ln11">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="515" gr:y="605" id="sv1#area1#page5" name="Saldo insuficiente" linkOrder="sv1#area1#page5#ln11">
   <ContentUnits>
     <MultiMessageUnit gr:x="0" gr:y="0" id="sv1#area1#page5#mssu1" name="Saldo insuficiente">
       <Message xml:space="preserve">Saldo insuficiente para realizar a aposta pretendida!</Message>

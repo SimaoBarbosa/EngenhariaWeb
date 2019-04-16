@@ -1,0 +1,81 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="430" id="sv2#area21#page44" name="Apostas">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv2#area21#page44#inu47" name="Apostas concretas" entity="ent10" displayAttributes="ent10#att23 ent10#att24 ent10#att28 rel17#role33.ent8#att25 rel17#role33.ent8#att27 rel17#role33.ent8#att30 rel17#role33.ent8#att15 rel17#role33.rel11#role22.ent1#att14 rel10#role20.userOID rel10#role20.userName">
+      <Selector id="sv2#area21#page44#inu47#su90" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area21#page44#inu47#su90#rcond52" name="RoleCondition52" predicate="in" implied="false" role="rel10#role19"/>
+      </Selector>
+      <SortAttribute attribute="ent10#att23" order="descending"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area21#page44#inu47">
+          <layout:Attribute attribute="ent10#att23"/>
+          <layout:Attribute attribute="ent10#att24"/>
+          <layout:Attribute attribute="ent10#att28"/>
+          <layout:Attribute attribute="rel17#role33.ent8#att25"/>
+          <layout:Attribute attribute="rel17#role33.ent8#att27"/>
+          <layout:Attribute attribute="rel17#role33.ent8#att30"/>
+          <layout:Attribute attribute="rel17#role33.ent8#att15"/>
+          <layout:Attribute attribute="rel17#role33.rel11#role22.ent1#att14"/>
+          <layout:Attribute attribute="rel10#role20.userOID"/>
+          <layout:Attribute attribute="rel10#role20.userName"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

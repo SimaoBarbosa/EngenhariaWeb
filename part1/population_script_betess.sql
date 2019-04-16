@@ -95,8 +95,8 @@ INSERT INTO desporto_regiao values
 -- equipa_regiao
 
 INSERT INTO aposta_disponivel values
-	(1, 'Resultado Final', 0, true, 1), -- Rio Ave x Portimonense
-	(2, '1º jogador a marcar', 0, true, 1);
+	(1, 'Resultado Final', 0, true,false, 1), -- Rio Ave x Portimonense
+	(2, '1º jogador a marcar', 0, true,true,1);
 
 INSERT INTO opcao values
 	(1, 'Rio Ave', 1.5, 1), -- Resultado Final
@@ -110,19 +110,25 @@ INSERT INTO opcao values
 
 INSERT INTO module values 
  (1,'sv1','Apostador'),
- (2,'sv2','Funcionario');
+ (2,'sv2','Funcionario'),
+ (3,'area4','Vip'),
+ (4,'area19','Informações VIP'),
+ (5,'page39','Apostas'),
+ (6,'page3','Apostas');
 
 
 INSERT INTO betess.group values 
  (1,'Apostador Normal',1),
- (2,'Funcionario',2);
+ (2,'Funcionario',2),
+ (3,'Apostador VIP',1);
 
 INSERT INTO user values 
  (1,'Simao','pass','simao-barbosa@hotmail.com',100,1),
- (2,'Joao','pass','joao-vieira@hotmail.com',NULL,2);
+ (2,'Joao','pass','joao-vieira@hotmail.com',NULL,2),
+ (3,'Ze','pass','josecarlos@hotmail.com',150,3);
 
 
 INSERT INTO user_group VALUES
- (1,1),(2,2);
+ (1,1),(2,2),(3,3);
 INSERT INTO group_module VALUES
- (1,1),(2,2);
+ (1,1),(2,2),(3,1),(1,3),(3,4),(1,6),(3,5);

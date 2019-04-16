@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1125" gr:y="185" id="sv1#area1#page4" name="Confirmar aposta">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1560" gr:y="585" id="sv1#area1#page4" name="Confirmar aposta">
   <ContentUnits>
-    <EntryUnit id="sv1#area1#page4#enu2" name="Fazer Aposta" linkOrder="sv1#area1#page4#enu2#ln6" gr:x="10" gr:y="65" entity="ent10">
+    <EntryUnit id="sv1#area1#page4#enu2" name="Fazer Aposta" linkOrder="sv1#area1#page4#enu2#ln6" gr:x="0" gr:y="320" entity="ent10">
       <Field id="sv1#area1#page4#enu2#fld4" name="Quantia a apostar" type="float" modifiable="true" attribute="ent10#att23"/>
       <Link id="sv1#area1#page4#enu2#ln6" name="Apostar" to="sv1#qu2" type="normal" validate="true">
         <LinkParameter id="sv1#area1#page4#enu2#ln6#par14" name="UserCtxParam.oid_PASSING_idUser" sourceLinkParameter="sv1#area1#page4#gtu4#ln28#par82" target="sv1#qu2.sv1#qu2#qi4"/>
@@ -8,32 +8,54 @@
         <LinkParameter id="sv1#area1#page4#enu2#ln6#par16" name="UserCtxParam.oid_PASSING" sourceLinkParameter="sv1#area1#page4#gtu4#ln28#par82" passing="true"/>
         <LinkParameter id="sv1#area1#page4#enu2#ln6#par17" name="Quantia a apostar_valor" source="sv1#area1#page4#enu2#fld4" target="sv1#qu2.sv1#qu2#qi5"/>
         <LinkParameter id="sv1#area1#page4#enu2#ln6#par28" name="Aposta_Concreta Object_PASSING" source="entityBean" passing="true"/>
-        <LinkParameter id="sv1#area1#page4#enu2#ln6#par29" name="id_aposta_disponivel_PASSING" sourceLinkParameter="sv1#area1#page4#dau1#ln19#par23" passing="true"/>
-        <LinkParameter id="sv1#area1#page4#enu2#ln6#par30" name="id_opcao_PASSING" sourceLinkParameter="sv1#area1#page4#dau1#ln19#par57" passing="true"/>
         <LinkParameter id="sv1#area1#page4#enu2#ln6#par31" name="Key [id_aposta_concreta]_PASSING" source="key.ent10#att22" passing="true"/>
-        <LinkParameter id="sv1#area1#page4#enu2#ln6#par32" name="odd_PASSING" sourceLinkParameter="sv1#area1#page4#dau1#ln19#par60" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln6#par487" name="Aposta_DisponivelToEvento.id_evento_PASSING" sourceLinkParameter="sv1#area1#page4#dau9#ln147#par480" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln6#par488" name="Data Size_PASSING" sourceLinkParameter="sv1#area1#page4#dau9#ln147#par481" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln6#par489" name="disponibilidade_PASSING" sourceLinkParameter="sv1#area1#page4#dau9#ln147#par482" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln6#par490" name="id_aposta_disponivel_PASSING" sourceLinkParameter="sv1#area1#page4#dau9#ln147#par483" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln6#par491" name="resultado_final_PASSING" sourceLinkParameter="sv1#area1#page4#dau9#ln147#par484" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln6#par492" name="titulo_PASSING" sourceLinkParameter="sv1#area1#page4#dau9#ln147#par485" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln6#par493" name="vip_PASSING" sourceLinkParameter="sv1#area1#page4#dau9#ln147#par486" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln6#par513" name="id_opcao_PASSING" sourceLinkParameter="sv1#area1#page4#dau9#ln147#par511" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln6#par514" name="odd_PASSING" sourceLinkParameter="sv1#area1#page4#dau9#ln147#par512" passing="true"/>
       </Link>
     </EntryUnit>
-    <DataUnit gr:x="160" gr:y="0" id="sv1#area1#page4#dau1" name="Aposta" entity="ent9" displayAttributes="ent9#att19 ent9#att20 ent9#att21">
+    <DataUnit gr:x="125" gr:y="0" id="sv1#area1#page4#dau1" name="Op&#231;&#227;o" entity="ent9" displayAttributes="ent9#att19 ent9#att20 ent9#att21">
       <Selector id="sv1#area1#page4#dau1#su10" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#area1#page4#dau1#su10#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
       </Selector>
-      <Link id="sv1#area1#page4#dau1#ln19" name="Flow19" to="sv1#area1#page4#enu2" type="transport" validate="true">
-        <LinkParameter id="sv1#area1#page4#dau1#ln19#par57" name="id_opcao_PASSING" source="data.ent9#att19" passing="true"/>
-        <LinkParameter id="sv1#area1#page4#dau1#ln19#par60" name="odd_PASSING" sourceLinkParameter="sv1#area1#page3#inu11#ln18#par54" passing="true"/>
-        <LinkParameter id="sv1#area1#page4#dau1#ln19#par23" name="id_aposta_disponivel_PASSING" sourceLinkParameter="sv1#area1#page3#inu11#ln18#par22" passing="true"/>
+      <Link id="sv1#area1#page4#dau1#ln146" name="Flow146" to="sv1#area1#page4#dau9" type="transport" validate="true">
+        <LinkParameter id="sv1#area1#page4#dau1#ln146#par508" name="id_opcao_RoleCondition57 [id_opcao]" source="data.ent9#att19" target="sv1#area1#page4#dau9#su99#rcond57.ent9#att19"/>
+        <LinkParameter id="sv1#area1#page4#dau1#ln146#par509" name="id_opcao_PASSING" source="data.ent9#att19" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#dau1#ln146#par510" name="odd_PASSING" source="data.ent9#att21" passing="true"/>
       </Link>
     </DataUnit>
-    <GetUnit id="sv1#area1#page4#gtu4" name="Get" gr:x="190" gr:y="120" contextParameters="UserCtxParam">
+    <GetUnit id="sv1#area1#page4#gtu4" name="Get" gr:x="180" gr:y="375" contextParameters="UserCtxParam">
       <Link id="sv1#area1#page4#gtu4#ln28" name="Flow27" to="sv1#area1#page4#enu2" type="transport" validate="true">
         <LinkParameter id="sv1#area1#page4#gtu4#ln28#par82" name="UserCtxParam.oid_PASSING" source="sv1#area1#page4#gtu4.UserCtxParam" passing="true"/>
       </Link>
       <Link id="sv1#area1#page4#gtu4#ln15" name="Flow15" to="sv1#area1#page4#dau2" type="transport" validate="true" automaticCoupling="true"/>
     </GetUnit>
-    <DataUnit gr:x="0" gr:y="200" id="sv1#area1#page4#dau2" name="Saldo Dispon&#237;vel" entity="User" displayAttributes="User#att29">
+    <DataUnit gr:x="0" gr:y="455" id="sv1#area1#page4#dau2" name="Saldo Dispon&#237;vel" entity="User" displayAttributes="User#att29">
       <Selector id="sv1#area1#page4#dau2#su7" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#area1#page4#dau2#su7#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
       </Selector>
+    </DataUnit>
+    <DataUnit gr:x="130" gr:y="140" id="sv1#area1#page4#dau9" name="Aposta" entity="ent8" displayAttributes="ent8#att25 ent8#att30">
+      <Selector id="sv1#area1#page4#dau9#su99" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area1#page4#dau9#su99#rcond57" name="RoleCondition57" predicate="in" implied="false" role="rel15#role30"/>
+      </Selector>
+      <Link id="sv1#area1#page4#dau9#ln147" name="Flow147" to="sv1#area1#page4#enu2" type="transport" validate="true">
+        <LinkParameter id="sv1#area1#page4#dau9#ln147#par480" name="Aposta_DisponivelToEvento.id_evento_PASSING" source="data.rel11#role22_ent1#att1" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#dau9#ln147#par481" name="Data Size_PASSING" source="dataSize" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#dau9#ln147#par482" name="disponibilidade_PASSING" source="data.ent8#att30" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#dau9#ln147#par483" name="id_aposta_disponivel_PASSING" source="data.ent8#att2" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#dau9#ln147#par484" name="resultado_final_PASSING" source="data.ent8#att27" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#dau9#ln147#par485" name="titulo_PASSING" source="data.ent8#att25" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#dau9#ln147#par486" name="vip_PASSING" source="data.ent8#att15" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#dau9#ln147#par511" name="id_opcao_PASSING" sourceLinkParameter="sv1#area1#page4#dau1#ln146#par509" passing="true"/>
+        <LinkParameter id="sv1#area1#page4#dau9#ln147#par512" name="odd_PASSING" sourceLinkParameter="sv1#area1#page4#dau1#ln146#par510" passing="true"/>
+      </Link>
     </DataUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
@@ -63,7 +85,12 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="6"/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area1#page4#dau9">
+          <layout:Attribute attribute="ent8#att25"/>
+          <layout:Attribute attribute="ent8#att30"/>
+        </layout:Unit>
+      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
@@ -74,6 +101,20 @@
           <layout:Attribute attribute="User#att29"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

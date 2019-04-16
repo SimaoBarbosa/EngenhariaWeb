@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area1#page1" name="Desportos" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="105" id="sv1#area1#page1" name="Desportos" landmark="true">
   <ContentUnits>
     <IndexUnit gr:x="0" gr:y="5" id="sv1#area1#page1#inu1" name="Desportos" entity="ent6" displayAttributes="ent6#att12" linkOrder="sv1#area1#page1#inu1#ln1">
       <Link id="sv1#area1#page1#inu1#ln1" name="Ver regi&#245;es" to="sv1#area1#page1#inu2" type="normal" validate="true">
@@ -35,16 +35,27 @@
         <RelationshipRoleCondition id="sv1#area1#page1#inu4#su4#rcond4" name="RoleCondition4" predicate="in" implied="false" role="rel1#role2"/>
       </Selector>
     </IndexUnit>
-    <IndexUnit gr:x="770" gr:y="0" id="sv1#area1#page1#inu5" name="Eventos" entity="ent1" displayAttributes="ent1#att14 rel9#role17.ent7#att16 rel9#role17.ent7#att17" linkOrder="sv1#area1#page1#inu5#ln5">
+    <IndexUnit gr:x="770" gr:y="0" id="sv1#area1#page1#inu5" name="Eventos" entity="ent1" displayAttributes="ent1#att14 rel9#role17.ent7#att16 rel9#role17.ent7#att17" linkOrder="sv1#area1#page1#inu5#ln5 sv1#area1#page1#inu5#ln93 sv1#area1#page1#inu5#ln114">
       <Selector id="sv1#area1#page1#inu5#su5" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#area1#page1#inu5#su5#rcond5" name="RoleCondition5" predicate="in" implied="false" role="rel5#role10"/>
       </Selector>
       <Link id="sv1#area1#page1#inu5#ln5" name="Ver apostas dispon&#237;veis" to="sv1#area1#page3#inu6" type="normal" validate="true">
         <LinkParameter id="sv1#area1#page1#inu5#ln5#par285" name="true_AttCondition7" sourceValue="true" target="sv1#area1#page3#inu6#su1#acond7"/>
         <LinkParameter id="sv1#area1#page1#inu5#ln5#par286" name="id_evento_RoleCondition1 [id_evento]" source="data[].ent1#att1" target="sv1#area1#page3#inu6#su1#rcond1.ent1#att1"/>
+        <LinkParameter id="sv1#area1#page1#inu5#ln5#par370" name="id_evento_PASSING" source="data[].ent1#att1" passing="true"/>
+        <LinkParameter id="sv1#area1#page1#inu5#ln5#par371" name="false_vip" sourceValue="false" target="sv1#area1#page3#inu6#su1#acond16"/>
       </Link>
       <SortAttribute attribute="rel9#role17.ent7#att16" order="ascending"/>
       <SortAttribute attribute="rel9#role17.ent7#att17" order="ascending"/>
+      <Link id="sv1#area1#page1#inu5#ln93" name="Informa&#231;&#245;es VIP" to="sv1#area19#page36#inu15" type="normal" validate="true">
+        <LinkParameter id="sv1#area1#page1#inu5#ln93#par364" name="id_evento_RoleCondition38 [id_evento]" source="data[].ent1#att1" target="sv1#area19#page36#inu15#su67#rcond38.ent1#att1"/>
+      </Link>
+      <Link id="sv1#area1#page1#inu5#ln114" name="Ver apostas dispon&#237;veis" to="sv1#area1#page39#inu40" type="normal" validate="true">
+        <LinkParameter id="sv1#area1#page1#inu5#ln114#par407" name="true_AttCondition7" target="sv1#area1#page39#inu40#su77#acond24" sourceValue="true"/>
+        <LinkParameter id="sv1#area1#page1#inu5#ln114#par408" name="id_evento_RoleCondition1 [id_evento]" source="data[].ent1#att1" target="sv1#area1#page39#inu40#su77#rcond46.ent1#att1"/>
+        <LinkParameter id="sv1#area1#page1#inu5#ln114#par409" name="id_evento_PASSING" source="data[].ent1#att1" passing="true"/>
+        <LinkParameter id="sv1#area1#page1#inu5#ln114#par410" name="false_vip" target="sv1#area1#page39#inu40#su77#acond25" sourceValue="false"/>
+      </Link>
     </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
@@ -89,10 +100,12 @@
       <layout:Cell/>
       <layout:Cell colspan="6">
         <layout:Unit unitId="sv1#area1#page1#inu5">
-          <layout:Link link="sv1#area1#page1#inu5#ln5"/>
           <layout:Attribute attribute="ent1#att14"/>
           <layout:Attribute attribute="rel9#role17.ent7#att16"/>
           <layout:Attribute attribute="rel9#role17.ent7#att17"/>
+          <layout:Link link="sv1#area1#page1#inu5#ln5"/>
+          <layout:Link link="sv1#area1#page1#inu5#ln93"/>
+          <layout:Link link="sv1#area1#page1#inu5#ln114"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

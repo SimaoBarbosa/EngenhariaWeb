@@ -1,33 +1,42 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="5" gr:y="85" id="sv1#area1" name="Eventos" landmark="true" landmarks="sv1#area1#page1 sv1#area1#page34" defaultPage="sv1#area1#page1">
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="10" gr:y="55" id="sv1#area1" name="Eventos" landmark="true" landmarks="sv1#area1#page1 sv1#area1#page34" defaultPage="sv1#area1#page1">
   <OperationUnits>
-    <IsNotNullUnit gr:x="620" gr:y="170" id="sv1#area1#inn1" name="Is Not Null1">
+    <IsNotNullUnit gr:x="345" gr:y="660" id="sv1#area1#inn1" name="Is Not Null1">
       <KOLink id="sv1#area1#inn1#kln4" name="KOFlow4" to="sv1#area1#page5" preserveForm="false" automaticCoupling="true"/>
       <OKLink id="sv1#area1#inn1#oln3" name="OKFlow3" to="sv1#area1#qu3">
         <LinkParameter id="sv1#area1#inn1#oln3#par41" name="UserCtxParam.oid_PASSING_userId" sourceLinkParameter="sv1#qu2#oln2#par40" target="sv1#area1#qu3.sv1#area1#qu3#qi7"/>
         <LinkParameter id="sv1#area1#inn1#oln3#par43" name="Quantia a apostar_PASSING_valor" sourceLinkParameter="sv1#qu2#oln2#par38" target="sv1#area1#qu3.sv1#area1#qu3#qi6"/>
-        <LinkParameter id="sv1#area1#inn1#oln3#par48" name="Aposta_Concreta Object_PASSING" sourceLinkParameter="sv1#qu2#oln2#par33" passing="true"/>
-        <LinkParameter id="sv1#area1#inn1#oln3#par49" name="id_aposta_disponivel_PASSING" sourceLinkParameter="sv1#qu2#oln2#par34" passing="true"/>
-        <LinkParameter id="sv1#area1#inn1#oln3#par50" name="id_opcao_PASSING" sourceLinkParameter="sv1#qu2#oln2#par35" passing="true"/>
         <LinkParameter id="sv1#area1#inn1#oln3#par51" name="Key [id_aposta_concreta]_PASSING" sourceLinkParameter="sv1#qu2#oln2#par36" passing="true"/>
-        <LinkParameter id="sv1#area1#inn1#oln3#par52" name="odd_PASSING" sourceLinkParameter="sv1#qu2#oln2#par37" passing="true"/>
         <LinkParameter id="sv1#area1#inn1#oln3#par53" name="Quantia a apostar_PASSING" sourceLinkParameter="sv1#qu2#oln2#par38" passing="true"/>
         <LinkParameter id="sv1#area1#inn1#oln3#par56" name="saldo_PASSING" sourceLinkParameter="sv1#qu2#oln2#par39" passing="true"/>
         <LinkParameter id="sv1#area1#inn1#oln3#par58" name="UserCtxParam.oid_PASSING" sourceLinkParameter="sv1#qu2#oln2#par40" passing="true"/>
+        <LinkParameter id="sv1#area1#inn1#oln3#par460" name="Input Value_PASSING" source="inputValue" passing="true"/>
+        <LinkParameter id="sv1#area1#inn1#oln3#par462" name="saldo (Array)_PASSING" sourceLinkParameter="sv1#qu2#oln2#par456" passing="true"/>
+        <LinkParameter id="sv1#area1#inn1#oln3#par504" name="id_aposta_disponivel_PASSING" sourceLinkParameter="sv1#qu2#oln2#par497" passing="true"/>
+        <LinkParameter id="sv1#area1#inn1#oln3#par505" name="resultado_final_PASSING" sourceLinkParameter="sv1#qu2#oln2#par498" passing="true"/>
+        <LinkParameter id="sv1#area1#inn1#oln3#par506" name="titulo_PASSING" sourceLinkParameter="sv1#qu2#oln2#par499" passing="true"/>
+        <LinkParameter id="sv1#area1#inn1#oln3#par507" name="vip_PASSING" sourceLinkParameter="sv1#qu2#oln2#par500" passing="true"/>
+        <LinkParameter id="sv1#area1#inn1#oln3#par517" name="Aposta_Concreta Object_PASSING" sourceLinkParameter="sv1#qu2#oln2#par33" passing="true"/>
+        <LinkParameter id="sv1#area1#inn1#oln3#par518" name="Aposta_DisponivelToEvento.id_evento_PASSING" sourceLinkParameter="sv1#qu2#oln2#par494" passing="true"/>
+        <LinkParameter id="sv1#area1#inn1#oln3#par519" name="Data Size_PASSING" sourceLinkParameter="sv1#qu2#oln2#par452" passing="true"/>
+        <LinkParameter id="sv1#area1#inn1#oln3#par520" name="Data Size_PASSING" sourceLinkParameter="sv1#qu2#oln2#par495" passing="true"/>
+        <LinkParameter id="sv1#area1#inn1#oln3#par521" name="disponibilidade_PASSING" sourceLinkParameter="sv1#qu2#oln2#par496" passing="true"/>
+        <LinkParameter id="sv1#area1#inn1#oln3#par522" name="id_opcao_PASSING" sourceLinkParameter="sv1#qu2#oln2#par515" passing="true"/>
+        <LinkParameter id="sv1#area1#inn1#oln3#par523" name="odd_PASSING" sourceLinkParameter="sv1#qu2#oln2#par516" passing="true"/>
       </OKLink>
     </IsNotNullUnit>
-    <QueryUnit id="sv1#area1#qu3" name="Remover saldo" gr:x="455" gr:y="255" mode="update" language="HQL" db="db1">
+    <QueryUnit id="sv1#area1#qu3" name="Remover saldo" gr:x="430" gr:y="850" mode="update" language="HQL" db="db1">
       <QueryText xml:space="preserve">update User set saldo = saldo - (:valor) where oid = (:userId);</QueryText>
       <QueryInput id="sv1#area1#qu3#qi6" name="valor" required="true" type="float"/>
       <QueryInput id="sv1#area1#qu3#qi7" name="userId" required="true" type="integer"/>
       <OKLink id="sv1#area1#qu3#oln7" name="OKFlow7" to="sv1#cru1">
-        <LinkParameter id="sv1#area1#qu3#oln7#par59" name="Aposta_Concreta Object_PASSING_Aposta_Concreta Object" sourceLinkParameter="sv1#area1#inn1#oln3#par48" target="sv1#cru1.entityBeans"/>
-        <LinkParameter id="sv1#area1#qu3#oln7#par61" name="id_aposta_disponivel_PASSING_Aposta_Disponivel.id_aposta_disponivel(Aposta_ConcretaToAposta_Disponivel)" sourceLinkParameter="sv1#area1#inn1#oln3#par49" target="sv1#cru1.rel17#role33.ent8#att2"/>
         <LinkParameter id="sv1#area1#qu3#oln7#par62" name="Key [id_aposta_concreta]_PASSING_id_aposta_concreta" sourceLinkParameter="sv1#area1#inn1#oln3#par51" target="sv1#cru1.ent10#att22"/>
-        <LinkParameter id="sv1#area1#qu3#oln7#par63" name="odd_PASSING_odd_fixada" sourceLinkParameter="sv1#area1#inn1#oln3#par52" target="sv1#cru1.ent10#att24"/>
-        <LinkParameter id="sv1#area1#qu3#oln7#par65" name="id_opcao_PASSING_Opcao.id_opcao(Aposta_ConcretaToOpcao)" sourceLinkParameter="sv1#area1#inn1#oln3#par50" target="sv1#cru1.rel16#role31.ent9#att19"/>
         <LinkParameter id="sv1#area1#qu3#oln7#par66" name="Quantia a apostar_PASSING_quantia" sourceLinkParameter="sv1#area1#inn1#oln3#par53" target="sv1#cru1.ent10#att23"/>
         <LinkParameter id="sv1#area1#qu3#oln7#par67" name="-1_resultado" sourceValue="-1" target="sv1#cru1.ent10#att28"/>
         <LinkParameter id="sv1#area1#qu3#oln7#par68" name="UserCtxParam.oid_PASSING_User.oid(Aposta_ConcretaToUser)" sourceLinkParameter="sv1#area1#inn1#oln3#par58" target="sv1#cru1.rel10#role20.userOID"/>
+        <LinkParameter id="sv1#area1#qu3#oln7#par524" name="Aposta_Concreta Object_PASSING_Aposta_Concreta Object" sourceLinkParameter="sv1#area1#inn1#oln3#par517" target="sv1#cru1.entityBeans"/>
+        <LinkParameter id="sv1#area1#qu3#oln7#par525" name="id_aposta_disponivel_PASSING_Aposta_Disponivel.id_aposta_disponivel(Aposta_ConcretaToAposta_Disponivel)" sourceLinkParameter="sv1#area1#inn1#oln3#par504" target="sv1#cru1.rel17#role33.ent8#att2"/>
+        <LinkParameter id="sv1#area1#qu3#oln7#par526" name="odd_PASSING_odd_fixada" sourceLinkParameter="sv1#area1#inn1#oln3#par523" target="sv1#cru1.ent10#att24"/>
+        <LinkParameter id="sv1#area1#qu3#oln7#par527" name="id_opcao_PASSING_Opcao.id_opcao(Aposta_ConcretaToOpcao)" sourceLinkParameter="sv1#area1#inn1#oln3#par522" target="sv1#cru1.rel16#role31.ent9#att19"/>
       </OKLink>
       <KOLink id="sv1#area1#qu3#kln6" name="KOFlow6" to="sv1#area1#page4" automaticCoupling="true"/>
     </QueryUnit>

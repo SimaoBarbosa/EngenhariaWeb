@@ -1,0 +1,74 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="400" gr:y="55" id="sv2#area21#page43" name="Tornar VIP">
+  <ContentUnits>
+    <IndexUnit id="sv2#area21#page43#inu45" name="Apostador Normal" gr:x="0" gr:y="35" entity="User" displayAttributes="userName email" linkOrder="sv2#area21#page43#inu45#ln123">
+      <SortAttribute attribute="userName" order="ascending"/>
+      <SortAttribute attribute="email" order="ascending"/>
+      <Selector id="sv2#area21#page43#inu45#su82" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area21#page43#inu45#su82#rcond50" name="RoleCondition50" predicate="in" implied="false" role="Group2User"/>
+      </Selector>
+      <Link id="sv2#area21#page43#inu45#ln123" name="Tornar VIP" to="sv2#mfu4" type="normal" validate="true">
+        <LinkParameter id="sv2#area21#page43#inu45#ln123#par419" name="3_Group.oid(defaultGroup)" sourceValue="3" target="sv2#mfu4.User2DefaultGroup.groupOID"/>
+        <LinkParameter id="sv2#area21#page43#inu45#ln123#par420" name="_Group.oid(groups)" blank="true" target="sv2#mfu4.User2Group.groupOID"/>
+        <LinkParameter id="sv2#area21#page43#inu45#ln123#par421" name="oid_KeyCondition36 [oid]" source="data[].userOID" target="sv2#mfu4#su85#kcond36.userOID"/>
+        <LinkParameter id="sv2#area21#page43#inu45#ln123#par430" name="oid_PASSING" source="data[].userOID" passing="true"/>
+      </Link>
+      <Link id="sv2#area21#page43#inu45#ln129" name="Flow125" to="sv2#area21#page43#inu46" type="transport" validate="true">
+        <LinkParameter id="sv2#area21#page43#inu45#ln129#par429" name="3_RoleCondition51 [oid]" target="sv2#area21#page43#inu46#su86#rcond51.groupOID" sourceValue="3"/>
+      </Link>
+    </IndexUnit>
+    <IndexUnit gr:x="165" gr:y="0" id="sv2#area21#page43#inu46" name="VIP" entity="User" linkOrder="sv2#area21#page43#inu46#ln128" displayAttributes="userName email">
+      <Selector id="sv2#area21#page43#inu46#su86" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area21#page43#inu46#su86#rcond51" name="RoleCondition51" predicate="in" implied="false" role="Group2User"/>
+      </Selector>
+      <Link id="sv2#area21#page43#inu46#ln128" name="Retirar VIP" to="sv2#mfu5" type="normal" validate="true">
+        <LinkParameter id="sv2#area21#page43#inu46#ln128#par427" name="1_Group.oid(defaultGroup)" sourceValue="1" target="sv2#mfu5.User2DefaultGroup.groupOID"/>
+        <LinkParameter id="sv2#area21#page43#inu46#ln128#par428" name="oid_KeyCondition36 [oid]" source="data[].userOID" target="sv2#mfu5#su89#kcond39.userOID"/>
+        <LinkParameter id="sv2#area21#page43#inu46#ln128#par431" name="oid_PASSING" source="data[].userOID" passing="true"/>
+      </Link>
+      <SortAttribute attribute="userName" order="ascending"/>
+      <SortAttribute attribute="email" order="ascending"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area21#page43#inu45">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Link link="sv2#area21#page43#inu45#ln123"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area21#page43#inu46">
+          <layout:Link link="sv2#area21#page43#inu46#ln128"/>
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

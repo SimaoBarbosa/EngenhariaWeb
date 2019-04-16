@@ -1,0 +1,37 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="215" gr:y="0" id="sv2#area21#page41" name="Gerir user" linkOrder="sv2#area21#page41#ln122 sv2#area21#page41#ln138">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv2#area21#page41#inu44" name="Users" entity="User" displayAttributes="userName email" linkOrder="sv2#area21#page41#inu44#ln117 sv2#area21#page41#inu44#ln130">
+      <SortAttribute attribute="userName" order="ascending"/>
+      <SortAttribute attribute="email" order="ascending"/>
+      <Link id="sv2#area21#page41#inu44#ln117" name="Remover" to="sv2#dlu4" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#area21#page41#inu44#ln130" name="Apostas" to="sv2#area21#page44#inu47" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area21#page41#inu44">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Link link="sv2#area21#page41#inu44#ln117"/>
+          <layout:Link link="sv2#area21#page41#inu44#ln130"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv2#area21#page41#ln122" name="Gerir VIP's" to="sv2#area21#page43#inu45" type="normal" validate="true">
+    <LinkParameter id="sv2#area21#page41#ln122#par416" name="1_RoleCondition50 [oid]" sourceValue="1" target="sv2#area21#page43#inu45#su82#rcond50.groupOID"/>
+  </Link>
+  <Link id="sv2#area21#page41#ln138" name="Maiores apostas" to="sv2#area21#page45#inu50" type="normal" automaticCoupling="true" validate="true"/>
+</Page>

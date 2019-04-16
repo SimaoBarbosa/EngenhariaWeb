@@ -1,0 +1,57 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="585" gr:y="20" id="sv1#area19#page38" name="Resultado final">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv1#area19#page38#inu35" name="Op&#231;&#245;es" entity="ent9" displayAttributes="ent9#att20 ent9#att21">
+      <Selector id="sv1#area19#page38#inu35#su72" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area19#page38#inu35#su72#rcond41" name="RoleCondition41" predicate="in" implied="false" role="rel15#role29"/>
+      </Selector>
+      <Link id="sv1#area19#page38#inu35#ln97" name="Flow97" to="sv1#area19#page38#dau4" type="transport" validate="true">
+        <LinkParameter id="sv1#area19#page38#inu35#ln97#par369" name="resultado_final_PASSING_KeyCondition32 [id_opcao]" sourceLinkParameter="sv1#area19#page37#inu30#ln96#par368" target="sv1#area19#page38#dau4#su71#kcond32.ent9#att19"/>
+      </Link>
+    </IndexUnit>
+    <DataUnit gr:x="205" gr:y="0" id="sv1#area19#page38#dau4" name="Resultado final" entity="ent9" displayAttributes="ent9#att20 ent9#att21">
+      <Selector id="sv1#area19#page38#dau4#su71" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area19#page38#dau4#su71#kcond32" name="KeyCondition32" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area19#page38#inu35">
+          <layout:Attribute attribute="ent9#att20"/>
+          <layout:Attribute attribute="ent9#att21"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area19#page38#dau4">
+          <layout:Attribute attribute="ent9#att20"/>
+          <layout:Attribute attribute="ent9#att21"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

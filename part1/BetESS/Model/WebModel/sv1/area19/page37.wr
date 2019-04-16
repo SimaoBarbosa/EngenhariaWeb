@@ -1,0 +1,81 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="190" gr:y="10" id="sv1#area19#page37" name="Hist&#243;rico de eventos">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv1#area19#page37#inu27" name="Eventos" entity="ent1" displayAttributes="ent1#att14 rel9#role17.ent7#att16 rel9#role17.ent7#att17" linkOrder="sv1#area19#page37#inu27#ln95">
+      <Selector id="sv1#area19#page37#inu27#su68" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area19#page37#inu27#su68#rcond39" name="RoleCondition39" predicate="in" implied="false" role="rel4#role8"/>
+      </Selector>
+      <Link id="sv1#area19#page37#inu27#ln95" name="Ver apostas fechadas" to="sv1#area19#page37#inu30" type="normal" validate="true">
+        <LinkParameter id="sv1#area19#page37#inu27#ln95#par365" name="false_AttCondition14" sourceValue="false" target="sv1#area19#page37#inu30#su69#acond14"/>
+        <LinkParameter id="sv1#area19#page37#inu27#ln95#par366" name="id_evento_RoleCondition40 [id_evento]" source="data[].ent1#att1" target="sv1#area19#page37#inu30#su69#rcond40.ent1#att1"/>
+      </Link>
+      <SortAttribute attribute="rel9#role17.ent7#att16" order="descending"/>
+      <SortAttribute attribute="rel9#role17.ent7#att17" order="descending"/>
+    </IndexUnit>
+    <IndexUnit gr:x="180" gr:y="0" id="sv1#area19#page37#inu30" name="Apostas" entity="ent8" displayAttributes="ent8#att25" linkOrder="sv1#area19#page37#inu30#ln96">
+      <Selector id="sv1#area19#page37#inu30#su69" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area19#page37#inu30#su69#rcond40" name="RoleCondition40" predicate="in" implied="false" role="rel11#role21"/>
+        <AttributesCondition id="sv1#area19#page37#inu30#su69#acond14" name="AttCondition14" predicate="eq" booleanOperator="or" implied="false" attributes="ent8#att30"/>
+      </Selector>
+      <Link id="sv1#area19#page37#inu30#ln96" name="Ver op&#231;&#245;es" to="sv1#area19#page38#inu35" type="normal" validate="true">
+        <LinkParameter id="sv1#area19#page37#inu30#ln96#par367" name="id_aposta_disponivel_RoleCondition41 [id_aposta_disponivel]" source="data[].ent8#att2" target="sv1#area19#page38#inu35#su72#rcond41.ent8#att2"/>
+        <LinkParameter id="sv1#area19#page37#inu30#ln96#par368" name="resultado_final_PASSING" source="data[].ent8#att27" passing="true"/>
+      </Link>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area19#page37#inu27">
+          <layout:Link link="sv1#area19#page37#inu27#ln95"/>
+          <layout:Attribute attribute="ent1#att14"/>
+          <layout:Attribute attribute="rel9#role17.ent7#att16"/>
+          <layout:Attribute attribute="rel9#role17.ent7#att17"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area19#page37#inu30">
+          <layout:Link link="sv1#area19#page37#inu30#ln96"/>
+          <layout:Attribute attribute="ent8#att25"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
