@@ -47,7 +47,7 @@
       <db:JoinColumn attribute="moduleOID" name="module_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="Database1" type="MySQL" url="jdbc:mysql://localhost:3306/betess" username="root" password="cGFzc3dvcmQ=" cryptedPassword="true"/>
+  <db:Database id="db1" name="Database1" type="MySQL" url="jdbc:mysql://localhost:3306/betess" username="root" password="MW5lbmh1bWEx" cryptedPassword="true"/>
   <Entity gr:x="425" gr:y="510" id="ent1" name="Evento" duration="persistent" attributeOrder="ent1#att1 ent1#att14" db:database="db1" db:table="evento">
     <Attribute id="ent1#att1" key="true" name="id_evento" type="integer" db:column="id_evento"/>
     <Attribute id="ent1#att14" name="titulo" type="string" db:column="titulo"/>
