@@ -1,0 +1,69 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area16#page28" name="Gerir equipas" gr:x="0" gr:y="0">
+  <ContentUnits>
+    <IndexUnit id="sv2#area16#page28#inu7" name="Equipas atuais" linkOrder="sv2#area16#page28#inu7#ln65" gr:x="0" gr:y="0" entity="ent2" displayAttributes="ent2#att4">
+      <Selector id="sv2#area16#page28#inu7#su56" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area16#page28#inu7#su56#rcond12" name="RoleCondition32" predicate="in" implied="false" role="rel4#role7"/>
+      </Selector>
+      <Link id="sv2#area16#page28#inu7#ln65" name="Remover equipa" to="sv2#dcnu4" type="normal" validate="true">
+        <LinkParameter id="sv2#area16#page28#inu7#ln65#par132" name="id_equipa_KeyCondition17 [id_equipa] [Equipa] [Target]" source="data[].ent2#att3" target="sv2#dcnu4#su51#kcond23.ent2#att3"/>
+        <LinkParameter id="sv2#area16#page28#inu7#ln65#par252" name="id_evento_PASSING_KeyCondition16 [id_evento] [Evento] [Source]" sourceLinkParameter="sv2#area18#page27#inu29#ln33#par119" target="sv2#dcnu4#su41#kcond22.ent1#att1"/>
+      </Link>
+      <Link id="sv2#area16#page28#inu7#ln77" name="Flow77" to="sv2#area16#page28#inu14" type="transport" validate="true">
+        <LinkParameter id="sv2#area16#page28#inu7#ln77#par248" name="id_evento_PASSING_RoleCondition33 [id_evento]" sourceLinkParameter="sv2#area18#page27#inu29#ln33#par119" target="sv2#area16#page28#inu14#su57#rcond27.ent1#att1"/>
+        <LinkParameter id="sv2#area16#page28#inu7#ln77#par249" name="EventoToFase.FaseToCompeticao.id_competicao_PASSING_RoleCondition34 [id_competicao]" sourceLinkParameter="sv2#area18#page27#inu29#ln33#par247" target="sv2#area16#page28#inu14#su57#rcond28.ent3#att5"/>
+        <LinkParameter id="sv2#area16#page28#inu7#ln77#par250" name="id_evento_PASSING" sourceLinkParameter="sv2#area18#page27#inu29#ln33#par119" passing="true"/>
+        <LinkParameter id="sv2#area16#page28#inu7#ln77#par253" name="EventoToFase.FaseToCompeticao.id_competicao_PASSING" sourceLinkParameter="sv2#area18#page27#inu29#ln33#par247" passing="true"/>
+      </Link>
+    </IndexUnit>
+    <IndexUnit id="sv2#area16#page28#inu14" name="Adicionar equipas" linkOrder="sv2#area16#page28#inu14#ln67" gr:x="0" gr:y="155" entity="ent2" displayAttributes="ent2#att4">
+      <Selector id="sv2#area16#page28#inu14#su57" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area16#page28#inu14#su57#rcond27" name="RoleCondition33" predicate="notIn" implied="false" role="rel4#role7"/>
+        <RelationshipRoleCondition id="sv2#area16#page28#inu14#su57#rcond28" name="RoleCondition34" predicate="in" implied="false" role="rel6#role12"/>
+      </Selector>
+      <Link id="sv2#area16#page28#inu14#ln67" name="Adicionar" to="sv2#cnu5" type="normal" validate="true">
+        <LinkParameter id="sv2#area16#page28#inu14#ln67#par133" name="id_equipa_KeyCondition19 [id_equipa] [Equipa] [Target]" source="data[].ent2#att3" target="sv2#cnu5#su55#kcond25.ent2#att3"/>
+        <LinkParameter id="sv2#area16#page28#inu14#ln67#par251" name="id_evento_PASSING_KeyCondition18 [id_evento] [Evento] [Source]" sourceLinkParameter="sv2#area16#page28#inu7#ln77#par250" target="sv2#cnu5#su52#kcond24.ent1#att1"/>
+      </Link>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area16#page28#inu7">
+          <layout:Attribute attribute="ent2#att4"/>
+          <layout:Link link="sv2#area16#page28#inu7#ln65"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area16#page28#inu14">
+          <layout:Link link="sv2#area16#page28#inu14#ln67"/>
+          <layout:Attribute attribute="ent2#att4"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

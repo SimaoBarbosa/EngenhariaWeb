@@ -19,7 +19,7 @@
         <RelationshipRoleCondition id="sv2#area17#page23#inu23#su43#rcond33" name="RoleCondition33" predicate="notIn" implied="false" role="rel4#role7"/>
         <RelationshipRoleCondition id="sv2#area17#page23#inu23#su43#rcond34" name="RoleCondition34" predicate="in" implied="false" role="rel6#role12"/>
       </Selector>
-      <Link id="sv2#area17#page23#inu23#ln70" name="Flow70" to="sv2#cnu4" type="normal" validate="true">
+      <Link id="sv2#area17#page23#inu23#ln70" name="Adicionar" to="sv2#cnu4" type="normal" validate="true">
         <LinkParameter id="sv2#area17#page23#inu23#ln70#par235" name="id_equipa_KeyCondition19 [id_equipa] [Equipa] [Target]" source="data[].ent2#att3" target="sv2#cnu4#su47#kcond19.ent2#att3"/>
         <LinkParameter id="sv2#area17#page23#inu23#ln70#par236" name="id_evento_PASSING" sourceLinkParameter="sv2#area17#page23#inu17#ln68#par234" passing="true"/>
         <LinkParameter id="sv2#area17#page23#inu23#ln70#par243" name="id_evento_PASSING_KeyCondition18 [id_evento] [Evento] [Source]" sourceLinkParameter="sv2#area17#page23#inu17#ln68#par234" target="sv2#cnu4#su46#kcond18.ent1#att1"/>

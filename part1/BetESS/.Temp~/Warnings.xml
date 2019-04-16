@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Warnings> 
+  <Warning xpath="id('sv2#area17#page23#inu23#ln70#par236')" rootXPath="id('sv2')" key="UNUSED_PASSING_PARAMETER" label="id_evento_PASSING"> 
+    <Message>The passing parameter 'id_evento_PASSING' is declared but never used</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.RemoveElementResolutionGenerator">Remove the invalid link parameter 'sv2#area17#page23#inu23#ln70#par236'</Resolution> 
+  </Warning>  
+  <Warning xpath="id('sv2#area18#page27#inu29#ln87')" rootXPath="id('sv2')" key="AUTOMATIC_COUPLING_WITHOUT_EFFECT" label="Adicionar apostas"> 
+    <Message>Neither explicit nor implicit parameters' bindings could be found for the flow 'Adicionar apostas'</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.ChangeAttributeResolutionGenerator" attribute="automaticCoupling" value="">Remove the 'Automatic Coupling' property</Resolution> 
+  </Warning>  
   <Warning xpath="id('sv2#area7#page13#inu19#ln45')" rootXPath="id('sv2')" key="AUTOMATIC_COUPLING_WITHOUT_EFFECT" label="Flow45"> 
     <Message>Neither explicit nor implicit parameters' bindings could be found for the flow 'Flow45'</Message>  
     <Resolution class="com.webratio.ide.ui.resources.ChangeAttributeResolutionGenerator" attribute="automaticCoupling" value="">Remove the 'Automatic Coupling' property</Resolution> 
@@ -20,10 +28,6 @@
   <Warning xpath="id('sv2#area8#page10#inu12#ln58#par156')" rootXPath="id('sv2')" key="UNUSED_PASSING_PARAMETER" label="id_equipa_PASSING"> 
     <Message>The passing parameter 'id_equipa_PASSING' is declared but never used</Message>  
     <Resolution class="com.webratio.ide.ui.resources.RemoveElementResolutionGenerator">Remove the invalid link parameter 'sv2#area8#page10#inu12#ln58#par156'</Resolution> 
-  </Warning>  
-  <Warning xpath="id('sv2#area17#page23#inu23#ln70#par236')" rootXPath="id('sv2')" key="UNUSED_PASSING_PARAMETER" label="id_evento_PASSING"> 
-    <Message>The passing parameter 'id_evento_PASSING' is declared but never used</Message>  
-    <Resolution class="com.webratio.ide.ui.resources.RemoveElementResolutionGenerator">Remove the invalid link parameter 'sv2#area17#page23#inu23#ln70#par236'</Resolution> 
   </Warning>  
   <Warning xpath="id('sv2#cru2#oln30#par184')" rootXPath="id('sv2')" key="UNUSED_PASSING_PARAMETER" label="id_competicao_PASSING"> 
     <Message>The passing parameter 'id_competicao_PASSING' is declared but never used</Message>  
@@ -132,6 +136,21 @@
   <Warning error="false" xpath="id('sv2#area15#page24#inu10')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Op&#231;&#245;es"> 
     <Message>Sorting attribute are unspecified for the component 'Op&#231;&#245;es'</Message> 
   </Warning>  
+  <Warning error="false" xpath="id('sv2#area17#page23#inu17')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Equipas atuais"> 
+    <Message>Sorting attribute are unspecified for the component 'Equipas atuais'</Message> 
+  </Warning>  
+  <Warning error="false" xpath="id('sv2#area17#page23#inu23')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Adicionar equipas"> 
+    <Message>Sorting attribute are unspecified for the component 'Adicionar equipas'</Message> 
+  </Warning>  
+  <Warning error="false" xpath="id('sv2#area18#page26#inu28')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Equipas"> 
+    <Message>Sorting attribute are unspecified for the component 'Equipas'</Message> 
+  </Warning>  
+  <Warning error="false" xpath="id('sv2#area18#page27#inu29')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Eventos"> 
+    <Message>Sorting attribute are unspecified for the component 'Eventos'</Message> 
+  </Warning>  
+  <Warning error="false" xpath="id('sv2#area18#page25#inu26')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Equipas"> 
+    <Message>Sorting attribute are unspecified for the component 'Equipas'</Message> 
+  </Warning>  
   <Warning error="false" xpath="id('sv2#area7#page13#inu18')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Desportos"> 
     <Message>Sorting attribute are unspecified for the component 'Desportos'</Message> 
   </Warning>  
@@ -158,18 +177,6 @@
   </Warning>  
   <Warning error="false" xpath="id('sv2#area8#page10#inu13')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Adicionar equipas"> 
     <Message>Sorting attribute are unspecified for the component 'Adicionar equipas'</Message> 
-  </Warning>  
-  <Warning error="false" xpath="id('sv2#area17#page23#inu17')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Equipas atuais"> 
-    <Message>Sorting attribute are unspecified for the component 'Equipas atuais'</Message> 
-  </Warning>  
-  <Warning error="false" xpath="id('sv2#area17#page23#inu23')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Adicionar equipas"> 
-    <Message>Sorting attribute are unspecified for the component 'Adicionar equipas'</Message> 
-  </Warning>  
-  <Warning error="false" xpath="id('sv2#area18#page25#inu26')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Equipas"> 
-    <Message>Sorting attribute are unspecified for the component 'Equipas'</Message> 
-  </Warning>  
-  <Warning error="false" xpath="id('sv2#area18#page26#inu28')" rootXPath="id('sv2')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="Equipas"> 
-    <Message>Sorting attribute are unspecified for the component 'Equipas'</Message> 
   </Warning>  
   <Warning xpath="/WebProject" rootXPath="/WebProject" key="" label="WebProject" tab="security"> 
     <Message>Security Warning: the project contains a protected resource but the 'Protect URL' property is missing</Message>  
