@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area3#page19" name="User">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area3#page19" name="Apostador">
   <ContentUnits>
     <DataUnit gr:x="170" gr:y="0" id="sv1#area3#page19#dau5" name="User" entity="User" displayAll="true">
       <Selector id="sv1#area3#page19#dau5#su19" defaultPolicy="fill" booleanOperator="and">

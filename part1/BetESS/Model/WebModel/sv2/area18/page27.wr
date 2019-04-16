@@ -1,6 +1,6 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="355" gr:y="160" id="sv2#area18#page27" name="Eventos de equipa">
   <ContentUnits>
-    <IndexUnit gr:x="0" gr:y="0" id="sv2#area18#page27#inu29" name="Eventos" entity="ent1" displayAttributes="ent1#att14 rel5#role9.ent5#att10 rel5#role9.rel1#role1.ent3#att6 rel5#role9.rel1#role1.rel13#role25.ent6#att12 rel5#role9.rel1#role1.rel2#role4.ent4#att8 rel5#role9.rel1#role1.ent3#att5" linkOrder="sv2#area18#page27#inu29#ln83 sv2#area18#page27#inu29#ln84 sv2#area18#page27#inu29#ln87 sv2#area18#page27#inu29#ln33">
+    <IndexUnit gr:x="0" gr:y="0" id="sv2#area18#page27#inu29" name="Eventos" entity="ent1" displayAttributes="ent1#att14 rel5#role9.ent5#att10 rel5#role9.rel1#role1.ent3#att6 rel5#role9.rel1#role1.rel13#role25.ent6#att12 rel5#role9.rel1#role1.rel2#role4.ent4#att8 rel5#role9.rel1#role1.ent3#att5 rel9#role17.ent7#att16 rel9#role17.ent7#att17" linkOrder="sv2#area18#page27#inu29#ln83 sv2#area18#page27#inu29#ln84 sv2#area18#page27#inu29#ln87 sv2#area18#page27#inu29#ln33">
       <Selector id="sv2#area18#page27#inu29#su54" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#area18#page27#inu29#su54#rcond36" name="RoleCondition36" predicate="in" implied="false" role="rel4#role8"/>
       </Selector>
@@ -15,6 +15,8 @@
         <LinkParameter id="sv2#area18#page27#inu29#ln33#par119" name="id_evento_PASSING" source="data[].ent1#att1" passing="true"/>
         <LinkParameter id="sv2#area18#page27#inu29#ln33#par247" name="EventoToFase.FaseToCompeticao.id_competicao_PASSING" source="data[].rel5#role9$rel1#role1$ent3#att5" passing="true"/>
       </Link>
+      <SortAttribute attribute="rel9#role17.ent7#att16" order="ascending"/>
+      <SortAttribute attribute="rel9#role17.ent7#att17" order="ascending"/>
     </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
@@ -31,6 +33,8 @@
           <layout:Attribute attribute="rel5#role9.rel1#role1.rel13#role25.ent6#att12"/>
           <layout:Attribute attribute="rel5#role9.rel1#role1.rel2#role4.ent4#att8"/>
           <layout:Attribute attribute="rel5#role9.rel1#role1.ent3#att5"/>
+          <layout:Attribute attribute="rel9#role17.ent7#att16"/>
+          <layout:Attribute attribute="rel9#role17.ent7#att17"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

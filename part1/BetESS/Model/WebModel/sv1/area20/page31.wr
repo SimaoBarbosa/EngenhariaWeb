@@ -1,0 +1,43 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area20#page31" name="Eventos de equipa" gr:x="145" gr:y="150">
+  <ContentUnits>
+    <IndexUnit id="sv1#area20#page31#inu32" name="Eventos" gr:x="0" gr:y="0" entity="ent1" displayAttributes="ent1#att14 rel5#role9.ent5#att10 rel5#role9.rel1#role1.ent3#att6 rel5#role9.rel1#role1.rel13#role25.ent6#att12 rel5#role9.rel1#role1.rel2#role4.ent4#att8 rel5#role9.rel1#role1.ent3#att5 rel9#role17.ent7#att16 rel9#role17.ent7#att17" linkOrder="sv1#area20#page31#inu32#ln91">
+      <Selector id="sv1#area20#page31#inu32#su64" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area20#page31#inu32#su64#rcond31" name="RoleCondition36" predicate="in" implied="false" role="rel4#role8"/>
+      </Selector>
+      <Link id="sv1#area20#page31#inu32#ln91" name="Ver eventos" to="sv1#area1#page3#inu6" type="normal" validate="true" gr:bendpoints="1304,0,524,1160;1304,-1352,524,-192;780,-1352,0,-192">
+        <LinkParameter id="sv1#area20#page31#inu32#ln91#par334" name="true_AttCondition7" sourceValue="true" target="sv1#area1#page3#inu6#su1#acond7"/>
+        <LinkParameter id="sv1#area20#page31#inu32#ln91#par335" name="id_evento_RoleCondition1 [id_evento]" source="data[].ent1#att1" target="sv1#area1#page3#inu6#su1#rcond1.ent1#att1"/>
+      </Link>
+      <SortAttribute attribute="rel9#role17.ent7#att16" order="ascending"/>
+      <SortAttribute attribute="rel9#role17.ent7#att17" order="ascending"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area20#page31#inu32">
+          <layout:Link link="sv1#area20#page31#inu32#ln91"/>
+          <layout:Attribute attribute="ent1#att14"/>
+          <layout:Attribute attribute="rel5#role9.ent5#att10"/>
+          <layout:Attribute attribute="rel5#role9.rel1#role1.ent3#att6"/>
+          <layout:Attribute attribute="rel5#role9.rel1#role1.rel13#role25.ent6#att12"/>
+          <layout:Attribute attribute="rel5#role9.rel1#role1.rel2#role4.ent4#att8"/>
+          <layout:Attribute attribute="rel5#role9.rel1#role1.ent3#att5"/>
+          <layout:Attribute attribute="rel9#role17.ent7#att16"/>
+          <layout:Attribute attribute="rel9#role17.ent7#att17"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

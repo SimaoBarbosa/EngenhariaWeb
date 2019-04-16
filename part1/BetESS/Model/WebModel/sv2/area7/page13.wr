@@ -67,7 +67,7 @@
         <LinkParameter id="sv2#area7#page13#inu21#ln50#par148" name="id_regiao_PASSING_RoleCondition3 [id_regiao]" sourceLinkParameter="sv2#area7#page13#inu20#ln40#par146" target="sv2#area7#page13#inu20#su23#rcond18.ent4#att7"/>
       </Link>
     </IndexUnit>
-    <IndexUnit id="sv2#area7#page13#inu22" name="Eventos" linkOrder="sv2#area7#page13#inu22#ln42 sv2#area7#page13#inu22#ln21 sv2#area7#page13#inu22#ln66" gr:x="770" gr:y="0" entity="ent1" displayAttributes="ent1#att14">
+    <IndexUnit id="sv2#area7#page13#inu22" name="Eventos" linkOrder="sv2#area7#page13#inu22#ln42 sv2#area7#page13#inu22#ln21 sv2#area7#page13#inu22#ln66" gr:x="770" gr:y="0" entity="ent1" displayAttributes="ent1#att14 rel9#role17.ent7#att16 rel9#role17.ent7#att17">
       <Selector id="sv2#area7#page13#inu22#su25" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#area7#page13#inu22#su25#rcond20" name="RoleCondition5" predicate="in" implied="false" role="rel5#role10"/>
       </Selector>
@@ -86,6 +86,8 @@
         <LinkParameter id="sv2#area7#page13#inu22#ln66#par202" name="id_competicao_PASSING" sourceLinkParameter="sv2#area7#page13#inu21#ln41#par149" passing="true"/>
         <LinkParameter id="sv2#area7#page13#inu22#ln66#par203" name="id_evento_PASSING" source="data[].ent1#att1" passing="true"/>
       </Link>
+      <SortAttribute attribute="rel9#role17.ent7#att16" order="ascending"/>
+      <SortAttribute attribute="rel9#role17.ent7#att17" order="descending"/>
     </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
@@ -135,10 +137,12 @@
       <layout:Cell/>
       <layout:Cell colspan="6">
         <layout:Unit unitId="sv2#area7#page13#inu22">
-          <layout:Attribute attribute="ent1#att14"/>
           <layout:Link link="sv2#area7#page13#inu22#ln42"/>
           <layout:Link link="sv2#area7#page13#inu22#ln21"/>
           <layout:Link link="sv2#area7#page13#inu22#ln66"/>
+          <layout:Attribute attribute="ent1#att14"/>
+          <layout:Attribute attribute="rel9#role17.ent7#att16"/>
+          <layout:Attribute attribute="rel9#role17.ent7#att17"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

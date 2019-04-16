@@ -1,4 +1,4 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Funcionario" protected="true" landmarks="sv2#area7 sv2#lou3 sv2#area18" homePage="sv2#area7#page13">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Funcionario" protected="true" landmarks="sv2#area7 sv2#area18 sv2#lou3" homePage="sv2#area7#page13">
   <OperationUnits>
     <LogoutUnit gr:x="1200" gr:y="610" id="sv2#lou3" name="Logout" siteView="sv3" landmark="true"/>
     <QueryUnit gr:x="1055" gr:y="235" id="sv2#qu4" name="Atualizar apostas" mode="update" language="SQL" db="db1">
@@ -18,9 +18,9 @@ where aposta_disponivel_id_aposta_di = (:idApostaDisponivel);</QueryText>
       </OKLink>
       <KOLink id="sv2#qu4#kln5" name="KOFlow5" to="sv2#area7#page12" automaticCoupling="true"/>
     </QueryUnit>
-    <ModuleInstanceUnit gr:x="1205" gr:y="430" id="sv2#miu4" moduleId="mov2#opm2">
+    <ModuleInstanceUnit gr:x="1230" gr:y="460" id="sv2#miu4" moduleId="mov2#opm2">
       <KOLink id="sv2#miu4#kln12" to="sv2#area7#page12" name="KOFlow8"/>
-      <OKLink id="sv2#miu4#oln34" name="OKFlow33" to="sv2#area7#page13" automaticCoupling="true"/>
+      <OKLink id="sv2#miu4#oln34" name="OKFlow33" to="sv2#area7#page13" automaticCoupling="true" gr:bendpoints="-167,-166,673,214"/>
     </ModuleInstanceUnit>
     <CreateUnit gr:x="380" gr:y="835" id="sv2#cru2" name="Criar evento" entity="ent1" skipBlankRecords="true" notBlankAttributes="ent1#att1 ent1#att14">
       <KOLink id="sv2#cru2#kln8" name="KOFlow8" to="sv2#area8#page8#enu4" automaticCoupling="true" gr:bendpoints="22,-77,7,78"/>
@@ -170,7 +170,7 @@ where aposta_disponivel_id_aposta_di = (:idApostaDisponivel);</QueryText>
         <KeyCondition id="sv2#cnu3#su33#kcond10" name="KeyCondition10" predicate="in" implied="false"/>
       </TargetSelector>
     </ConnectUnit>
-    <ModifyUnit gr:x="1665" gr:y="475" id="sv2#mfu1" name="Mudar odd" entity="ent9">
+    <ModifyUnit gr:x="1745" gr:y="475" id="sv2#mfu1" name="Mudar odd" entity="ent9">
       <Selector id="sv2#mfu1#su37" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#mfu1#su37#kcond13" name="KeyCondition13" predicate="in" implied="false"/>
       </Selector>
@@ -241,7 +241,7 @@ where aposta_disponivel_id_aposta_di = (:idApostaDisponivel);</QueryText>
         <KeyCondition id="sv2#cnu5#su55#kcond25" name="KeyCondition19" predicate="in" implied="false"/>
       </TargetSelector>
     </ConnectUnit>
-    <ModifyUnit gr:x="1195" gr:y="295" id="sv2#mfu2" name="Tornar Aposta indispon&#237;vel" entity="ent8">
+    <ModifyUnit gr:x="1215" gr:y="315" id="sv2#mfu2" name="Tornar Aposta indispon&#237;vel" entity="ent8">
       <Selector id="sv2#mfu2#su58" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#mfu2#su58#kcond26" name="KeyCondition26" predicate="in" implied="false"/>
       </Selector>

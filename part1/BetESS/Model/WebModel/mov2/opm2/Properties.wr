@@ -68,7 +68,16 @@
     </SelectorUnit>
     <QueryUnit id="mov2#opm2#qu9" name="ganhou" gr:x="565" gr:y="545" mode="update" language="SQL" db="db1">
       <QueryText xml:space="preserve">update notificacao 
-	set notificacao = CONCAT('Ganhou ',((:odd)*(:quantia)) ,' com  a aposta ',(:aposta))
+	set notificacao = CONCAT(
+		'Ganhou ',
+        ((:odd)*(:quantia)),
+        ' com  a aposta "',
+        (select titulo from aposta_concreta join aposta_disponivel on id_aposta_disponivel = aposta_disponivel_id_aposta_di where id_aposta_concreta = (:aposta)),
+        '" no evento "',
+        (select evento.titulo from aposta_concreta join aposta_disponivel on id_aposta_disponivel = aposta_disponivel_id_aposta_di join evento on evento_id_evento = id_evento where id_aposta_concreta = (:aposta)),
+        '". Resultado final = "',
+        (select opcao.opcao from aposta_concreta join aposta_disponivel on id_aposta_disponivel = aposta_disponivel_id_aposta_di join opcao on resultado_final = id_opcao where id_aposta_concreta = (:aposta)),
+        '".')
 	where id_notificacao = (:idNoti);</QueryText>
       <KOLink id="mov2#opm2#qu9#kln23" name="KOFlow23" to="mov2#opm2#kocu2" automaticCoupling="true"/>
       <OKLink id="mov2#opm2#qu9#oln39" name="OKFlow39" to="mov2#opm2#lpu1">
@@ -79,7 +88,7 @@
       <QueryInput id="mov2#opm2#qu9#qi18" name="aposta" required="true" type="integer"/>
       <QueryInput id="mov2#opm2#qu9#qi20" name="quantia" required="true" type="float"/>
     </QueryUnit>
-    <SelectorUnit id="mov2#opm2#seu5" name="Apostas concretas" gr:x="255" gr:y="40" entity="ent10" distinctAttributes="ent10#att22 ent10#att23 ent10#att24 ent10#att28">
+    <SelectorUnit id="mov2#opm2#seu5" name="Apostas concretas" gr:x="260" gr:y="0" entity="ent10" distinctAttributes="ent10#att22 ent10#att23 ent10#att24 ent10#att28">
       <Selector id="mov2#opm2#seu5#su12" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="mov2#opm2#seu5#su12#rcond9" name="RoleCondition7" predicate="in" implied="false" role="rel17#role34"/>
         <AttributesCondition id="mov2#opm2#seu5#su12#acond3" name="resultado" predicate="eq" booleanOperator="or" implied="false" attributes="ent10#att28"/>
@@ -108,7 +117,7 @@
         <LinkParameter id="mov2#opm2#lpu2#oln18#par272" name="id_opcao_PASSING" sourceLinkParameter="mov2#opm2#seu5#oln44#par271" passing="true"/>
       </OKLink>
     </LoopUnit>
-    <SelectorUnit id="mov2#opm2#seu8" name="user da aposta concreta" gr:x="430" gr:y="110" entity="User" distinctAttributes="userOID userName password email User#att29">
+    <SelectorUnit id="mov2#opm2#seu8" name="user da aposta concreta" gr:x="410" gr:y="150" entity="User" distinctAttributes="userOID userName password email User#att29">
       <Selector id="mov2#opm2#seu8#su14" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="mov2#opm2#seu8#su14#rcond11" name="RoleCondition8" predicate="in" implied="false" role="rel10#role20"/>
       </Selector>
@@ -130,8 +139,17 @@
       </OKLink>
     </SelectorUnit>
     <QueryUnit id="mov2#opm2#qu10" name="perdeu" gr:x="590" gr:y="255" mode="update" language="SQL" db="db1">
-      <QueryText xml:space="preserve">update notificacao
-	set notificacao = CONCAT('Perdeu ',(:quantia) ,' com  a aposta ',(:aposta))
+      <QueryText xml:space="preserve">update notificacao 
+	set notificacao = CONCAT(
+		'Perdeu ',
+        ((:quantia)),
+        ' com  a aposta "',
+        (select titulo from aposta_concreta join aposta_disponivel on id_aposta_disponivel = aposta_disponivel_id_aposta_di where id_aposta_concreta = (:aposta)),
+        '" no evento "',
+        (select evento.titulo from aposta_concreta join aposta_disponivel on id_aposta_disponivel = aposta_disponivel_id_aposta_di join evento on evento_id_evento = id_evento where id_aposta_concreta = (:aposta)),
+        '". Resultado final = "',
+        (select opcao.opcao from aposta_concreta join aposta_disponivel on id_aposta_disponivel = aposta_disponivel_id_aposta_di join opcao on resultado_final = id_opcao where id_aposta_concreta = (:aposta)),
+        '".')
 	where id_notificacao = (:idNoti);</QueryText>
       <QueryInput id="mov2#opm2#qu10#qi21" name="idNoti" required="true" type="integer"/>
       <QueryInput id="mov2#opm2#qu10#qi24" name="aposta" required="true" type="integer"/>

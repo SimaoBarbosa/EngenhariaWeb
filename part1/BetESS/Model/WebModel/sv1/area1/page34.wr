@@ -1,0 +1,37 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="80" gr:y="400" id="sv1#area1#page34" name="Pr&#243;ximos eventos" landmark="true">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv1#area1#page34#inu34" name="Pr&#243;ximos eventos" entity="ent1" displayAttributes="ent1#att14 rel5#role9.ent5#att10 rel5#role9.rel1#role1.ent3#att6 rel9#role17.ent7#att16 rel9#role17.ent7#att17" linkOrder="sv1#area1#page34#inu34#ln92">
+      <SortAttribute attribute="rel9#role17.ent7#att16" order="ascending"/>
+      <SortAttribute attribute="rel9#role17.ent7#att17" order="ascending"/>
+      <Link id="sv1#area1#page34#inu34#ln92" name="Ver apostas dispon&#237;veis" to="sv1#area1#page3#inu6" type="normal" validate="true" gr:bendpoints="-205,2,-1055,377;-206,-567,-1056,-192;808,-567,-42,-192">
+        <LinkParameter id="sv1#area1#page34#inu34#ln92#par336" name="true_AttCondition7" sourceValue="true" target="sv1#area1#page3#inu6#su1#acond7"/>
+        <LinkParameter id="sv1#area1#page34#inu34#ln92#par337" name="id_evento_RoleCondition1 [id_evento]" source="data[].ent1#att1" target="sv1#area1#page3#inu6#su1#rcond1.ent1#att1"/>
+      </Link>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area1#page34#inu34">
+          <layout:Link link="sv1#area1#page34#inu34#ln92"/>
+          <layout:Attribute attribute="ent1#att14"/>
+          <layout:Attribute attribute="rel5#role9.ent5#att10"/>
+          <layout:Attribute attribute="rel5#role9.rel1#role1.ent3#att6"/>
+          <layout:Attribute attribute="rel9#role17.ent7#att16"/>
+          <layout:Attribute attribute="rel9#role17.ent7#att17"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

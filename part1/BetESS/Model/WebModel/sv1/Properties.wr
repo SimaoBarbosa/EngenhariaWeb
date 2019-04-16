@@ -1,11 +1,11 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Apostador" landmarks="sv1#area1 sv1#area2 sv1#area3 sv1#area4 sv1#lou2 sv1#area5" protected="true" homePage="sv1#area1#page1">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Apostador" landmarks="sv1#area1 sv1#area20 sv1#area2 sv1#area3 sv1#area5 sv1#lou2" protected="true" homePage="sv1#area1#page1">
   <OperationUnits>
     <CreateUnit gr:x="910" gr:y="505" id="sv1#cru1" name="Criar Aposta" entity="ent10">
       <KOLink id="sv1#cru1#kln3" name="KOFlow1" to="sv1#area1#page4" automaticCoupling="true" gr:bendpoints="68,-115,-42,125"/>
       <OKLink id="sv1#cru1#oln6" name="OKFlow6" to="sv1#area2#page7" automaticCoupling="true"/>
     </CreateUnit>
-    <LogoutUnit gr:x="755" gr:y="735" id="sv1#lou2" name="Logout" siteView="sv3" landmark="true"/>
-    <QueryUnit gr:x="485" gr:y="975" id="sv1#qu1" name="Carregar saldo" mode="update" language="HQL" db="db1">
+    <LogoutUnit gr:x="1390" gr:y="680" id="sv1#lou2" name="Logout" siteView="sv3" landmark="true"/>
+    <QueryUnit gr:x="615" gr:y="1015" id="sv1#qu1" name="Carregar saldo" mode="update" language="HQL" db="db1">
       <QueryText xml:space="preserve">update User set saldo = saldo + (:valor) where oid = (:userId);</QueryText>
       <OKLink id="sv1#qu1#oln1" name="OKFlow1" to="sv1#area3#page19" automaticCoupling="true" gr:bendpoints="112,-57,102,143"/>
       <KOLink id="sv1#qu1#kln1" name="KOFlow1" to="sv1#area3#page19" automaticCoupling="true" gr:bendpoints="-112,-57,-122,143"/>
@@ -30,12 +30,12 @@
       </OKLink>
       <KOLink id="sv1#qu2#kln2" name="KOFlow2" to="sv1#area1#page4" automaticCoupling="true" gr:bendpoints="152,19,-178,9"/>
     </QueryUnit>
-    <DeleteUnit gr:x="1350" gr:y="975" id="sv1#dlu1" name="Delete1" entity="ent11">
+    <DeleteUnit gr:x="225" gr:y="975" id="sv1#dlu1" name="Delete1" entity="ent11">
       <Selector id="sv1#dlu1#su8" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#dlu1#su8#kcond3" name="KeyCondition3" predicate="in" implied="false"/>
       </Selector>
       <OKLink id="sv1#dlu1#oln8" name="OKFlow8" to="sv1#area5#page2" automaticCoupling="true"/>
-      <KOLink id="sv1#dlu1#kln7" name="KOFlow7" to="sv1#area5#page2" automaticCoupling="true" gr:bendpoints="-146,13,249,18"/>
+      <KOLink id="sv1#dlu1#kln7" name="KOFlow7" to="sv1#area5#page2" automaticCoupling="true" gr:bendpoints="-17,-105,79,135"/>
     </DeleteUnit>
   </OperationUnits>
 </SiteView>

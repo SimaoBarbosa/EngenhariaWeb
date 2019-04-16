@@ -1,0 +1,42 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area20#page32" name="Ver todas" landmark="true" gr:x="0" gr:y="0">
+  <ContentUnits>
+    <IndexUnit id="sv1#area20#page32#inu33" name="Equipas" linkOrder="sv1#area20#page32#inu33#ln89" gr:x="0" gr:y="0" entity="ent2" displayAttributes="ent2#att4">
+      <Link id="sv1#area20#page32#inu33#ln89" name="Ver eventos" to="sv1#area20#page31#inu32" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="152,98,-222,-68"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell rowspan="2" colspan="9">
+        <layout:Unit unitId="sv1#area20#page32#inu33">
+          <layout:Attribute attribute="ent2#att4"/>
+          <layout:Link link="sv1#area20#page32#inu33#ln89"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="3"/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="3"/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

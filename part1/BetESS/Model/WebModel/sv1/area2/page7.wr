@@ -1,9 +1,10 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area2#page7" name="Minhas apostas">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area2#page7" name="Todas as minhas apostas">
   <ContentUnits>
-    <MultiDataUnit gr:x="175" gr:y="0" id="sv1#area2#page7#mdu3" name="Minhas Apostas" entity="ent10" displayAttributes="ent10#att22 ent10#att23 ent10#att24 rel16#role31.ent9#att20 rel17#role33.ent8#att25 rel17#role33.rel11#role22.ent1#att14 ent10#att28">
+    <MultiDataUnit gr:x="175" gr:y="0" id="sv1#area2#page7#mdu3" name="Minhas Apostas" entity="ent10" displayAttributes="ent10#att23 ent10#att24 rel16#role31.ent9#att20 rel17#role33.ent8#att25 rel17#role33.rel11#role22.ent1#att14">
       <Selector id="sv1#area2#page7#mdu3#su20" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#area2#page7#mdu3#su20#rcond13" name="RoleCondition13" predicate="in" implied="false" role="rel10#role19"/>
       </Selector>
+      <SortAttribute attribute="ent10#att22" order="descending"/>
     </MultiDataUnit>
     <GetUnit gr:x="0" gr:y="15" id="sv1#area2#page7#gtu5" name="Get5" contextParameters="UserCtxParam">
       <Link id="sv1#area2#page7#gtu5#ln29" name="Flow29" to="sv1#area2#page7#mdu3" automaticCoupling="true" type="transport" validate="true"/>
@@ -13,13 +14,11 @@
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv1#area2#page7#mdu3">
-          <layout:Attribute attribute="ent10#att22"/>
           <layout:Attribute attribute="ent10#att23"/>
           <layout:Attribute attribute="ent10#att24"/>
           <layout:Attribute attribute="rel16#role31.ent9#att20"/>
           <layout:Attribute attribute="rel17#role33.ent8#att25"/>
           <layout:Attribute attribute="rel17#role33.rel11#role22.ent1#att14"/>
-          <layout:Attribute attribute="ent10#att28"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
