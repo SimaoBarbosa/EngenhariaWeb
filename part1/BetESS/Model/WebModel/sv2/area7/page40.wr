@@ -1,0 +1,41 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area7#page40" name="Pr&#243;ximos eventos" landmark="true" gr:x="5" gr:y="170">
+  <ContentUnits>
+    <IndexUnit id="sv2#area7#page40#inu36" name="Pr&#243;ximos eventos" gr:x="0" gr:y="0" entity="ent1" displayAttributes="ent1#att14 rel5#role9.ent5#att10 rel5#role9.rel1#role1.ent3#att6 rel9#role17.ent7#att16 rel9#role17.ent7#att17" linkOrder="sv2#area7#page40#inu36#ln101 sv2#area7#page40#inu36#ln120">
+      <SortAttribute attribute="rel9#role17.ent7#att16" order="ascending"/>
+      <SortAttribute attribute="rel9#role17.ent7#att17" order="ascending"/>
+      <Link id="sv2#area7#page40#inu36#ln101" name="Ver apostas" to="sv2#area7#page12#inu16" type="normal" validate="true" gr:bendpoints="926,-1,2,153">
+        <LinkParameter id="sv2#area7#page40#inu36#ln101#par60" name="true_AttCondition6" sourceValue="true" target="sv2#area7#page12#inu16#su17#acond6"/>
+        <LinkParameter id="sv2#area7#page40#inu36#ln101#par291" name="id_evento_RoleCondition1 [id_evento]" source="data[].ent1#att1" target="sv2#area7#page12#inu16#su17#rcond15.ent1#att1"/>
+      </Link>
+      <Link id="sv2#area7#page40#inu36#ln120" name="Adicionar apostas" to="sv2#area11#page49#enu19" type="normal" validate="true" gr:bendpoints="474,32,-106,-464;476,464,-104,-32">
+        <LinkParameter id="sv2#area7#page40#inu36#ln120#par457" name="id_evento_PASSING" source="data[].ent1#att1" passing="true"/>
+      </Link>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area7#page40#inu36">
+          <layout:Attribute attribute="ent1#att14"/>
+          <layout:Attribute attribute="rel5#role9.ent5#att10"/>
+          <layout:Attribute attribute="rel5#role9.rel1#role1.ent3#att6"/>
+          <layout:Attribute attribute="rel9#role17.ent7#att16"/>
+          <layout:Attribute attribute="rel9#role17.ent7#att17"/>
+          <layout:Link link="sv2#area7#page40#inu36#ln101"/>
+          <layout:Link link="sv2#area7#page40#inu36#ln120"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -71,32 +71,38 @@ INSERT INTO equipa values
 	(18, 'Sérvia'),
 	(19, 'Brasil'),
 	(20, 'Alemanha');
+    
+INSERT INTO equipa_competicao values
+	(1, 1),
+    (2, 1),
+    (3, 1),
+    (4, 1),
+    (5, 1),
+    (6, 1),
+    (7, 1),
+    (8, 1);
 
 INSERT INTO evento_equipa values
-	(1,1),(1,2),
-	(2,3),(2,4),
-	(3,5),(3,6),
-	(4,7),(4,8),
-	(5,9),(5,10),
-	(6,11),(6,12),
-	(7,13),(7,14),
-	(8,15),(8,16),
-	(9,17),(9,18),
-	(10,19),(10,20);
+	(1, 1), (1, 2),
+	(2, 3), (2, 4),
+	(3, 5), (3, 6),
+	(4, 7), (4, 8),
+	(5, 9), (5, 10),
+	(6, 11), (6, 12),
+	(7, 13), (7, 14),
+	(8, 15), (8, 16),
+	(9, 17), (9, 18),
+	(10, 19), (10, 20);
 
 INSERT INTO desporto_regiao values
-	(1,1), -- Futebol Portugal
-	(1,2), -- Futebol Espanha
-	(1,3), -- Futebol Europa
-	(1,4); -- Futebol Internacional
-
--- equipa_competição
--- equipa_fase
--- equipa_regiao
+	(1, 1), -- Futebol Portugal
+	(1, 2), -- Futebol Espanha
+	(1, 3), -- Futebol Europa
+	(1, 4); -- Futebol Internacional
 
 INSERT INTO aposta_disponivel values
-	(1, 'Resultado Final', 0, true,false, 1), -- Rio Ave x Portimonense
-	(2, '1º jogador a marcar', 0, true,true,1);
+	(1, 'Resultado Final', 0, true, false, 1), -- Rio Ave x Portimonense
+	(2, '1º jogador a marcar', 0, true, true, 1);
 
 INSERT INTO opcao values
 	(1, 'Rio Ave', 1.5, 1), -- Resultado Final
@@ -109,26 +115,33 @@ INSERT INTO opcao values
 	(7, 'Paulinho', 8, 2);
 
 INSERT INTO module values 
- (1,'sv1','Apostador'),
- (2,'sv2','Funcionario'),
- (3,'area4','Vip'),
- (4,'area19','Informações VIP'),
- (5,'page39','Apostas'),
- (6,'page3','Apostas');
-
+	(1, 'sv1', 'Apostador'),
+	(2, 'sv2', 'Funcionario'),
+	(3, 'area4', 'Vip'),
+	(4, 'area19', 'Informações VIP'),
+	(5, 'page39', 'Apostas'),
+	(6, 'page3', 'Apostas');
 
 INSERT INTO betess.group values 
- (1,'Apostador Normal',1),
- (2,'Funcionario',2),
- (3,'Apostador VIP',1);
+	(1, 'Apostador Normal', 1),
+	(2, 'Funcionario', 2),
+	(3, 'Apostador VIP', 1);
 
 INSERT INTO user values 
- (1,'Simao','pass','simao-barbosa@hotmail.com',100,1),
- (2,'Joao','pass','joao-vieira@hotmail.com',NULL,2),
- (3,'Ze','pass','josecarlos@hotmail.com',150,3);
-
+	(1, 'Apostador1', 'pass', 'apostador1@hotmail.com', 100, 1),      -- Apostador normal
+	(2, 'Funcionario1', 'pass', 'funcionario1@hotmail.com', NULL, 2), -- Funcionário / Admin
+	(3, 'Apostador2', 'pass', 'apostador2@hotmail.com', 150, 3);      -- Apostador VIP
 
 INSERT INTO user_group VALUES
- (1,1),(2,2),(3,3);
+	(1, 1), -- Apostador1 <-> Apostador normal
+	(2, 2), -- Funcionario1 <-> Funcionario
+	(3, 3); -- Apostador2 <-> Apostador VIP
+
 INSERT INTO group_module VALUES
- (1,1),(2,2),(3,1),(1,3),(3,4),(1,6),(3,5);
+	(1, 1), -- Apostador normal <-> sv1
+	(2, 2), -- Funcionario <-> sv2
+	(3, 1), -- Apostador VIP <-> sv1
+	(1, 3), -- Apostador normal <-> area4
+	(3, 4), -- Apostador VIP <-> area19
+	(1, 6), -- Apostador normal <-> page3
+	(3, 5); -- Apostador VIP <-> page39

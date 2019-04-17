@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="230" gr:y="0" id="sv2#area11#page15" name="Adicionar opc&#245;es" linkOrder="sv2#area11#page15#ln72">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="235" gr:y="0" id="sv2#area11#page15" name="Adicionar opc&#245;es" linkOrder="sv2#area11#page15#ln72">
   <ContentUnits>
     <EntryUnit gr:x="0" gr:y="5" id="sv2#area11#page15#enu9" name="Nova opc&#227;o" entity="ent9" linkOrder="sv2#area11#page15#enu9#ln46 sv2#area11#page15#enu9#ln48">
       <Link id="sv2#area11#page15#enu9#ln46" name="Adicionar op&#231;&#227;o" to="sv2#cru6" type="normal" validate="true">
@@ -22,7 +22,7 @@
       <Selector id="sv2#area11#page15#inu24#su48" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#area11#page15#inu24#su48#rcond35" name="RoleCondition35" predicate="in" implied="false" role="rel15#role29"/>
       </Selector>
-      <Link id="sv2#area11#page15#inu24#ln74" name="Remover" to="sv2#dlu2" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#area11#page15#inu24#ln74" name="Remover" to="sv2#dlu2" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="100,294,116,4"/>
     </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">

@@ -10,7 +10,7 @@
         <LinkParameter id="sv2#area8#page10#inu12#ln58#par157" name="id_evento_PASSING" sourceLinkParameter="sv2#cru2#oln30#par154" passing="true"/>
         <LinkParameter id="sv2#area8#page10#inu12#ln58#par185" name="id_competicao_PASSING_RoleCondition30 [id_competicao]" sourceLinkParameter="sv2#cru2#oln30#par169" target="sv2#area8#page10#inu13#su38#rcond30.ent3#att5"/>
       </Link>
-      <Link id="sv2#area8#page10#inu12#ln60" name="Remover" to="sv2#dcnu2" type="normal" validate="true" gr:bendpoints="120,77,-220,-317">
+      <Link id="sv2#area8#page10#inu12#ln60" name="Remover" to="sv2#dcnu2" type="normal" validate="true" gr:bendpoints="-65,294,-136,-100">
         <LinkParameter id="sv2#area8#page10#inu12#ln60#par160" name="id_evento_PASSING_KeyCondition14 [id_evento] [Evento] [Source]" sourceLinkParameter="sv2#cru2#oln30#par154" target="sv2#dcnu2#su39#kcond14.ent1#att1"/>
         <LinkParameter id="sv2#area8#page10#inu12#ln60#par161" name="id_equipa_KeyCondition15 [id_equipa] [Equipa] [Target]" source="data[].ent2#att3" target="sv2#dcnu2#su40#kcond15.ent2#att3"/>
       </Link>

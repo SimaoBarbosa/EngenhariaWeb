@@ -6,11 +6,12 @@
         <LinkParameter id="sv2#area18#page26#enu14#ln78#par239" name="nome_AttCondition8" source="sv2#area18#page26#enu14#fld22" target="sv2#area18#page26#inu28#su53#acond8"/>
       </Link>
     </EntryUnit>
-    <IndexUnit gr:x="130" gr:y="0" id="sv2#area18#page26#inu28" name="Equipas" entity="ent2" displayAttributes="ent2#att4" linkOrder="sv2#area18#page26#inu28#ln81">
+    <IndexUnit gr:x="130" gr:y="0" id="sv2#area18#page26#inu28" name="Equipas" entity="ent2" displayAttributes="ent2#att4" linkOrder="sv2#area18#page26#inu28#ln81 sv2#area18#page26#inu28#ln100">
       <Selector id="sv2#area18#page26#inu28#su53" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="sv2#area18#page26#inu28#su53#acond8" name="AttCondition8" predicate="contains" booleanOperator="or" implied="false" ignoreCase="true" attributes="ent2#att4"/>
       </Selector>
       <Link id="sv2#area18#page26#inu28#ln81" name="Ver eventos" to="sv2#area18#page27#inu29" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#area18#page26#inu28#ln100" name="Eliminar" to="sv2#dlu3" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-144,-134,350,-308;-589,-135,-95,-309;-589,177,-95,3"/>
     </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
@@ -38,6 +39,7 @@
         <layout:Unit unitId="sv2#area18#page26#inu28">
           <layout:Attribute attribute="ent2#att4"/>
           <layout:Link link="sv2#area18#page26#inu28#ln81"/>
+          <layout:Link link="sv2#area18#page26#inu28#ln100"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

@@ -19,7 +19,7 @@
       <Selector id="sv2#area7#page13#inu19#su22" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#area7#page13#inu19#su22#rcond17" name="RoleCondition2" predicate="in" implied="false" role="rel3#role5"/>
       </Selector>
-      <Link id="sv2#area7#page13#inu19#ln26" name="Adicionar competi&#231;&#227;o" to="sv2#area12#page18#enu11" type="normal" validate="true" gr:bendpoints="101,-140,-815,156;625,-143,-291,153">
+      <Link id="sv2#area7#page13#inu19#ln26" name="Adicionar competi&#231;&#227;o" to="sv2#area12#page18#enu11" type="normal" validate="true" gr:bendpoints="111,-139,-835,117;648,-138,-298,118">
         <LinkParameter id="sv2#area7#page13#inu19#ln26#par102" name="id_desporto_PASSING" sourceLinkParameter="sv2#area7#page13#inu18#ln38#par170" passing="true"/>
         <LinkParameter id="sv2#area7#page13#inu19#ln26#par108" name="id_regiao_PASSING" source="data[].ent4#att7" passing="true"/>
       </Link>
@@ -39,7 +39,7 @@
       <Link id="sv2#area7#page13#inu20#ln32" name="Adicionar fase" to="sv2#area13#page21#enu12" type="normal" validate="true" gr:bendpoints="528,-117,-512,-77">
         <LinkParameter id="sv2#area7#page13#inu20#ln32#par113" name="id_competicao_PASSING" source="data[].ent3#att5" passing="true"/>
       </Link>
-      <Link id="sv2#area7#page13#inu20#ln25" name="Gerir equipas" to="sv2#area14#page22#inu8" type="normal" validate="true" gr:bendpoints="-148,105,522,149;-448,104,222,148">
+      <Link id="sv2#area7#page13#inu20#ln25" name="Gerir equipas" to="sv2#area14#page22#inu8" type="normal" validate="true" gr:bendpoints="-142,65,498,69;-426,58,214,62">
         <LinkParameter id="sv2#area7#page13#inu20#ln25#par130" name="id_competicao_RoleCondition23 [id_competicao]" source="data[].ent3#att5" target="sv2#area14#page22#inu8#su28#rcond23.ent3#att5"/>
         <LinkParameter id="sv2#area7#page13#inu20#ln25#par137" name="id_competicao_PASSING" source="data[].ent3#att5" passing="true"/>
       </Link>
@@ -81,7 +81,7 @@
       <Link id="sv2#area7#page13#inu22#ln57" name="Flow57" to="sv2#area7#page13#inu21" type="transport" validate="true" gr:bendpoints="-108,15,117,15">
         <LinkParameter id="sv2#area7#page13#inu22#ln57#par152" name="id_competicao_PASSING_RoleCondition4 [id_competicao]" sourceLinkParameter="sv2#area7#page13#inu21#ln41#par149" target="sv2#area7#page13#inu21#su24#rcond19.ent3#att5"/>
       </Link>
-      <Link id="sv2#area7#page13#inu22#ln66" name="Gerir equipas" to="sv2#area17#page23#inu17" type="normal" validate="true">
+      <Link id="sv2#area7#page13#inu22#ln66" name="Gerir equipas" to="sv2#area17#page23#inu17" type="normal" validate="true" gr:bendpoints="-642,222,658,-158">
         <LinkParameter id="sv2#area7#page13#inu22#ln66#par200" name="id_evento_RoleCondition32 [id_evento]" source="data[].ent1#att1" target="sv2#area17#page23#inu17#su42#rcond32.ent1#att1"/>
         <LinkParameter id="sv2#area7#page13#inu22#ln66#par202" name="id_competicao_PASSING" sourceLinkParameter="sv2#area7#page13#inu21#ln41#par149" passing="true"/>
         <LinkParameter id="sv2#area7#page13#inu22#ln66#par203" name="id_evento_PASSING" source="data[].ent1#att1" passing="true"/>
@@ -137,12 +137,12 @@
       <layout:Cell/>
       <layout:Cell colspan="8">
         <layout:Unit unitId="sv2#area7#page13#inu22">
-          <layout:Link link="sv2#area7#page13#inu22#ln42"/>
-          <layout:Link link="sv2#area7#page13#inu22#ln21"/>
-          <layout:Link link="sv2#area7#page13#inu22#ln66"/>
           <layout:Attribute attribute="ent1#att14"/>
           <layout:Attribute attribute="rel9#role17.ent7#att16"/>
           <layout:Attribute attribute="rel9#role17.ent7#att17"/>
+          <layout:Link link="sv2#area7#page13#inu22#ln42"/>
+          <layout:Link link="sv2#area7#page13#inu22#ln21"/>
+          <layout:Link link="sv2#area7#page13#inu22#ln66"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

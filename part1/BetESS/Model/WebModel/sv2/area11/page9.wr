@@ -1,8 +1,8 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="5" id="sv2#area11#page9" name="Adicionar aposta">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="5" gr:y="5" id="sv2#area11#page9" name="Adicionar aposta">
   <ContentUnits>
     <EntryUnit gr:x="0" gr:y="0" id="sv2#area11#page9#enu6" name="Nova aposta" entity="ent8" linkOrder="sv2#area11#page9#enu6#ln44">
       <Field id="sv2#area11#page9#enu6#fld17" name="Titulo da nova aposta" type="string" modifiable="true" attribute="ent8#att25"/>
-      <Link id="sv2#area11#page9#enu6#ln44" name="Adicionar op&#231;&#245;es" to="sv2#cru4" type="normal" validate="true" gr:bendpoints="-6,90,34,-85">
+      <Link id="sv2#area11#page9#enu6#ln44" name="Adicionar aposta" to="sv2#cru4" type="normal" validate="true" gr:bendpoints="-6,90,34,-85">
         <LinkParameter id="sv2#area11#page9#enu6#ln44#par327" name="Aposta_Disponivel Object_Aposta_Disponivel Object" source="entityBean" target="sv2#cru4.entityBeans"/>
         <LinkParameter id="sv2#area11#page9#enu6#ln44#par328" name="false_disponibilidade" sourceValue="true" target="sv2#cru4.ent8#att30"/>
         <LinkParameter id="sv2#area11#page9#enu6#ln44#par329" name="Key [id_aposta_disponivel]_id_aposta_disponivel" source="key.ent8#att2" target="sv2#cru4.ent8#att2"/>
@@ -18,9 +18,9 @@
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv2#area11#page9#enu6">
-          <layout:Link link="sv2#area11#page9#enu6#ln44"/>
           <layout:Field field="sv2#area11#page9#enu6#fld17"/>
           <layout:Field field="sv2#area11#page9#enu6#sfld1"/>
+          <layout:Link link="sv2#area11#page9#enu6#ln44"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
