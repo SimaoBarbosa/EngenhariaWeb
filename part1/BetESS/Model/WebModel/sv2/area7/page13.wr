@@ -81,10 +81,9 @@
       <Link id="sv2#area7#page13#inu22#ln57" name="Flow57" to="sv2#area7#page13#inu21" type="transport" validate="true" gr:bendpoints="-108,15,117,15">
         <LinkParameter id="sv2#area7#page13#inu22#ln57#par152" name="id_competicao_PASSING_RoleCondition4 [id_competicao]" sourceLinkParameter="sv2#area7#page13#inu21#ln41#par149" target="sv2#area7#page13#inu21#su24#rcond19.ent3#att5"/>
       </Link>
-      <Link id="sv2#area7#page13#inu22#ln66" name="Gerir equipas" to="sv2#area17#page23#inu17" type="normal" validate="true" gr:bendpoints="-642,222,658,-158">
-        <LinkParameter id="sv2#area7#page13#inu22#ln66#par200" name="id_evento_RoleCondition32 [id_evento]" source="data[].ent1#att1" target="sv2#area17#page23#inu17#su42#rcond32.ent1#att1"/>
+      <Link id="sv2#area7#page13#inu22#ln66" name="Gerir equipas" to="sv2#area17#page23#dau7" type="normal" validate="true" gr:bendpoints="-642,222,658,-158">
         <LinkParameter id="sv2#area7#page13#inu22#ln66#par202" name="id_competicao_PASSING" sourceLinkParameter="sv2#area7#page13#inu21#ln41#par149" passing="true"/>
-        <LinkParameter id="sv2#area7#page13#inu22#ln66#par203" name="id_evento_PASSING" source="data[].ent1#att1" passing="true"/>
+        <LinkParameter id="sv2#area7#page13#inu22#ln66#par374" name="id_evento_KeyCondition41 [id_evento]" source="data[].ent1#att1" target="sv2#area17#page23#dau7#su74#kcond41.ent1#att1"/>
       </Link>
       <SortAttribute attribute="rel9#role17.ent7#att16" order="ascending"/>
       <SortAttribute attribute="rel9#role17.ent7#att17" order="descending"/>

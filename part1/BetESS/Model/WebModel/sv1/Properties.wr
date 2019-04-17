@@ -106,5 +106,12 @@
         <LinkParameter id="sv1#inn4#oln37#par362" name="oid_PASSING" sourceLinkParameter="sv1#seu3#oln13#par338" passing="true"/>
       </OKLink>
     </IsNotNullUnit>
+    <MathUnit id="sv1#mathu3" name="Calculo possiveis ganhos" gr:x="2100" gr:y="930" resultType="float" defaultExpression="odd * quantia">
+      <MathVariable id="sv1#mathu3#mathv5" name="odd"/>
+      <MathVariable id="sv1#mathu3#mathv6" name="quantia"/>
+      <Link id="sv1#mathu3#ln125" name="Flow124" to="sv1#area1#page4#mssu7" type="transport" validate="true">
+        <LinkParameter id="sv1#mathu3#ln125#par400" name="Result_Shown Messages" source="result" target="sv1#area1#page4#mssu7.shownMessages"/>
+      </Link>
+    </MathUnit>
   </OperationUnits>
 </SiteView>

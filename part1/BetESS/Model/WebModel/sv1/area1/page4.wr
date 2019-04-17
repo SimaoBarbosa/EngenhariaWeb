@@ -1,6 +1,6 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1560" gr:y="585" id="sv1#area1#page4" name="Confirmar aposta">
   <ContentUnits>
-    <EntryUnit id="sv1#area1#page4#enu2" name="Fazer Aposta" linkOrder="sv1#area1#page4#enu2#ln6" gr:x="0" gr:y="320" entity="ent10">
+    <EntryUnit id="sv1#area1#page4#enu2" name="Fazer Aposta" linkOrder="sv1#area1#page4#enu2#ln6 sv1#area1#page4#enu2#ln126" gr:x="0" gr:y="320" entity="ent10">
       <Field id="sv1#area1#page4#enu2#fld4" name="Quantia a apostar" type="float" modifiable="true" attribute="ent10#att23"/>
       <Link id="sv1#area1#page4#enu2#ln6" name="Apostar" to="sv1#qu2" type="normal" validate="true" gr:bendpoints="-23,-143,609,5">
         <LinkParameter id="sv1#area1#page4#enu2#ln6#par14" name="UserCtxParam.oid_PASSING_idUser" sourceLinkParameter="sv1#area1#page4#gtu4#ln28#par82" target="sv1#qu2.sv1#qu2#qi4"/>
@@ -18,6 +18,10 @@
         <LinkParameter id="sv1#area1#page4#enu2#ln6#par493" name="vip_PASSING" sourceLinkParameter="sv1#area1#page4#dau9#ln147#par486" passing="true"/>
         <LinkParameter id="sv1#area1#page4#enu2#ln6#par513" name="id_opcao_PASSING" sourceLinkParameter="sv1#area1#page4#dau9#ln147#par511" passing="true"/>
         <LinkParameter id="sv1#area1#page4#enu2#ln6#par514" name="odd_PASSING" sourceLinkParameter="sv1#area1#page4#dau9#ln147#par512" passing="true"/>
+      </Link>
+      <Link id="sv1#area1#page4#enu2#ln126" name="simular" to="sv1#mathu3" type="normal" validate="true">
+        <LinkParameter id="sv1#area1#page4#enu2#ln126#par415" name="odd_PASSING_odd" target="sv1#mathu3#mathv5" sourceLinkParameter="sv1#area1#page4#dau9#ln147#par512"/>
+        <LinkParameter id="sv1#area1#page4#enu2#ln126#par417" name="Quantia a apostar_quantia" target="sv1#mathu3#mathv6" source="sv1#area1#page4#enu2#fld4"/>
       </Link>
     </EntryUnit>
     <DataUnit gr:x="125" gr:y="0" id="sv1#area1#page4#dau1" name="Op&#231;&#227;o" entity="ent9" displayAttributes="ent9#att19 ent9#att20 ent9#att21">
@@ -57,6 +61,7 @@
         <LinkParameter id="sv1#area1#page4#dau9#ln147#par512" name="odd_PASSING" sourceLinkParameter="sv1#area1#page4#dau1#ln146#par510" passing="true"/>
       </Link>
     </DataUnit>
+    <MultiMessageUnit gr:x="310" gr:y="370" id="sv1#area1#page4#mssu7" name="Poss&#237;veis ganhos"/>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -76,6 +81,7 @@
         <layout:Unit unitId="sv1#area1#page4#enu2">
           <layout:Field field="sv1#area1#page4#enu2#fld4"/>
           <layout:Link link="sv1#area1#page4#enu2#ln6"/>
+          <layout:Link link="sv1#area1#page4#enu2#ln126"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -96,14 +102,16 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell colspan="6">
+      <layout:Cell colspan="3">
         <layout:Unit unitId="sv1#area1#page4#dau2">
           <layout:Attribute attribute="User#att29"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell/>
+      <layout:Cell colspan="3">
+        <layout:Unit unitId="sv1#area1#page4#mssu7"/>
+      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
