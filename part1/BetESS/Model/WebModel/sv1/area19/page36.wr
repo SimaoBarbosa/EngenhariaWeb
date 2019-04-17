@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area19#page36" name="Informa&#231;&#245;es VIP">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="20" id="sv1#area19#page36" name="Informa&#231;&#245;es VIP">
   <ContentUnits>
     <IndexUnit gr:x="0" gr:y="0" id="sv1#area19#page36#inu15" name="Equipas do evento" entity="ent2" linkOrder="sv1#area19#page36#inu15#ln94" displayAttributes="ent2#att4">
       <Selector id="sv1#area19#page36#inu15#su67" defaultPolicy="fill" booleanOperator="and">

@@ -1,12 +1,12 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="105" id="sv1#area1#page1" name="Desportos" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="25" id="sv1#area1#page1" name="Desportos" landmark="true">
   <ContentUnits>
-    <IndexUnit gr:x="0" gr:y="5" id="sv1#area1#page1#inu1" name="Desportos" entity="ent6" displayAttributes="ent6#att12" linkOrder="sv1#area1#page1#inu1#ln1">
+    <IndexUnit gr:x="0" gr:y="85" id="sv1#area1#page1#inu1" name="Desportos" entity="ent6" displayAttributes="ent6#att12" linkOrder="sv1#area1#page1#inu1#ln1">
       <Link id="sv1#area1#page1#inu1#ln1" name="Ver regi&#245;es" to="sv1#area1#page1#inu2" type="normal" validate="true">
         <LinkParameter id="sv1#area1#page1#inu1#ln1#par1" name="id_desporto_PASSING" source="data[].ent6#att11" passing="true"/>
         <LinkParameter id="sv1#area1#page1#inu1#ln1#par2" name="id_desporto_RoleCondition2 [id_desporto]" source="data[].ent6#att11" target="sv1#area1#page1#inu2#su2#rcond2.ent6#att11"/>
       </Link>
     </IndexUnit>
-    <IndexUnit gr:x="150" gr:y="5" id="sv1#area1#page1#inu2" name="Regi&#245;es" entity="ent4" displayAttributes="ent4#att8" linkOrder="sv1#area1#page1#inu2#ln2">
+    <IndexUnit gr:x="150" gr:y="85" id="sv1#area1#page1#inu2" name="Regi&#245;es" entity="ent4" displayAttributes="ent4#att8" linkOrder="sv1#area1#page1#inu2#ln2">
       <Link id="sv1#area1#page1#inu2#ln2" name="Ver competi&#231;&#245;es" to="sv1#area1#page1#inu3" type="normal" validate="true">
         <LinkParameter id="sv1#area1#page1#inu2#ln2#par3" name="id_regiao_PASSING" source="data[].ent4#att7" passing="true"/>
         <LinkParameter id="sv1#area1#page1#inu2#ln2#par6" name="id_regiao_RoleCondition3 [id_regiao]" source="data[].ent4#att7" target="sv1#area1#page1#inu3#su3#rcond3.ent4#att7"/>
@@ -16,7 +16,7 @@
         <RelationshipRoleCondition id="sv1#area1#page1#inu2#su2#rcond2" name="RoleCondition2" predicate="in" implied="false" role="rel3#role5"/>
       </Selector>
     </IndexUnit>
-    <IndexUnit gr:x="330" gr:y="0" id="sv1#area1#page1#inu3" name="Competi&#231;&#245;es" entity="ent3" displayAttributes="ent3#att6" linkOrder="sv1#area1#page1#inu3#ln3">
+    <IndexUnit gr:x="330" gr:y="80" id="sv1#area1#page1#inu3" name="Competi&#231;&#245;es" entity="ent3" displayAttributes="ent3#att6" linkOrder="sv1#area1#page1#inu3#ln3">
       <Link id="sv1#area1#page1#inu3#ln3" name="Ver fases" to="sv1#area1#page1#inu4" type="normal" validate="true">
         <LinkParameter id="sv1#area1#page1#inu3#ln3#par4" name="id_competicao_PASSING" source="data[].ent3#att5" passing="true"/>
         <LinkParameter id="sv1#area1#page1#inu3#ln3#par7" name="id_competicao_RoleCondition4 [id_competicao]" source="data[].ent3#att5" target="sv1#area1#page1#inu4#su4#rcond4.ent3#att5"/>
@@ -26,7 +26,7 @@
         <RelationshipRoleCondition id="sv1#area1#page1#inu3#su3#rcond22" name="RoleCondition22" predicate="in" implied="false" role="rel13#role26"/>
       </Selector>
     </IndexUnit>
-    <IndexUnit gr:x="535" gr:y="0" id="sv1#area1#page1#inu4" name="Fases" entity="ent5" displayAttributes="ent5#att10" linkOrder="sv1#area1#page1#inu4#ln4">
+    <IndexUnit gr:x="535" gr:y="80" id="sv1#area1#page1#inu4" name="Fases" entity="ent5" displayAttributes="ent5#att10" linkOrder="sv1#area1#page1#inu4#ln4">
       <Link id="sv1#area1#page1#inu4#ln4" name="Ver eventos" to="sv1#area1#page1#inu5" type="normal" validate="true">
         <LinkParameter id="sv1#area1#page1#inu4#ln4#par5" name="id_fase_PASSING" source="data[].ent5#att9" passing="true"/>
         <LinkParameter id="sv1#area1#page1#inu4#ln4#par8" name="id_fase_RoleCondition5 [id_fase]" source="data[].ent5#att9" target="sv1#area1#page1#inu5#su5#rcond5.ent5#att9"/>
@@ -35,11 +35,11 @@
         <RelationshipRoleCondition id="sv1#area1#page1#inu4#su4#rcond4" name="RoleCondition4" predicate="in" implied="false" role="rel1#role2"/>
       </Selector>
     </IndexUnit>
-    <IndexUnit gr:x="770" gr:y="0" id="sv1#area1#page1#inu5" name="Eventos" entity="ent1" displayAttributes="ent1#att14 rel9#role17.ent7#att16 rel9#role17.ent7#att17" linkOrder="sv1#area1#page1#inu5#ln5 sv1#area1#page1#inu5#ln93 sv1#area1#page1#inu5#ln114">
+    <IndexUnit gr:x="770" gr:y="80" id="sv1#area1#page1#inu5" name="Eventos" entity="ent1" displayAttributes="ent1#att14 rel9#role17.ent7#att16 rel9#role17.ent7#att17" linkOrder="sv1#area1#page1#inu5#ln5 sv1#area1#page1#inu5#ln93 sv1#area1#page1#inu5#ln114">
       <Selector id="sv1#area1#page1#inu5#su5" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#area1#page1#inu5#su5#rcond5" name="RoleCondition5" predicate="in" implied="false" role="rel5#role10"/>
       </Selector>
-      <Link id="sv1#area1#page1#inu5#ln5" name="Ver apostas dispon&#237;veis" to="sv1#area1#page3#inu6" type="normal" validate="true">
+      <Link id="sv1#area1#page1#inu5#ln5" name="Ver apostas dispon&#237;veis" to="sv1#area1#page3#inu6" type="normal" validate="true" gr:bendpoints="160,-94,-320,-2">
         <LinkParameter id="sv1#area1#page1#inu5#ln5#par285" name="true_AttCondition7" sourceValue="true" target="sv1#area1#page3#inu6#su1#acond7"/>
         <LinkParameter id="sv1#area1#page1#inu5#ln5#par286" name="id_evento_RoleCondition1 [id_evento]" source="data[].ent1#att1" target="sv1#area1#page3#inu6#su1#rcond1.ent1#att1"/>
         <LinkParameter id="sv1#area1#page1#inu5#ln5#par370" name="id_evento_PASSING" source="data[].ent1#att1" passing="true"/>
@@ -47,7 +47,7 @@
       </Link>
       <SortAttribute attribute="rel9#role17.ent7#att16" order="ascending"/>
       <SortAttribute attribute="rel9#role17.ent7#att17" order="ascending"/>
-      <Link id="sv1#area1#page1#inu5#ln93" name="Informa&#231;&#245;es VIP" to="sv1#area19#page36#inu15" type="normal" validate="true">
+      <Link id="sv1#area1#page1#inu5#ln93" name="Informa&#231;&#245;es VIP" to="sv1#area19#page36#inu15" type="normal" validate="true" gr:bendpoints="1,-178,756,176;-756,-177,-1,177">
         <LinkParameter id="sv1#area1#page1#inu5#ln93#par364" name="id_evento_RoleCondition38 [id_evento]" source="data[].ent1#att1" target="sv1#area19#page36#inu15#su67#rcond38.ent1#att1"/>
       </Link>
       <Link id="sv1#area1#page1#inu5#ln114" name="Ver apostas dispon&#237;veis" to="sv1#area1#page39#inu40" type="normal" validate="true">
@@ -57,8 +57,34 @@
         <LinkParameter id="sv1#area1#page1#inu5#ln114#par410" name="false_vip" target="sv1#area1#page39#inu40#su77#acond25" sourceValue="false"/>
       </Link>
     </IndexUnit>
+    <QueryUnit gr:x="200" gr:y="0" id="sv1#area1#page1#qu7" name="Notifica&#231;&#245;es" mode="select" language="SQL" db="db1">
+      <QueryText xml:space="preserve">select count(*) from notificacao where user_oid = (:idUser);</QueryText>
+      <QueryInput id="sv1#area1#page1#qu7#qi10" name="idUser" required="true" type="integer"/>
+      <QueryOutput id="sv1#area1#page1#qu7#qo5" name="Tem o seguinte n&#250;mero de notifica&#231;&#245;es:" type="integer"/>
+    </QueryUnit>
+    <GetUnit gr:x="10" gr:y="0" id="sv1#area1#page1#gtu10" name="Get10" contextParameters="UserCtxParam">
+      <Link id="sv1#area1#page1#gtu10#ln104" name="Flow104" to="sv1#area1#page1#qu7" type="transport" validate="true">
+        <LinkParameter id="sv1#area1#page1#gtu10#ln104#par376" name="UserCtxParam.oid_idUser" source="sv1#area1#page1#gtu10.UserCtxParam" target="sv1#area1#page1#qu7.sv1#area1#page1#qu7#qi10"/>
+      </Link>
+    </GetUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area1#page1#qu7"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
     <layout:Row>
       <layout:Cell colspan="4">
         <layout:Unit unitId="sv1#area1#page1#inu1">
@@ -98,7 +124,7 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell colspan="6">
+      <layout:Cell colspan="8">
         <layout:Unit unitId="sv1#area1#page1#inu5">
           <layout:Attribute attribute="ent1#att14"/>
           <layout:Attribute attribute="rel9#role17.ent7#att16"/>
@@ -113,7 +139,7 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell colspan="2"/>
+      <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
     <layout:Row>

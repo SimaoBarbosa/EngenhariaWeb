@@ -4,7 +4,7 @@
       <SortAttribute attribute="userName" order="ascending"/>
       <SortAttribute attribute="email" order="ascending"/>
       <Link id="sv2#area21#page41#inu44#ln117" name="Remover" to="sv2#dlu4" automaticCoupling="true" type="normal" validate="true"/>
-      <Link id="sv2#area21#page41#inu44#ln130" name="Apostas" to="sv2#area21#page44#inu47" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#area21#page41#inu44#ln130" name="Apostas" to="sv2#area21#page44#inu47" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-175,152,1,-283"/>
     </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
@@ -33,5 +33,5 @@
   <Link id="sv2#area21#page41#ln122" name="Gerir VIP's" to="sv2#area21#page43#inu45" type="normal" validate="true">
     <LinkParameter id="sv2#area21#page41#ln122#par416" name="1_RoleCondition50 [oid]" sourceValue="1" target="sv2#area21#page43#inu45#su82#rcond50.groupOID"/>
   </Link>
-  <Link id="sv2#area21#page41#ln138" name="Maiores apostas" to="sv2#area21#page45#inu50" type="normal" automaticCoupling="true" validate="true"/>
+  <Link id="sv2#area21#page41#ln138" name="Maiores apostas" to="sv2#area21#page45#inu50" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="-2,321,-32,-143"/>
 </Page>

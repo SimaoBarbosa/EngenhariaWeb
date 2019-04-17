@@ -15,12 +15,22 @@
         <LinkParameter id="sv1#area1#page3#inu6#ln108#par390" name="id_evento_PASSING_RoleCondition42 [id_evento]" sourceLinkParameter="sv1#area1#page1#inu5#ln5#par370" target="sv1#area1#page3#inu39#su76#rcond45.ent1#att1"/>
         <LinkParameter id="sv1#area1#page3#inu6#ln108#par391" name="true_vip" sourceValue="true" target="sv1#area1#page3#inu39#su76#acond23"/>
       </Link>
+      <Link id="sv1#area1#page3#inu6#ln76" name="Flow76" to="sv1#area1#page3#inu39" type="transport" validate="true" gr:bendpoints="212,32,-244,27">
+        <LinkParameter id="sv1#area1#page3#inu6#ln76#par48" name="true_disponibilidade" sourceValue="true" target="sv1#area1#page3#inu39#su76#acond22"/>
+        <LinkParameter id="sv1#area1#page3#inu6#ln76#par49" name="id_evento_PASSING_RoleCondition42 [id_evento]" sourceLinkParameter="sv1#area1#page34#inu34#ln92#par37" target="sv1#area1#page3#inu39#su76#rcond45.ent1#att1"/>
+        <LinkParameter id="sv1#area1#page3#inu6#ln76#par50" name="true_vip" sourceValue="true" target="sv1#area1#page3#inu39#su76#acond23"/>
+      </Link>
+      <Link id="sv1#area1#page3#inu6#ln90" name="Flow90" to="sv1#area1#page3#inu39" type="transport" validate="true" gr:bendpoints="213,-31,-243,-36">
+        <LinkParameter id="sv1#area1#page3#inu6#ln90#par104" name="true_disponibilidade" sourceValue="true" target="sv1#area1#page3#inu39#su76#acond22"/>
+        <LinkParameter id="sv1#area1#page3#inu6#ln90#par117" name="id_evento_PASSING_RoleCondition42 [id_evento]" sourceLinkParameter="sv1#area20#page31#inu32#ln91#par57" target="sv1#area1#page3#inu39#su76#rcond45.ent1#att1"/>
+        <LinkParameter id="sv1#area1#page3#inu6#ln90#par289" name="true_vip" sourceValue="true" target="sv1#area1#page3#inu39#su76#acond23"/>
+      </Link>
     </IndexUnit>
     <IndexUnit gr:x="270" gr:y="140" id="sv1#area1#page3#inu11" name="Opc&#245;es" entity="ent9" displayAttributes="ent9#att20 ent9#att21" linkOrder="sv1#area1#page3#inu11#ln18">
       <Selector id="sv1#area1#page3#inu11#su6" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#area1#page3#inu11#su6#rcond6" name="RoleCondition6" predicate="in" implied="false" role="rel15#role29"/>
       </Selector>
-      <Link id="sv1#area1#page3#inu11#ln18" name="Apostar" to="sv1#area1#page4#dau1" type="normal" validate="true">
+      <Link id="sv1#area1#page3#inu11#ln18" name="Apostar" to="sv1#area1#page4#dau1" type="normal" validate="true" gr:bendpoints="0,223,-166,-223;166,226,0,-220">
         <LinkParameter id="sv1#area1#page3#inu11#ln18#par54" name="odd_PASSING" source="data[].ent9#att21" passing="true"/>
         <LinkParameter id="sv1#area1#page3#inu11#ln18#par55" name="opcao_PASSING" source="data[].ent9#att20" passing="true"/>
         <LinkParameter id="sv1#area1#page3#inu11#ln18#par22" name="id_aposta_disponivel_PASSING" sourceLinkParameter="sv1#area1#page3#inu6#ln10#par21" passing="true"/>

@@ -1,9 +1,11 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area4#page33" name="Vip" linkOrder="sv1#area4#page33#ln80">
   <ContentUnits>
     <MultiMessageUnit gr:x="0" gr:y="0" id="sv1#area4#page33#mssu2" name="Vip">
-      <Message xml:space="preserve">Pode tornar-se vip por apenas 50 ESScoins, para usufruir das seguintes ofertas:
-- Apostas exclusivas para vips
-- Consulta de hist&#243;ricos de apostas das equipas envolvidas num evento</Message>
+      <Message xml:space="preserve">Pode tornar-se vip por apenas 50 ESScoins, para usufruir das seguintes ofertas:</Message>
+    </MultiMessageUnit>
+    <MultiMessageUnit gr:x="80" gr:y="0" id="sv1#area4#page33#mssu4">
+      <Message xml:space="preserve">- Apostas exclusivas para apostadores VIP's;
+</Message>    </MultiMessageUnit>    <MultiMessageUnit gr:x="160" gr:y="0" id="sv1#area4#page33#mssu5">      <Message xml:space="preserve">- Consulta de hist&#243;ricos de apostas das equipas envolvidas num evento.</Message>
     </MultiMessageUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
@@ -23,6 +25,38 @@
       <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area4#page33#mssu4"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area4#page33#mssu5"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
   </layout:Grid>
-  <Link id="sv1#area4#page33#ln80" name="Tornar-me vip" to="sv1#seu3" automaticCoupling="true" type="normal" validate="true"/>
+  <Link id="sv1#area4#page33#ln80" name="Tornar-me vip" to="sv1#seu3" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-165,85,265,-15"/>
 </Page>

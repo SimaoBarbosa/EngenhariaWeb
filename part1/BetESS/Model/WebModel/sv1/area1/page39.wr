@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area1#page39" name="Apostas" gr:x="755" gr:y="415" protected="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area1#page39" name="Apostas" gr:x="755" gr:y="355" protected="true">
   <ContentUnits>
     <IndexUnit id="sv1#area1#page39#inu40" name="Apostas Dispon&#237;veis" linkOrder="sv1#area1#page39#inu40#ln109" gr:x="0" gr:y="0" entity="ent8" displayAttributes="ent8#att25">
       <Selector id="sv1#area1#page39#inu40#su77" defaultPolicy="fill" booleanOperator="and">
@@ -15,8 +15,18 @@
         <LinkParameter id="sv1#area1#page39#inu40#ln110#par396" name="id_evento_PASSING_RoleCondition42 [id_evento]" sourceLinkParameter="sv1#area1#page1#inu5#ln114#par409" target="sv1#area1#page39#inu42#su79#rcond48.ent1#att1"/>
         <LinkParameter id="sv1#area1#page39#inu40#ln110#par397" name="true_vip" target="sv1#area1#page39#inu42#su79#acond27" sourceValue="true"/>
       </Link>
+      <Link id="sv1#area1#page39#inu40#ln64" name="Flow64" to="sv1#area1#page39#inu42" type="transport" validate="true" gr:bendpoints="-36,69,-40,-80">
+        <LinkParameter id="sv1#area1#page39#inu40#ln64#par32" name="true_disponibilidade" sourceValue="true" target="sv1#area1#page39#inu42#su79#acond26"/>
+        <LinkParameter id="sv1#area1#page39#inu40#ln64#par34" name="id_evento_PASSING_RoleCondition42 [id_evento]" sourceLinkParameter="sv1#area1#page34#inu34#ln116#par30" target="sv1#area1#page39#inu42#su79#rcond48.ent1#att1"/>
+        <LinkParameter id="sv1#area1#page39#inu40#ln64#par35" name="true_vip" sourceValue="true" target="sv1#area1#page39#inu42#su79#acond27"/>
+      </Link>
+      <Link id="sv1#area1#page39#inu40#ln19" name="Flow19" to="sv1#area1#page39#inu42" type="transport" validate="true" gr:bendpoints="50,129,41,-125">
+        <LinkParameter id="sv1#area1#page39#inu40#ln19#par61" name="true_disponibilidade" sourceValue="true" target="sv1#area1#page39#inu42#su79#acond26"/>
+        <LinkParameter id="sv1#area1#page39#inu40#ln19#par63" name="id_evento_PASSING_RoleCondition42 [id_evento]" sourceLinkParameter="sv1#area20#page31#inu32#ln115#par372" target="sv1#area1#page39#inu42#su79#rcond48.ent1#att1"/>
+        <LinkParameter id="sv1#area1#page39#inu40#ln19#par65" name="true_vip" sourceValue="true" target="sv1#area1#page39#inu42#su79#acond27"/>
+      </Link>
     </IndexUnit>
-    <IndexUnit id="sv1#area1#page39#inu41" name="Opc&#245;es" linkOrder="sv1#area1#page39#inu41#ln112" gr:x="270" gr:y="140" entity="ent9" displayAttributes="ent9#att20 ent9#att21">
+    <IndexUnit id="sv1#area1#page39#inu41" name="Opc&#245;es" linkOrder="sv1#area1#page39#inu41#ln112" gr:x="270" gr:y="200" entity="ent9" displayAttributes="ent9#att20 ent9#att21">
       <Selector id="sv1#area1#page39#inu41#su78" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#area1#page39#inu41#su78#rcond47" name="RoleCondition6" predicate="in" implied="false" role="rel15#role29"/>
       </Selector>
@@ -28,7 +38,7 @@
         <LinkParameter id="sv1#area1#page39#inu41#ln112#par403" name="id_opcao_KeyCondition1 [id_opcao]" source="data[].ent9#att19" target="sv1#area1#page4#dau1#su10#kcond1.ent9#att19"/>
       </Link>
     </IndexUnit>
-    <IndexUnit id="sv1#area1#page39#inu42" name="Apostas VIP" linkOrder="sv1#area1#page39#inu42#ln113" gr:x="5" gr:y="150" entity="ent8" displayAttributes="ent8#att25">
+    <IndexUnit id="sv1#area1#page39#inu42" name="Apostas VIP" linkOrder="sv1#area1#page39#inu42#ln113" gr:x="10" gr:y="255" entity="ent8" displayAttributes="ent8#att25">
       <Selector id="sv1#area1#page39#inu42#su79" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#area1#page39#inu42#su79#rcond48" name="RoleCondition42" predicate="in" implied="false" role="rel11#role21"/>
         <AttributesCondition id="sv1#area1#page39#inu42#su79#acond26" name="disponibilidade" predicate="eq" booleanOperator="or" implied="false" attributes="ent8#att30"/>

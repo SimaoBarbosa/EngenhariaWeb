@@ -20,7 +20,7 @@
       <Selector id="sv2#area21#page43#inu46#su86" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#area21#page43#inu46#su86#rcond51" name="RoleCondition51" predicate="in" implied="false" role="Group2User"/>
       </Selector>
-      <Link id="sv2#area21#page43#inu46#ln128" name="Retirar VIP" to="sv2#mfu5" type="normal" validate="true">
+      <Link id="sv2#area21#page43#inu46#ln128" name="Retirar VIP" to="sv2#mfu5" type="normal" validate="true" gr:bendpoints="122,-16,-118,-51">
         <LinkParameter id="sv2#area21#page43#inu46#ln128#par427" name="1_Group.oid(defaultGroup)" sourceValue="1" target="sv2#mfu5.User2DefaultGroup.groupOID"/>
         <LinkParameter id="sv2#area21#page43#inu46#ln128#par428" name="oid_KeyCondition36 [oid]" source="data[].userOID" target="sv2#mfu5#su89#kcond39.userOID"/>
         <LinkParameter id="sv2#area21#page43#inu46#ln128#par431" name="oid_PASSING" source="data[].userOID" passing="true"/>

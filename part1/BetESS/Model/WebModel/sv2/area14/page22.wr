@@ -77,5 +77,5 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Link id="sv2#area14#page22#ln62" name="Voltar" to="sv2#area7#page13" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="173,26,-527,116"/>
+  <Link id="sv2#area14#page22#ln62" name="Voltar" to="sv2#area7#page13" automaticCoupling="true" type="normal" validate="true"/>
 </Page>

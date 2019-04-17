@@ -111,11 +111,11 @@ where aposta_disponivel_id_aposta_di = (:idApostaDisponivel);</QueryText>
       </OKLink>
       <KOLink id="sv2#cru6#kln16" name="KOFlow16" to="sv2#area11#page9" automaticCoupling="true"/>
     </CreateUnit>
-    <CreateUnit gr:x="285" gr:y="-130" id="sv2#cru7" name="Criar desporto" entity="ent6">
-      <OKLink id="sv2#cru7#oln10" name="OKFlow10" to="sv2#area7#page13" automaticCoupling="true" gr:bendpoints="-178,107,-303,-93"/>
+    <CreateUnit gr:x="285" gr:y="-225" id="sv2#cru7" name="Criar desporto" entity="ent6">
+      <OKLink id="sv2#cru7#oln10" name="OKFlow10" to="sv2#area7#page13" automaticCoupling="true"/>
       <KOLink id="sv2#cru7#kln13" name="KOFlow13" to="sv2#area6#page6" automaticCoupling="true" gr:bendpoints="-94,-30,131,-30"/>
     </CreateUnit>
-    <SelectorUnit gr:x="685" gr:y="-220" id="sv2#seu7" name="Regi&#227;o" entity="ent4">
+    <SelectorUnit gr:x="685" gr:y="-315" id="sv2#seu7" name="Regi&#227;o" entity="ent4">
       <Selector id="sv2#seu7#su18" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="sv2#seu7#su18#acond5" name="nome" predicate="eq" booleanOperator="or" implied="false" attributes="ent4#att8"/>
       </Selector>
@@ -127,35 +127,35 @@ where aposta_disponivel_id_aposta_di = (:idApostaDisponivel);</QueryText>
         <LinkParameter id="sv2#seu7#oln14#par101" name="nome_PASSING" sourceLinkParameter="sv2#area9#page16#enu10#ln23#par96" passing="true"/>
       </OKLink>
     </SelectorUnit>
-    <IsNotNullUnit gr:x="670" gr:y="-75" id="sv2#inn3" name="Regiao_existe">
-      <KOLink id="sv2#inn3#kln14" name="KOFlow14" to="sv2#cru8">
+    <IsNotNullUnit gr:x="670" gr:y="-170" id="sv2#inn3" name="Regiao_existe">
+      <KOLink id="sv2#inn3#kln14" name="KOFlow14" to="sv2#cru8" gr:bendpoints="99,-22,-96,-11">
         <LinkParameter id="sv2#inn3#kln14#par86" name="nome_PASSING_nome" sourceLinkParameter="sv2#seu7#oln14#par101" target="sv2#cru8.ent4#att8"/>
         <LinkParameter id="sv2#inn3#kln14#par92" name="id_desporto_PASSING" sourceLinkParameter="sv2#seu7#oln14#par85" passing="true"/>
       </KOLink>
-      <OKLink id="sv2#inn3#oln23" name="OKFlow23" to="sv2#cnu2">
+      <OKLink id="sv2#inn3#oln23" name="OKFlow23" to="sv2#cnu2" gr:bendpoints="63,-87,-137,73">
         <LinkParameter id="sv2#inn3#oln23#par88" name="id_regiao_PASSING_KeyCondition6 [id_regiao] [Regi&#227;o] [Source]" sourceLinkParameter="sv2#seu7#oln14#par87" target="sv2#cnu2#su26#kcond6.ent4#att7"/>
         <LinkParameter id="sv2#inn3#oln23#par91" name="id_desporto_PASSING_KeyCondition8 [id_desporto] [Desporto] [Target]" sourceLinkParameter="sv2#seu7#oln14#par85" target="sv2#cnu2#su27#kcond8.ent6#att11"/>
       </OKLink>
     </IsNotNullUnit>
-    <CreateUnit gr:x="870" gr:y="-95" id="sv2#cru8" name="Criar Regi&#227;o" entity="ent4">
+    <CreateUnit gr:x="870" gr:y="-190" id="sv2#cru8" name="Criar Regi&#227;o" entity="ent4">
       <OKLink id="sv2#cru8#oln25" name="OKFlow25" to="sv2#cnu2">
         <LinkParameter id="sv2#cru8#oln25#par93" name="id_regiao_KeyCondition6 [id_regiao] [Regi&#227;o] [Source]" source="ent4#att7Array" target="sv2#cnu2#su26#kcond6.ent4#att7"/>
         <LinkParameter id="sv2#cru8#oln25#par95" name="id_desporto_PASSING_KeyCondition8 [id_desporto] [Desporto] [Target]" sourceLinkParameter="sv2#inn3#kln14#par92" target="sv2#cnu2#su27#kcond8.ent6#att11"/>
       </OKLink>
-      <KOLink id="sv2#cru8#kln18" name="KOFlow18" to="sv2#area6#page6" automaticCoupling="true" gr:bendpoints="-434,66,371,111"/>
+      <KOLink id="sv2#cru8#kln18" name="KOFlow18" to="sv2#area6#page6" automaticCoupling="true" gr:bendpoints="-178,75,626,120;-650,80,154,125"/>
     </CreateUnit>
-    <ConnectUnit gr:x="825" gr:y="-255" id="sv2#cnu2" name="Relaciona regi&#227;o e desporto" relationship="rel3#role6">
+    <ConnectUnit gr:x="825" gr:y="-350" id="sv2#cnu2" name="Relaciona regi&#227;o e desporto" relationship="rel3#role6">
       <SourceSelector id="sv2#cnu2#su26" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#cnu2#su26#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
       </SourceSelector>
       <TargetSelector id="sv2#cnu2#su27" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#cnu2#su27#kcond8" name="KeyCondition8" predicate="in" implied="false"/>
       </TargetSelector>
-      <OKLink id="sv2#cnu2#oln26" name="OKFlow26" to="sv2#area7#page13" automaticCoupling="true"/>
-      <KOLink id="sv2#cnu2#kln17" name="KOFlow17" to="sv2#area6#page6" automaticCoupling="true" gr:bendpoints="-532,-47,278,-152"/>
+      <OKLink id="sv2#cnu2#oln26" name="OKFlow26" to="sv2#area7#page13" automaticCoupling="true" gr:bendpoints="-161,252,299,-162"/>
+      <KOLink id="sv2#cnu2#kln17" name="KOFlow17" to="sv2#area6#page6" automaticCoupling="true" gr:bendpoints="-156,-46,653,-150;-812,-47,-3,-151"/>
     </ConnectUnit>
-    <CreateUnit gr:x="1365" gr:y="-125" id="sv2#cru9" name="Cirar competi&#231;&#227;o" entity="ent3">
-      <OKLink id="sv2#cru9#oln27" name="OKFlow27" to="sv2#area7#page13" automaticCoupling="true"/>
+    <CreateUnit gr:x="1365" gr:y="-220" id="sv2#cru9" name="Cirar competi&#231;&#227;o" entity="ent3">
+      <OKLink id="sv2#cru9#oln27" name="OKFlow27" to="sv2#area7#page13" automaticCoupling="true" gr:bendpoints="-74,84,891,-210;-302,86,663,-208;-462,150,503,-144"/>
       <KOLink id="sv2#cru9#kln19" name="KOFlow19" to="sv2#area12#page18#enu11" automaticCoupling="true" gr:bendpoints="-138,17,137,12"/>
     </CreateUnit>
     <CreateUnit gr:x="1655" gr:y="30" id="sv2#cru10" name="Criar fase" entity="ent5">
@@ -225,7 +225,7 @@ where aposta_disponivel_id_aposta_di = (:idApostaDisponivel);</QueryText>
       <OKLink id="sv2#cru11#oln32" name="OKFlow32" to="sv2#area18#page25" automaticCoupling="true"/>
       <KOLink id="sv2#cru11#kln25" name="KOFlow25" to="sv2#area18#page25" automaticCoupling="true" gr:bendpoints="-36,-50,19,90"/>
     </CreateUnit>
-    <DisconnectUnit id="sv2#dcnu4" name="Remover equipa de evento" gr:x="1805" gr:y="1010" relationship="rel4#role7">
+    <DisconnectUnit id="sv2#dcnu4" name="Remover equipa de evento" gr:x="1415" gr:y="1205" relationship="rel4#role7">
       <SourceSelector id="sv2#dcnu4#su41" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#dcnu4#su41#kcond22" name="KeyCondition16" predicate="in" implied="false"/>
       </SourceSelector>
@@ -233,7 +233,7 @@ where aposta_disponivel_id_aposta_di = (:idApostaDisponivel);</QueryText>
         <KeyCondition id="sv2#dcnu4#su51#kcond23" name="KeyCondition17" predicate="in" implied="false"/>
       </TargetSelector>
     </DisconnectUnit>
-    <ConnectUnit id="sv2#cnu5" name="Ligar equipa a evento" gr:x="1825" gr:y="1175" relationship="rel4#role7">
+    <ConnectUnit id="sv2#cnu5" name="Ligar equipa a evento" gr:x="1435" gr:y="1370" relationship="rel4#role7">
       <SourceSelector id="sv2#cnu5#su52" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#cnu5#su52#kcond24" name="KeyCondition18" predicate="in" implied="false"/>
       </SourceSelector>
@@ -258,7 +258,7 @@ where aposta_disponivel_id_aposta_di = (:idApostaDisponivel);</QueryText>
       <OKLink id="sv2#dlu4#oln45" name="OKFlow45" to="sv2#area21#page41" automaticCoupling="true"/>
       <KOLink id="sv2#dlu4#kln35" name="KOFlow35" to="sv2#area21#page41" automaticCoupling="true" gr:bendpoints="90,-40,-90,75"/>
     </DeleteUnit>
-    <ReconnectUnit gr:x="-190" gr:y="1355" id="sv2#rcnu2" name="Tornar VIP" relationship="User2Group">
+    <ReconnectUnit gr:x="-140" gr:y="1355" id="sv2#rcnu2" name="Tornar VIP" relationship="User2Group">
       <SourceSelector id="sv2#rcnu2#su83" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#rcnu2#su83#kcond34" name="KeyCondition34" predicate="in" implied="false"/>
       </SourceSelector>
@@ -266,29 +266,29 @@ where aposta_disponivel_id_aposta_di = (:idApostaDisponivel);</QueryText>
         <KeyCondition id="sv2#rcnu2#su84#kcond35" name="KeyCondition35" predicate="in" implied="false"/>
       </TargetSelector>
       <OKLink id="sv2#rcnu2#oln43" name="OKFlow43" to="sv2#area21#page43" automaticCoupling="true"/>
-      <KOLink id="sv2#rcnu2#kln33" name="KOFlow33" to="sv2#area21#page43" automaticCoupling="true" gr:bendpoints="-27,-79,-2,101"/>
+      <KOLink id="sv2#rcnu2#kln33" name="KOFlow33" to="sv2#area21#page43" automaticCoupling="true" gr:bendpoints="96,-65,-54,124"/>
     </ReconnectUnit>
-    <ModifyUnit gr:x="35" gr:y="1360" id="sv2#mfu4" name="Tornar VIP" entity="User">
+    <ModifyUnit gr:x="65" gr:y="1490" id="sv2#mfu4" name="Tornar VIP" entity="User">
       <Selector id="sv2#mfu4#su85" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#mfu4#su85#kcond36" name="KeyCondition36" predicate="in" implied="false"/>
       </Selector>
-      <OKLink id="sv2#mfu4#oln42" name="OKFlow42" to="sv2#rcnu2">
+      <OKLink id="sv2#mfu4#oln42" name="OKFlow42" to="sv2#rcnu2" gr:bendpoints="-168,-37,17,88">
         <LinkParameter id="sv2#mfu4#oln42#par434" name="oid_PASSING_KeyCondition34 [oid] [User] [ConnectSource]" sourceLinkParameter="sv2#area21#page43#inu45#ln123#par430" target="sv2#rcnu2#su83#kcond34.userOID"/>
         <LinkParameter id="sv2#mfu4#oln42#par435" name="3_KeyCondition35 [oid] [Group] [ConnectTarget]" sourceValue="3" target="sv2#rcnu2#su84#kcond35.groupOID"/>
       </OKLink>
-      <KOLink id="sv2#mfu4#kln34" name="KOFlow34" to="sv2#area21#page43" automaticCoupling="true"/>
+      <KOLink id="sv2#mfu4#kln34" name="KOFlow34" to="sv2#area21#page43" automaticCoupling="true" gr:bendpoints="12,-137,47,177"/>
     </ModifyUnit>
-    <ReconnectUnit id="sv2#rcnu3" name="Retirar VIP" gr:x="175" gr:y="1355" relationship="User2Group">
+    <ReconnectUnit id="sv2#rcnu3" name="Retirar VIP" gr:x="175" gr:y="1400" relationship="User2Group">
       <SourceSelector id="sv2#rcnu3#su87" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#rcnu3#su87#kcond37" name="KeyCondition34" predicate="in" implied="false"/>
       </SourceSelector>
       <TargetSelector id="sv2#rcnu3#su88" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#rcnu3#su88#kcond38" name="KeyCondition35" predicate="in" implied="false"/>
       </TargetSelector>
-      <OKLink id="sv2#rcnu3#oln48" name="OKFlow48" to="sv2#area21#page43" automaticCoupling="true"/>
-      <KOLink id="sv2#rcnu3#kln36" name="KOFlow36" to="sv2#area21#page43" automaticCoupling="true" gr:bendpoints="-74,-63,86,122"/>
+      <OKLink id="sv2#rcnu3#oln48" name="OKFlow48" to="sv2#area21#page43" automaticCoupling="true" gr:bendpoints="-48,-105,118,129"/>
+      <KOLink id="sv2#rcnu3#kln36" name="KOFlow36" to="sv2#area21#page43" automaticCoupling="true" gr:bendpoints="-98,-84,68,150"/>
     </ReconnectUnit>
-    <ModifyUnit id="sv2#mfu5" name="Retirar VIP" gr:x="345" gr:y="1265" entity="User">
+    <ModifyUnit id="sv2#mfu5" name="Retirar VIP" gr:x="345" gr:y="1200" entity="User">
       <Selector id="sv2#mfu5#su89" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#mfu5#su89#kcond39" name="KeyCondition36" predicate="in" implied="false"/>
       </Selector>

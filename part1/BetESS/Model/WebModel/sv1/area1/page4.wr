@@ -2,7 +2,7 @@
   <ContentUnits>
     <EntryUnit id="sv1#area1#page4#enu2" name="Fazer Aposta" linkOrder="sv1#area1#page4#enu2#ln6" gr:x="0" gr:y="320" entity="ent10">
       <Field id="sv1#area1#page4#enu2#fld4" name="Quantia a apostar" type="float" modifiable="true" attribute="ent10#att23"/>
-      <Link id="sv1#area1#page4#enu2#ln6" name="Apostar" to="sv1#qu2" type="normal" validate="true">
+      <Link id="sv1#area1#page4#enu2#ln6" name="Apostar" to="sv1#qu2" type="normal" validate="true" gr:bendpoints="-23,-143,609,5">
         <LinkParameter id="sv1#area1#page4#enu2#ln6#par14" name="UserCtxParam.oid_PASSING_idUser" sourceLinkParameter="sv1#area1#page4#gtu4#ln28#par82" target="sv1#qu2.sv1#qu2#qi4"/>
         <LinkParameter id="sv1#area1#page4#enu2#ln6#par15" name="Quantia a apostar_PASSING" source="sv1#area1#page4#enu2#fld4" passing="true"/>
         <LinkParameter id="sv1#area1#page4#enu2#ln6#par16" name="UserCtxParam.oid_PASSING" sourceLinkParameter="sv1#area1#page4#gtu4#ln28#par82" passing="true"/>
@@ -30,7 +30,7 @@
         <LinkParameter id="sv1#area1#page4#dau1#ln146#par510" name="odd_PASSING" source="data.ent9#att21" passing="true"/>
       </Link>
     </DataUnit>
-    <GetUnit id="sv1#area1#page4#gtu4" name="Get" gr:x="180" gr:y="375" contextParameters="UserCtxParam">
+    <GetUnit id="sv1#area1#page4#gtu4" name="Get" gr:x="180" gr:y="405" contextParameters="UserCtxParam">
       <Link id="sv1#area1#page4#gtu4#ln28" name="Flow27" to="sv1#area1#page4#enu2" type="transport" validate="true">
         <LinkParameter id="sv1#area1#page4#gtu4#ln28#par82" name="UserCtxParam.oid_PASSING" source="sv1#area1#page4#gtu4.UserCtxParam" passing="true"/>
       </Link>

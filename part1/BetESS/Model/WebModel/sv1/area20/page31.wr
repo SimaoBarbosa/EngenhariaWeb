@@ -4,16 +4,20 @@
       <Selector id="sv1#area20#page31#inu32#su64" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#area20#page31#inu32#su64#rcond31" name="RoleCondition36" predicate="in" implied="false" role="rel4#role8"/>
       </Selector>
-      <Link id="sv1#area20#page31#inu32#ln91" name="Ver eventos" to="sv1#area1#page3#inu6" type="normal" validate="true" gr:bendpoints="1304,0,524,1160;1304,-1352,524,-192;780,-1352,0,-192">
+      <Link id="sv1#area20#page31#inu32#ln91" name="Ver apostas dispon&#237;veis" to="sv1#area1#page3#inu6" type="normal" validate="true" gr:bendpoints="648,434,-454,2226;1760,436,656,2224;1760,-1948,656,-160;1098,-1950,-6,-160">
         <LinkParameter id="sv1#area20#page31#inu32#ln91#par334" name="true_AttCondition7" sourceValue="true" target="sv1#area1#page3#inu6#su1#acond7"/>
         <LinkParameter id="sv1#area20#page31#inu32#ln91#par335" name="id_evento_RoleCondition1 [id_evento]" source="data[].ent1#att1" target="sv1#area1#page3#inu6#su1#rcond1.ent1#att1"/>
+        <LinkParameter id="sv1#area20#page31#inu32#ln91#par52" name="false_vip" sourceValue="false" target="sv1#area1#page3#inu6#su1#acond16"/>
+        <LinkParameter id="sv1#area20#page31#inu32#ln91#par57" name="id_evento_PASSING" source="data[].ent1#att1" passing="true"/>
       </Link>
       <SortAttribute attribute="rel9#role17.ent7#att16" order="ascending"/>
       <SortAttribute attribute="rel9#role17.ent7#att17" order="ascending"/>
-      <Link id="sv1#area20#page31#inu32#ln98" name="Informa&#231;&#245;es VIP" to="sv1#area19#page36#inu15" automaticCoupling="true" type="normal" validate="true"/>
-      <Link id="sv1#area20#page31#inu32#ln115" name="Ver eventos" to="sv1#area1#page39#inu40" type="normal" validate="true" gr:bendpoints="1304,0,524,1160;1304,-1352,524,-192;780,-1352,0,-192">
+      <Link id="sv1#area20#page31#inu32#ln98" name="Informa&#231;&#245;es VIP" to="sv1#area19#page36#inu15" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-383,0,-251,2054;-386,-2126,-254,-52;-255,-2112,-123,-58"/>
+      <Link id="sv1#area20#page31#inu32#ln115" name="Ver apostas dispon&#237;veis" to="sv1#area1#page39#inu40" type="normal" validate="true" gr:bendpoints="628,60,-12,1494;1125,60,485,1494;1134,-1577,494,-143;668,-1577,28,-143">
         <LinkParameter id="sv1#area20#page31#inu32#ln115#par411" name="true_AttCondition7" target="sv1#area1#page39#inu40#su77#acond24" sourceValue="true"/>
         <LinkParameter id="sv1#area20#page31#inu32#ln115#par412" name="id_evento_RoleCondition1 [id_evento]" source="data[].ent1#att1" target="sv1#area1#page39#inu40#su77#rcond46.ent1#att1"/>
+        <LinkParameter id="sv1#area20#page31#inu32#ln115#par59" name="false_vip" sourceValue="false" target="sv1#area1#page39#inu40#su77#acond25"/>
+        <LinkParameter id="sv1#area20#page31#inu32#ln115#par372" name="id_evento_PASSING" source="data[].ent1#att1" passing="true"/>
       </Link>
     </IndexUnit>
   </ContentUnits>

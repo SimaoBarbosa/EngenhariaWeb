@@ -1,6 +1,6 @@
 <Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="10" gr:y="55" id="sv1#area1" name="Eventos" landmark="true" landmarks="sv1#area1#page1 sv1#area1#page34" defaultPage="sv1#area1#page1">
   <OperationUnits>
-    <IsNotNullUnit gr:x="345" gr:y="660" id="sv1#area1#inn1" name="Is Not Null1">
+    <IsNotNullUnit gr:x="600" gr:y="875" id="sv1#area1#inn1" name="Is Not Null1">
       <KOLink id="sv1#area1#inn1#kln4" name="KOFlow4" to="sv1#area1#page5" preserveForm="false" automaticCoupling="true"/>
       <OKLink id="sv1#area1#inn1#oln3" name="OKFlow3" to="sv1#area1#qu3">
         <LinkParameter id="sv1#area1#inn1#oln3#par41" name="UserCtxParam.oid_PASSING_userId" sourceLinkParameter="sv1#qu2#oln2#par40" target="sv1#area1#qu3.sv1#area1#qu3#qi7"/>
@@ -24,7 +24,7 @@
         <LinkParameter id="sv1#area1#inn1#oln3#par523" name="odd_PASSING" sourceLinkParameter="sv1#qu2#oln2#par516" passing="true"/>
       </OKLink>
     </IsNotNullUnit>
-    <QueryUnit id="sv1#area1#qu3" name="Remover saldo" gr:x="430" gr:y="850" mode="update" language="HQL" db="db1">
+    <QueryUnit id="sv1#area1#qu3" name="Remover saldo" gr:x="640" gr:y="1035" mode="update" language="HQL" db="db1">
       <QueryText xml:space="preserve">update User set saldo = saldo - (:valor) where oid = (:userId);</QueryText>
       <QueryInput id="sv1#area1#qu3#qi6" name="valor" required="true" type="float"/>
       <QueryInput id="sv1#area1#qu3#qi7" name="userId" required="true" type="integer"/>
@@ -38,7 +38,7 @@
         <LinkParameter id="sv1#area1#qu3#oln7#par526" name="odd_PASSING_odd_fixada" sourceLinkParameter="sv1#area1#inn1#oln3#par523" target="sv1#cru1.ent10#att24"/>
         <LinkParameter id="sv1#area1#qu3#oln7#par527" name="id_opcao_PASSING_Opcao.id_opcao(Aposta_ConcretaToOpcao)" sourceLinkParameter="sv1#area1#inn1#oln3#par522" target="sv1#cru1.rel16#role31.ent9#att19"/>
       </OKLink>
-      <KOLink id="sv1#area1#qu3#kln6" name="KOFlow6" to="sv1#area1#page4" automaticCoupling="true"/>
+      <KOLink id="sv1#area1#qu3#kln6" name="KOFlow6" to="sv1#area1#page4" automaticCoupling="true" gr:bendpoints="238,-117,-788,63"/>
     </QueryUnit>
   </OperationUnits>
 </Area>

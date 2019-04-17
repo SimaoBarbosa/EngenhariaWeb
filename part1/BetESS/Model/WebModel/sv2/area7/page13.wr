@@ -19,7 +19,7 @@
       <Selector id="sv2#area7#page13#inu19#su22" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#area7#page13#inu19#su22#rcond17" name="RoleCondition2" predicate="in" implied="false" role="rel3#role5"/>
       </Selector>
-      <Link id="sv2#area7#page13#inu19#ln26" name="Adicionar competi&#231;&#227;o" to="sv2#area12#page18#enu11" type="normal" validate="true" gr:bendpoints="483,-98,-432,102">
+      <Link id="sv2#area7#page13#inu19#ln26" name="Adicionar competi&#231;&#227;o" to="sv2#area12#page18#enu11" type="normal" validate="true" gr:bendpoints="101,-140,-815,156;625,-143,-291,153">
         <LinkParameter id="sv2#area7#page13#inu19#ln26#par102" name="id_desporto_PASSING" sourceLinkParameter="sv2#area7#page13#inu18#ln38#par170" passing="true"/>
         <LinkParameter id="sv2#area7#page13#inu19#ln26#par108" name="id_regiao_PASSING" source="data[].ent4#att7" passing="true"/>
       </Link>
@@ -39,7 +39,7 @@
       <Link id="sv2#area7#page13#inu20#ln32" name="Adicionar fase" to="sv2#area13#page21#enu12" type="normal" validate="true" gr:bendpoints="528,-117,-512,-77">
         <LinkParameter id="sv2#area7#page13#inu20#ln32#par113" name="id_competicao_PASSING" source="data[].ent3#att5" passing="true"/>
       </Link>
-      <Link id="sv2#area7#page13#inu20#ln25" name="Gerir equipas" to="sv2#area14#page22#inu8" type="normal" validate="true" gr:bendpoints="-342,114,323,104">
+      <Link id="sv2#area7#page13#inu20#ln25" name="Gerir equipas" to="sv2#area14#page22#inu8" type="normal" validate="true" gr:bendpoints="-148,105,522,149;-448,104,222,148">
         <LinkParameter id="sv2#area7#page13#inu20#ln25#par130" name="id_competicao_RoleCondition23 [id_competicao]" source="data[].ent3#att5" target="sv2#area14#page22#inu8#su28#rcond23.ent3#att5"/>
         <LinkParameter id="sv2#area7#page13#inu20#ln25#par137" name="id_competicao_PASSING" source="data[].ent3#att5" passing="true"/>
       </Link>
@@ -135,7 +135,7 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell colspan="6">
+      <layout:Cell colspan="8">
         <layout:Unit unitId="sv2#area7#page13#inu22">
           <layout:Link link="sv2#area7#page13#inu22#ln42"/>
           <layout:Link link="sv2#area7#page13#inu22#ln21"/>
@@ -150,7 +150,7 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell colspan="2"/>
+      <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
@@ -210,5 +210,5 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Link id="sv2#area7#page13#ln13" name="Adicionar desporto" to="sv2#area6#page6#enu7" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-379,-87,-29,123"/>
+  <Link id="sv2#area7#page13#ln13" name="Adicionar desporto" to="sv2#area6#page6#enu7" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-273,-154,102,146"/>
 </Page>

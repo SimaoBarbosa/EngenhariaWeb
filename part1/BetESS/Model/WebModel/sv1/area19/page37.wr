@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="190" gr:y="10" id="sv1#area19#page37" name="Hist&#243;rico de eventos">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="235" gr:y="0" id="sv1#area19#page37" name="Hist&#243;rico de eventos">
   <ContentUnits>
     <IndexUnit gr:x="0" gr:y="0" id="sv1#area19#page37#inu27" name="Eventos" entity="ent1" displayAttributes="ent1#att14 rel9#role17.ent7#att16 rel9#role17.ent7#att17" linkOrder="sv1#area19#page37#inu27#ln95">
       <Selector id="sv1#area19#page37#inu27#su68" defaultPolicy="fill" booleanOperator="and">

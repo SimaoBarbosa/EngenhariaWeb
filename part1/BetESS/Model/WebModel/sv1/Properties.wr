@@ -1,23 +1,23 @@
 <SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Apostador" landmarks="sv1#area1 sv1#area20 sv1#area2 sv1#area3 sv1#area5 sv1#area4 sv1#lou2" protected="true" homePage="sv1#area1#page1">
   <OperationUnits>
-    <CreateUnit gr:x="475" gr:y="1040" id="sv1#cru1" name="Criar Aposta" entity="ent10">
+    <CreateUnit gr:x="1045" gr:y="1115" id="sv1#cru1" name="Criar Aposta" entity="ent10">
       <KOLink id="sv1#cru1#kln3" name="KOFlow1" to="sv1#area1#page4" automaticCoupling="true" gr:bendpoints="68,-115,-42,125"/>
       <OKLink id="sv1#cru1#oln6" name="OKFlow6" to="sv1#area2#page7" automaticCoupling="true"/>
     </CreateUnit>
-    <LogoutUnit gr:x="575" gr:y="2175" id="sv1#lou2" name="Logout" siteView="sv3" landmark="true"/>
-    <QueryUnit gr:x="590" gr:y="1620" id="sv1#qu1" name="Carregar saldo" mode="update" language="HQL" db="db1">
+    <LogoutUnit gr:x="945" gr:y="2310" id="sv1#lou2" name="Logout" siteView="sv3" landmark="true"/>
+    <QueryUnit gr:x="590" gr:y="1680" id="sv1#qu1" name="Carregar saldo" mode="update" language="HQL" db="db1">
       <QueryText xml:space="preserve">update User set saldo = saldo + (:valor) where oid = (:userId);</QueryText>
       <OKLink id="sv1#qu1#oln1" name="OKFlow1" to="sv1#area3#page19" automaticCoupling="true" gr:bendpoints="112,-57,102,143"/>
       <KOLink id="sv1#qu1#kln1" name="KOFlow1" to="sv1#area3#page19" automaticCoupling="true" gr:bendpoints="-112,-57,-122,143"/>
       <QueryInput id="sv1#qu1#qi1" name="valor" required="true" type="float"/>
       <QueryInput id="sv1#qu1#qi2" name="userId" required="true" type="integer"/>
     </QueryUnit>
-    <QueryUnit id="sv1#qu2" name="Query2" gr:x="765" gr:y="890" mode="select" language="SQL" db="db1">
+    <QueryUnit id="sv1#qu2" name="Query2" gr:x="995" gr:y="890" mode="select" language="SQL" db="db1">
       <QueryText xml:space="preserve">select saldo from user where oid=(:idUser) and saldo &gt;= (:valor);</QueryText>
       <QueryInput id="sv1#qu2#qi4" name="idUser" required="true" type="integer"/>
       <QueryOutput id="sv1#qu2#qo2" name="saldo" type="float"/>
       <QueryInput id="sv1#qu2#qi5" name="valor" required="true" type="float"/>
-      <OKLink id="sv1#qu2#oln2" name="OKFlow2" to="sv1#area1#inn1">
+      <OKLink id="sv1#qu2#oln2" name="OKFlow2" to="sv1#area1#inn1" gr:bendpoints="-326,2,28,-72">
         <LinkParameter id="sv1#qu2#oln2#par18" name="saldo_Input" source="data[].saldo" target="sv1#area1#inn1.isnotnull"/>
         <LinkParameter id="sv1#qu2#oln2#par33" name="Aposta_Concreta Object_PASSING" sourceLinkParameter="sv1#area1#page4#enu2#ln6#par28" passing="true"/>
         <LinkParameter id="sv1#qu2#oln2#par36" name="Key [id_aposta_concreta]_PASSING" sourceLinkParameter="sv1#area1#page4#enu2#ln6#par31" passing="true"/>
@@ -38,20 +38,20 @@
       </OKLink>
       <KOLink id="sv1#qu2#kln2" name="KOFlow2" to="sv1#area1#page4" automaticCoupling="true" gr:bendpoints="152,19,-178,9"/>
     </QueryUnit>
-    <DeleteUnit gr:x="200" gr:y="1580" id="sv1#dlu1" name="Delete1" entity="ent11">
+    <DeleteUnit gr:x="225" gr:y="1595" id="sv1#dlu1" name="Delete1" entity="ent11">
       <Selector id="sv1#dlu1#su8" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#dlu1#su8#kcond3" name="KeyCondition3" predicate="in" implied="false"/>
       </Selector>
       <OKLink id="sv1#dlu1#oln8" name="OKFlow8" to="sv1#area5#page2" automaticCoupling="true"/>
       <KOLink id="sv1#dlu1#kln7" name="KOFlow7" to="sv1#area5#page2" automaticCoupling="true" gr:bendpoints="-17,-105,79,135"/>
     </DeleteUnit>
-    <GetUnit id="sv1#gtu9" name="Get2" gr:x="585" gr:y="1990" contextParameters="UserCtxParam" linkOrder="sv1#gtu9#ln88">
+    <GetUnit id="sv1#gtu9" name="Get2" gr:x="950" gr:y="2080" contextParameters="UserCtxParam" linkOrder="sv1#gtu9#ln88">
       <Link id="sv1#gtu9#ln88" name="Flow88" to="sv1#seu3" type="transport" validate="true">
         <LinkParameter id="sv1#gtu9#ln88#par118" name="UserCtxParam.oid_KeyCondition28 [oid]" source="sv1#gtu9.UserCtxParam" target="sv1#seu3#su62#kcond28.userOID"/>
         <LinkParameter id="sv1#gtu9#ln88#par287" name="50_AttCondition13" sourceValue="50" target="sv1#seu3#su62#acond13"/>
       </Link>
     </GetUnit>
-    <ModifyUnit gr:x="1010" gr:y="2240" id="sv1#mfu3" name="Tornar user vip" entity="User">
+    <ModifyUnit gr:x="1295" gr:y="2300" id="sv1#mfu3" name="Tornar user vip" entity="User">
       <Selector id="sv1#mfu3#su61" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#mfu3#su61#kcond27" name="KeyCondition27" predicate="in" implied="false"/>
       </Selector>
@@ -59,9 +59,9 @@
         <LinkParameter id="sv1#mfu3#oln36#par346" name="oid_KeyCondition29 [oid] [User] [ConnectSource]" source="userOIDArray" target="sv1#rcnu1#su65#kcond29.userOID"/>
         <LinkParameter id="sv1#mfu3#oln36#par352" name="3_KeyCondition30 [oid] [Group] [ConnectTarget]" sourceValue="3" target="sv1#rcnu1#su66#kcond30.groupOID"/>
       </OKLink>
-      <KOLink id="sv1#mfu3#kln30" name="KOFlow30" to="sv1#area4" automaticCoupling="true"/>
+      <KOLink id="sv1#mfu3#kln30" name="KOFlow30" to="sv1#area4" automaticCoupling="true" gr:bendpoints="182,-74,-103,201"/>
     </ModifyUnit>
-    <MathUnit gr:x="1225" gr:y="2255" id="sv1#mathu1" name="Tirar 50 ESScoins" resultType="float" defaultExpression="saldo - custo">
+    <MathUnit gr:x="1510" gr:y="2315" id="sv1#mathu1" name="Tirar 50 ESScoins" resultType="float" defaultExpression="saldo - custo">
       <MathVariable id="sv1#mathu1#mathv1" name="saldo"/>
       <MathVariable id="sv1#mathu1#mathv2" name="custo"/>
       <OKLink id="sv1#mathu1#oln33" name="OKFlow33" to="sv1#mfu3">
@@ -71,7 +71,7 @@
       </OKLink>
       <KOLink id="sv1#mathu1#kln29" name="KOFlow29" to="sv1#area4" automaticCoupling="true"/>
     </MathUnit>
-    <SelectorUnit gr:x="925" gr:y="1980" id="sv1#seu3" name="User" entity="User">
+    <SelectorUnit gr:x="1115" gr:y="2060" id="sv1#seu3" name="User" entity="User">
       <Selector id="sv1#seu3#su62" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#seu3#su62#kcond28" name="KeyCondition28" predicate="in" implied="false"/>
         <AttributesCondition id="sv1#seu3#su62#acond13" name="AttCondition13" predicate="gteq" booleanOperator="or" implied="false" attributes="User#att29"/>
@@ -88,17 +88,17 @@
       </OKLink>
       <KOLink id="sv1#seu3#kln28" name="KOFlow28" to="sv1#area4#page35#mssu3" automaticCoupling="true"/>
     </SelectorUnit>
-    <ReconnectUnit gr:x="810" gr:y="2180" id="sv1#rcnu1" name="Relacionar " relationship="User2Group">
+    <ReconnectUnit gr:x="1075" gr:y="2290" id="sv1#rcnu1" name="Relacionar " relationship="User2Group">
       <SourceSelector id="sv1#rcnu1#su65" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#rcnu1#su65#kcond29" name="KeyCondition29" predicate="in" implied="false"/>
       </SourceSelector>
       <TargetSelector id="sv1#rcnu1#su66" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#rcnu1#su66#kcond30" name="KeyCondition30" predicate="in" implied="false"/>
       </TargetSelector>
-      <KOLink id="sv1#rcnu1#kln31" name="KOFlow31" to="sv1#area4" automaticCoupling="true"/>
+      <KOLink id="sv1#rcnu1#kln31" name="KOFlow31" to="sv1#area4" automaticCoupling="true" gr:bendpoints="157,-128,-328,97"/>
       <OKLink id="sv1#rcnu1#oln40" name="OKFlow40" to="sv1#lou2" automaticCoupling="true"/>
     </ReconnectUnit>
-    <IsNotNullUnit gr:x="1025" gr:y="2110" id="sv1#inn4" name="Is Not Null4">
+    <IsNotNullUnit gr:x="1340" gr:y="2210" id="sv1#inn4" name="Is Not Null4">
       <KOLink id="sv1#inn4#kln32" name="KOFlow32" to="sv1#area4#page35#mssu3" automaticCoupling="true"/>
       <OKLink id="sv1#inn4#oln37" name="OKFlow37" to="sv1#mathu1">
         <LinkParameter id="sv1#inn4#oln37#par360" name="50_custo" sourceValue="50" target="sv1#mathu1#mathv2"/>

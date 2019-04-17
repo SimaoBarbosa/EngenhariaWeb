@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="110" gr:y="55" id="sv1#area4#page35" name="Saldo insuficiente">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="5" gr:y="140" id="sv1#area4#page35" name="Saldo insuficiente">
   <ContentUnits>
     <MultiMessageUnit gr:x="0" gr:y="0" id="sv1#area4#page35#mssu3" name="Saldo insuficiente">
       <Message xml:space="preserve">Saldo insuficiente para se inscrever como vip.</Message>

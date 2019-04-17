@@ -10,7 +10,7 @@
       <Selector id="sv1#area20#page30#inu31#su63" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="sv1#area20#page30#inu31#su63#acond10" name="AttCondition8" predicate="contains" booleanOperator="or" implied="false" ignoreCase="true" attributes="ent2#att4"/>
       </Selector>
-      <Link id="sv1#area20#page30#inu31#ln86" name="Ver apostas" to="sv1#area20#page31#inu32" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="-57,91,133,-59"/>
+      <Link id="sv1#area20#page30#inu31#ln86" name="Ver eventos" to="sv1#area20#page31#inu32" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="-57,91,133,-59"/>
     </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">

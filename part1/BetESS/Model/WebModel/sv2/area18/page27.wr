@@ -4,11 +4,11 @@
       <Selector id="sv2#area18#page27#inu29#su54" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#area18#page27#inu29#su54#rcond36" name="RoleCondition36" predicate="in" implied="false" role="rel4#role8"/>
       </Selector>
-      <Link id="sv2#area18#page27#inu29#ln83" name="Ver apostas" to="sv2#area7#page12#inu16" type="normal" validate="true" gr:bendpoints="352,-108,576,778;621,-108,845,778;636,-836,860,50;418,-1076,642,-190;50,-1014,274,-128">
+      <Link id="sv2#area18#page27#inu29#ln83" name="Ver apostas" to="sv2#area7#page12#inu16" type="normal" validate="true" gr:bendpoints="352,-108,576,778;621,-108,845,778;636,-836,860,50;418,-1076,642,-190;-11,-1072,217,-192">
         <LinkParameter id="sv2#area18#page27#inu29#ln83#par100" name="true_AttCondition6" sourceValue="true" target="sv2#area7#page12#inu16#su17#acond6"/>
         <LinkParameter id="sv2#area18#page27#inu29#ln83#par103" name="id_evento_RoleCondition1 [id_evento]" source="data[].ent1#att1" target="sv2#area7#page12#inu16#su17#rcond15.ent1#att1"/>
       </Link>
-      <Link id="sv2#area18#page27#inu29#ln84" name="Gerir equipas" to="sv2#area17#page23#inu17" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-184,144,1556,690;-1034,144,706,690;-1872,-14,-132,532;-1874,-370,-134,176"/>
+      <Link id="sv2#area18#page27#inu29#ln84" name="Gerir equipas" to="sv2#area17#page23#inu17" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-184,144,1556,690;-785,145,955,691;-894,-3,846,543;-1872,-14,-132,532;-1874,-370,-134,176"/>
       <Link id="sv2#area18#page27#inu29#ln87" name="Adicionar apostas" to="sv2#area11#page9#enu6" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-184,130,410,660;-758,130,-164,660;-758,-538,-164,-8"/>
       <Link id="sv2#area18#page27#inu29#ln33" name="Gerir equipas" to="sv2#area16#page28#inu7" type="normal" validate="true">
         <LinkParameter id="sv2#area18#page27#inu29#ln33#par116" name="id_evento_RoleCondition32 [id_evento]" source="data[].ent1#att1" target="sv2#area16#page28#inu7#su56#rcond12.ent1#att1"/>
