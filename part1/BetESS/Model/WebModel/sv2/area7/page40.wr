@@ -10,7 +10,7 @@
       <Link id="sv2#area7#page40#inu36#ln120" name="Adicionar apostas" to="sv2#area11#page49#enu19" type="normal" validate="true" gr:bendpoints="474,32,-106,-464;476,464,-104,-32">
         <LinkParameter id="sv2#area7#page40#inu36#ln120#par457" name="id_evento_PASSING" source="data[].ent1#att1" passing="true"/>
       </Link>
-      <Link id="sv2#area7#page40#inu36#ln84" name="Gerir Equipas" to="sv2#area17#page23#dau7" type="normal" validate="true">
+      <Link id="sv2#area7#page40#inu36#ln84" name="Gerir Equipas" to="sv2#area17#page23#dau7" type="normal" validate="true" gr:bendpoints="-240,91,466,-203;-544,116,162,-179">
         <LinkParameter id="sv2#area7#page40#inu36#ln84#par375" name="id_evento_KeyCondition41 [id_evento]" source="data[].ent1#att1" target="sv2#area17#page23#dau7#su74#kcond41.ent1#att1"/>
       </Link>
     </IndexUnit>

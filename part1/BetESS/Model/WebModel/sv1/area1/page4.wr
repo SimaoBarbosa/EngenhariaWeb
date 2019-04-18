@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1560" gr:y="585" id="sv1#area1#page4" name="Confirmar aposta">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1550" gr:y="585" id="sv1#area1#page4" name="Confirmar aposta">
   <ContentUnits>
     <EntryUnit id="sv1#area1#page4#enu2" name="Fazer Aposta" linkOrder="sv1#area1#page4#enu2#ln6 sv1#area1#page4#enu2#ln126" gr:x="0" gr:y="320" entity="ent10">
       <Field id="sv1#area1#page4#enu2#fld4" name="Quantia a apostar" type="float" modifiable="true" attribute="ent10#att23"/>
@@ -61,7 +61,7 @@
         <LinkParameter id="sv1#area1#page4#dau9#ln147#par512" name="odd_PASSING" sourceLinkParameter="sv1#area1#page4#dau1#ln146#par510" passing="true"/>
       </Link>
     </DataUnit>
-    <MultiMessageUnit gr:x="310" gr:y="370" id="sv1#area1#page4#mssu7" name="Poss&#237;veis ganhos"/>
+    <MultiMessageUnit gr:x="215" gr:y="280" id="sv1#area1#page4#mssu7" name="Poss&#237;veis ganhos"/>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>

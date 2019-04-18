@@ -101,8 +101,8 @@ INSERT INTO desporto_regiao values
 	(1, 4); -- Futebol Internacional
 
 INSERT INTO aposta_disponivel values
-	(1, 'Resultado Final', 0, true, false, 1), -- Rio Ave x Portimonense
-	(2, '1º jogador a marcar', 0, true, true, 1);
+	(1, 'Resultado Final', -1, true, false, 1), -- Rio Ave x Portimonense
+	(2, '1º jogador a marcar', -1, true, true, 1);
 
 INSERT INTO opcao values
 	(1, 'Rio Ave', 1.5, 1), -- Resultado Final

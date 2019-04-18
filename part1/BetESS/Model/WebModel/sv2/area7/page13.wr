@@ -81,7 +81,7 @@
       <Link id="sv2#area7#page13#inu22#ln57" name="Flow57" to="sv2#area7#page13#inu21" type="transport" validate="true" gr:bendpoints="-108,15,117,15">
         <LinkParameter id="sv2#area7#page13#inu22#ln57#par152" name="id_competicao_PASSING_RoleCondition4 [id_competicao]" sourceLinkParameter="sv2#area7#page13#inu21#ln41#par149" target="sv2#area7#page13#inu21#su24#rcond19.ent3#att5"/>
       </Link>
-      <Link id="sv2#area7#page13#inu22#ln66" name="Gerir equipas" to="sv2#area17#page23#dau7" type="normal" validate="true" gr:bendpoints="-642,222,658,-158">
+      <Link id="sv2#area7#page13#inu22#ln66" name="Gerir equipas" to="sv2#area17#page23#dau7" type="normal" validate="true" gr:bendpoints="-658,254,792,-221;-856,255,594,-220">
         <LinkParameter id="sv2#area7#page13#inu22#ln66#par202" name="id_competicao_PASSING" sourceLinkParameter="sv2#area7#page13#inu21#ln41#par149" passing="true"/>
         <LinkParameter id="sv2#area7#page13#inu22#ln66#par374" name="id_evento_KeyCondition41 [id_evento]" source="data[].ent1#att1" target="sv2#area17#page23#dau7#su74#kcond41.ent1#att1"/>
       </Link>
