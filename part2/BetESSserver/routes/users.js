@@ -1,8 +1,23 @@
 var express = require('express');
 var router = express.Router();
-var app = require('../app.js')
+var app = require('../app.js');
+const UserController = require('./../controllers/user');
 
 
+/* Operations using controllers/models */
+
+//teste
+router.get('/teste', async (req, res) => {
+  UserController.find().then(users => {
+    console.log("All users:", JSON.stringify(users, null, 4));
+    res.send(JSON.stringify({users}));
+  });
+});
+
+
+
+/* Operations with sql querys directly */
+ 
 //show all users
 router.get('/', async (req, res) => {
   let sql = "SELECT * FROM user";

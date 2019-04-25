@@ -1,0 +1,32 @@
+{
+  "development": {
+    "username": "root",
+    "password": "password",
+    "database": "betess",
+    "host": "localhost",
+    "dialect": "mysql",
+    "define": {
+      "timestamps": false
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": "password",
+    "database": "betess",
+    "host": "localhost",
+    "dialect": "mysql",
+    "define": {
+      "timestamps": false
+    }
+  },
+  "production": {
+    "username": "root",
+    "password": "password",
+    "database": "betess",
+    "host": "localhost",
+    "dialect": "mysql",
+    "define": {
+      "timestamps": false
+    }
+  }
+}
