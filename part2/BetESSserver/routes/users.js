@@ -6,13 +6,20 @@ const UserController = require('./../controllers/user');
 
 /* Operations using controllers/models */
 
-//teste
+// get all users
 router.get('/teste', async (req, res) => {
   UserController.find().then(users => {
     console.log("All users:", JSON.stringify(users, null, 4));
     res.send(JSON.stringify({users}));
   });
 });
+
+// insert new user
+router.post('/insert', async (req, res) => {
+  UserController.create(req.body).then(user => {
+    res.send(JSON.stringify({user}))
+  });
+})
 
 
 
@@ -40,8 +47,7 @@ router.get('/:oid', async (req, res) => {
 //insert user 
 router.post('/', async (req, res) => {
   console.dir(req.body);
-  let insert_data = '(\''+ req.body.oid
-                  + '\',\'' + req.body.username
+  let insert_data = '(\''+ req.body.username
                   + '\',\'' + req.body.password
                   + '\',\''+ req.body.email 
                   + '\',\''+ req.body.saldo 
@@ -49,7 +55,7 @@ router.post('/', async (req, res) => {
                    +'\')' ;
   console.log(insert_data);
   
-  let sql = "INSERT INTO user VALUES  "+ insert_data ;
+  let sql = "INSERT INTO user (username, password, email, saldo, group_oid) VALUES  "+ insert_data ;
   let query = app.db.query(sql, (err, results) => {
     if(err) throw err;
     res.send(JSON.stringify({"status": 200, "error": null, "response": results}));

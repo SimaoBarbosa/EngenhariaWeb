@@ -5,7 +5,6 @@ module.exports = function(sequelize, DataTypes) {
     evento_id_evento: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
-      primaryKey: true,
       references: {
         model: 'evento',
         key: 'id_evento'

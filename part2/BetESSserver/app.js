@@ -6,29 +6,19 @@ var mysql = require('mysql')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var notificationsRouter = require('./routes/notifications');
 
 var app = express();
 
-//Conexão à base de dados MYSQL
+// Conexão à base de dados MySQL
 var pool = mysql.createPool({
     host: 'localhost',
+    port: '3306',
+    database: 'betess',
     user: 'root',
-    password: 'password',
-    database: 'betess'
-})
+    password: 'password'
+});
 
-module.exports.db = pool ; 
-
-// Exemplo de uma query
-/*
-connection.query('SELECT * from user', function (err, rows, fields) {
-    if (err) throw err
-  
-    console.log('The solution is: ', rows)
-})*/
-  
-
-  
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -37,5 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/notifications', notificationsRouter);
 
+module.exports.db = pool;
 module.exports = app;

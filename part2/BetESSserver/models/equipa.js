@@ -5,7 +5,8 @@ module.exports = function(sequelize, DataTypes) {
     id_equipa: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     nome: {
       type: DataTypes.STRING(255),

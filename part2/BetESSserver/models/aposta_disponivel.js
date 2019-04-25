@@ -5,7 +5,8 @@ module.exports = function(sequelize, DataTypes) {
     id_aposta_disponivel: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     titulo: {
       type: DataTypes.STRING(255),
