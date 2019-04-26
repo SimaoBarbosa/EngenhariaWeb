@@ -49,7 +49,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'aposta_disponivel_id_aposta_di'
     });
 
-    aposta_disponivel.hasOne(models.evento, {
+    aposta_disponivel.belongsTo(models.evento, {
       as: 'evento', 
       foreignKey: 'evento_id_evento'
     });

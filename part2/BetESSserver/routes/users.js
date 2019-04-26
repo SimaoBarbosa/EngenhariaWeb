@@ -19,7 +19,7 @@ router.post('/insert', async (req, res) => {
 
 // get notifications of user
 router.get('/notificacoes/:oid', async (req, res) => {
-  UserController.findNotifications(req.params.oid).then(notifications => {
+  UserController.findNotificacoes(req.params.oid).then(notifications => {
     res.send(notifications);
   })
 })

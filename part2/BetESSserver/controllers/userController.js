@@ -11,7 +11,7 @@ module.exports.create = user => {
 }
 
 // get notifications of user
-module.exports.findNotifications = userId => {
+module.exports.findNotificacoes = userId => {
     return models.user.findOne({
         attributes: [],
         where: {oid: userId},

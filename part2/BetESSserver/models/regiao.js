@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
 
     regiao.hasMany(models.competicao, {
       as: 'competicoes',
-      foreignKey: 'user_oid'
+      foreignKey: 'regiao_id_regiao'
     });
     
   };

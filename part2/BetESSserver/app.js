@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var notificacoesRouter = require('./routes/notificacoes');
 var competicoesRouter = require('./routes/competicoes');
 var equipasRouter = require('./routes/equipas');
+var eventosRouter = require('./routes/eventos');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use('/users', usersRouter);
 app.use('/notificacoes', notificacoesRouter);
 app.use('/competicoes', competicoesRouter);
 app.use('/equipas', equipasRouter);
+app.use('/eventos', eventosRouter);
 
 module.exports.db = pool;
 module.exports = app;

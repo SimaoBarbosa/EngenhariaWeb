@@ -27,6 +27,11 @@ module.exports = (sequelize, DataTypes) => {
 
   fase.associate = (models) => {
 
+    fase.belongsTo(models.competicao, {
+      as: 'competicao',
+      foreignKey: 'competicao_id_competicao'
+    })
+
     fase.hasMany(models.evento, {
       as: 'eventos', 
       foreignKey: 'fase_id_fase'

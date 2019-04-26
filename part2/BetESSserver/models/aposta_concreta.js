@@ -51,18 +51,18 @@ module.exports = (sequelize, DataTypes) => {
 
   aposta_concreta.associate = (models) => {
 
-    aposta_concreta.hasOne(models.aposta_disponivel, {
+    aposta_concreta.belongsTo(models.aposta_disponivel, {
       as: 'aposta_disponivel', 
       foreignKey: 'aposta_disponivel_id_aposta_di'
     });
 
     
-    aposta_concreta.hasOne(models.opcao, {
+    aposta_concreta.belongsTo(models.opcao, {
       as: 'opcao', 
       foreignKey: 'opcao_id_opcao'
     });
 
-    aposta_concreta.hasOne(models.user, {
+    aposta_concreta.belongsTo(models.user, {
       as: 'user', 
       foreignKey: 'user_oid'
     });
