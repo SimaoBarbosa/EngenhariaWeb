@@ -1,7 +1,8 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('aposta_concreta', {
+module.exports = (sequelize, DataTypes) => {
+  
+  const aposta_concreta = sequelize.define('aposta_concreta', {
     id_aposta_concreta: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -47,4 +48,27 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     tableName: 'aposta_concreta'
   });
+
+  aposta_concreta.associate = (models) => {
+
+    aposta_concreta.hasOne(models.aposta_disponivel, {
+      as: 'aposta_disponivel', 
+      foreignKey: 'aposta_disponivel_id_aposta_di'
+    });
+
+    
+    aposta_concreta.hasOne(models.opcao, {
+      as: 'opcao', 
+      foreignKey: 'opcao_id_opcao'
+    });
+
+    aposta_concreta.hasOne(models.user, {
+      as: 'user', 
+      foreignKey: 'user_oid'
+    });
+    
+  };
+
+  return aposta_concreta;
+
 };

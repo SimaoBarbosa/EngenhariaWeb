@@ -1,7 +1,8 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('regiao', {
+  
+  const regiao = sequelize.define('regiao', {
     id_regiao: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -15,4 +16,22 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     tableName: 'regiao'
   });
+
+  regiao.associate = (models) => {
+    
+    regiao.belongsToMany(models.desporto, {
+      through: 'desporto_regiao',
+      as: 'desportos',
+      foreignKey: 'regiao_id_regiao'
+    });
+
+    regiao.hasMany(models.competicao, {
+      as: 'competicoes',
+      foreignKey: 'user_oid'
+    });
+    
+  };
+
+  return regiao;
+
 };

@@ -1,7 +1,8 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('group', {
+module.exports = (sequelize, DataTypes) => {
+  
+  const group = sequelize.define('group', {
     oid: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -23,4 +24,6 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     tableName: 'group'
   });
+
+  return group;
 };

@@ -1,7 +1,8 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('datahora', {
+module.exports = (sequelize, DataTypes) => {
+  
+  const datahora = sequelize.define('datahora', {
     id_datahora: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -19,4 +20,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     tableName: 'datahora'
   });
+
+  return datahora;
+  
 };

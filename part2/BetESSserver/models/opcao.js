@@ -1,7 +1,8 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('opcao', {
+module.exports = (sequelize, DataTypes) => {
+  
+  const opcao = sequelize.define('opcao', {
     id_opcao: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -27,4 +28,16 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     tableName: 'opcao'
   });
+
+  opcao.associate = (models) => {
+
+    opcao.hasMany(models.aposta_concreta, {
+      as: 'apostas_concretas', 
+      foreignKey: 'opcao_id_opcao'
+    });
+    
+  };
+
+  return opcao;
+
 };

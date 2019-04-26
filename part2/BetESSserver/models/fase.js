@@ -1,7 +1,8 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('fase', {
+module.exports = (sequelize, DataTypes) => {
+  
+  const fase = sequelize.define('fase', {
     id_fase: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -23,4 +24,16 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     tableName: 'fase'
   });
+
+  fase.associate = (models) => {
+
+    fase.hasMany(models.evento, {
+      as: 'eventos', 
+      foreignKey: 'fase_id_fase'
+    });
+    
+  };
+
+  return fase;
+
 };

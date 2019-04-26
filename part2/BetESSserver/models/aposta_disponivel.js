@@ -1,7 +1,8 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('aposta_disponivel', {
+module.exports = (sequelize, DataTypes) => {
+  
+  const aposta_disponivel = sequelize.define('aposta_disponivel', {
     id_aposta_disponivel: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -35,4 +36,26 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     tableName: 'aposta_disponivel'
   });
+
+  aposta_disponivel.associate = (models) => {
+
+    aposta_disponivel.hasMany(models.aposta_concreta, {
+      as: 'apostas_concretas', 
+      foreignKey: 'aposta_disponivel_id_aposta_di'
+    });
+
+    aposta_disponivel.hasMany(models.opcao, {
+      as: 'opcoes', 
+      foreignKey: 'aposta_disponivel_id_aposta_di'
+    });
+
+    aposta_disponivel.hasOne(models.evento, {
+      as: 'evento', 
+      foreignKey: 'evento_id_evento'
+    });
+    
+  };
+
+  return aposta_disponivel;
+  
 };

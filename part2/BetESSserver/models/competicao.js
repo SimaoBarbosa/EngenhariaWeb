@@ -1,7 +1,8 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('competicao', {
+module.exports = (sequelize, DataTypes) => {
+  
+  const competicao = sequelize.define('competicao', {
     id_competicao: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -31,4 +32,27 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     tableName: 'competicao'
   });
+
+  competicao.associate = (models) => {
+    
+    competicao.belongsToMany(models.equipa, {
+      through: 'equipa_competicao',
+      as: 'equipas',
+      foreignKey: 'competicao_id_competicao'
+    });
+
+    competicao.hasMany(models.fase, {
+      as: 'fases', 
+      foreignKey: 'competicao_id_competicao'
+    });
+
+    competicao.hasOne(models.desporto, {
+      as: 'desporto', 
+      foreignKey: 'desporto_id_desporto'
+    });
+    
+  };
+
+  return competicao;
+
 };

@@ -10,9 +10,11 @@ module.exports.create = user => {
     return models.user.create(values = user)
 }
 
-module.exports.getNotifications = userId => {
-    return models.user.findByPk(
-        userId,
-        {include: ['notifications']}
-    )
+// get notifications of user
+module.exports.findNotifications = userId => {
+    return models.user.findOne({
+        attributes: [],
+        where: {oid: userId},
+        include: ['notificacoes']
+    })
 }

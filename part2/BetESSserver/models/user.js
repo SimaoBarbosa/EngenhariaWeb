@@ -1,7 +1,8 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('user', {
+module.exports = (sequelize, DataTypes) => {
+  
+  const user = sequelize.define('user', {
     oid: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -35,4 +36,21 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     tableName: 'user'
   });
+
+  user.associate = function (models){
+    
+    user.hasMany(models.notificacao, {
+      as: 'notificacoes', 
+      foreignKey: 'user_oid'
+    });
+    
+    user.hasMany(models.aposta_concreta, {
+      as: 'apostas', 
+      foreignKey: 'user_oid'
+    });
+    
+  };
+
+  return user;
+
 };

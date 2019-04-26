@@ -1,7 +1,8 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('evento', {
+module.exports = (sequelize, DataTypes) => {
+  
+  const evento = sequelize.define('evento', {
     id_evento: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -31,4 +32,27 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     tableName: 'evento'
   });
+
+  evento.associate = (models) => {
+
+    evento.hasOne(models.datahora, {
+      as: 'datahora', 
+      foreignKey: 'datahora_datahora_id'
+    });
+
+    evento.belongsToMany(models.equipa, {
+      through: 'evento_equipa',
+      as: 'equipas',
+      foreignKey: 'evento_id_evento'
+    });
+
+    evento.hasMany(models.aposta_disponivel, {
+      as: 'apostas_disponiveis', 
+      foreignKey: 'evento_id_evento'
+    });
+    
+  };
+
+  return evento;
+
 };

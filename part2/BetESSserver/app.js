@@ -6,7 +6,9 @@ var mysql = require('mysql')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var notificationsRouter = require('./routes/notifications');
+var notificacoesRouter = require('./routes/notificacoes');
+var competicoesRouter = require('./routes/competicoes');
+var equipasRouter = require('./routes/equipas');
 
 var app = express();
 
@@ -27,7 +29,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/notifications', notificationsRouter);
+app.use('/notificacoes', notificacoesRouter);
+app.use('/competicoes', competicoesRouter);
+app.use('/equipas', equipasRouter);
 
 module.exports.db = pool;
 module.exports = app;

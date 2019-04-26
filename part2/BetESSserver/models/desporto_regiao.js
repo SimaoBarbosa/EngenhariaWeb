@@ -1,7 +1,8 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('desporto_regiao', {
+module.exports = (sequelize, DataTypes) => {
+  
+  const desporto_regiao = sequelize.define('desporto_regiao', {
     desporto_id_desporto: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -23,4 +24,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     tableName: 'desporto_regiao'
   });
+
+  return desporto_regiao;
+
 };

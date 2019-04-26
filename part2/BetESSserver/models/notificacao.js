@@ -1,7 +1,8 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('notificacao', {
+module.exports = (sequelize, DataTypes) => {
+  
+  const notificacao = sequelize.define('notificacao', {
     id_notificacao: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -23,4 +24,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     tableName: 'notificacao'
   });
+
+  return notificacao;
+
 };
