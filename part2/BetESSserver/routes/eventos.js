@@ -2,6 +2,10 @@ var express = require('express');
 var router = express.Router();
 const EventoController = require('../controllers/eventoController');
 const DataHoraController = require('../controllers/datahoraController');
+const DesportoController = require('../controllers/desportoController');
+const RegiaoController = require('../controllers/regiaoController');
+const CompeticaoController = require('../controllers/competicaoController');
+const FaseController = require('../controllers/faseController');
 
 // get all the events
 router.get('/', async (req, res) => {
@@ -103,5 +107,41 @@ router.post('/test', async (req, res) => {
       }
     });
 });
+
+// get all the sports
+router.get('/desportos', async (req, res) => {
+  DesportoController.getAll().then(desportos => {
+    res.send(desportos);
+  });
+});
+
+// get all the regions of certain sport
+router.get('/desporto/regioes/:oid', async (req, res) => {
+  DesportoController.getRegioes(req.params.oid).then(regioes => {
+    res.send(regioes);
+  });
+});
+
+// get all the competitions of certain region and sport
+router.get('/regioes/competicoes/:idR/:idD', async (req, res) => {
+  RegiaoController.getCompeticoes(req.params.idR, req.params.idD).then(competicoes => {
+    res.send(competicoes);
+  });
+});
+
+// get phases of competition
+router.get('/competicoes/fases/:oid', async (req, res) => {
+  CompeticaoController.getFases(req.params.oid).then(fases => {
+    res.send(fases);
+  });
+});
+
+// get events of phase
+router.get('/fase/:oid', async (req, res) => {
+  FaseController.getEventos(req.params.oid).then(eventos => {
+    res.send(eventos);
+  });
+});
+
 
 module.exports = router;

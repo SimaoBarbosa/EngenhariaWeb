@@ -46,7 +46,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'competicao_id_competicao'
     });
 
-    competicao.hasOne(models.desporto, {
+    competicao.belongsTo(models.desporto, {
       as: 'desporto', 
       foreignKey: 'desporto_id_desporto'
     });
