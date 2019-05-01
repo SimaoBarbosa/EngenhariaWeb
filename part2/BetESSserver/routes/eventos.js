@@ -21,14 +21,6 @@ router.get('/info', async (req, res) => {
     });
 });
 
-// create new event
-router.post('/insert', async (req, res) => {
-    EventoController.create(req.body).then(evento => {
-      console.log(req.body.titulo + ' ' + req.body.email)
-      res.send(evento);
-    });
-});
-
 // get teams of event
 router.get('/equipas/:oid', async (req, res) => {
     EventoController.getTeams(req.params.oid).then(equipas => {
@@ -58,7 +50,7 @@ router.get('/team/:oid', async (req, res) => {
 // -> data
 // -> hora
 // -> equipas
-router.post('/test', async (req, res) => {
+router.post('/insert', async (req, res) => {
     
     let titulo = req.body.titulo;
     let id_fase = req.body.fase;
