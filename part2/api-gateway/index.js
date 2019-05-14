@@ -1,18 +1,72 @@
+require("dotenv-safe").load();
+var jwt = require('jsonwebtoken');
 var http = require('http');
 const express = require('express');
 const httpProxy = require('express-http-proxy');
 const app = express();
+const bodyParser = require('body-parser')
 var logger = require('morgan');
 const helmet = require('helmet');
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 
 // Microservices available
 const jsonplaceholder = httpProxy('http://jsonplaceholder.typicode.com/');
 const reqres = httpProxy('https://reqres.in/');
 
+// Users data
+users = [
+    {id: 1, name: 'admin', password: 'password', group: 1},
+    {id: 2, name: 'apostador', password: 'password', group: 2}
+]
+
+// Login to authenticate users
+app.post('/login', (req, res, next) => {
+    var exist = false
+    var u = null
+    for (user of users){
+        if (req.body.user === user.name && req.body.password === user.password){
+            exist = true
+            u = user
+            break;
+        }
+    }
+    if (exist){
+        // authentication is ok
+        const id = u.id; // from the database
+        const group = u.group;
+        var token = jwt.sign({ id, group }, process.env.SECRET, {
+            expiresIn: 600 // expires in 10 minutes
+        });
+        res.status(200).send({ auth: true, token: token });
+    }
+    else {
+        res.status(500).send('Login inválido!');
+    }
+})
+
+// Verify if the token is correct
+function verifyJWT(req, res, next){
+    var token = req.headers['x-access-token'];
+    if (!token) return res.status(401).send({ auth: false, message: 'No token provided.' });
+    
+    jwt.verify(token, process.env.SECRET, function(err, decoded) {
+        if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });
+      
+        // se tudo estiver ok, salva no request para uso posterior
+        req.userId = decoded.id;
+        req.group = decoded.group;
+        next();
+    });
+}
+
 // -------------------------------
 // Proxy requests
 
-app.get('/todos', (req, res, next) => {
+app.get('/todos', verifyJWT, (req, res, next) => {
+    if (req.group != 2)
+        return res.status(500).send({ auth: false, message: 'Not right group to access the data' })
     jsonplaceholder(req, res, next);
 })
 // example:
@@ -20,7 +74,9 @@ app.get('/todos', (req, res, next) => {
 // will request
 // https://jsonplaceholder.typicode.com/todos
 
-app.get('/todos/:id', (req, res, next) => {
+app.get('/todos/:id', verifyJWT, (req, res, next) => {
+    if (req.group != 2)
+        return res.status(500).send({ auth: false, message: 'Not right group to access the data' })
     jsonplaceholder(req, res, next);
 })
 // example:
@@ -28,7 +84,9 @@ app.get('/todos/:id', (req, res, next) => {
 // will request
 // https://jsonplaceholder.typicode.com/todos/1
   
-app.get('/api/users', (req, res, next) => {
+app.get('/api/users', verifyJWT, (req, res, next) => {
+    if (req.group != 1)
+        return res.status(500).send({ auth: false, message: 'Not right group to access the data' })
     reqres(req, res, next);
 })
 // example:
@@ -40,7 +98,9 @@ app.get('/api/users', (req, res, next) => {
 // will request
 // https://reqres.in/api/users?page=1
 
-app.get('/api/users/:id', (req, res, next) => {
+app.get('/api/users/:id', verifyJWT, (req, res, next) => {
+    if (req.group != 1)
+        return res.status(500).send({ auth: false, message: 'Not right group to access the data' })
     reqres(req, res, next);
 })
 // example:
