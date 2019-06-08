@@ -25,14 +25,10 @@ module.exports = (sequelize, DataTypes) => {
       type: "DOUBLE",
       allowNull: true
     },
-    group_oid: {
+    group: {
       type: DataTypes.INTEGER(11),
-      allowNull: true,
-      references: {
-        model: 'group',
-        key: 'oid'
-      }
-    }
+      allowNull: false
+    },
   }, {
     tableName: 'user'
   });

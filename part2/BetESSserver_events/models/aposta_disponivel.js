@@ -39,11 +39,6 @@ module.exports = (sequelize, DataTypes) => {
 
   aposta_disponivel.associate = (models) => {
 
-    aposta_disponivel.hasMany(models.aposta_concreta, {
-      as: 'apostas_concretas', 
-      foreignKey: 'aposta_disponivel_id_aposta_di'
-    });
-
     aposta_disponivel.hasMany(models.opcao, {
       as: 'opcoes', 
       foreignKey: 'aposta_disponivel_id_aposta_di'

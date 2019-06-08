@@ -2,28 +2,33 @@
 
 module.exports = (sequelize, DataTypes) => {
   
-  const group = sequelize.define('group', {
-    oid: {
+  const opcao = sequelize.define('opcao', {
+    id_opcao: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-    groupname: {
+    opcao: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    module_oid: {
+    odd: {
+      type: "DOUBLE",
+      allowNull: true
+    },
+    aposta_disponivel_id_aposta_di: {
       type: DataTypes.INTEGER(11),
       allowNull: true,
       references: {
-        model: 'module',
-        key: 'oid'
+        model: 'aposta_disponivel',
+        key: 'id_aposta_disponivel'
       }
     }
   }, {
-    tableName: 'group'
+    tableName: 'opcao'
   });
 
-  return group;
+  return opcao;
+
 };

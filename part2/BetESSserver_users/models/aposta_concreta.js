@@ -21,6 +21,30 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER(11),
       allowNull: true
     },
+    id_aposta_disponivel: {
+      type: DataTypes.INTEGER(11),
+      allowNull: false
+    },
+    id_opcao: {
+      type: DataTypes.INTEGER(11),
+      allowNull: false
+    },
+    nome_opcao: {
+      type: DataTypes.STRING(255),
+      allowNull: false
+    },
+    nome_aposta_disponivel: {
+      type: DataTypes.STRING(255),
+      allowNull: false
+    },
+    nome_evento: {
+      type: DataTypes.STRING(255),
+      allowNull: false
+    },
+    nome_competicao: {
+      type: DataTypes.STRING(255),
+      allowNull: false
+    },
     user_oid: {
       type: DataTypes.INTEGER(11),
       allowNull: true,
@@ -29,38 +53,11 @@ module.exports = (sequelize, DataTypes) => {
         key: 'oid'
       }
     },
-    opcao_id_opcao: {
-      type: DataTypes.INTEGER(11),
-      allowNull: true,
-      references: {
-        model: 'opcao',
-        key: 'id_opcao'
-      }
-    },
-    aposta_disponivel_id_aposta_di: {
-      type: DataTypes.INTEGER(11),
-      allowNull: true,
-      references: {
-        model: 'aposta_disponivel',
-        key: 'id_aposta_disponivel'
-      }
-    }
   }, {
     tableName: 'aposta_concreta'
   });
 
   aposta_concreta.associate = (models) => {
-
-    aposta_concreta.belongsTo(models.aposta_disponivel, {
-      as: 'aposta_disponivel', 
-      foreignKey: 'aposta_disponivel_id_aposta_di'
-    });
-
-    
-    aposta_concreta.belongsTo(models.opcao, {
-      as: 'opcao', 
-      foreignKey: 'opcao_id_opcao'
-    });
 
     aposta_concreta.belongsTo(models.user, {
       as: 'user', 

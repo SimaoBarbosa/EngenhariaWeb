@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "password",
-    "database": "betess",
+    "database": "betess_events",
     "host": "localhost",
     "dialect": "mysql",
     "define": {
@@ -12,7 +12,7 @@
   "test": {
     "username": "root",
     "password": "password",
-    "database": "betess",
+    "database": "betess_events",
     "host": "localhost",
     "dialect": "mysql",
     "define": {
@@ -22,7 +22,7 @@
   "production": {
     "username": "root",
     "password": "password",
-    "database": "betess",
+    "database": "betess_events",
     "host": "localhost",
     "dialect": "mysql",
     "define": {

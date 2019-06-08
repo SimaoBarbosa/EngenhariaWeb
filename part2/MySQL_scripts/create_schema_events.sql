@@ -1,61 +1,15 @@
 -- Create database
-DROP DATABASE IF EXISTS betess;
+DROP DATABASE IF EXISTS betess_events;
 
-CREATE DATABASE betess;
+CREATE DATABASE betess_events;
 
-USE betess;
-
--- Group [Group]
-create table `group` (
-   `oid`  integer  not null AUTO_INCREMENT,
-   `groupname`  varchar(255),
-  primary key (`oid`)
-);
-
-
--- Module [Module]
-create table `module` (
-   `oid`  integer  not null AUTO_INCREMENT,
-   `moduleid`  varchar(255),
-   `modulename`  varchar(255),
-  primary key (`oid`)
-);
-
-
--- User [User]
-create table `user` (
-   `oid`  integer  not null AUTO_INCREMENT,
-   `username`  varchar(255),
-   `password`  varchar(255),
-   `email`  varchar(255),
-   `saldo`  double precision,
-  primary key (`oid`)
-);
-
+USE betess_events;
 
 -- Evento [ent1]
 create table `evento` (
    `id_evento`  integer  not null AUTO_INCREMENT,
    `titulo`  varchar(255),
   primary key (`id_evento`)
-);
-
-
--- Aposta_Concreta [ent10]
-create table `aposta_concreta` (
-   `id_aposta_concreta`  integer  not null AUTO_INCREMENT,
-   `quantia`  double precision,
-   `odd_fixada`  double precision,
-   `resultado`  integer,
-  primary key (`id_aposta_concreta`)
-);
-
-
--- Notificacao [ent11]
-create table `notificacao` (
-   `id_notificacao`  integer  not null AUTO_INCREMENT,
-   `notificacao`  varchar(255),
-  primary key (`id_notificacao`)
 );
 
 
@@ -128,54 +82,13 @@ create table `opcao` (
 );
 
 
--- Group_DefaultModule [Group2DefaultModule_DefaultModule2Group]
-alter table `group`  add column  `module_oid`  integer;
-alter table `group`   add index fk_group_module (`module_oid`), add constraint fk_group_module foreign key (`module_oid`) references `module` (`oid`);
-
-
--- Group_Module [Group2Module_Module2Group]
-create table `group_module` (
-   `group_oid`  integer not null,
-   `module_oid`  integer not null,
-  primary key (`group_oid`, `module_oid`)
-);
-alter table `group_module`   add index fk_group_module_group (`group_oid`), add constraint fk_group_module_group foreign key (`group_oid`) references `group` (`oid`);
-alter table `group_module`   add index fk_group_module_module (`module_oid`), add constraint fk_group_module_module foreign key (`module_oid`) references `module` (`oid`);
-
-
--- User_DefaultGroup [User2DefaultGroup_DefaultGroup2User]
-alter table `user`  add column  `group_oid`  integer;
-alter table `user`   add index fk_user_group (`group_oid`), add constraint fk_user_group foreign key (`group_oid`) references `group` (`oid`);
-
-
--- User_Group [User2Group_Group2User]
-create table `user_group` (
-   `user_oid`  integer not null,
-   `group_oid`  integer not null,
-  primary key (`user_oid`, `group_oid`)
-);
-alter table `user_group`   add index fk_user_group_user (`user_oid`), add constraint fk_user_group_user foreign key (`user_oid`) references `user` (`oid`);
-alter table `user_group`   add index fk_user_group_group (`group_oid`), add constraint fk_user_group_group foreign key (`group_oid`) references `group` (`oid`);
-
-
 -- Fase_Competicao [rel1]
 alter table `fase`  add column  `competicao_id_competicao`  integer;
 alter table `fase`   add index fk_fase_competicao (`competicao_id_competicao`), add constraint fk_fase_competicao foreign key (`competicao_id_competicao`) references `competicao` (`id_competicao`);
 
-
--- User_Aposta_Concreta [rel10]
-alter table `aposta_concreta`  add column  `user_oid`  integer;
-alter table `aposta_concreta`   add index fk_aposta_concreta_user (`user_oid`), add constraint fk_aposta_concreta_user foreign key (`user_oid`) references `user` (`oid`);
-
-
 -- Evento_Aposta_Disponivel [rel11]
 alter table `aposta_disponivel`  add column  `evento_id_evento`  integer;
 alter table `aposta_disponivel`   add index fk_aposta_disponivel_evento (`evento_id_evento`), add constraint fk_aposta_disponivel_evento foreign key (`evento_id_evento`) references `evento` (`id_evento`);
-
-
--- Notificacao_User [rel12]
-alter table `notificacao`  add column  `user_oid`  integer;
-alter table `notificacao`   add index fk_notificacao_user (`user_oid`), add constraint fk_notificacao_user foreign key (`user_oid`) references `user` (`oid`);
 
 
 -- Competicao_Desporto [rel13]
@@ -187,15 +100,6 @@ alter table `competicao`   add index fk_competicao_desporto (`desporto_id_despor
 alter table `opcao`  add column  `aposta_disponivel_id_aposta_di`  integer;
 alter table `opcao`   add index fk_opcao_aposta_disponivel (`aposta_disponivel_id_aposta_di`), add constraint fk_opcao_aposta_disponivel foreign key (`aposta_disponivel_id_aposta_di`) references `aposta_disponivel` (`id_aposta_disponivel`);
 
-
--- Aposta_Concreta_Opcao [rel16]
-alter table `aposta_concreta`  add column  `opcao_id_opcao`  integer;
-alter table `aposta_concreta`   add index fk_aposta_concreta_opcao (`opcao_id_opcao`), add constraint fk_aposta_concreta_opcao foreign key (`opcao_id_opcao`) references `opcao` (`id_opcao`);
-
-
--- Aposta_Concreta_Aposta_Disponivel [rel17]
-alter table `aposta_concreta`  add column  `aposta_disponivel_id_aposta_di`  integer;
-alter table `aposta_concreta`   add index fk_aposta_concreta_aposta_disp (`aposta_disponivel_id_aposta_di`), add constraint fk_aposta_concreta_aposta_disp foreign key (`aposta_disponivel_id_aposta_di`) references `aposta_disponivel` (`id_aposta_disponivel`);
 
 
 -- Região_Competicao [rel2]

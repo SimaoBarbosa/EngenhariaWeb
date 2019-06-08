@@ -1,4 +1,4 @@
-USE betess;
+USE betess_events;
 
 INSERT INTO desporto values 
 	(1, 'Futebol'),
@@ -113,35 +113,3 @@ INSERT INTO opcao values
 	(5, 'Nakajima', 9, 2),
 	(6, 'Gabrielzinho', 7, 2),
 	(7, 'Paulinho', 8, 2);
-
-INSERT INTO module values 
-	(1, 'sv1', 'Apostador'),
-	(2, 'sv2', 'Funcionario'),
-	(3, 'area4', 'Vip'),
-	(4, 'area19', 'Informações VIP'),
-	(5, 'page39', 'Apostas'),
-	(6, 'page3', 'Apostas');
-
-INSERT INTO betess.group values 
-	(1, 'Apostador Normal', 1),
-	(2, 'Funcionario', 2),
-	(3, 'Apostador VIP', 1);
-
-INSERT INTO user values 
-	(1, 'Apostador1', 'pass', 'apostador1@hotmail.com', 100, 1),      -- Apostador normal
-	(2, 'Funcionario1', 'pass', 'funcionario1@hotmail.com', NULL, 2), -- Funcionário / Admin
-	(3, 'Apostador2', 'pass', 'apostador2@hotmail.com', 150, 3);      -- Apostador VIP
-
-INSERT INTO user_group VALUES
-	(1, 1), -- Apostador1 <-> Apostador normal
-	(2, 2), -- Funcionario1 <-> Funcionario
-	(3, 3); -- Apostador2 <-> Apostador VIP
-
-INSERT INTO group_module VALUES
-	(1, 1), -- Apostador normal <-> sv1
-	(2, 2), -- Funcionario <-> sv2
-	(3, 1), -- Apostador VIP <-> sv1
-	(1, 3), -- Apostador normal <-> area4
-	(3, 4), -- Apostador VIP <-> area19
-	(1, 6), -- Apostador normal <-> page3
-	(3, 5); -- Apostador VIP <-> page39
