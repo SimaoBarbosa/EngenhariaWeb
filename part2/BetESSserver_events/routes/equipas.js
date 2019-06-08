@@ -10,4 +10,18 @@ router.get('/competicoes/:oid', async (req, res) => {
     });
 });
 
+// get team by name
+router.get('/:nome', async (req, res) => {
+  let nomeEquipa = req.params.nome
+  EquipaController.getEquipaByName(nomeEquipa).then(equipas => {
+    res.send(equipas);
+  })
+  .catch(err=>{
+    res.send(err);
+  });
+});
+
+
+
+
 module.exports = router;

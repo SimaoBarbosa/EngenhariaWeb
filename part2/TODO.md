@@ -1,19 +1,26 @@
 # TODO
-## Controllers/Routes Backend
+
+## Users MS
+- [ ] Restrict acess 
 ### Users
 - [ ] Get - Bets (all, won bets,lost bets, open bets) of User 
 - [ ] Post - add money to user
 - [ ] Post - make user vip
 - [ ] Post - make user normal
 - [ ] Post - remove user
+### Bets
+- [ ] Post - create bet
+- [ ] Post - end bet
+
+
+## Events MS
+- [ ] Restrict acess 
 ### Teams 
-- [ ] Get - team by name
+- [x] Get - team by name
 - [x] Get - events from team
 - [ ] Post - Add team
 - [ ] Post - remove team
 ### Bets
-- [ ] Post - create bet
-- [ ] Post - end bet
 - [ ] Post - update odd of available bet
 ### Events
 - [ ] Post - add/remove team from event
@@ -25,3 +32,7 @@
 - [ ] Post - add sport/region/competition to region/phase to competition
 - [ ] Post - Relate region to sport/competion to sport
 - [x] Get  - all sports/regions of sport/competicions of region of sport/phases of competicion
+
+
+## API gateway
+- [ ] Login
