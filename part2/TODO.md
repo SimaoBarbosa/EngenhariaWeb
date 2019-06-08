@@ -26,13 +26,14 @@
 - [ ] Post - add/remove team from event
 - [x] Post - create event
 - [x] Get - events of phase 
-### Competicion
-- [ ] Post - add/remove team from competicion
+### Competition
+- [ ] Post - add/remove team from competition
 ### Others
 - [ ] Post - add sport/region/competition to region/phase to competition
 - [ ] Post - Relate region to sport/competion to sport
-- [x] Get  - all sports/regions of sport/competicions of region of sport/phases of competicion
+- [x] Get  - all sports/regions of sport/competitions of region of sport/phases of competition
 
 
 ## API gateway
 - [ ] Login
+- [ ] Access rights
