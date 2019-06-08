@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // Microservices available
 const jsonplaceholder = httpProxy('http://jsonplaceholder.typicode.com/');
 const reqres = httpProxy('https://reqres.in/');
+const usersMS = httpProxy('http://localhost:3001/');
+const eventsMS = httpProxy('http://localhost:3002/');
 
 // Users data
 users = [
@@ -107,6 +109,20 @@ app.get('/api/users/:id', verifyJWT, (req, res, next) => {
 // GET http://localhost:3000/api/users/1
 // will request
 // https://reqres.in/api/users/1
+
+
+//examples with our microservices
+app.get('/users', (req, res, next) => {
+    //if (req.group != 1)
+      //  return res.status(500).send({ auth: false, message: 'Not right group to access the data' })
+    usersMS(req, res, next);
+})
+
+app.get('/eventos', (req, res, next) => {
+    //if (req.group != 1)
+      //  return res.status(500).send({ auth: false, message: 'Not right group to access the data' })
+    eventsMS(req, res, next);
+})
 
 // -------------------------------
 
