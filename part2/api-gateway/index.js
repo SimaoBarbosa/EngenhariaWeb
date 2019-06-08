@@ -7,15 +7,19 @@ const app = express();
 const bodyParser = require('body-parser')
 var logger = require('morgan');
 const helmet = require('helmet');
+const axios = require('axios')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // Microservices available
+const users_microservice = 'http://localhost:3001/'
+const events_microservice = 'http://localhost:3002/'
+
 const jsonplaceholder = httpProxy('http://jsonplaceholder.typicode.com/');
 const reqres = httpProxy('https://reqres.in/');
-const usersMS = httpProxy('http://localhost:3001/');
-const eventsMS = httpProxy('http://localhost:3002/');
+const usersMS = httpProxy(users_microservice);
+const eventsMS = httpProxy(events_microservice);
 
 // Users data
 users = [
@@ -24,27 +28,36 @@ users = [
 ]
 
 // Login to authenticate users
-app.post('/login', (req, res, next) => {
-    var exist = false
-    var u = null
-    for (user of users){
-        if (req.body.user === user.name && req.body.password === user.password){
-            exist = true
-            u = user
-            break;
-        }
-    }
-    if (exist){
-        // authentication is ok
-        const id = u.id; // from the database
-        const group = u.group;
+app.post('/login', async (req, res, next) => {
+    
+    let login = await axios.post(users_microservice + 'users/login', {user: req.body.user, password: req.body.password})
+
+    if (login.data.success){ // success
+
+        const id = login.data.oid;
+        const group = login.data.group;
         var token = jwt.sign({ id, group }, process.env.SECRET, {
             expiresIn: 600 // expires in 10 minutes
         });
-        res.status(200).send({ auth: true, token: token });
-    }
-    else {
-        res.status(500).send('Login inválido!');
+        res.status(200).send({
+            success: true,
+            token: token 
+        });
+
+    } else {
+
+        if (login.data.error == 1){
+            res.send({
+                success: false,
+                error: 'username don\'t exist'
+            })
+        } else {
+            res.send({
+                success: false,
+                error: 'password is not correct'
+            })
+        }
+
     }
 })
 

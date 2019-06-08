@@ -8,6 +8,9 @@
 - [ ] Post - make user vip
 - [ ] Post - make user normal
 - [ ] Post - remove user
+- [x] Post - check login valus
+- [ ] Get - user notifications
+- [ ] Post - delete notification
 ### Bets
 - [ ] Post - create bet
 - [ ] Post - end bet
@@ -35,5 +38,5 @@
 
 
 ## API gateway
-- [ ] Login
+- [x] Login
 - [ ] Access rights
