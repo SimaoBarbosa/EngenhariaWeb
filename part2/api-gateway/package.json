@@ -4,7 +4,7 @@
   "description": "API layer to provide a Facade to the microservices available",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "helmet": "^3.18.0",
     "http": "0.0.0",
     "jsonwebtoken": "^8.5.1",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.1"
   }
 }
