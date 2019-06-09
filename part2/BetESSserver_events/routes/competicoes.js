@@ -4,7 +4,7 @@ const CompeticaoController = require('../controllers/competicaoController');
 const DesportoController = require('../controllers/desportoController');
 const RegiaoController = require('../controllers/regiaoController');
 const FaseController = require('../controllers/faseController');
-
+const mw = require('../auth/auth_middlewares')
 
 // --------------------------------------COMPETITION--------------------------------------------
 // get teams of a competition
@@ -16,7 +16,7 @@ router.get('/equipas/:oid', async (req, res) => {
 });
 
 // remove team of competicion
-router.post('/removeEquipa/:idcomp/:idteam', async (req, res) => {
+router.post('/removeEquipa/:idcomp/:idteam',mw.verifyFuncionario , async (req, res) => {
   let idcomp = req.params.idcomp;
   let idteam = req.params.idteam;
   CompeticaoController.removeTeam(idteam,idcomp)
@@ -32,7 +32,7 @@ router.post('/removeEquipa/:idcomp/:idteam', async (req, res) => {
 
 
 // add team to competicion
-router.post('/addEquipa/:idcomp/:idteam', async (req, res) => {
+router.post('/addEquipa/:idcomp/:idteam', mw.verifyFuncionario , async (req, res) => {
   let idcomp = req.params.idcomp;
   let idteam = req.params.idteam;
   CompeticaoController.addTeam(idteam,idcomp)
@@ -66,7 +66,7 @@ router.get('/regioes/:idR/:idD', async (req, res) => {
 // -> nome      -- string with name of competition
 // -> desporto  -- id desporto
 // -> regiao    -- id regiao
-router.post('/create', async (req, res) => {
+router.post('/create', mw.verifyFuncionario , async (req, res) => {
   let nome= req.body.nome
   let desporto= req.body.desporto
   let regiao= req.body.regiao
@@ -86,14 +86,14 @@ router.post('/create', async (req, res) => {
 // -------
 // Body of the POST message needs to have the following values:
 // -> nome   -- string with name of sport
-router.post('/createDesporto', async (req, res) => {
+router.post('/createDesporto', mw.verifyFuncionario , async (req, res) => {
   DesportoController.create(req.body.nome)
   .then(resp=>res.send(resp))
   .catch(err=>res.send(err))
 });
 
 // add region to sport
-router.post('/addRegiaoToDesporto/:idreg/:idsport', async (req, res) => {
+router.post('/addRegiaoToDesporto/:idreg/:idsport', mw.verifyFuncionario ,async (req, res) => {
   let idreg = req.params.idreg;
   let idsport = req.params.idsport;
   DesportoController.addRegion(idsport,idreg)
@@ -104,7 +104,7 @@ router.post('/addRegiaoToDesporto/:idreg/:idsport', async (req, res) => {
 });
 
 // remove region to sport
-router.post('/removeRegiaoOfDesporto/:idreg/:idsport', async (req, res) => {
+router.post('/removeRegiaoOfDesporto/:idreg/:idsport', mw.verifyFuncionario ,async (req, res) => {
   let idreg = req.params.idreg;
   let idsport = req.params.idsport;
   CompeticaoController.removeTeam(idsport,idreg)
@@ -140,7 +140,7 @@ router.get('/desporto/regioes/:oid', async (req, res) => {
 // Body of the POST message needs to have the following values:
 // -> nome   -- string with name of region
 // -> desportos -- list of sports for that region
-router.post('/addOrCreateRegiao', async (req, res) => {
+router.post('/addOrCreateRegiao', mw.verifyFuncionario , async (req, res) => {
   let nome = req.body.nome;
   let desportos = JSON.parse(req.body.desportos);
   RegiaoController.getByName(nome)
@@ -171,7 +171,7 @@ router.post('/addOrCreateRegiao', async (req, res) => {
 // Body of the POST message needs to have the following values:
 // -> nome       -- string with name of fase
 // -> competicao -- id of competition
-router.post('/createFase', async (req, res) => {
+router.post('/createFase', mw.verifyFuncionario , async (req, res) => {
   let nome  = req.body.nome;
   let competicao = req.body.competicao;
 

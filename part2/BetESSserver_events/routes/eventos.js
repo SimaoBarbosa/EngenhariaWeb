@@ -7,7 +7,7 @@ const FaseController = require('../controllers/faseController');
 const mw = require('../auth/auth_middlewares')
 
 // get all the events
-router.get('/', mw.verifyFuncionario ,async (req, res) => {
+router.get('/', async (req, res) => {
     EventoController.findAll().then(eventos => {
       res.send(eventos);
     });
@@ -35,7 +35,7 @@ router.get('/apostas_disponiveis/:oid', async (req, res) => {
 });
 
 // get events of certain team => for vips
-router.get('/equipa/:oid', async (req, res) => {
+router.get('/equipa/:oid', mw.verifyVIP ,async (req, res) => {
     EventoController.getEventosDeEquipa(req.params.oid).then(eventos =>{
         res.send(eventos);
     })
@@ -49,7 +49,7 @@ router.get('/equipa/:oid', async (req, res) => {
 // -> data
 // -> hora
 // -> equipas
-router.post('/insert', async (req, res) => {
+router.post('/insert', mw.verifyFuncionario ,async (req, res) => {
     
     let titulo = req.body.titulo;
     let id_fase = req.body.fase;
@@ -115,7 +115,7 @@ router.get('/fase/:oid', async (req, res) => {
 });
 
 // remove team of event
-router.post('/removeEquipa/:idevento/:idteam', async (req, res) => {
+router.post('/removeEquipa/:idevento/:idteam', mw.verifyFuncionario ,async (req, res) => {
   let idevento = req.params.idevento;
   let idteam = req.params.idteam;
   EventoController.removeTeam(idevento,idteam)
@@ -131,7 +131,7 @@ router.post('/removeEquipa/:idevento/:idteam', async (req, res) => {
 
 
 // add team to event
-router.post('/addEquipa/:idevento/:idteam', async (req, res) => {
+router.post('/addEquipa/:idevento/:idteam', mw.verifyFuncionario , async (req, res) => {
   let idevento = req.params.idevento;
   let idteam = req.params.idteam;
   EventoController.addTeam(idevento,idteam)

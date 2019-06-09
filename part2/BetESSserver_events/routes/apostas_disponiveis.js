@@ -3,6 +3,7 @@ var router = express.Router();
 var axios = require('axios')
 const ApostasController = require('../controllers/aposta_disponivelController');
 const OpcaoController = require('../controllers/opcaoController');
+const mw = require('../auth/auth_middlewares')
 
 // get  apostas disponiveis
 // ------
@@ -67,7 +68,7 @@ router.get('/ofEvento/:vip/:available/:idevento', async (req, res) => {
 // Body of the POST message needs to have the following values:
 // -> id_opcao       -- id of option
 // -> odd            -- float with odd 
-router.post('/updateOdd', async (req, res) => {
+router.post('/updateOdd',mw.verifyFuncionario ,async (req, res) => {
   let id_opcao = req.body.id_opcao;
   let odd = req.body.odd;
   ApostasController.updateOdd(id_opcao,odd)
@@ -85,7 +86,7 @@ router.post('/updateOdd', async (req, res) => {
 // -> opcao          -- name of option
 // -> odd            -- float with odd 
 // -> aposta         -- id aposta disponivel
-router.post('/createAddOpcao', async (req, res) => {
+router.post('/createAddOpcao', mw.verifyFuncionario,async (req, res) => {
   let opcao = req.body.opcao;
   let odd = req.body.odd;
   let aposta = req.body.aposta;
@@ -107,7 +108,7 @@ router.post('/createAddOpcao', async (req, res) => {
 // Body of the POST message needs to have the following values:
 // -> id_aposta      -- id of aposta_disponivel
 // -> id_opcao       -- id of option
-router.post('/end', async (req, res) => {
+router.post('/end', mw.verifyFuncionario ,async (req, res) => {
   let id_aposta = req.body.id_aposta;
   let id_opcao = req.body.id_opcao;
   ApostasController.endBet(id_opcao,id_aposta)
@@ -147,7 +148,7 @@ router.post('/end', async (req, res) => {
 // -> titulo          -- name of aposta_disponivel
 // -> vip             -- 0=false, else true
 // -> id_evento       -- if of event
-router.post('/create', async (req, res) => {
+router.post('/create', mw.verifyFuncionario ,async (req, res) => {
   let titulo = req.body.titulo
   let id_evento = req.body.id_evento
   let vip = (req.body.vip != 0)
@@ -169,7 +170,7 @@ router.post('/create', async (req, res) => {
 // Make bet available
 // -------
 // idaposta => id of aposta disponivel
-router.post('/makeAvailable/:idaposta', async (req, res) => {
+router.post('/makeAvailable/:idaposta', mw.verifyFuncionario ,async (req, res) => {
   ApostasController.makeAvailable(req.params.idaposta)
   .then(resp=>res.send(resp))
   .catch(err=>res.status(500).send(err))

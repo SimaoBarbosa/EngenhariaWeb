@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const EquipaController = require('../controllers/equipaController');
 const CompeticaoController = require('../controllers/competicaoController');
+const mw = require('../auth/auth_middlewares')
+
 // get competitions of a team
 router.get('/competicoes/:oid', async (req, res) => {
     let equipaId = req.params.oid
@@ -35,7 +37,7 @@ router.get('/:nome', async (req, res) => {
 
 
 // delete team by id
-router.post('/delete/:id', async (req, res) => {
+router.post('/delete/:id', mw.verifyFuncionario ,async (req, res) => {
   let id_equipa = req.params.id
   EquipaController.delete(id_equipa).then(n_deleted => {
     if(n_deleted>0)
@@ -55,7 +57,7 @@ router.post('/delete/:id', async (req, res) => {
 // Body of the POST message needs to have the following values:
 // -> equipa       -- string name of team
 // -> competicoes  -- list of ids of competicions
-router.post('/insert', async (req, res) => {
+router.post('/insert', mw.verifyFuncionario ,async (req, res) => {
       
   let equipa = req.body.equipa;
   let competicoes = JSON.parse(req.body.competicoes);
