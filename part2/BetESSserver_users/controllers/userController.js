@@ -100,7 +100,7 @@ module.exports.tornarVIP_pagamento = async (userId) => {
 
     await models.user.update(
         {group: 3},
-        { where: {
+        {where: {
             oid: userId
         }}
     )

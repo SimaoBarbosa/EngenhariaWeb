@@ -13,8 +13,8 @@
 - [x] Get - user notifications
 - [x] Post - delete notification
 ### Bets
-- [ ] Post - create bet
-- [ ] Post - end bet
+- [x] Post - create bet
+- [x] Post - update concrete bets, user account and generate notifications when available bet is closed
 
 
 ## Events MS
