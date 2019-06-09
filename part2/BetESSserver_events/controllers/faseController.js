@@ -8,3 +8,8 @@ module.exports.getEventos = faseId => {
         include: ['eventos']
     })
 }
+
+//create new fase
+module.exports.create = data => {
+    return models.fase.create(values = data );
+}

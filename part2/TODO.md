@@ -25,9 +25,9 @@
 - [x] Post - remove team
 ### Bets
 - [x] Post - update odd of available bet
-- [ ] Post - add available bet
-- [ ] Post - end available bet
-- [ ] Post - add/remove option
+- [x] Post - add available bet
+- [ ] Post - end available bet //todo update saldo
+- [x] Post - add/remove option
 ### Events
 - [x] Post - add/remove team from event
 - [x] Post - create event
@@ -38,7 +38,7 @@
 - [X] Post - Relate region to sport/competition to sport
 - [x] Get  - all sports/regions of sport/competitions of region of sport/phases of competition
 - [x] Post - Add sports, regions, competitions
-- [ ] Post - Add phase
+- [x] Post - Add phase
 
 ## API gateway
 - [x] Login

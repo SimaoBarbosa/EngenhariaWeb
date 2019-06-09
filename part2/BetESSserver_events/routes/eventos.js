@@ -33,8 +33,8 @@ router.get('/apostas_disponiveis/:oid', async (req, res) => {
     });
 });
 
-// get events of certain team
-router.get('/team/:oid', async (req, res) => {
+// get events of certain team => for vips
+router.get('/equipa/:oid', async (req, res) => {
     EventoController.getEventosDeEquipa(req.params.oid).then(eventos =>{
         res.send(eventos);
     })
@@ -114,7 +114,7 @@ router.get('/fase/:oid', async (req, res) => {
 });
 
 // remove team of event
-router.post('/removeTeam/:idevento/:idteam', async (req, res) => {
+router.post('/removeEquipa/:idevento/:idteam', async (req, res) => {
   let idevento = req.params.idevento;
   let idteam = req.params.idteam;
   EventoController.removeTeam(idevento,idteam)
@@ -130,7 +130,7 @@ router.post('/removeTeam/:idevento/:idteam', async (req, res) => {
 
 
 // add team to event
-router.post('/addTeam/:idevento/:idteam', async (req, res) => {
+router.post('/addEquipa/:idevento/:idteam', async (req, res) => {
   let idevento = req.params.idevento;
   let idteam = req.params.idteam;
   EventoController.addTeam(idevento,idteam)

@@ -1,4 +1,6 @@
 var models = require('../models/index')
+var Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 // get all the events with date and time
 module.exports.findAll = () => {
@@ -44,7 +46,7 @@ module.exports.getApostasDisponiveis = (eventoId) => {
     });
 }
 
-// get events of team
+// get events of team => for vips (history of teams)
 module.exports.getEventosDeEquipa = (equipaId) => {
     return models.evento.findAll({
         include: [{
@@ -52,6 +54,15 @@ module.exports.getEventosDeEquipa = (equipaId) => {
             where: {id_equipa: equipaId},
             attributes: []
         }, 'datahora',
+        {
+            association : 'apostas_disponiveis',
+            where : {
+                disponibilidade:true,
+                resultado_final:{
+                    [Op.gt]:-1
+                }
+            }
+        },
         {
             association: 'fase', 
             include: ['competicao']
