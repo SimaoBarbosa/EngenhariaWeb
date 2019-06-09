@@ -1,4 +1,5 @@
 var models = require('../models/index')
+var axios = require('axios')
 
 // get concrete bets of user
 module.exports.getApostasConcretas = seletores => {
@@ -7,32 +8,49 @@ module.exports.getApostasConcretas = seletores => {
 
 // create new concrete bet
 module.exports.create = async bet => {
-    let user = await models.user.findOne({
-        attributes: ['saldo'],
-        where: {
-            oid: bet.user_oid
+
+    axios({
+        method: 'get',
+        url: 'http://localhost:3000/api_eventos/apostasDisponiveis/disponivel/' + bet.id_aposta_disponivel,
+        headers: {}, 
+        data: {}
+    })
+    .then(async response => {
+        if (response.disponibilidade){
+
+            let user = await models.user.findOne({
+                attributes: ['saldo'],
+                where: {
+                    oid: bet.user_oid
+                }
+            })
+        
+            if (!user){
+                return {success: false, message: 'Utilizador não existe'}
+            }
+        
+            if (user.saldo < bet.quantia){
+                return {success: false, message: 'Utilizador não tem dinheiro suficiente'}
+            }
+        
+            await models.user.decrement(
+                ['saldo'],
+                {
+                    by: bet.quantia,
+                    where: {oid: bet.user_oid}
+                }
+            )
+        
+            return models.aposta_concreta.create(values = bet);
+
+        } else {
+            return {success: false, message: 'Aposta não está disponível'}
         }
     })
-
-    if (!user){
-        return {success: false, message: 'Utilizador não existe'}
-    }
-
-    if (user.saldo < bet.quantia){
-        return {success: false, message: 'Utilizador não tem dinheiro suficiente'}
-    }
-
-    await models.user.decrement(
-        ['saldo'],
-        {
-            by: bet.quantia,
-            where: {oid: bet.user_oid}
-        }
-    )
-
-    await models.aposta_concreta.create(values = bet);
-
-    return {success: true}
+    .catch(err => {
+        res.send(err)
+    })
+    
 }
 
 // create new concrete bet

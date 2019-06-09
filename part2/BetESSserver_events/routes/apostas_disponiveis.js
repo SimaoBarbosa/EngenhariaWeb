@@ -9,14 +9,14 @@ const OpcaoController = require('../controllers/opcaoController');
 // PARAMS
 // vip       -> int => 0= false, 1=true , else both
 // available -> int => 0= false, 1=true , else both
-router.get('/:vip/:available', async (req, res) => {
+router.get('apostas/:vip/:available', async (req, res) => {
     let vip = req.params.vip
     let available =  req.params.available
     let seletores = {}
     if(vip==0) 
       seletores["vip"] = false
     else if(vip==1)     
-    seletores["vip"] = true
+      seletores["vip"] = true
 
     if(available==0) 
       seletores["disponibilidade"] = false
@@ -30,7 +30,6 @@ router.get('/:vip/:available', async (req, res) => {
         res.status(500).send(err);
     })
 });
-
 
 // get  apostas disponiveis of event
 // ------
@@ -123,14 +122,24 @@ router.post('/end', async (req, res) => {
           id_opcao : id_opcao
         }
       })
-      .then( resp => (res.send(resp)))
-      .catch(err=>res.status(500).send(err))
+      .then(response => {
+        res.send(response)
+      })
+      .catch(() => {
+        console.log(response)
+        ApostasController.usersNotUpdated(id_opcao,id_aposta)
+        .then(response => {
+          res.send(response);
+        })
+        .catch(err => {
+          res.send(err)
+        })
+      })
   })
   .catch(err=>{
       res.status(500).send(err);
   })
 });
-
 
 // Create Bet
 // -------
@@ -157,7 +166,6 @@ router.post('/create', async (req, res) => {
   })
 });
 
-
 // Make bet available
 // -------
 // idaposta => id of aposta disponivel
@@ -166,6 +174,12 @@ router.post('/makeAvailable/:idaposta', async (req, res) => {
   .then(resp=>res.send(resp))
   .catch(err=>res.status(500).send(err))
 });
+
+router.get('/disponivel/:oid', async (req, res) => {
+  ApostasController.isAvailable(req.params.oid)
+  .then(resp=>res.send(resp))
+  .catch(err=>res.status(500).send(err))
+})
 
 module.exports = router;
 
