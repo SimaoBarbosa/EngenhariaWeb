@@ -4,16 +4,17 @@ const EventoController = require('../controllers/eventoController');
 const DataHoraController = require('../controllers/datahoraController');
 const CompeticaoController = require('../controllers/competicaoController');
 const FaseController = require('../controllers/faseController');
+const mw = require('../auth/auth_middlewares')
 
 // get all the events
-router.get('/', async (req, res) => {
+router.get('/', mw.verifyFuncionario ,async (req, res) => {
     EventoController.findAll().then(eventos => {
       res.send(eventos);
     });
 });
 
 // get all the events with more info
-router.get('/info', async (req, res) => {
+router.get('/info',  async (req, res) => {
     EventoController.findAllInfo().then(eventos => {
       res.send(eventos);
     });

@@ -10,6 +10,7 @@ var equipasRouter = require('./routes/equipas');
 var eventosRouter = require('./routes/eventos');
 var apostasRouter = require('./routes/apostas_disponiveis');
 
+
 var app = express();
 
 // Conexão à base de dados MySQL
