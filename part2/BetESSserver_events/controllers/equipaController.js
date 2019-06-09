@@ -11,6 +11,11 @@ module.exports.getCompeticoes = equipaId => {
     })
 }
 
+// get all teams
+module.exports.getEquipas = () => {
+    return models.equipa.findAll()
+}
+
 // get team by name
 module.exports.getEquipaByName = equipa => {
     return models.equipa.findAll({
@@ -22,3 +27,18 @@ module.exports.getEquipaByName = equipa => {
     })
 }
 
+// create new team
+module.exports.create = team => {
+    return models.equipa.create(values = team);
+}
+
+
+// delete team by id
+module.exports.delete = id => {
+    return models.equipa.destroy({
+        where : {
+            id_equipa: id
+        },
+        cascade: true
+    });
+}

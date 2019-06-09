@@ -22,13 +22,15 @@ module.exports = (sequelize, DataTypes) => {
     equipa.belongsToMany(models.competicao, {
       through: 'equipa_competicao',
       as: 'competicoes',
-      foreignKey: 'equipa_id_equipa'
+      foreignKey: 'equipa_id_equipa',
+      onDelete: 'CASCADE'
     });
 
     equipa.belongsToMany(models.evento, {
       through: 'evento_equipa',
       as: 'eventos',
-      foreignKey: 'equipa_id_equipa'
+      foreignKey: 'equipa_id_equipa',
+      onDelete: 'CASCADE'
     });
 
   };

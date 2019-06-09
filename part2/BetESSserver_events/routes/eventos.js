@@ -2,8 +2,6 @@ var express = require('express');
 var router = express.Router();
 const EventoController = require('../controllers/eventoController');
 const DataHoraController = require('../controllers/datahoraController');
-const DesportoController = require('../controllers/desportoController');
-const RegiaoController = require('../controllers/regiaoController');
 const CompeticaoController = require('../controllers/competicaoController');
 const FaseController = require('../controllers/faseController');
 
@@ -100,26 +98,6 @@ router.post('/insert', async (req, res) => {
     });
 });
 
-// get all the sports
-router.get('/desportos', async (req, res) => {
-  DesportoController.getAll().then(desportos => {
-    res.send(desportos);
-  });
-});
-
-// get all the regions of certain sport
-router.get('/desporto/regioes/:oid', async (req, res) => {
-  DesportoController.getRegioes(req.params.oid).then(regioes => {
-    res.send(regioes);
-  });
-});
-
-// get all the competitions of certain region and sport
-router.get('/regioes/competicoes/:idR/:idD', async (req, res) => {
-  RegiaoController.getCompeticoes(req.params.idR, req.params.idD).then(competicoes => {
-    res.send(competicoes);
-  });
-});
 
 // get phases of competition
 router.get('/competicoes/fases/:oid', async (req, res) => {
@@ -135,5 +113,32 @@ router.get('/fase/:oid', async (req, res) => {
   });
 });
 
+// remove team of event
+router.post('/removeTeam/:idevento/:idteam', async (req, res) => {
+  let idevento = req.params.idevento;
+  let idteam = req.params.idteam;
+  EventoController.removeTeam(idevento,idteam)
+  .then((n_deleted) => {
+    if (n_deleted>0) 
+      res.send("Removida relação equipa/evento com sucesso")
+    else 
+      res.send("Relação equipa/evento não removida, pois não existe")
+  })
+  .catch(err => res.status(500).send(err + "\n\n Relação equipa/evento ERRO"))
+
+});
+
+
+// add team to event
+router.post('/addTeam/:idevento/:idteam', async (req, res) => {
+  let idevento = req.params.idevento;
+  let idteam = req.params.idteam;
+  EventoController.addTeam(idevento,idteam)
+  .then((evento_equipa) => {
+    res.send(evento_equipa);
+  })
+  .catch(err => res.status(500).send(err + "\n\n Relação equipa/evento ERRO"))
+
+});
 
 module.exports = router;

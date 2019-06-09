@@ -66,3 +66,13 @@ module.exports.addTeam = (eventoId, equipaId) => {
         equipa_id_equipa: equipaId
     })
 }
+
+// remove team of event
+module.exports.removeTeam = (eventoId, equipaId) => {
+    return models.evento_equipa.destroy({
+        where:{
+            evento_id_evento: eventoId,
+            equipa_id_equipa: equipaId
+        }
+    })
+}

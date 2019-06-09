@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
     competicao.belongsToMany(models.equipa, {
       through: 'equipa_competicao',
       as: 'equipas',
-      foreignKey: 'competicao_id_competicao'
+      foreignKey: 'competicao_id_competicao',
     });
 
     competicao.hasMany(models.fase, {

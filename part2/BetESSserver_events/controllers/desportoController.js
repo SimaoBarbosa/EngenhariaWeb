@@ -13,3 +13,26 @@ module.exports.getRegioes = (desportoId) => {
         include: ['regioes']
     })
 }
+
+//create new sport
+module.exports.create = sport => {
+    return models.desporto.create(values = sport);
+}
+
+// add region to sport
+module.exports.addRegion = (sportId,regionId) => {
+    return models.desporto_regiao.create({
+        desporto_id_desporto: sportId,
+        regiao_id_regiao: regionId
+    })
+}
+
+// remove team of competition
+module.exports.removeRegion = (sportId,regionId) => {
+    return models.desporto_regiao.destroy({
+        where:{
+            desporto_id_desporto: sportId,
+            regiao_id_regiao: regionId
+        }
+    })
+}

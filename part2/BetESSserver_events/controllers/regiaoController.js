@@ -19,3 +19,18 @@ module.exports.getCompeticoes = (regiaoId, desportoId) => {
         ]
     })
 }
+//create new region
+module.exports.create = region => {
+    return models.regiao.create(values = {
+        nome:region
+    });
+}
+
+//get region by name
+module.exports.getByName = (reg) => {
+    return models.regiao.findOne({
+        where:{
+            nome:reg
+        }
+    });
+}

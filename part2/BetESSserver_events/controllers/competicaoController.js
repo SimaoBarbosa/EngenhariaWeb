@@ -17,3 +17,25 @@ module.exports.getEquipas = competicaoId => {
         include: ['equipas']
     })
 }
+
+// add team to competition
+module.exports.addTeam = (equipaId,compId) => {
+    return models.equipa_competicao.create({
+        equipa_id_equipa: equipaId,
+        competicao_id_competicao: compId
+    })
+}
+// remove team of competition
+module.exports.removeTeam = (equipaId,compId) => {
+    return models.equipa_competicao.destroy({
+        where:{
+            equipa_id_equipa: equipaId,
+            competicao_id_competicao: compId
+        }
+    })
+}
+
+//create new competition
+module.exports.create = data => {
+    return models.competicao.create(values = data );
+}

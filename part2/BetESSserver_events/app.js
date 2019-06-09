@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var competicoesRouter = require('./routes/competicoes');
 var equipasRouter = require('./routes/equipas');
 var eventosRouter = require('./routes/eventos');
+var apostasRouter = require('./routes/apostas_disponiveis');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use('/', indexRouter);
 app.use('/competicoes', competicoesRouter);
 app.use('/equipas', equipasRouter);
 app.use('/eventos', eventosRouter);
+app.use('/apostasDisponiveis', apostasRouter);
 
 module.exports.db = pool;
 module.exports = app;
