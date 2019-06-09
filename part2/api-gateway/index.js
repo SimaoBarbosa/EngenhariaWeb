@@ -21,12 +21,6 @@ const reqres = httpProxy('https://reqres.in/');
 const usersMS = httpProxy(users_microservice);
 const eventsMS = httpProxy(events_microservice);
 
-// Users data
-users = [
-    {id: 1, name: 'admin', password: 'password', group: 1},
-    {id: 2, name: 'apostador', password: 'password', group: 2}
-]
-
 // Login to authenticate users
 app.post('/login', async (req, res, next) => {
     
@@ -123,17 +117,15 @@ app.get('/api/users/:id', verifyJWT, (req, res, next) => {
 // will request
 // https://reqres.in/api/users/1
 
-
-//examples with our microservices
-app.get('/users', (req, res, next) => {
-    //if (req.group != 1)
-      //  return res.status(500).send({ auth: false, message: 'Not right group to access the data' })
+// forwards request to users micro-service
+app.get('/api_users*', (req, res, next) => {
+    req.url = req.url.replace('/api_users', '')
     usersMS(req, res, next);
 })
 
-app.get('/eventos', (req, res, next) => {
-    //if (req.group != 1)
-      //  return res.status(500).send({ auth: false, message: 'Not right group to access the data' })
+// forwards request to eventos micro-service
+app.get('/api_eventos*', (req, res, next) => {
+    req.url = req.url.replace('/api_eventos', '')
     eventsMS(req, res, next);
 })
 
