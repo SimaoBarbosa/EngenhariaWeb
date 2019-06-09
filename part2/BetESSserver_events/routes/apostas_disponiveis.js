@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var axios = require('axios')
 const ApostasController = require('../controllers/aposta_disponivelController');
 const OpcaoController = require('../controllers/opcaoController');
 
@@ -112,8 +113,18 @@ router.post('/end', async (req, res) => {
   let id_opcao = req.body.id_opcao;
   ApostasController.endBet(id_opcao,id_aposta)
   .then(response => {
-    // TODO -> ATUALIZAR SALDOS
-    res.send(response);
+      console.dir(response);
+      axios({
+        method: 'post',
+        url: 'http://localhost:3000/api_users/apostas/end_available_bet',
+        headers: {}, 
+        data: {
+          id_aposta_disponivel: id_aposta,
+          id_opcao : id_opcao
+        }
+      })
+      .then( resp => (res.send(resp)))
+      .catch(err=>res.status(500).send(err))
   })
   .catch(err=>{
       res.status(500).send(err);

@@ -118,13 +118,26 @@ app.get('/api/users/:id', verifyJWT, (req, res, next) => {
 // https://reqres.in/api/users/1
 
 // forwards request to users micro-service
-app.get('/api_users*', (req, res, next) => {
+app.get('/api_users*', verifyJWT ,(req, res, next) => {
+    req.body["user_group_id"]=req.group
     req.url = req.url.replace('/api_users', '')
     usersMS(req, res, next);
 })
 
 // forwards request to eventos micro-service
-app.get('/api_eventos*', (req, res, next) => {
+app.get('/api_eventos*', verifyJWT ,(req, res, next) => {
+    req.url = req.url.replace('/api_eventos', '')
+    eventsMS(req, res, next);
+})
+
+// forwards request to users micro-service
+app.post('/api_users*', verifyJWT ,(req, res, next) => {
+    req.url = req.url.replace('/api_users', '')
+    usersMS(req, res, next);
+})
+
+// forwards request to eventos micro-service
+app.post('/api_eventos*', verifyJWT ,(req, res, next) => {
     req.url = req.url.replace('/api_eventos', '')
     eventsMS(req, res, next);
 })

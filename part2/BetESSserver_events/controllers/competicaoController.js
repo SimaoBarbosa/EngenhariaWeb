@@ -1,6 +1,6 @@
 var models = require('../models/index')
 
-// get events of compettion
+// get fases of competition
 module.exports.getFases = competicaoId => {
     return models.competicao.findOne({
         attributes: [],
