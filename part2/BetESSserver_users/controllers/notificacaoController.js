@@ -8,3 +8,12 @@ module.exports.notificacoesUser = userId => {
         }
     })
 }
+
+// delete notification
+module.exports.remove = notificacaoId => {
+    return models.notificacao.destroy({
+        where: {
+            id_notificacao: notificacaoId
+        }
+    })
+}

@@ -37,12 +37,14 @@ module.exports = (sequelize, DataTypes) => {
     
     user.hasMany(models.notificacao, {
       as: 'notificacoes', 
-      foreignKey: 'user_oid'
+      foreignKey: 'user_oid',
+      onDelete: 'CASCADE'
     });
     
     user.hasMany(models.aposta_concreta, {
       as: 'apostas', 
-      foreignKey: 'user_oid'
+      foreignKey: 'user_oid',
+      onDelete: 'CASCADE'
     });
     
   };

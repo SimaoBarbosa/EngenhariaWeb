@@ -7,7 +7,20 @@ router.get('/user/:oid', async (req, res) => {
     let userId = req.params.oid
     NotificacaoController.notificacoesUser(userId).then(notificacoes => {
       res.send(notificacoes);
+    })
+    .catch(err => {
+      res.status(500).send(err);
     });
 });
+
+// remove specific notification
+router.post('/delete/:oid', async (req, res) => {
+  NotificacaoController.remove(req.params.oid).then(() => {
+    res.send({success: true});
+  })
+  .catch(err => {
+    res.status(500).send(err);
+  })
+})
 
 module.exports = router;
