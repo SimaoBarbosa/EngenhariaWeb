@@ -46,6 +46,8 @@ services:
         ipv4_address: 172.28.0.11
     ports:
       - '3001:3001'
+    depends_on:
+      - db_users
 
   BetESSserver_events: # events micro-service folder
     build: ./BetESSserver_events
@@ -56,8 +58,13 @@ services:
         ipv4_address: 10.1.0.12
       backNetwork:
         ipv4_address: 172.28.0.12
+    ports:
+      - '3002:3002'
+    depends_on:
+      - db_events
 
   db_users:
+    build: ./MySQL_users
     container_name: mysqldb_users
     image: mysql
     restart: always
@@ -71,6 +78,7 @@ services:
       MYSQL_ROOT_PASSWORD: password
 
   db_events:
+    build: ./MySQL_events
     container_name: mysqldb_events
     image: mysql
     restart: always
