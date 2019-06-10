@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const EquipaController = require('../controllers/equipaController');
 const CompeticaoController = require('../controllers/competicaoController');
-const mw = require('../auth/auth_middlewares')
+const mw = require('../auth/auth_middlewares');
 
 // get competitions of a team
 router.get('/competicoes/:oid', async (req, res) => {
@@ -11,7 +11,6 @@ router.get('/competicoes/:oid', async (req, res) => {
       res.send(competicoes);
     });
 });
-
 
 // get all teams
 router.get('/', async (req, res) => {
@@ -23,7 +22,6 @@ router.get('/', async (req, res) => {
   });
 });
 
-
 // get team by name
 router.get('/:nome', async (req, res) => {
   let nomeEquipa = req.params.nome
@@ -34,7 +32,6 @@ router.get('/:nome', async (req, res) => {
     res.status(500).send(err);
   });
 });
-
 
 // delete team by id
 router.post('/delete/:id', mw.verifyFuncionario ,async (req, res) => {
@@ -49,8 +46,6 @@ router.post('/delete/:id', mw.verifyFuncionario ,async (req, res) => {
     res.status(500).send(err);
   });
 });
-
-
 
 // create new team 
 // -------
@@ -78,9 +73,5 @@ router.post('/insert', mw.verifyFuncionario ,async (req, res) => {
     res.status(500).send(err);
   })
 });
-
-
-
-
 
 module.exports = router;

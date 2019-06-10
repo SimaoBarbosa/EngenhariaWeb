@@ -4,7 +4,7 @@ const EventoController = require('../controllers/eventoController');
 const DataHoraController = require('../controllers/datahoraController');
 const CompeticaoController = require('../controllers/competicaoController');
 const FaseController = require('../controllers/faseController');
-const mw = require('../auth/auth_middlewares')
+const mw = require('../auth/auth_middlewares');
 
 // get all the events
 router.get('/', async (req, res) => {
@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 });
 
 // get all the events with more info
-router.get('/info',  async (req, res) => {
+router.get('/info', async (req, res) => {
     EventoController.findAllInfo().then(eventos => {
       res.send(eventos);
     });
@@ -99,7 +99,6 @@ router.post('/insert', mw.verifyFuncionario ,async (req, res) => {
     });
 });
 
-
 // get phases of competition
 router.get('/competicoes/fases/:oid', async (req, res) => {
   CompeticaoController.getFases(req.params.oid).then(fases => {
@@ -129,7 +128,6 @@ router.post('/removeEquipa/:idevento/:idteam', mw.verifyFuncionario ,async (req,
 
 });
 
-
 // add team to event
 router.post('/addEquipa/:idevento/:idteam', mw.verifyFuncionario , async (req, res) => {
   let idevento = req.params.idevento;
@@ -139,7 +137,6 @@ router.post('/addEquipa/:idevento/:idteam', mw.verifyFuncionario , async (req, r
     res.send(evento_equipa);
   })
   .catch(err => res.status(500).send(err + "\n\n Relação equipa/evento ERRO"))
-
 });
 
 module.exports = router;

@@ -6,50 +6,84 @@ module.exports.getApostasConcretas = seletores => {
     return models.aposta_concreta.findAll(seletores);
 }
 
-// create new concrete bet
+// create new concrete bet for VIP user
+module.exports.createVIP = async bet => {
+
+    let response = await axios.get(
+        'http://localhost:3000/api_eventos/apostasDisponiveis/disponivel/' + bet.id_aposta_disponivel.toString(),
+        {data: {secret: 'this_is_a_secret_key_1'}}
+    )
+
+    if (response.data.disponibilidade){
+
+        let user = await models.user.findOne({
+            attributes: ['saldo'],
+            where: {
+                oid: bet.user_oid
+            }
+        })
+    
+        if (!user){
+            return {success: false, message: 'Utilizador não existe'}
+        }
+    
+        if (user.saldo < bet.quantia){
+            return {success: false, message: 'Utilizador não tem dinheiro suficiente'}
+        }
+    
+        await models.user.decrement(
+            ['saldo'],
+            {
+                by: bet.quantia,
+                where: {oid: bet.user_oid}
+            }
+        )
+    
+        return models.aposta_concreta.create(values = bet);
+
+    } else {
+        return {success: false, message: 'Aposta não está disponível'}
+    }
+    
+}
+
+// create new concrete bet for normal user
 module.exports.create = async bet => {
 
-    axios({
-        method: 'get',
-        url: 'http://localhost:3000/api_eventos/apostasDisponiveis/disponivel/' + bet.id_aposta_disponivel,
-        headers: {}, 
-        data: {}
-    })
-    .then(async response => {
-        if (response.disponibilidade){
+    let response = await axios.get(
+        'http://localhost:3000/api_eventos/apostasDisponiveis/disponivel_and_vip/' + bet.id_aposta_disponivel.toString(),
+        {data: {secret: 'this_is_a_secret_key_1'}}
+    )
 
-            let user = await models.user.findOne({
-                attributes: ['saldo'],
-                where: {
-                    oid: bet.user_oid
-                }
-            })
-        
-            if (!user){
-                return {success: false, message: 'Utilizador não existe'}
+    if (!response.data.vip && response.data.disponibilidade){
+        let user = await models.user.findOne({
+            attributes: ['saldo'],
+            where: {
+                oid: bet.user_oid
             }
-        
-            if (user.saldo < bet.quantia){
-                return {success: false, message: 'Utilizador não tem dinheiro suficiente'}
-            }
-        
-            await models.user.decrement(
-                ['saldo'],
-                {
-                    by: bet.quantia,
-                    where: {oid: bet.user_oid}
-                }
-            )
-        
-            return models.aposta_concreta.create(values = bet);
-
-        } else {
-            return {success: false, message: 'Aposta não está disponível'}
+        })
+    
+        if (!user){
+            return {success: false, message: 'Utilizador não existe'}
         }
-    })
-    .catch(err => {
-        res.send(err)
-    })
+    
+        if (user.saldo < bet.quantia){
+            return {success: false, message: 'Utilizador não tem dinheiro suficiente'}
+        }
+    
+        await models.user.decrement(
+            ['saldo'],
+            {
+                by: bet.quantia,
+                where: {oid: bet.user_oid}
+            }
+        )
+    
+        return models.aposta_concreta.create(values = bet)
+
+    } else {
+        return {success: false, message: 'Aposta não está disponível ou é apenas para apostadores VIP'}
+    }
     
 }
 

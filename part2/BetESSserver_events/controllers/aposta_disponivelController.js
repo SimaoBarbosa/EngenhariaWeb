@@ -13,7 +13,7 @@ module.exports.updateOdd = (idopcao,odd) => {
     return models.opcao.update(
         { odd : odd },
         { where: { id_opcao: idopcao } }
-      )
+    )
 }
 
 //create new aposta disponivel
@@ -33,7 +33,7 @@ module.exports.endBet = (id_opcao,id_aposta) => {
                 id_aposta_disponivel:id_aposta
             }
         } 
-        );
+    );
 }
 
 // End aposta disponivel
@@ -47,7 +47,7 @@ module.exports.usersNotUpdated = (id_opcao,id_aposta) => {
                 id_aposta_disponivel: id_aposta
             }
         } 
-        );
+    );
 }
 
 // make aposta disponivel available
@@ -58,9 +58,20 @@ module.exports.makeAvailable = (id_aposta) => {
       )
 }
 
+// check if bet is available
 module.exports.isAvailable = (id_aposta) => {
     return models.aposta_disponivel.findOne({
         attributes: ['disponibilidade'],
+        where: {
+            id_aposta_disponivel: id_aposta
+        }
+    })
+}
+
+// check if bet is available and VIP
+module.exports.isAvailableAndVIP = (id_aposta) => {
+    return models.aposta_disponivel.findOne({
+        attributes: ['disponibilidade', 'vip'],
         where: {
             id_aposta_disponivel: id_aposta
         }
