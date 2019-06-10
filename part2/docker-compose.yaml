@@ -1,0 +1,85 @@
+version: '3.5'
+
+# -------------------------
+# BetESS containers network
+# -------------------------
+
+networks:
+  frontNetwork:
+    name: front-network
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.1.0.0/24
+  backNetwork:
+    name: back-network
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.28.0.0/16
+
+# -------------------------
+# BetESS backend containers
+# -------------------------
+
+services:
+  api-gateway: # gateway folder name
+    build: ./api-gateway
+    image: betess-api # nome que queres dar à imagem que criaste no Dockerfile
+    container_name: betess-api # nome do container que queres dar
+    networks:
+      frontNetwork:
+        ipv4_address: 10.1.0.10 # access by this IP or localhost
+    ports:
+      - '3000:3000'
+
+  BetESSserver_users: # users micro-service folder
+    build: ./BetESSserver_users
+    image: betess-msu # name of image in Dockerfile
+    container_name: betess-msu # container name
+    networks:
+      frontNetwork: # access to front network but without expose
+        ipv4_address: 10.1.0.11
+      backNetwork: # access to back network but without expose
+        ipv4_address: 172.28.0.11
+    ports:
+      - '3001:3001'
+
+  BetESSserver_events: # events micro-service folder
+    build: ./BetESSserver_events
+    image: betess-mse
+    container_name: betess-mse
+    networks:
+      frontNetwork:
+        ipv4_address: 10.1.0.12
+      backNetwork:
+        ipv4_address: 172.28.0.12
+
+  db_users:
+    container_name: mysqldb_users
+    image: mysql
+    restart: always
+    ports:
+      - "8998:3306"
+    networks:
+      backNetwork:
+        ipv4_address: 172.28.0.13
+    environment:
+      MYSQL_DATABASE: betess_users
+      MYSQL_ROOT_PASSWORD: password
+
+  db_events:
+    container_name: mysqldb_events
+    image: mysql
+    restart: always
+    ports:
+      - "8999:3306"
+    networks:
+      backNetwork:
+        ipv4_address: 172.28.0.14
+    environment:
+      MYSQL_DATABASE: betess_events
+      MYSQL_ROOT_PASSWORD: password
+    

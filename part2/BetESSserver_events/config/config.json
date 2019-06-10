@@ -3,7 +3,7 @@
     "username": "root",
     "password": "password",
     "database": "betess_events",
-    "host": "localhost",
+    "host": "mysqldb_events",
     "dialect": "mysql",
     "define": {
       "timestamps": false
@@ -13,7 +13,7 @@
     "username": "root",
     "password": "password",
     "database": "betess_events",
-    "host": "localhost",
+    "host": "mysqldb_events",
     "dialect": "mysql",
     "define": {
       "timestamps": false
@@ -23,7 +23,7 @@
     "username": "root",
     "password": "password",
     "database": "betess_events",
-    "host": "localhost",
+    "host": "mysqldb_events",
     "dialect": "mysql",
     "define": {
       "timestamps": false
