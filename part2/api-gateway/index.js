@@ -61,6 +61,27 @@ app.post('/login', async (req, res, next) => {
     }
 })
 
+// Make regist
+app.post('/register', async (req, res, next) => {
+    
+    axios.post(users_microservice + 'users/create', {
+    	username: req.body.username,
+    	password: req.body.password,
+    	email: req.body.email,
+    	saldo: req.body.saldo
+    }).then(response => {
+    	res.send({
+    		success: true,
+    		message: 'Registado com sucesso!'
+    	})
+    }).catch(error => {
+    	res.send({
+    		success: false,
+    		message: 'Não foi possível efetuar o registo!'
+    	})
+    })
+})
+
 // Verify if the token is correct
 function verifyJWT(req, res, next){
     if (req.body.secret == 'this_is_a_secret_key_1' || req.body.secret == 'this_is_a_secret_key_2'){

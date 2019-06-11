@@ -40,7 +40,7 @@ const jsonFetch = (url, options = {}) => (
       headers: {
         ...(options.headers || {}),
         'Content-Type': 'application/json',
-        'x-access-token': localStorage.getItem('token') 
+        'x-access-token': localStorage.getItem('token')
       },
       body: options.body ? JSON.stringify(options.body) : options.body,
     }
@@ -52,8 +52,13 @@ export const login = (body) => (
     jsonFetch(generateUrl(BASE_URL, '/login'), { method: 'post', body })
 );
 
+export const register = (body) => (
+  jsonFetch(generateUrl(BASE_URL, '/register'), { method: 'post', body })
+);
+
 export const getNotificacoes = (user_id, token) => (
   jsonFetch(generateUrl(BASE_URL, '/api_users/notificacoes/user/' + user_id), { method: 'get' })
+
 );
 
 
@@ -80,3 +85,4 @@ export const eventsOfFase = (idFase) => (
 export const apostasOfEvent = (vip,available,id_evento) => (
   jsonFetch(generateUrl(BASE_URL, '/api_eventos/apostasDisponiveis/ofEvento/'+vip+'/'+available+'/'+id_evento),{method:'get'}) 
 );
+

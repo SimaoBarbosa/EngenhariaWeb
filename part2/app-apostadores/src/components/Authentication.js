@@ -12,7 +12,7 @@ export default class Authentication {
         console.log(localStorage.getItem('token'));
         console.log(localStorage.getItem('user_id'));
         console.log(localStorage.getItem('username'));
-        return !!localStorage.getItem('sessionId');
+        return localStorage.getItem('token');
     }
 
     static async logout() {
