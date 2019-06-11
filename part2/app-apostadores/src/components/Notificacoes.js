@@ -58,8 +58,8 @@ class Notificacoes extends Component {
                                     <i className="bell icon"></i>
                                     <div className="content">
                                         {n.notificacao.includes("Ganhou") ?
-                                            <div className="header">Aposta ganha</div> :
-                                            <div className="header">Aposta perdida</div>
+                                            <Header color='green' as='h5'>Aposta ganha</Header> :
+                                            <Header color='red' as='h5'>Aposta perdida</Header>
                                         }
                                         <div className="description">{n.notificacao}</div>
                                     </div>

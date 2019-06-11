@@ -64,6 +64,18 @@ export const removerNotificacao = (id_notificacao) => (
   jsonFetch(generateUrl(BASE_URL, '/api_users/notificacoes/delete/' + id_notificacao), { method: 'post' })
 );
 
+export const getApostasGanhas = () => (
+  jsonFetch(generateUrl(BASE_URL, '/api_users/apostas/ganhas/' + + localStorage.getItem('user_id')), { method: 'get' })
+);
+
+export const getApostasEmAberto = () => (
+  jsonFetch(generateUrl(BASE_URL, '/api_users/apostas/abertas/' + + localStorage.getItem('user_id')), { method: 'get' })
+);
+
+export const getApostasPerdidas = () => (
+  jsonFetch(generateUrl(BASE_URL, '/api_users/apostas/perdidas/' + + localStorage.getItem('user_id')), { method: 'get' })
+);
+
 export const desportos = () => (
   jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes/desportos'),{method:'get'}) 
 );

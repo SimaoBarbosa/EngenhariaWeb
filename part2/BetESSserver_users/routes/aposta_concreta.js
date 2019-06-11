@@ -9,8 +9,8 @@ router.get('/:oid', mw.verifyApostador, async (req, res) => {
     where: {
       user_oid: req.params.oid
     }
-  }).then(users => {
-    res.send(users);
+  }).then(bets => {
+    res.send(bets);
   })
   .catch(err => {
     res.status(500).send(err);
@@ -24,8 +24,8 @@ router.get('/ganhas/:oid', mw.verifyApostador, async (req, res) => {
       user_oid: req.params.oid,
       resultado: 1
     }
-  }).then(users => {
-    res.send(users);
+  }).then(bets => {
+    res.send(bets);
   })
   .catch(err => {
     res.status(500).send(err);
@@ -39,8 +39,8 @@ router.get('/perdidas/:oid', mw.verifyApostador, async (req, res) => {
       user_oid: req.params.oid,
       resultado: 0
     }
-  }).then(users => {
-    res.send(users);
+  }).then(bets => {
+    res.send(bets);
   })
   .catch(err => {
     res.status(500).send(err);
@@ -54,8 +54,8 @@ router.get('/abertas/:oid', mw.verifyApostador, async (req, res) => {
       user_oid: req.params.oid,
       resultado: -1
     }
-  }).then(users => {
-    res.send(users);
+  }).then(bets => {
+    res.send(bets);
   })
   .catch(err => {
     res.status(500).send(err);
