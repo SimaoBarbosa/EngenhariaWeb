@@ -1,4 +1,23 @@
+import qs from "qs";
 const BASE_URL = 'http://localhost:3000';
+
+export const post = (path, token, body) => fetch(
+  BASE_URL + path,{
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+      'x-access-token': (token) ? token : ''
+    },
+    body: qs.stringify(body)
+})
+
+export const get = (path, token, body) => fetch(
+  BASE_URL + path,{
+    method: 'GET',
+    headers: {
+      'x-access-token': token
+    },
+})
 
 const generateUrl = (base, path, params = []) => {
   const strParams = Object.entries(params)

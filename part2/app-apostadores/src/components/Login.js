@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Header } from 'semantic-ui-react';
+import { post, get } from './../services/Api'
 
 class Login extends Component {
 
@@ -15,6 +16,47 @@ class Login extends Component {
     }
 
     componentDidMount() {
+        /*
+        post('/login', '', {
+            user: 'Apostador1',
+            password: 'pass',
+        }).then(res => {
+            res.json().then(json => {
+                console.log(json)
+            })
+        }).catch(err => {
+            console.log(err)
+        })*/
+
+        
+        get('/api_users/notificacoes/user/1', 'token', {}).then(res => {
+            res.json().then(json => {
+                console.log(json)
+            })
+        }).catch(err => {
+            console.log(err)
+        })
+        
+
+        /*
+        fetch('http://localhost:3000/login',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+          },
+          body: qs.stringify({
+            user: 'Apostador1',
+            password: 'pass',
+          })
+        }).then(response => {
+            response.json().then(function(json) {
+                console.log(json)
+            });
+        }).catch(err => {
+            console.log(err)
+        })
+        */
 
         const rememberMe = localStorage.getItem('rememberMe') === 'true';
         const email = rememberMe ? localStorage.getItem('email') : '';
@@ -37,13 +79,11 @@ class Login extends Component {
         if(email !== '' && password !== '') {
 
             const response = await this._login();
-            console.log(response)
             if(response.success) {
 
                 console.log("login success");
 
                 if(rememberMe) {
-                    console.log("AQUI CRL")
                     localStorage.setItem('name', 'NOME');
                     localStorage.setItem('token', response.token);
                     localStorage.setItem('email', email);
