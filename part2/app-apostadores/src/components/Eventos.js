@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import { Table , TableCell, TableRow,TableBody} from 'semantic-ui-react';
 import {desportos, regioesFromDesporto, competicioesFromRegDesp,getFases} from '../services/Api'
 import EventosDiv from '../small_components/EventosDiv'
 import TreeMenu from 'react-simple-tree-menu'
-class Eventos extends Component {
+class Eventos extends PureComponent {
 
     constructor(props) {
         super(props);
@@ -14,52 +14,14 @@ class Eventos extends Component {
         if(!id_fase) id_fase=-1
         */
         this.state = {
+            sidebar_content:[],
             data:[],
-            events:[],
-            id_fase: -1
+            id_fase: "-1"
         };
     }
 
-    
-    componentWillMount(){
-        
-        desportos().then(desps =>{
-            desps.forEach(d=>{ 
-                regioesFromDesporto(d.id_desporto)
-                .then(regioes=>{
-                    regioes.regioes.forEach(reg=>{
-                        competicioesFromRegDesp(reg.id_regiao,d.id_desporto)
-                        .then( competicoes => {
-                            competicoes.competicoes.forEach(comp=>{
-                                getFases(comp.id_competicao)
-                                .then(fases=>{
-                                    comp.fases = fases.fases
-                                    reg.competicoes =competicoes.competicoes
-                                    d.regioes = regioes.regioes
-                                    this.setState({data:desps})
-                                })
-                            })
-                        })
-                    })
-                })
-            })
-        })
-
-        
-    }
-
-    changeFase(props,key){
-        
-        if(props.level===3){
-            this.setState({id_fase:key});
-            this.forceUpdate();
-            console.log("ID_FASE:"+this.state.id_fase);
-        }
-    }
-
-    render() {
-        const sidebar_content=[];
-        const id_fase = this.state.id_fase
+    treeMenuData(){
+        const sidebar=[];
         this.state.data.forEach( desporto =>{
             let regioesBar = []
             if (!desporto.regioes) desporto.regioes = []
@@ -71,10 +33,11 @@ class Eventos extends Component {
                     if (!comp.fases) comp.fases = []
                     comp.fases.forEach(fase=>{
                         FasesBar.push({
-                            key: fase.id_fase,
+                            key: fase.nome + "/"+fase.id_fase,
                             label: fase.nome,
                             nodes: [],
-                            id_fase:id_fase
+                        
+
                         })
                         
                     })
@@ -95,13 +58,54 @@ class Eventos extends Component {
                 }
             })
             if(regioesBar.length>0){
-                sidebar_content.push({
+                sidebar.push({
                     key: desporto.nome,
                     label: desporto.nome,
                     nodes: regioesBar,
                 })
             }
         } )
+        this.setState({sidebar_content:sidebar})
+    }
+    
+    componentDidMount(){
+        
+        desportos().then(desps =>{
+            desps.forEach(d=>{ 
+                regioesFromDesporto(d.id_desporto)
+                .then(regioes=>{
+                    regioes.regioes.forEach(reg=>{
+                        competicioesFromRegDesp(reg.id_regiao,d.id_desporto)
+                        .then( competicoes => {
+                            competicoes.competicoes.forEach(comp=>{
+                                getFases(comp.id_competicao)
+                                .then(fases=>{
+                                    comp.fases = fases.fases
+                                    reg.competicoes =competicoes.competicoes
+                                    d.regioes = regioes.regioes
+                                    this.setState({data:desps})
+                                    this.treeMenuData();
+                                })
+                            })
+                        })
+                    })
+                })
+            })
+        })
+
+        
+    }
+
+    changeFase(props,key){
+        
+        if(props.level===3){
+            this.setState({id_fase:key});
+            console.log("ID_FASE Eventos:"+this.state.id_fase);
+        }
+    }
+
+    render() {
+        const sidebar_content=this.state.sidebar_content;
         
         console.log(sidebar_content);
         
@@ -121,7 +125,7 @@ class Eventos extends Component {
                         />
                         </TableCell >
                         <TableCell style={ {maxWidth: "90px"}}  textAlign={'center'} >
-                            <EventosDiv id_fase={id_fase} />
+                            <EventosDiv id_fase={this.state.id_fase} />
                         </TableCell>
                     </TableRow>
                 </TableBody>
