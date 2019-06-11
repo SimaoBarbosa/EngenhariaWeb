@@ -32,7 +32,7 @@ const generateUrl = (base, path, params = []) => {
     .join('?');
 };
 
-const jsonFetch = (url, options = {}, token) => (
+const jsonFetch = (url, options = {}) => (
   fetch(
     url,
     {
@@ -40,7 +40,7 @@ const jsonFetch = (url, options = {}, token) => (
       headers: {
         ...(options.headers || {}),
         'Content-Type': 'application/json',
-        'x-access-token': token
+        'x-access-token': localStorage.getItem('token') 
       },
       body: options.body ? JSON.stringify(options.body) : options.body,
     }
@@ -53,5 +53,30 @@ export const login = (body) => (
 );
 
 export const getNotificacoes = (user_id, token) => (
-  jsonFetch(generateUrl(BASE_URL, '/api_users/notificacoes/user/' + user_id), { method: 'get' }, token)
+  jsonFetch(generateUrl(BASE_URL, '/api_users/notificacoes/user/' + user_id), { method: 'get' })
+);
+
+
+export const desportos = () => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes/desportos'),{method:'get'}) 
+);
+
+export const regioesFromDesporto = (idDesporto) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes/desporto/regioes/'+idDesporto),{method:'get'}) 
+);
+
+export const competicioesFromRegDesp = (idReg,idDesp) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes/regioes/'+idReg+"/"+idDesp),{method:'get'}) 
+);
+
+export const getFases = (idComp) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes/fases/'+idComp),{method:'get'}) 
+);
+
+export const eventsOfFase = (idFase) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/eventos/fase/'+idFase),{method:'get'}) 
+);
+
+export const apostasOfEvent = (vip,available,id_evento) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/apostasDisponiveis/ofEvento/'+vip+'/'+available+'/'+id_evento),{method:'get'}) 
 );
