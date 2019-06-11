@@ -82,6 +82,10 @@ export const eventsOfFase = (idFase) => (
   jsonFetch(generateUrl(BASE_URL, '/api_eventos/eventos/fase/'+idFase),{method:'get'}) 
 );
 
+export const allEvents= () => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/eventos'),{method:'get'}) 
+);
+
 export const apostasOfEvent = (vip,available,id_evento) => (
   jsonFetch(generateUrl(BASE_URL, '/api_eventos/apostasDisponiveis/ofEvento/'+vip+'/'+available+'/'+id_evento),{method:'get'}) 
 );

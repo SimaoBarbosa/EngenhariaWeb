@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import Evento from './Evento'
-import {eventsOfFase} from '../services/Api'
+import {allEvents} from '../services/Api'
 import { List } from 'semantic-ui-react';
 
-class EventosDiv extends Component {
+class EventosDiv extends PureComponent {
 
     constructor(props) {
         super(props);
@@ -15,28 +15,43 @@ class EventosDiv extends Component {
             eventos:[],
         };
     }
-
     
-    componentWillMount(){
-        console.log("fase:");
-        
+    componentWillReceiveProps(props) {
+        if(props.id_fase!=this.props.id_fase)
+            this.setState({id_fase:props.id_fase})
+    }
+      
+    componentDidUpdate (prevProps, prevState, snapshot){
+        console.log("Updated  id_fase eventosDIR"+this.state.id_fase);
         console.log(this.state.id_fase);
         
-        const id_fase = this.state.id_fase
-        if(id_fase>0){
-            eventsOfFase(id_fase)
-            .then(evts=>{
-                
-                this.setState({eventos:evts.eventos }) ;
-            })
-            .catch(err=>console.log(err))
-          }
         
+    }
+    
+    componentWillMount(){
+        allEvents()
+        .then(evts=>{  
+            this.setState({eventos:evts}) ;
+        })
+        .catch(err=>console.log(err))
     }
 
     render() {
-        const eventos = this.state.eventos;
+
+        console.log("fase:");
         
+        console.log(this.state.id_fase);
+        let eventos =[]
+        if(this.state.id_fase!==-1){
+            this.state.eventos.forEach(ev=>{
+                if(ev.fase_id_fase==this.state.id_fase)
+                    eventos.push(ev);
+            })
+        }
+        else eventos = this.state.eventos
+        console.log(this.state.eventos);
+        
+        if(!eventos) eventos = []
         return (
             <div >
                 <List>
