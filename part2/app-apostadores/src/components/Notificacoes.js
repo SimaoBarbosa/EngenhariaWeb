@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Container, Header } from 'semantic-ui-react';
 
 class Notificacoes extends Component {
 
@@ -13,10 +12,35 @@ class Notificacoes extends Component {
 
     render() {
         return (
-            <Container text={true} textAlign={'center'}>
-                <Header>NOTIFICACOES</Header>
-                <Header>{this.props.location.pathname}</Header>
-            </Container>
+            <div className="ui column stackable center page grid">
+                <div className="twelve wide column">
+                    <div className="ui stacked segment left aligned">
+                    <div className="ui list">
+                    <div className="item">
+                        <i className="bell icon"></i>
+                        <div className="content">
+                            <div className="header">Floated Icon</div>
+                            <div className="description">This text will always have a left margin to make sure it sits alongside your icon</div>
+                        </div>
+                    </div>
+                    <div className="item">
+                        <i className="bell icon"></i>
+                        <div className="content">
+                            <div className="header">Icon Alignment</div>
+                            <div className="description">Floated icons are by default top aligned. To have an icon top aligned try this example.</div>
+                        </div>
+                    </div>
+                    <div className="item">
+                        <i className="bell icon"></i>
+                        <div className="content">
+                            <div className="header">Floated Icon</div>
+                            <div className="description">This text will always have a left margin to make sure it sits alongside your icon</div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
         );
     }
 }

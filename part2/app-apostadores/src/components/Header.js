@@ -49,6 +49,14 @@ class Header extends React.Component {
                         </NavLink>
                         <div className="right menu">
                             <div className="item">
+                                <div className="ui yellow label">
+                                    {localStorage.getItem('username')}
+                                    <div className="detail">Apostador normal</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="right menu">
+                            <div className="item">
                                 <Button content='LOGOUT' icon='sign-out' labelPosition='right' onClick={this.handleLogout.bind(this)}/>
                             </div>
                         </div>
@@ -82,6 +90,14 @@ class Header extends React.Component {
                             <i className="bell icon" />
                             <p>NOTIFICAÇÕES</p>
                         </NavLink>
+                        <div className="right menu">
+                            <div className="item">
+                                <div className="ui yellow label">
+                                    {localStorage.getItem('username')}
+                                    <div className="detail">Apostador VIP</div>
+                                </div>
+                            </div>
+                        </div>
                         <div className="right menu">
                             <div className="item">
                                 <Button content='LOGOUT' icon='sign-out' labelPosition='right' onClick={this.handleLogout.bind(this)}/>

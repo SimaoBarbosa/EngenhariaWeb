@@ -25,7 +25,7 @@ const FindRoute = ({ component: Component, ...rest }) => (
     <Route
         {...rest}
         render={props =>
-            !Authentication.isAuthenticated() ? (
+            Authentication.isAuthenticated() ? (
                 <Component {...props} />
             ) : (
                 <Redirect to={{ pathname: "/login", state: { from: props.location } }} />
