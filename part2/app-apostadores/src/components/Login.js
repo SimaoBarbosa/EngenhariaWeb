@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Header } from 'semantic-ui-react';
-import { post, get } from './../services/Api'
+import { login } from './../services/Api';
 
 class Login extends Component {
 
@@ -9,112 +9,53 @@ class Login extends Component {
         super(props);
 
         this.state = {
-            email: '',
+            username: '',
             password: '',
-            rememberMe: true
+            error: ''
         };
-    }
-
-    componentDidMount() {
-        /*
-        post('/login', '', {
-            user: 'Apostador1',
-            password: 'pass',
-        }).then(res => {
-            res.json().then(json => {
-                console.log(json)
-            })
-        }).catch(err => {
-            console.log(err)
-        })*/
-
-        
-        get('/api_users/notificacoes/user/1', 'token', {}).then(res => {
-            res.json().then(json => {
-                console.log(json)
-            })
-        }).catch(err => {
-            console.log(err)
-        })
-        
-
-        /*
-        fetch('http://localhost:3000/login',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-          },
-          body: qs.stringify({
-            user: 'Apostador1',
-            password: 'pass',
-          })
-        }).then(response => {
-            response.json().then(function(json) {
-                console.log(json)
-            });
-        }).catch(err => {
-            console.log(err)
-        })
-        */
-
-        const rememberMe = localStorage.getItem('rememberMe') === 'true';
-        const email = rememberMe ? localStorage.getItem('email') : '';
-
-        this.setState({ email, rememberMe });
     }
 
     handleInputChange = (event) => {
 
         const input = event.target;
-        const value = input.type === 'checkbox' ? input.checked : input.value;
+
+        const value = input.value;
 
         this.setState({ [input.name]: value });
     };
 
-    handleLoginSubmit = async (history) => {
+    handleLoginSubmit = async (event, history) => {
 
-        const { email, password, rememberMe } = this.state;
+        event.preventDefault()
 
-        if(email !== '' && password !== '') {
+        const { username, password } = this.state;
 
-            const response = await this._login();
-            if(response.success) {
+        if(username !== '' && password !== '') {
 
-                console.log("login success");
+            login({user: username, password: password}).then(response => {
+                console.log(response)
+                if (response.success){
+                    console.log("login success");
 
-                if(rememberMe) {
-                    localStorage.setItem('name', 'NOME');
                     localStorage.setItem('token', response.token);
-                    localStorage.setItem('email', email);
+                    localStorage.setItem('username', username);
+                    localStorage.setItem('user_id', response.id);
+                    
+                    if (response.group === 1)
+                        localStorage.setItem('userType', 'normal');
+                    else if (response.group === 3)
+                        localStorage.setItem('userType', 'vip');
+                    
+                    //this.props.history.push('/home');
+                    window.location.reload(); 
+                } else {
+                    this.setState({error: response.error})
                 }
-
-                localStorage.setItem('userType', response.userType);
-                this.props.history.push('/home');
-            }
+            }).catch(err => {
+                this.setState({error: 'Ocorreu um erro'})
+            })
         }
     };
-
-    /**
-     * User login
-     * @private
-     */
-    async _login() {
-
-        if(true) {
-            return {
-                success: true,
-                userType: 'normal',
-                token: 'token_token_token',
-            };
-        }
-        else {
-            return {
-                success: false,
-                error: 'Credenciais erradas'
-            };
-        }
-    }
 
     render() {
 
@@ -134,8 +75,7 @@ class Login extends Component {
                                 <label>Username</label>
                                 <div className="ui left icon input">
                                     <input
-                                        type="email"
-                                        name={"email"}
+                                        name={"username"}
                                         placeholder="Introduza o seu username"
                                         onChange={this.handleInputChange}
                                     />
@@ -154,18 +94,7 @@ class Login extends Component {
                                     <i className="lock icon" />
                                 </div>
                             </div>
-                            <div className="field">
-                                <div className="ui checkbox">
-                                    <input
-                                        type="checkbox"
-                                        name={"rememberMe"}
-                                        defaultChecked={true}
-                                        onChange={this.handleInputChange}
-                                        tabIndex="0"
-                                    />
-                                    <label>Lembrar o meu acesso</label>
-                                </div>
-                            </div>
+                            <Header color='red' as='h4'>{this.state.error}</Header>
                             <button
                                 className="ui fluid button"
                                 type="submit"

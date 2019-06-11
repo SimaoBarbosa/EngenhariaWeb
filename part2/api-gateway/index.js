@@ -39,7 +39,9 @@ app.post('/login', async (req, res, next) => {
         });
         res.status(200).send({
             success: true,
-            token: token 
+            token: token,
+            id: id,
+            group: group
         });
 
     } else {
@@ -47,12 +49,12 @@ app.post('/login', async (req, res, next) => {
         if (login.data.error == 1){
             res.send({
                 success: false,
-                error: 'username don\'t exist'
+                error: 'Username don\'t exist'
             })
         } else {
             res.send({
                 success: false,
-                error: 'password is not correct'
+                error: 'Password is not correct'
             })
         }
 
@@ -85,29 +87,29 @@ function verifyJWT(req, res, next){
 // Proxy requests
 
 // forwards request to users micro-service
-app.get('/api_users*',   (req, res, next) => {
-    req.body["user_group_id"] = 2//req.group
+app.get('/api_users*', verifyJWT, (req, res, next) => {
+    req.body["user_group_id"] = req.group
     req.url = req.url.replace('/api_users', '')
     usersMS(req, res, next);
 })
 
 // forwards request to eventos micro-service
-app.get('/api_eventos*',  (req, res, next) => {
-    req.body["user_group_id"] = 2//req.group
+app.get('/api_eventos*', verifyJWT, (req, res, next) => {
+    req.body["user_group_id"] = req.group
     req.url = req.url.replace('/api_eventos', '')
     eventsMS(req, res, next);
 })
 
 // forwards request to users micro-service
-app.post('/api_users*',  (req, res, next) => {
-    req.body["user_group_id"] = 2//req.group
+app.post('/api_users*', verifyJWT, (req, res, next) => {
+    req.body["user_group_id"] = req.group
     req.url = req.url.replace('/api_users', '')
     usersMS(req, res, next);
 })
 
 // forwards request to eventos micro-service
-app.post('/api_eventos*', (req, res, next) => {
-    req.body["user_group_id"] = 2//req.group
+app.post('/api_eventos*', verifyJWT, (req, res, next) => {
+    req.body["user_group_id"] = req.group
     req.url = req.url.replace('/api_eventos', '')
     eventsMS(req, res, next);
 })
