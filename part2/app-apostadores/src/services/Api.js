@@ -56,11 +56,13 @@ export const register = (body) => (
   jsonFetch(generateUrl(BASE_URL, '/register'), { method: 'post', body })
 );
 
-export const getNotificacoes = (user_id, token) => (
-  jsonFetch(generateUrl(BASE_URL, '/api_users/notificacoes/user/' + user_id), { method: 'get' })
-
+export const getNotificacoes = () => (
+  jsonFetch(generateUrl(BASE_URL, '/api_users/notificacoes/user/' + localStorage.getItem('user_id')), { method: 'get' })
 );
 
+export const removerNotificacao = (id_notificacao) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_users/notificacoes/delete/' + id_notificacao), { method: 'post' })
+);
 
 export const desportos = () => (
   jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes/desportos'),{method:'get'}) 

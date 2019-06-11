@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Button, Header} from 'semantic-ui-react';
+import { getNotificacoes, removerNotificacao } from './../services/Api';
 
 class Notificacoes extends Component {
 
@@ -6,42 +8,69 @@ class Notificacoes extends Component {
         super(props);
 
         this.state = {
-
+            notifications: [],
+            error: '',
         };
+    }
+
+    componentDidMount(){
+
+        getNotificacoes().then(response => {
+            this.setState({notifications: response})
+        })
+
+    }
+
+    delete(id_notificacao){
+        console.log('ELIMINAR ' + id_notificacao)
+        removerNotificacao(id_notificacao).then(response => {
+            if (response.success){
+                this.setState({
+                    notifications: this.state.notifications.filter((n) => n.id_notificacao !== id_notificacao),
+                    error: ''
+                });
+            } else {
+                this.setState({
+                    error: 'Ocorreu um erro'
+                })
+            }
+        }).catch(err => {
+            this.setState({
+                error: 'Ocorreu um erro'
+            })
+        })
+
     }
 
     render() {
         return (
-            <div className="ui column stackable center page grid">
+            <div className="ui stackable grid container center aligned">
                 <div className="twelve wide column">
+                    <Header color='red' as='h4'>{this.state.error}</Header>
                     <div className="ui stacked segment left aligned">
-                    <div className="ui list">
-                    <div className="item">
-                        <i className="bell icon"></i>
-                        <div className="content">
-                            <div className="header">Floated Icon</div>
-                            <div className="description">This text will always have a left margin to make sure it sits alongside your icon</div>
+                        <div className="ui list">
+
+                            {this.state.notifications.map((n) => 
+                                <div key={n.id_notificacao} className="item">
+                                    <div className="right floated content">
+                                        <Button icon='trash' onClick={() => this.delete(n.id_notificacao)}/>
+                                    </div>
+                                    <i className="bell icon"></i>
+                                    <div className="content">
+                                        {n.notificacao.includes("Ganhou") ?
+                                            <div className="header">Aposta ganha</div> :
+                                            <div className="header">Aposta perdida</div>
+                                        }
+                                        <div className="description">{n.notificacao}</div>
+                                    </div>
+                                </div>
+                            )}
+
                         </div>
-                    </div>
-                    <div className="item">
-                        <i className="bell icon"></i>
-                        <div className="content">
-                            <div className="header">Icon Alignment</div>
-                            <div className="description">Floated icons are by default top aligned. To have an icon top aligned try this example.</div>
-                        </div>
-                    </div>
-                    <div className="item">
-                        <i className="bell icon"></i>
-                        <div className="content">
-                            <div className="header">Floated Icon</div>
-                            <div className="description">This text will always have a left margin to make sure it sits alongside your icon</div>
-                        </div>
-                    </div>
-                </div>
                     </div>
                 </div>
             </div>
-        );
+        )
     }
 }
 
