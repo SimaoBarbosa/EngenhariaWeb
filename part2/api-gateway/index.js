@@ -9,6 +9,9 @@ var logger = require('morgan');
 const helmet = require('helmet');
 const axios = require('axios')
 
+var cors = require('cors')
+app.use(cors());
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -82,29 +85,29 @@ function verifyJWT(req, res, next){
 // Proxy requests
 
 // forwards request to users micro-service
-app.get('/api_users*',  verifyJWT, (req, res, next) => {
-    req.body["user_group_id"] = req.group
+app.get('/api_users*',   (req, res, next) => {
+    req.body["user_group_id"] = 2//req.group
     req.url = req.url.replace('/api_users', '')
     usersMS(req, res, next);
 })
 
 // forwards request to eventos micro-service
-app.get('/api_eventos*', verifyJWT, (req, res, next) => {
-    req.body["user_group_id"] = req.group
+app.get('/api_eventos*',  (req, res, next) => {
+    req.body["user_group_id"] = 2//req.group
     req.url = req.url.replace('/api_eventos', '')
     eventsMS(req, res, next);
 })
 
 // forwards request to users micro-service
-app.post('/api_users*', verifyJWT, (req, res, next) => {
-    req.body["user_group_id"] = req.group
+app.post('/api_users*',  (req, res, next) => {
+    req.body["user_group_id"] = 2//req.group
     req.url = req.url.replace('/api_users', '')
     usersMS(req, res, next);
 })
 
 // forwards request to eventos micro-service
-app.post('/api_eventos*', verifyJWT, (req, res, next) => {
-    req.body["user_group_id"] = req.group
+app.post('/api_eventos*', (req, res, next) => {
+    req.body["user_group_id"] = 2//req.group
     req.url = req.url.replace('/api_eventos', '')
     eventsMS(req, res, next);
 })

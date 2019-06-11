@@ -13,6 +13,8 @@ var apostasRouter = require('./routes/apostas_disponiveis');
 
 var app = express();
 
+var cors = require('cors')
+app.use(cors());
 // Conexão à base de dados MySQL
 var pool = mysql.createPool({
     host: 'localhost',
