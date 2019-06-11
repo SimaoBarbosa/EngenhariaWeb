@@ -62,7 +62,7 @@ class Header extends React.Component {
             return (
                 <div className="ui fluid secondary pointing menu" style={headerStyle}>
                     <Container>
-                    <NavLink activeClassName="active" className="ui item" to="/home" >
+                        <NavLink activeClassName="active" className="ui item" to="/home" >
                             <i className="home icon" />
                             <p>EVENTOS</p>
                         </NavLink>

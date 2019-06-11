@@ -37,12 +37,14 @@ class Login extends Component {
         if(email !== '' && password !== '') {
 
             const response = await this._login();
+            console.log(response)
             if(response.success) {
 
                 console.log("login success");
 
                 if(rememberMe) {
-                    localStorage.setItem('name', response.name);
+                    console.log("AQUI CRL")
+                    localStorage.setItem('name', 'NOME');
                     localStorage.setItem('token', response.token);
                     localStorage.setItem('email', email);
                 }
@@ -127,6 +129,7 @@ class Login extends Component {
                             <button
                                 className="ui fluid button"
                                 type="submit"
+                                color="orange"
                                 onClick={this.handleLoginSubmit.bind(this)}
                             >LOGIN</button>
                         </div>

@@ -8,6 +8,9 @@ export default class Authentication {
      * @returns {boolean}
      */
     static isAuthenticated () {
+        console.log('SI')
+        console.log(localStorage.getItem('userType'))
+        console.log(!!localStorage.getItem('sessionId'));
         return !!localStorage.getItem('sessionId');
     }
 
