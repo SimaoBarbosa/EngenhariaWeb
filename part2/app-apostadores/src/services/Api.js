@@ -32,14 +32,15 @@ const generateUrl = (base, path, params = []) => {
     .join('?');
 };
 
-const jsonFetch = (url, options = {}) => (
+const jsonFetch = (url, options = {}, token) => (
   fetch(
     url,
     {
       ...options,
       headers: {
         ...(options.headers || {}),
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'x-access-token': token
       },
       body: options.body ? JSON.stringify(options.body) : options.body,
     }
@@ -49,4 +50,8 @@ const jsonFetch = (url, options = {}) => (
 
 export const login = (body) => (
     jsonFetch(generateUrl(BASE_URL, '/login'), { method: 'post', body })
+);
+
+export const getNotificacoes = (user_id, token) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_users/notificacoes/user/' + user_id), { method: 'get' }, token)
 );
