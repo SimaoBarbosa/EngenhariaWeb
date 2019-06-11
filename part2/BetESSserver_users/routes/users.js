@@ -44,8 +44,8 @@ router.get('/:oid', mw.verifyFuncionario, async (req, res) => {
 // -> password  -- string with password of user
 // -> email     -- string with email of user
 // -> saldo     -- value of the money to put on user account
-// -> group     -- id of user group
-router.post('/create', mw.verifyApostador, async (req, res) => {
+router.post('/create', async (req, res) => {
+  req.body.group = 1
   UserController.create(req.body).then(user => {
     res.send(user);
   })

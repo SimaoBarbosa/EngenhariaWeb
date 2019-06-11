@@ -54,6 +54,8 @@ class Login extends Component {
             }).catch(err => {
                 this.setState({error: 'Ocorreu um erro'})
             })
+        } else {
+            this.setState({error: 'Preencha todos os campos'})
         }
     };
 
