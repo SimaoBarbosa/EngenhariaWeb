@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {criar_aposta_concreta} from '../services/Api'
 import {Redirect } from 'react-router-dom';
+import {getInformacoesUser} from '../services/Api'
+import {Grid,Header, TableHeader,Table , TableCell, TableRow,TableBody, TableHeaderCell } from 'semantic-ui-react';
 
 class Apostar extends Component {
 
@@ -12,7 +14,9 @@ class Apostar extends Component {
             evento:this.props.location.state.evento,
             aposta: this.props.location.state.aposta  ,
             opcao:  this.props.location.state.opcao ,
-            quantia:0
+            possiveisGanhos : 0,
+            quantia:0,
+            saldo : 0
         };
     }
 
@@ -56,10 +60,17 @@ class Apostar extends Component {
     saveQuantia(quantia){
         console.log("quantia:");
         console.log(quantia);
-        this.setState({quantia : quantia})
+        this.setState({
+            quantia : quantia,
+            possiveisGanhos : quantia * this.state.opcao.odd
+        })
     }
     
-    componentDidMount(){   
+    componentDidMount(){ 
+        getInformacoesUser().then(user=>{
+            console.log(user);
+            this.setState({saldo:user.saldo})
+        })
     }
 
     render() {
@@ -71,15 +82,106 @@ class Apostar extends Component {
         console.log(aposta);
         
         return (
-            <div >
-                {this.renderRedirect()}
-                <div className="ui right labeled input">
-                    <div className="ui basic label">$</div>
-                        <input type="text" placeholder="Quantia a apostar"  onChange={({target: {value}}) => this.saveQuantia(value) } />
+            <div className="ui container center aligned">
+                <br></br><br></br>
+                <div className="ui stackable grid container center aligned">
+                    <Table textAlign={'center'}>
+                        <TableHeader>
+                            <TableRow>
+                                <TableHeaderCell>
+                                    Evento
+                                </TableHeaderCell>
+                                <TableHeaderCell>
+                                    Aposta
+                                </TableHeaderCell>
+                                <TableHeaderCell>
+                                    Opção escolhida
+                                </TableHeaderCell>
+                                <TableHeaderCell>
+                                    Odd
+                                </TableHeaderCell>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            <TableRow>
+                                <TableCell>
+                                    {this.state.evento.titulo}
+                                </TableCell>
+                                <TableCell>
+                                    {this.state.aposta.titulo}
+                                </TableCell>
+                                <TableCell>
+                                    {this.state.opcao.opcao}
+                                </TableCell>
+                                <TableCell>
+                                    {this.state.opcao.odd}
+                                </TableCell>
+                            </TableRow>
+                        </TableBody>
+                    </Table>
                 </div>
-                <button className="ui button" onClick = {() => this.apostar() }  >
-                             Apostar
-                </button>
+                <br></br>
+                <br></br>
+                <div className="ui grid center aligned">
+                    <div className="six wide column">
+        			    <div className="ui container center aligned">
+                            <Table textAlign={'center'}>
+                                <TableHeader>
+                                    <TableRow>
+                                        <TableHeaderCell >
+                                        <Grid columns={2}>
+                                            <Grid.Column  textAlign={'left'} >
+                                                Saldo atual
+                                            </Grid.Column>
+                                            <Grid.Column textAlign={'right'} >
+                                                <Header as={'h5'} color="yellow">
+                                                    $
+                                                </Header>
+                                            </Grid.Column>
+                                        </Grid>
+                                        </TableHeaderCell>
+                                        <TableHeaderCell>
+                                            <Grid columns={2} >
+                                                <Grid.Column  textAlign={'left'}>
+                                                    Possiveis Ganhos
+                                                </Grid.Column>
+                                                <Grid.Column  textAlign={'right'}>
+                                                    <Header as={'h5'} color="yellow">
+                                                        $
+                                                    </Header>
+                                                </Grid.Column>
+                                                
+                                            </Grid>
+                                        </TableHeaderCell>
+                                        
+                                    </TableRow>
+                                </TableHeader>
+                                <TableBody>
+                                    <TableRow>
+                                        <TableCell>
+                                            {this.state.saldo}
+                                        </TableCell>
+                                        <TableCell>
+                                            {this.state.possiveisGanhos}
+                                        </TableCell>
+                                    </TableRow>
+                                </TableBody>
+                            </Table>
+                        </div>
+                    </div>
+                </div>
+                <br></br>
+                <br></br>
+                {this.renderRedirect()}
+                <div className="ui stackable grid container center aligned">
+                    <div className="ui right labeled input" >
+                        <div className="ui basic label center">$</div>
+                            <input type="number" placeholder="Quantia a apostar"  onChange={({target: {value}}) => this.saveQuantia(value) } />
+                    </div>
+                    <button  disabled={this.state.saldo<this.state.quantia || this.state.quantia===0} className="ui button" onClick = {() => this.apostar() }  >
+                                Apostar
+                    </button>
+                </div>
             </div>
           );
     }
