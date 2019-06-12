@@ -110,6 +110,7 @@ function verifyJWT(req, res, next){
 // forwards request to users micro-service
 app.get('/api_users*', verifyJWT, (req, res, next) => {
     req.body["user_group_id"] = req.group
+    req.body["user_oid"] = req.userId
     req.url = req.url.replace('/api_users', '')
     usersMS(req, res, next);
 })

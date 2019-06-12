@@ -24,7 +24,7 @@ router.get('/', mw.verifyFuncionario, async (req, res) => {
 });
 
 // get specific user
-router.get('/:oid', mw.verifyFuncionario, async (req, res) => {
+router.get('/:oid', mw.verifyProprioApostador, async (req, res) => {
   UserController.findUser({
     where: {
       oid: req.params.oid
