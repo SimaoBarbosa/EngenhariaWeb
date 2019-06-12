@@ -45,6 +45,7 @@ class ApostaDisponivel extends Component {
 
 
     render() {
+        const userType = localStorage.getItem('userType');
         const aposta = this.state.aposta;
         let vip = aposta.vip ? "VIP" : "" 
         return (
@@ -64,9 +65,16 @@ class ApostaDisponivel extends Component {
                   </TableCell>
                   {aposta.opcoes.map(opcao => ( 
                         <TableCell textAlign={'right'} key={opcao.id_opcao}  width={'2'}>
-                          <button className="ui right floated button" key={ opcao } onClick = {() => this.apostar(opcao) }  >
-                              {opcao.opcao} {opcao.odd}
-                          </button>
+                          
+                          {(aposta.vip && userType=='normal') ? 
+                            (<button className="ui right floated button disabled" key={ opcao } onClick = {() => this.apostar(opcao) }  >
+                              {opcao.opcao} odd: {opcao.odd}
+                            </button>) :
+                            (<button className="ui right floated button" key={ opcao } onClick = {() => this.apostar(opcao) }  >
+                              {opcao.opcao} odd: {opcao.odd}
+                            </button>)
+                          }
+                        
                         </TableCell>
                   ))}
                 </TableRow>

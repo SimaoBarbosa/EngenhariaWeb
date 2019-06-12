@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import Evento from './Evento'
 import {allEvents} from '../services/Api'
+import {Header} from 'semantic-ui-react';
 
 class EventosDiv extends PureComponent {
 
@@ -19,13 +20,6 @@ class EventosDiv extends PureComponent {
         if(props.id_fase.toString() !== this.props.id_fase.toString())
             this.setState({id_fase:props.id_fase})
     }
-      
-    componentDidUpdate (prevProps, prevState, snapshot){
-        console.log("Updated  id_fase eventosDIR"+this.state.id_fase);
-        console.log(this.state.id_fase);
-        
-        
-    }
     
     componentDidMount(){
         allEvents()
@@ -37,9 +31,9 @@ class EventosDiv extends PureComponent {
 
     render() {
 
-        console.log("fase:");
+        //console.log("fase:");
+        //console.log(this.state.id_fase);
         
-        console.log(this.state.id_fase);
         let eventos =[]
         if(this.state.id_fase.toString()!=="-1"){
             this.state.eventos.forEach(ev=>{
@@ -48,24 +42,27 @@ class EventosDiv extends PureComponent {
             })
         }
         else eventos = this.state.eventos
-        console.log(this.state.eventos);
+        //console.log(this.state.eventos);
         
         if(!eventos) eventos = []
         return (
-            <div >
+            <div>
                 <div className="ui column stackable center page grid">
-                <div className="twelve wide column">
-                    <div className="ui stacked segment left aligned">
-                    <div className="ui list">
-                  {eventos.map(evento => ( 
-                    <Evento evento={evento}  key={evento.id_evento} />
-                  ))}
-                </div>
-                </div>
+                    <div className="wide column">
+                        <div className="ui container center aligned">
+                            <Header color='orange' as='h3'>Eventos</Header>
+                        </div>
+                        <div className="ui stacked segment left aligned">
+                            <div className="ui list">
+                                {eventos.map(evento => ( 
+                                    <Evento evento={evento}  key={evento.id_evento} />
+                                ))}
+                            </div>
+                        </div>
                     </div>
-                    </div>
+                </div>
             </div>
-          );
+        );
     }
 }
 

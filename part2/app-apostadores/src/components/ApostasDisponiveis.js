@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import {apostasOfEvent} from '../services/Api'
-import { Container} from 'semantic-ui-react';
+import { Container, Header } from 'semantic-ui-react';
 import ApostaDisponivel from '../small_components/ApostaDisponivel'
 
 
@@ -44,13 +44,13 @@ class ApostasDisponiveis extends Component {
         const evento = this.state.evento;
         return (
             <div >
-                <Container  textAlign={'center'}  >
-                    <h1>
+                <Container  textAlign={'center'}>
+                    <Header color='orange' as='h1'>
                         {evento.titulo}
-                    </h1>
-                    <h3>
-                        {evento.datahora.data} {evento.datahora.hora}
-                    </h3>
+                    </Header>
+                    <Header as='h4'>
+                        Data: {evento.datahora.data}, Hora: {evento.datahora.hora}
+                    </Header>
                 </Container>
                 <br></br>
                 <br></br>

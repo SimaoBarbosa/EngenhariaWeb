@@ -16,13 +16,11 @@ class Evento extends PureComponent {
         redirect: true
       })
     }
+    
     renderRedirect = () => {
       if (this.state.redirect) {
         return <Redirect to={{ pathname: "/apostasDisponiveis", state: {evento: this.state.evento } }} />
       }
-    }
-
-    componentDidMount(){
     }
 
     render() {
@@ -42,7 +40,7 @@ class Evento extends PureComponent {
                   <TableCell>
                     {this.renderRedirect()}
                     <button className="ui right floated button" onClick = {() => this.setRedirect() }  >
-                          Ver Apostas
+                      Ver Apostas
                     </button>
                   </TableCell>
                 </TableRow>
