@@ -17,10 +17,6 @@ class Header extends React.Component {
     };
 
     render() {
-        console.log("HEADER :");
-        console.log(this.props.userType);
-        
-        
 
         if (this.props.userType === 'funcionario') {
 
@@ -46,8 +42,6 @@ class Header extends React.Component {
                                     <div className="detail">Funcionário</div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="right menu">
                             <div className="item">
                                 <Button content='LOGOUT' icon='sign-out' labelPosition='right' onClick={this.handleLogout.bind(this)}/>
                             </div>
