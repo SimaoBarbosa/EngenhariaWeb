@@ -65,15 +65,19 @@ export const removerNotificacao = (id_notificacao) => (
 );
 
 export const getApostasGanhas = () => (
-  jsonFetch(generateUrl(BASE_URL, '/api_users/apostas/ganhas/' + + localStorage.getItem('user_id')), { method: 'get' })
+  jsonFetch(generateUrl(BASE_URL, '/api_users/apostas/ganhas/' + localStorage.getItem('user_id')), { method: 'get' })
 );
 
 export const getApostasEmAberto = () => (
-  jsonFetch(generateUrl(BASE_URL, '/api_users/apostas/abertas/' + + localStorage.getItem('user_id')), { method: 'get' })
+  jsonFetch(generateUrl(BASE_URL, '/api_users/apostas/abertas/' + localStorage.getItem('user_id')), { method: 'get' })
 );
 
 export const getApostasPerdidas = () => (
-  jsonFetch(generateUrl(BASE_URL, '/api_users/apostas/perdidas/' + + localStorage.getItem('user_id')), { method: 'get' })
+  jsonFetch(generateUrl(BASE_URL, '/api_users/apostas/perdidas/' + localStorage.getItem('user_id')), { method: 'get' })
+);
+
+export const tornarVIP = (body) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_users/users/vip_p/' + localStorage.getItem('user_id')), { method: 'post', body })
 );
 
 export const desportos = () => (
