@@ -1,5 +1,11 @@
 var models = require('../models/index')
 
+module.exports.getCompeticoes = () => {
+    return models.competicao.findAll({
+        include: ['equipas']
+    })
+}
+
 // get fases of competition
 module.exports.getFases = competicaoId => {
     return models.competicao.findOne({

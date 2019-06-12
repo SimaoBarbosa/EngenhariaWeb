@@ -7,6 +7,15 @@ const FaseController = require('../controllers/faseController');
 const mw = require('../auth/auth_middlewares');
 
 // --------------------------------------COMPETITION--------------------------------------------
+
+router.get('/', mw.verifyApostador, async (req, res) => {
+	CompeticaoController.getCompeticoes().then(competicoes => {
+      res.send(competicoes);
+    }).catch(err => {
+    	res.status(500).send(err)
+    });
+});
+
 // get teams of a competition
 router.get('/equipas/:oid', async (req, res) => {
     let competicaoId = req.params.oid

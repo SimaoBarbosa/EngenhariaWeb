@@ -13,7 +13,7 @@ router.get('/competicoes/:oid', async (req, res) => {
 });
 
 // get all teams
-router.get('/', async (req, res) => {
+router.get('/', mw.verifyApostador, async (req, res) => {
   EquipaController.getEquipas().then(equipas => {
     res.send(equipas);
   })

@@ -69,6 +69,14 @@ export const importarSaldo = (body) => (
 	jsonFetch(generateUrl(BASE_URL, '/api_users/users/saldo'), { method: 'post', body })
 ); 
 
+export const getTodasCompeticoes = () => (
+    jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes'), { method: 'get' })
+);
+
+export const getTodasEquipas = () => (
+    jsonFetch(generateUrl(BASE_URL, '/api_eventos/equipas'), { method: 'get' })
+);
+
 export const desportos = () => (
   jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes/desportos'),{method:'get'}) 
 );
