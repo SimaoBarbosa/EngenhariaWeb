@@ -1,8 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-// Redux
-import {Provider as StoreProvider} from 'react-redux';
 
 // React router
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
@@ -36,7 +32,7 @@ const FindRoute = ({ component: Component, ...rest }) => (
     />
 );
 
-const Root = ({ store }) => {
+const Root = () => {
 
     const routesByApostador = {
         normal: (
@@ -98,16 +94,10 @@ const Root = ({ store }) => {
     }
 
     return (
-        <StoreProvider store={store}>
-            <BrowserRouter>
-                {content}
-            </BrowserRouter>
-        </StoreProvider>
+        <BrowserRouter>
+            {content}
+        </BrowserRouter>
     );
-};
-
-Root.propTypes = {
-    store: PropTypes.object.isRequired
 };
 
 export default Root;

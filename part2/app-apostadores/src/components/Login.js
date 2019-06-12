@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Header } from 'semantic-ui-react';
 import { login } from './../services/Api';
 
@@ -111,8 +110,4 @@ class Login extends Component {
     }
 }
 
-const mapStateToProps = state => ({});
-
-const mapDispatchToProps = dispatch => ({});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default Login;

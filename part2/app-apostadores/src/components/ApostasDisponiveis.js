@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import {apostasOfEvent} from '../services/Api'
 import { Container, Header } from 'semantic-ui-react';
 import ApostaDisponivel from '../small_components/ApostaDisponivel'
@@ -21,7 +20,6 @@ class ApostasDisponiveis extends Component {
             apostas:[],
         };
     }
-    
     
     componentDidMount(){    
         console.log("evento:");

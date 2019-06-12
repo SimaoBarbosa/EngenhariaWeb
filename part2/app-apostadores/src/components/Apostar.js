@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import {criar_aposta_concreta} from '../services/Api'
 import {Redirect } from 'react-router-dom';
 
@@ -70,8 +69,6 @@ class Apostar extends Component {
         console.log(opcao);
         console.log(evento);
         console.log(aposta);
-        
-        
         
         return (
             <div >
