@@ -50,7 +50,7 @@ class EventosDiv extends PureComponent {
                 <div className="ui column stackable center page grid">
                     <div className="wide column">
                         <div className="ui container center aligned">
-                            <Header color='orange' as='h3'>Eventos</Header>
+                            <Header style={{marginTop: "15px"}} color='orange' as='h2'>Lista de Eventos</Header>
                         </div>
                         <div className="ui stacked segment left aligned">
                             <div className="ui list">

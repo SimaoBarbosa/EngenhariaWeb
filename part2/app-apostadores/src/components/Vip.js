@@ -51,7 +51,7 @@ class Vip extends Component {
                 <div className="ui stackable grid container center aligned">
                     <div className="five wide column">
                         <button
-                            className="ui fluid button"
+                            className="ui fluid orange button"
                             color="orange"
                             onClick={this.vip.bind(this)}
                         >TORNAR-ME VIP</button>

@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import { List,Table , TableCell, TableRow,TableBody } from 'semantic-ui-react';
+import { List,Table , TableCell, TableRow,TableBody, Header } from 'semantic-ui-react';
 import {Redirect } from 'react-router-dom';
 class Evento extends PureComponent {
 
@@ -33,15 +33,21 @@ class Evento extends PureComponent {
                 <TableRow>
                   <TableCell>
                     <div className="content">
-                        <div className="header">{evento.titulo}</div>
-                        <div className="description">{evento.datahora.data}  {evento.datahora.hora} </div>
+                        <Header as='h3'>{evento.titulo}</Header>
+                        <div style={{marginTop: "5px"}} className="description">{evento.datahora.data}  {evento.datahora.hora} </div>
                     </div>
                   </TableCell>
                   <TableCell>
                     {this.renderRedirect()}
-                    <button className="ui right floated button" onClick = {() => this.setRedirect() }  >
-                      Ver Apostas
-                    </button>
+                    <div className="right floated">
+                      <button
+                        className="ui orange right labeled icon button"
+                        onClick = {() => this.setRedirect() }
+                      >
+                        <i className="angle right icon"></i>
+                        Apostar
+                      </button>
+                    </div>
                   </TableCell>
                 </TableRow>
               </TableBody>

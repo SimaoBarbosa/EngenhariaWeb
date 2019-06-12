@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {criar_aposta_concreta} from '../services/Api'
 import {Redirect } from 'react-router-dom';
 import {getInformacoesUser} from '../services/Api'
-import {Grid,Header, TableHeader,Table , TableCell, TableRow,TableBody, TableHeaderCell } from 'semantic-ui-react';
+import { Header } from 'semantic-ui-react';
 
 class Apostar extends Component {
 
@@ -15,12 +15,14 @@ class Apostar extends Component {
             aposta: this.props.location.state.aposta  ,
             opcao:  this.props.location.state.opcao ,
             possiveisGanhos : 0,
-            quantia:0,
-            saldo : 0
+            quantia: 0,
+            saldo : 0,
+            message: '',
+            error: ''
         };
     }
 
-    apostar = () => {
+    apostar = async () => {
         const userType = localStorage.getItem('userType');      
         if( (this.state.aposta.vip && userType==='normal')){
           alert("VIP ONLY")
@@ -40,15 +42,27 @@ class Apostar extends Component {
         console.log("body:");
         console.log(body);
 
-        debugger;
         criar_aposta_concreta(body)
-        .then(res=>{
+        .then(async res=>{
+            console.log("SIIIII")
             console.log(res);
+            await this.setState({
+                message: 'Aposta realizada com sucesso!',
+                error: ''
+            })
+            console.log("YAAAAAA")
+            await sleep(3000)
             this.setState({
                 redirect: true
-              })            
+            }) 
+                             
         })
-        .catch(err=>alert(err))
+        .catch(err => {
+            this.setState({
+                message: '',
+                error: 'Não foi possível realizar a aposta'
+            })
+        })
 
     }
     renderRedirect = () => {
@@ -74,99 +88,51 @@ class Apostar extends Component {
     }
 
     render() {
-        const aposta = this.state.aposta;
-        const evento = this.state.evento;
-        const opcao = this.state.opcao;
-        console.log(opcao);
-        console.log(evento);
-        console.log(aposta);
         
         return (
             <div className="ui container center aligned">
-                <br></br><br></br>
-                <div className="ui stackable grid container center aligned">
-                    <Table textAlign={'center'}>
-                        <TableHeader>
-                            <TableRow>
-                                <TableHeaderCell>
-                                    Evento
-                                </TableHeaderCell>
-                                <TableHeaderCell>
-                                    Aposta
-                                </TableHeaderCell>
-                                <TableHeaderCell>
-                                    Opção escolhida
-                                </TableHeaderCell>
-                                <TableHeaderCell>
-                                    Odd
-                                </TableHeaderCell>
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                            <TableRow>
-                                <TableCell>
-                                    {this.state.evento.titulo}
-                                </TableCell>
-                                <TableCell>
-                                    {this.state.aposta.titulo}
-                                </TableCell>
-                                <TableCell>
-                                    {this.state.opcao.opcao}
-                                </TableCell>
-                                <TableCell>
-                                    {this.state.opcao.odd}
-                                </TableCell>
-                            </TableRow>
-                        </TableBody>
-                    </Table>
-                </div>
+                <Header style={{marginTop: "40px"}} color='orange' size='huge'>Definir Aposta</Header>
+                <br></br>
+                    <table className="ui orange table">
+                      <thead>
+                        <tr><th>Evento</th>
+                        <th>Aposta</th>
+                        <th>Opção escolhida</th>
+                        <th>Odd</th>
+                      </tr></thead><tbody>
+                        <tr>
+                          <td>{this.state.evento.titulo}</td>
+                          <td>{this.state.aposta.titulo}</td>
+                          <td>{this.state.opcao.opcao}</td>
+                          <td>{this.state.opcao.odd}</td>
+                        </tr>
+                      </tbody>
+                    </table>
                 <br></br>
                 <br></br>
                 <div className="ui grid center aligned">
                     <div className="six wide column">
         			    <div className="ui container center aligned">
-                            <Table textAlign={'center'}>
-                                <TableHeader>
-                                    <TableRow>
-                                        <TableHeaderCell >
-                                        <Grid columns={2}>
-                                            <Grid.Column  textAlign={'left'} >
-                                                Saldo atual
-                                            </Grid.Column>
-                                            <Grid.Column textAlign={'right'} >
-                                                <Header as={'h5'} color="yellow">
-                                                    $
-                                                </Header>
-                                            </Grid.Column>
-                                        </Grid>
-                                        </TableHeaderCell>
-                                        <TableHeaderCell>
-                                            <Grid columns={2} >
-                                                <Grid.Column  textAlign={'left'}>
-                                                    Possiveis Ganhos
-                                                </Grid.Column>
-                                                <Grid.Column  textAlign={'right'}>
-                                                    <Header as={'h5'} color="yellow">
-                                                        $
-                                                    </Header>
-                                                </Grid.Column>
-                                                
-                                            </Grid>
-                                        </TableHeaderCell>
-                                        
-                                    </TableRow>
-                                </TableHeader>
-                                <TableBody>
-                                    <TableRow>
-                                        <TableCell>
-                                            {this.state.saldo}
-                                        </TableCell>
-                                        <TableCell>
-                                            {this.state.possiveisGanhos}
-                                        </TableCell>
-                                    </TableRow>
-                                </TableBody>
-                            </Table>
+                            <table className="ui inverted orange table">
+                              <thead>
+                                <tr>
+                                    <th>
+                                        <i className="dollar yellow icon"></i>
+                                        Saldo atual
+                                    </th>
+                                    <th>
+                                        <i className="dollar yellow icon"></i>
+                                        Possíveis ganhos
+                                    </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>{this.state.saldo} ESScoins</td>
+                                  <td>{this.state.possiveisGanhos} ESScoins</td>
+                                </tr>
+                              </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -174,17 +140,28 @@ class Apostar extends Component {
                 <br></br>
                 {this.renderRedirect()}
                 <div className="ui stackable grid container center aligned">
-                    <div className="ui right labeled input" >
-                        <div className="ui basic label center">$</div>
-                            <input type="number" placeholder="Quantia a apostar"  onChange={({target: {value}}) => this.saveQuantia(value) } />
+                    <div className="ui action right labeled input">
+                      <label className="ui label">$</label>
+                      <input type="number" placeholder="Quantia a apostar"  onChange={({target: {value}}) => this.saveQuantia(value) } />
+                      <button 
+                        disabled={this.state.saldo<this.state.quantia || this.state.quantia===0}
+                        className="ui orange right labeled icon button"
+                        onClick = {() => this.apostar()}
+                      >
+                        <i className="arrow circle right icon"></i>
+                        Apostar
+                      </button>
                     </div>
-                    <button  disabled={this.state.saldo<this.state.quantia || this.state.quantia===0} className="ui button" onClick = {() => this.apostar() }  >
-                                Apostar
-                    </button>
                 </div>
+                <Header as="h4" color="green">{this.state.message}</Header>
+                <Header as="h4" color="red">{this.state.error}</Header>
             </div>
           );
     }
+}
+
+const sleep = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
 
 export default Apostar;
