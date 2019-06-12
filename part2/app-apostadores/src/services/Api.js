@@ -84,6 +84,10 @@ export const getInformacoesUser = () => (
   jsonFetch(generateUrl(BASE_URL, '/api_users/users/' + localStorage.getItem('user_id')), { method: 'get' })
 );
 
+export const importarSaldo = (body) => (
+	jsonFetch(generateUrl(BASE_URL, '/api_users/users/saldo'), { method: 'post', body })
+); 
+
 export const desportos = () => (
   jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes/desportos'),{method:'get'}) 
 );

@@ -46,6 +46,7 @@ class Notificacoes extends Component {
         return (
             <div className="ui stackable grid container center aligned">
                 <div className="twelve wide column">
+                    <Header style={{marginTop: "40px"}} color='orange' size='huge'>Notificações de apostas</Header>
                     <Header color='red' as='h4'>{this.state.error}</Header>
                     <div className="ui stacked segment left aligned">
                         <div className="ui list">
