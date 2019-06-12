@@ -140,3 +140,15 @@ export const createEvento= (body) => (
 export const getEquipasOfComp = (idComp) => (
   jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes/equipas/'+idComp),{method:'get'}) 
 );
+
+export const createApostaDisponivel= (body) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/apostasDisponiveis/create'), { method: 'post', body })
+);
+
+export const createAddOpcao= (body) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/apostasDisponiveis/createAddOpcao'), { method: 'post', body })
+);
+
+export const makeAvailable= (idAposta) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/apostasDisponiveis/makeAvailable/'+idAposta), { method: 'post' })
+);
