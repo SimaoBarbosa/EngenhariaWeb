@@ -83,9 +83,12 @@ router.post('/create', mw.verifyFuncionario , async (req, res) => {
 // Body of the POST message needs to have the following values:
 // -> nome   -- string with name of sport
 router.post('/createDesporto', mw.verifyFuncionario , async (req, res) => {
-  DesportoController.create(req.body.nome)
+  console.log("Nome desporto:"+req.body.nome);
+  
+  if(!req.body.nome) res.status(500).send("Null input")
+  DesportoController.create({nome:req.body.nome})
   .then(resp=>res.send(resp))
-  .catch(err=>res.send(err))
+  .catch(err=>res.status(500).send(err))
 });
 
 // add region to sport
@@ -134,26 +137,32 @@ router.get('/desporto/regioes/:oid', async (req, res) => {
 // -------
 // Body of the POST message needs to have the following values:
 // -> nome   -- string with name of region
-// -> desportos -- list of sports for that region
+// -> desporto -- sport for that region
 router.post('/addOrCreateRegiao', mw.verifyFuncionario , async (req, res) => {
+
+  console.log("Desportoo:"+req.body.desporto);
   let nome = req.body.nome;
-  let desportos = JSON.parse(req.body.desportos);
+  let desporto = req.body.desporto;
+  console.log("Desportoo:"+desporto);
+  
   RegiaoController.getByName(nome)
   .then(regiao=>{
     if (regiao==null){
       RegiaoController.create(nome)
       .then(resp=>{
-        desportos.forEach(desporto => {
-          DesportoController.addRegion(desporto, resp.id_regiao);
-        })
+        
+          DesportoController.addRegion(desporto, resp.id_regiao)
+          .then(r => res.send("Sucesso"))
+
+        
       })
+      .catch(err=>res.status(500).send(err))
     }
     else{
-      desportos.forEach(desporto => {
-        DesportoController.addRegion(desporto, regiao.id_regiao);
-      })
+        DesportoController.addRegion(desporto, regiao.id_regiao)
+        .then(r => res.send("Sucesso"))
+      
     }
-    res.send("Sucesso");
   })
   .catch(err=>res.status(500).send(err))
 });

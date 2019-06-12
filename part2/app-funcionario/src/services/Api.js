@@ -115,3 +115,20 @@ export const apostasOfEvent = (vip,available,id_evento) => (
 export const criar_aposta_concreta = (body) => (
   jsonFetch(generateUrl(BASE_URL, '/api_users/apostas/create'), { method: 'post', body })
 );
+
+export const create_desporto = (body) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes/createDesporto'), { method: 'post', body })
+);
+
+export const add_create_regiao = (body) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes/addOrCreateRegiao'), { method: 'post', body })
+);
+
+export const createCompeticao= (body) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes/create'), { method: 'post', body })
+);
+
+export const createFase= (body) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes/createFase'), { method: 'post', body })
+);
+
