@@ -19,6 +19,8 @@ import Equipas from './Equipas';
 import Apostas from './Apostas';
 import Perfil from './Perfil';
 import Notificacoes from './Notificacoes';
+import ApostasDisponiveis from './ApostasDisponiveis'
+import Apostar from './Apostar'
 import Vip from './Vip';
 
 const FindRoute = ({ component: Component, ...rest }) => (
@@ -42,6 +44,8 @@ const Root = ({ store }) => {
                 <Header userType={'normal'} />
                 <Switch>
                     <FindRoute exact path="/" component={Eventos} />
+                    <FindRoute exact path="/apostasDisponiveis" component={ApostasDisponiveis} />
+                    <FindRoute exact path="/apostar" component={Apostar} />
                     <FindRoute exact path="/home" component={Eventos} />
                     <FindRoute exact path="/equipas" component={Equipas} />
                     <FindRoute exact path="/apostas" component={Apostas} />
@@ -56,6 +60,8 @@ const Root = ({ store }) => {
                 <Header userType={'vip'} />
                 <Switch>
                     <FindRoute exact path="/" component={Eventos} />
+                    <FindRoute exact path="/apostasDisponiveis" component={ApostasDisponiveis} />
+                    <FindRoute exact path="/apostar" component={Apostar} />
                     <FindRoute exact path="/home" component={Eventos} />
                     <FindRoute exact path="/equipas" component={Equipas} />
                     <FindRoute exact path="/apostas" component={Apostas} />

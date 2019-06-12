@@ -61,7 +61,6 @@ export const getNotificacoes = (user_id, token) => (
 
 );
 
-
 export const desportos = () => (
   jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes/desportos'),{method:'get'}) 
 );
@@ -83,10 +82,13 @@ export const eventsOfFase = (idFase) => (
 );
 
 export const allEvents= () => (
-  jsonFetch(generateUrl(BASE_URL, '/api_eventos/eventos'),{method:'get'}) 
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/eventos/info'),{method:'get'}) 
 );
 
 export const apostasOfEvent = (vip,available,id_evento) => (
   jsonFetch(generateUrl(BASE_URL, '/api_eventos/apostasDisponiveis/ofEvento/'+vip+'/'+available+'/'+id_evento),{method:'get'}) 
 );
 
+export const criar_aposta_concreta = (body) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_users/apostas/create'), { method: 'post', body })
+);

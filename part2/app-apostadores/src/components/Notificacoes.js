@@ -16,13 +16,7 @@ class Notificacoes extends Component {
                 <div className="twelve wide column">
                     <div className="ui stacked segment left aligned">
                     <div className="ui list">
-                    <div className="item">
-                        <i className="bell icon"></i>
-                        <div className="content">
-                            <div className="header">Floated Icon</div>
-                            <div className="description">This text will always have a left margin to make sure it sits alongside your icon</div>
-                        </div>
-                    </div>
+
                     <div className="item">
                         <i className="bell icon"></i>
                         <div className="content">

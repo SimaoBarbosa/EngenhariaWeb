@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react';
 import Evento from './Evento'
 import {allEvents} from '../services/Api'
-import { List } from 'semantic-ui-react';
 
 class EventosDiv extends PureComponent {
 
@@ -17,7 +16,7 @@ class EventosDiv extends PureComponent {
     }
     
     componentWillReceiveProps(props) {
-        if(props.id_fase!=this.props.id_fase)
+        if(props.id_fase.toString() !== this.props.id_fase.toString())
             this.setState({id_fase:props.id_fase})
     }
       
@@ -28,7 +27,7 @@ class EventosDiv extends PureComponent {
         
     }
     
-    componentWillMount(){
+    componentDidMount(){
         allEvents()
         .then(evts=>{  
             this.setState({eventos:evts}) ;
@@ -42,9 +41,9 @@ class EventosDiv extends PureComponent {
         
         console.log(this.state.id_fase);
         let eventos =[]
-        if(this.state.id_fase!==-1){
+        if(this.state.id_fase.toString()!=="-1"){
             this.state.eventos.forEach(ev=>{
-                if(ev.fase_id_fase==this.state.id_fase)
+                if(ev.fase_id_fase.toString()===this.state.id_fase.toString())
                     eventos.push(ev);
             })
         }
@@ -54,11 +53,17 @@ class EventosDiv extends PureComponent {
         if(!eventos) eventos = []
         return (
             <div >
-                <List>
+                <div className="ui column stackable center page grid">
+                <div className="twelve wide column">
+                    <div className="ui stacked segment left aligned">
+                    <div className="ui list">
                   {eventos.map(evento => ( 
                     <Evento evento={evento}  key={evento.id_evento} />
                   ))}
-                </List>
+                </div>
+                </div>
+                    </div>
+                    </div>
             </div>
           );
     }

@@ -114,7 +114,7 @@ class Eventos extends PureComponent {
             <Table>
                 <TableBody>
                     <TableRow>
-                        <TableCell style={ {maxWidth: "10px"}}   textAlign={'left'} >
+                        <TableCell style={ {maxWidth: "10px"}}   textAlign={'left'} verticalAlign={'top'} >
                         <TreeMenu 
                             data={sidebar_content} 
                             onClickItem={({ key, label, ...props }) => {
@@ -124,7 +124,7 @@ class Eventos extends PureComponent {
                               }}
                         />
                         </TableCell >
-                        <TableCell style={ {maxWidth: "90px"}}  textAlign={'center'} >
+                        <TableCell style={ {maxWidth: "90px"}}  textAlign={'center'} verticalAlign={'top'} >
                             <EventosDiv id_fase={this.state.id_fase} />
                         </TableCell>
                     </TableRow>
