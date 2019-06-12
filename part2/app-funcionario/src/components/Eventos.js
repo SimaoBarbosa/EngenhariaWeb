@@ -188,7 +188,7 @@ class Eventos extends PureComponent {
             <div className="ui grid">
         		<div className="four wide column">
         			<div className="ui container center aligned">
-        				<Header color='orange' as='h3'>Procurar eventos</Header>
+        				<Header style={{marginTop: "15px"}} color='orange' as='h2'>Procurar eventos</Header>
         				<h5>Procurar eventos pela categorização:</h5>
         				<p>Desporto → Região → Competição → Fase</p>
         			</div>
@@ -201,19 +201,20 @@ class Eventos extends PureComponent {
                         }}
                         hasSearch={false}
                     />
-                    <button  disabled={ !this.state.hideDesportos } className="ui button" 
-                    onClick = {() => {
-                        this.setState({
-                            hideEventos :true,
-                            hideDesportos: false,
-                            hideRegioes: true,
-                            hideComps: true,
-                            hideFases: true,
-                        })
-
-                    } }  >
-                                    Criar Desporto
-                    </button>
+                    <div className="ui container center aligned">
+                        <button disabled={!this.state.hideDesportos }className="ui button" 
+                        onClick = {() => {
+                            this.setState({
+                                hideEventos :true,
+                                hideDesportos: false,
+                                hideRegioes: true,
+                                hideComps: true,
+                                hideFases: true,
+                            })
+                        }}>
+                            Criar Desporto
+                        </button>
+                    </div>
                 </div>
                     <div className="twelve wide column" >  
                     <div hidden={this.state.hideEventos} >   

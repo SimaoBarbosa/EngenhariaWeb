@@ -64,7 +64,7 @@ class DesportosDiv extends PureComponent {
                 <div className="ui column stackable center page grid">
                     <div className="seven wide column">
                         <div className="ui container center aligned">
-                            <Header color='orange' as='h3'>Regiões de {nomedesporto}</Header>
+                            <Header style={{marginTop: "15px"}} color='orange' as='h2'>Regiões de {nomedesporto}</Header>
                         </div>
                         <div className="ui stacked segment center aligned">
                             <div className="ui list">
