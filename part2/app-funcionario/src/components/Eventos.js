@@ -14,8 +14,8 @@ class Eventos extends PureComponent {
         super(props);
 
         this.state = {
-            hideEventos :true,
-            hideDesportos: false,
+            hideEventos : false,
+            hideDesportos: true,
             hideRegioes: true,
             hideComps: true,
             hideFases: true,
@@ -172,6 +172,7 @@ class Eventos extends PureComponent {
                     hideComps: true,
                     hideFases: true,
                     id_fase:key,
+                    id_competicao : key_parent
                 });
                 break;
             }
@@ -218,7 +219,7 @@ class Eventos extends PureComponent {
                 </div>
                     <div className="twelve wide column" >  
                     <div hidden={this.state.hideEventos} >   
-                        <EventosDiv id_fase={this.state.id_fase} />
+                        <EventosDiv id_fase={this.state.id_fase} id_competicao={this.state.id_competicao} />
                     </div>
                     <div hidden={this.state.hideDesportos} >   
                         <DesportosDiv data={this.state.data} />

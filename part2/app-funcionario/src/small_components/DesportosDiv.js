@@ -70,7 +70,15 @@ class DesportosDiv extends PureComponent {
                             </div>
                         </div>
                     </div>
+                    <div className="ui right labeled input" >
+                        <div className="ui basic label center">=></div>
+                        <input type="text" placeholder="Nome do Evento"  onChange={({target: {value}}) => this.saveNome(value) } />
+                    </div>
+                    <button  disabled={ this.state.nome===""} className="ui button" onClick = {() => this.CriarEvento() }  >
+                                Criar Novo Evento
+                </button>
                 </div>
+                
             </div>
         );
     }

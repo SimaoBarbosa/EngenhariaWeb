@@ -12,6 +12,9 @@ import Login from './Login';
 import Eventos from './Eventos';
 import Equipas from './Equipas';
 import GerirUsers from './GerirUsers';
+import ApostasDisponiveis from './ApostasDisponiveis'
+import GerirEquipasEvento from './EquipasEvento'
+import CriarEvento from './CriarEvento'
 const FindRoute = ({ component: Component, ...rest }) => (
     <Route
         {...rest}
@@ -36,6 +39,9 @@ const Root = () => {
                     <FindRoute exact path="/home" component={Eventos} />
                     <FindRoute exact path="/equipas" component={Equipas} />
                     <FindRoute exact path="/gerirUsers" component={GerirUsers} />
+                    <FindRoute exact path="/apostasDisponiveis" component={ApostasDisponiveis} />
+                    <FindRoute exact path="/gerirEquipasEvento" component={GerirEquipasEvento} />
+                    <FindRoute exact path="/criarEvento" component={CriarEvento} />
                 </Switch>
             </React.Fragment>
         ),
