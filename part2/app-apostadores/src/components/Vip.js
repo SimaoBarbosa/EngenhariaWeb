@@ -36,7 +36,13 @@ class Vip extends Component {
             <div>
                 <div className="ui stackable grid container center aligned">
                     <div className="twelve wide column">
-                        <Header color='orange' as='h1'>Apostador VIP</Header>
+                        <Header style={{marginTop: "40px"}} color='orange' as='h1'>Apostador VIP</Header>
+                        <img 
+                            className="ui small centered image"
+                            src={require("../images/star.png")}
+                            style={{marginBottom: "20px"}}
+                            alt={"logo"}
+                        />
                         <Header color='grey' as='h2'>Pode tornar-se VIP por apenas 50 ESScoins, para usufruir das seguintes ofertas:</Header>
                         <Header color='black' as='h3'>- Apostas exclusivas para apostadores VIP's</Header>
                         <Header color='black' as='h3'>- Consulta de históricos de apostas das equipas envolvidas num evento</Header>
@@ -45,7 +51,7 @@ class Vip extends Component {
                 <div className="ui stackable grid container center aligned">
                     <div className="five wide column">
                         <button
-                            className="ui fluid button"
+                            className="ui fluid orange button"
                             color="orange"
                             onClick={this.vip.bind(this)}
                         >TORNAR-ME VIP</button>

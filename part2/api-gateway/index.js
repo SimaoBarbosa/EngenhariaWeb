@@ -35,7 +35,7 @@ app.post('/login', async (req, res, next) => {
         const id = login.data.oid;
         const group = login.data.group;
         var token = jwt.sign({ id, group }, process.env.SECRET, {
-            expiresIn: 3600 // expires in 1 hour
+            expiresIn: 18000 // expires in 5 hours
         });
         res.status(200).send({
             success: true,

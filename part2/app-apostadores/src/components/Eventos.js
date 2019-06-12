@@ -109,7 +109,7 @@ class Eventos extends PureComponent {
             <div className="ui grid">
         		<div className="four wide column">
         			<div className="ui container center aligned">
-        				<Header color='orange' as='h3'>Procurar eventos</Header>
+        				<Header style={{marginTop: "15px"}} color='orange' as='h2'>Procurar eventos</Header>
         				<h5>Procurar eventos pela categorização:</h5>
         				<p>Desporto → Região → Competição → Fase</p>
         			</div>

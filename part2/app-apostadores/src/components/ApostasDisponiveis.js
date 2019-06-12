@@ -43,7 +43,7 @@ class ApostasDisponiveis extends Component {
         return (
             <div >
                 <Container  textAlign={'center'}>
-                    <Header color='orange' as='h1'>
+                    <Header style={{marginTop: "40px"}} color='orange' size='huge'>
                         {evento.titulo}
                     </Header>
                     <Header as='h4'>

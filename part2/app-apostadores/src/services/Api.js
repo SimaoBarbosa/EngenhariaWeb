@@ -1,23 +1,4 @@
-import qs from "qs";
 const BASE_URL = 'http://localhost:3000';
-
-export const post = (path, token, body) => fetch(
-  BASE_URL + path,{
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-      'x-access-token': (token) ? token : ''
-    },
-    body: qs.stringify(body)
-})
-
-export const get = (path, token, body) => fetch(
-  BASE_URL + path,{
-    method: 'GET',
-    headers: {
-      'x-access-token': token
-    },
-})
 
 const generateUrl = (base, path, params = []) => {
   const strParams = Object.entries(params)
@@ -83,6 +64,10 @@ export const tornarVIP = (body) => (
 export const getInformacoesUser = () => (
   jsonFetch(generateUrl(BASE_URL, '/api_users/users/' + localStorage.getItem('user_id')), { method: 'get' })
 );
+
+export const importarSaldo = (body) => (
+	jsonFetch(generateUrl(BASE_URL, '/api_users/users/saldo'), { method: 'post', body })
+); 
 
 export const desportos = () => (
   jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes/desportos'),{method:'get'}) 
