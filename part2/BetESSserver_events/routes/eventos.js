@@ -27,6 +27,7 @@ router.get('/equipas/:oid', async (req, res) => {
     });
 });
 
+
 // get apostas_disponiveis of event
 router.get('/apostas_disponiveis/:oid', async (req, res) => {
     EventoController.getApostasDisponiveis(req.params.oid).then(apostas => {
@@ -82,8 +83,10 @@ router.post('/insert', mw.verifyFuncionario ,async (req, res) => {
                 })
                 res.send(response);
             })
+            .catch(err=>res.status(500).send(err))
 
           })
+          .catch(err=>res.status(500).send(err))
 
       } else {
           

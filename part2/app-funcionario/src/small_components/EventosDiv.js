@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react';
 import Evento from './Evento'
 import {allEvents} from '../services/Api'
 import {Header} from 'semantic-ui-react';
+import {Redirect } from 'react-router-dom';
 
 class EventosDiv extends PureComponent {
 
@@ -12,13 +13,34 @@ class EventosDiv extends PureComponent {
         if(props.id_fase>0) id_fase=props.id_fase
         this.state = {
             id_fase:id_fase,
+            id_competicao:props.id_competicao,
             eventos:[],
+            redirect:false
+
         };
     }
     
+    setRedirect = () => {
+        this.setState({
+          redirect: true
+        })
+    }
+      
+    renderRedirect = () => {
+        if (this.state.redirect) {
+            return <Redirect to={{ pathname: "/criarEvento", state: {
+                id_fase: this.state.id_fase,
+                id_competicao :  this.state.id_competicao
+            } }} />
+        }
+    }
+
     componentWillReceiveProps(props) {
-        if(props.id_fase.toString() !== this.props.id_fase.toString())
-            this.setState({id_fase:props.id_fase})
+        if(props.id_fase.toString() !== this.props.id_fase.toString() || props.id_competicao.toString() !== this.props.id_competicao.toString())
+            this.setState({
+                id_fase:props.id_fase,
+                id_competicao : props.id_competicao
+            })
     }
     
     componentDidMount(){
@@ -29,6 +51,7 @@ class EventosDiv extends PureComponent {
         .catch(err=>console.log(err))
     }
 
+    
     render() {
 
         //console.log("fase:");
@@ -47,6 +70,8 @@ class EventosDiv extends PureComponent {
         if(!eventos) eventos = []
         return (
             <div>
+                
+                {this.renderRedirect()}
                 <div className="ui column stackable center page grid">
                     <div className="wide column">
                         <div className="ui container center aligned">
@@ -58,6 +83,16 @@ class EventosDiv extends PureComponent {
                                     <Evento evento={evento}  key={evento.id_evento} />
                                 ))}
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="ui column stackable center page grid">
+                    <div className="wide column">
+                        <div hidden={this.state.id_fase<0}>
+                            <button  className="ui button" onClick = {() => this.setRedirect() }  >
+                                        Criar Novo Evento
+                            </button>
                         </div>
                     </div>
                 </div>
