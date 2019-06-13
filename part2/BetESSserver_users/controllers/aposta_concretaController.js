@@ -10,7 +10,8 @@ module.exports.getApostasConcretas = seletores => {
 module.exports.createVIP = async bet => {
 
     let response = await axios.get(
-        'http://localhost:3000/api_eventos/apostasDisponiveis/disponivel/' + bet.id_aposta_disponivel.toString(),
+        'http://10.1.0.10:3000/api_eventos/apostasDisponiveis/disponivel/' + bet.id_aposta_disponivel.toString(),
+        //'http://localhost:3000/api_eventos/apostasDisponiveis/disponivel/' + bet.id_aposta_disponivel.toString(),
         {data: {secret: 'this_is_a_secret_key_1'}}
     )
 
@@ -51,7 +52,8 @@ module.exports.createVIP = async bet => {
 module.exports.create = async bet => {
 
     let response = await axios.get(
-        'http://localhost:3000/api_eventos/apostasDisponiveis/disponivel_and_vip/' + bet.id_aposta_disponivel.toString(),
+        'http://10.1.0.10:3000/api_eventos/apostasDisponiveis/disponivel_and_vip/' + bet.id_aposta_disponivel.toString(),
+        //'http://localhost:3000/api_eventos/apostasDisponiveis/disponivel_and_vip/' + bet.id_aposta_disponivel.toString(),
         {data: {secret: 'this_is_a_secret_key_1'}}
     )
 

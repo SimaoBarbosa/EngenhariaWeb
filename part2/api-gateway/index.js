@@ -16,11 +16,11 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // Microservices available
-//const users_microservice = 'http://10.1.0.11:3001/'
-//const events_microservice = 'http://10.1.0.12:3002/'
+const users_microservice = 'http://10.1.0.11:3001/'
+const events_microservice = 'http://10.1.0.12:3002/'
 
-const users_microservice = 'http://localhost:3001/'
-const events_microservice = 'http://localhost:3002/'
+//const users_microservice = 'http://localhost:3001/'
+//const events_microservice = 'http://localhost:3002/'
 
 const usersMS = httpProxy(users_microservice);
 const eventsMS = httpProxy(events_microservice);
