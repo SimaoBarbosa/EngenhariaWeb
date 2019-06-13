@@ -134,7 +134,8 @@ router.post('/end', mw.verifyFuncionario, async (req, res) => {
         }
       )*/
       axios.post(
-        'http://localhost:3000/api_users/apostas/end_available_bet',
+        'http://10.1.0.10:3000/api_users/apostas/end_available_bet',
+        //'http://localhost:3000/api_users/apostas/end_available_bet',
         {
             id_aposta_disponivel: id_aposta,
             id_opcao : id_opcao,

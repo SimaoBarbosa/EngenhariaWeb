@@ -1,29 +1,29 @@
 {
   "development": {
-    "username": "root",
-    "password": "password",
+    "username": "betess",
+    "password": "pass",
     "database": "betess_users",
-    "host": "localhost",
+    "host": "mysqldb",
     "dialect": "mysql",
     "define": {
       "timestamps": false
     }
   },
   "test": {
-    "username": "root",
-    "password": "password",
+    "username": "betess",
+    "password": "pass",
     "database": "betess_users",
-    "host": "localhost",
+    "host": "mysqldb",
     "dialect": "mysql",
     "define": {
       "timestamps": false
     }
   },
   "production": {
-    "username": "root",
-    "password": "password",
+    "username": "betess",
+    "password": "pass",
     "database": "betess_users",
-    "host": "localhost",
+    "host": "mysqldb",
     "dialect": "mysql",
     "define": {
       "timestamps": false

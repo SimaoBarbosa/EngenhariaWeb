@@ -2,7 +2,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mysql = require('mysql')
 
 var indexRouter = require('./routes/index');
 var competicoesRouter = require('./routes/competicoes');
@@ -15,14 +14,6 @@ var app = express();
 
 var cors = require('cors')
 app.use(cors());
-// Conexão à base de dados MySQL
-var pool = mysql.createPool({
-    host: 'localhost',
-    port: '3306',
-    database: 'betess',
-    user: 'root',
-    password: 'password'
-});
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -36,5 +27,4 @@ app.use('/equipas', equipasRouter);
 app.use('/eventos', eventosRouter);
 app.use('/apostasDisponiveis', apostasRouter);
 
-module.exports.db = pool;
 module.exports = app;
