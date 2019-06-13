@@ -124,7 +124,7 @@ class Eventos extends PureComponent {
                     />
                 </div>
                 <div className="twelve wide column">        
-                    <EventosDiv id_fase={this.state.id_fase} />
+                    <EventosDiv id_fase={this.state.id_fase} history={this.props.history} />
                 </div>
             </div>
         );

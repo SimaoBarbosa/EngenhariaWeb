@@ -26,11 +26,14 @@ class EventosEquipa extends Component {
 
     render() {
 
-        if (this.state.redirect) {
+        if (this.state.redirect) {/*
             return (<Redirect to={{
                 pathname: '/apostas_disponiveis',
                 state: {evento: this.state.evento}}
-            }/>)
+            }/>)*/
+
+            this.props.history.push( "/apostas_disponiveis", {evento: this.state.evento} )
+            
         }
 
         return (

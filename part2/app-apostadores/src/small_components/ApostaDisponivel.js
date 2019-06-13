@@ -24,11 +24,17 @@ class ApostaDisponivel extends Component {
 
     renderRedirect = () => {
       if (this.state.redirect) {
+        /*
         return <Redirect to={{ pathname: "/apostar", state: {
             opcao: this.state.opcao , 
             aposta: this.state.aposta ,
             evento: this.state.evento
-        } }} />
+        } }} />*/
+        this.props.history.push( "/apostar", {
+            opcao: this.state.opcao , 
+            aposta: this.state.aposta ,
+            evento: this.state.evento
+        } )
       }
     }
 

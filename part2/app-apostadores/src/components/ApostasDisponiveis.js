@@ -57,7 +57,7 @@ class ApostasDisponiveis extends Component {
                     <div className="ui stacked segment left aligned">
                     <div className="ui list">
                         {apostas.map(aposta => ( 
-                            <ApostaDisponivel aposta={aposta} evento={evento}  key={aposta.id_aposta_disponivel} />
+                            <ApostaDisponivel aposta={aposta} evento={evento}  key={aposta.id_aposta_disponivel} history={this.props.history} />
                         ))}
                     </div>
                     </div>

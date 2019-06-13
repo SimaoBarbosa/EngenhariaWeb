@@ -15,11 +15,13 @@ class Evento extends PureComponent {
     render() {
 
       if (this.state.redirectE) {
-        return <Redirect to={{ pathname: "/apostas_disponiveis", state: {evento: this.state.evento }}} />
-      }
+      //  return <Redirect to={{ pathname: "/apostas_disponiveis", state: {evento: this.state.evento }}} />
+          this.props.history.push("/apostas_disponiveis",{evento: this.state.evento })   
+     }
 
       if (this.state.redirectH) {
-        return <Redirect to={{pathname: "/historico"}} />
+       // return <Redirect to={{pathname: "/historico"}} />
+          this.props.history.push( "/historico"   )
       }
 
       const evento =  this.state.evento;

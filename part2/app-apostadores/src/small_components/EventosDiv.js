@@ -55,7 +55,7 @@ class EventosDiv extends PureComponent {
                         <div className="ui stacked segment left aligned">
                             <div className="ui list">
                                 {eventos.map(evento => ( 
-                                    <Evento evento={evento}  key={evento.id_evento} />
+                                    <Evento evento={evento}  key={evento.id_evento} history={this.props.history}/>
                                 ))}
                             </div>
                         </div>
