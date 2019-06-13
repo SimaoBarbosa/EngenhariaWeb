@@ -9,6 +9,24 @@ module.exports.findAll = () => {
     });
 }
 
+// get all the events with date and time
+module.exports.findDisponiveis = () => {
+    return models.evento.findAll({
+        include: [
+            'datahora',
+            {
+                association:'apostas_disponiveis',
+                where :{disponibilidade:true}
+            },
+            {
+                association: 'fase', 
+                include: ['competicao']
+            },
+        ]
+    });
+}
+
+
 // get all the event with date and time, competition and phase 
 module.exports.findAllInfo = () => {
     return models.evento.findAll({

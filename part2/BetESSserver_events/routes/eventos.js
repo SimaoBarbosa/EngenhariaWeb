@@ -6,9 +6,17 @@ const CompeticaoController = require('../controllers/competicaoController');
 const FaseController = require('../controllers/faseController');
 const mw = require('../auth/auth_middlewares');
 
+
 // get all the events
 router.get('/', async (req, res) => {
-    EventoController.findAll().then(eventos => {
+  EventoController.findAll().then(eventos => {
+    res.send(eventos);
+  });
+});
+
+// get  the events with apostas disponiveis
+router.get('/disponiveis', async (req, res) => {
+    EventoController.findDisponiveis().then(eventos => {
       res.send(eventos);
     });
 });

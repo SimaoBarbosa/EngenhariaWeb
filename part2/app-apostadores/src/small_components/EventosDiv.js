@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import Evento from './Evento'
-import {allEvents} from '../services/Api'
+import {allEventsDisponiveis} from '../services/Api'
 import {Header} from 'semantic-ui-react';
 
 class EventosDiv extends PureComponent {
@@ -22,7 +22,7 @@ class EventosDiv extends PureComponent {
     }
     
     componentDidMount(){
-        allEvents()
+        allEventsDisponiveis()
         .then(evts=>{  
             this.setState({eventos:evts}) ;
         })
