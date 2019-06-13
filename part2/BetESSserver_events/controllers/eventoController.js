@@ -47,6 +47,30 @@ module.exports.getApostasDisponiveis = (eventoId) => {
 }
 
 // get events of team => for vips (history of teams)
+module.exports.getEventosDeEquipaVIP = (equipaId) => {
+    return models.evento.findAll({
+        include: [{
+            association: 'equipas',
+            where: {id_equipa: equipaId},
+            attributes: []
+        }, 'datahora',
+        {
+            association : 'apostas_disponiveis',
+            where : {
+                disponibilidade: false,
+                resultado_final: {
+                    [Op.gt]:-1
+                }
+            }
+        },
+        {
+            association: 'fase', 
+            include: ['competicao']
+        }]
+    });
+}
+
+// get events of team
 module.exports.getEventosDeEquipa = (equipaId) => {
     return models.evento.findAll({
         include: [{
@@ -57,9 +81,9 @@ module.exports.getEventosDeEquipa = (equipaId) => {
         {
             association : 'apostas_disponiveis',
             where : {
-                disponibilidade:true,
-                resultado_final:{
-                    [Op.gt]:-1
+                disponibilidade: true,
+                resultado_final: {
+                    [Op.lt]: 0
                 }
             }
         },

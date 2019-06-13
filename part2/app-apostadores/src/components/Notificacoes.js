@@ -51,22 +51,24 @@ class Notificacoes extends Component {
                     <div className="ui stacked segment left aligned">
                         <div className="ui list">
 
-                            {this.state.notifications.map((n) => 
-                                <div key={n.id_notificacao} className="item">
-                                    <div className="right floated content">
-                                        <Button icon='trash' onClick={() => this.delete(n.id_notificacao)}/>
+                            {(this.state.notifications.length > 0) ?
+                                this.state.notifications.map((n) => 
+                                    <div key={n.id_notificacao} className="item">
+                                        <div className="right floated content">
+                                            <Button icon='trash' onClick={() => this.delete(n.id_notificacao)}/>
+                                        </div>
+                                        <i className="bell icon"></i>
+                                        <div className="content">
+                                            {n.notificacao.includes("Ganhou") ?
+                                                <Header color='green' as='h5'>Aposta ganha</Header> :
+                                                <Header color='red' as='h5'>Aposta perdida</Header>
+                                            }
+                                            <div className="description">{n.notificacao}</div>
+                                        </div>
                                     </div>
-                                    <i className="bell icon"></i>
-                                    <div className="content">
-                                        {n.notificacao.includes("Ganhou") ?
-                                            <Header color='green' as='h5'>Aposta ganha</Header> :
-                                            <Header color='red' as='h5'>Aposta perdida</Header>
-                                        }
-                                        <div className="description">{n.notificacao}</div>
-                                    </div>
-                                </div>
-                            )}
-
+                                ) :
+                                <Header color='grey' as='h2'>Sem notificações</Header>
+                            }
                         </div>
                     </div>
                 </div>

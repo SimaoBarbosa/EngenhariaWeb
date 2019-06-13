@@ -77,6 +77,14 @@ export const getTodasEquipas = () => (
     jsonFetch(generateUrl(BASE_URL, '/api_eventos/equipas'), { method: 'get' })
 );
 
+export const getHistoricoEquipa = (id_equipa) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/eventos/historico/equipa/' + id_equipa), { method: 'get' })
+);
+
+export const getEventosEquipa = (id_equipa) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/eventos/equipa/' + id_equipa), { method: 'get' })
+);
+
 export const desportos = () => (
   jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes/desportos'),{method:'get'}) 
 );

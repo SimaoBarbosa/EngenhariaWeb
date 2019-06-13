@@ -34,11 +34,18 @@ router.get('/apostas_disponiveis/:oid', async (req, res) => {
     });
 });
 
-// get events of certain team => for vips
-router.get('/equipa/:oid', mw.verifyVIP ,async (req, res) => {
-    EventoController.getEventosDeEquipa(req.params.oid).then(eventos =>{
+// get history of events of certain team => for vips
+router.get('/historico/equipa/:oid', mw.verifyVIP ,async (req, res) => {
+    EventoController.getEventosDeEquipaVIP(req.params.oid).then(eventos =>{
         res.send(eventos);
     })
+})
+
+// get events of certain team
+router.get('/equipa/:oid', mw.verifyApostador ,async (req, res) => {
+  EventoController.getEventosDeEquipa(req.params.oid).then(eventos =>{
+      res.send(eventos);
+  })
 })
 
 // Create new event

@@ -6,24 +6,22 @@ class Evento extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-          redirect:false,
-          evento:this.props.evento
+          evento: this.props.evento,
+          redirectE: false,
+          redirectH: false
         };
-    }
-   
-    setRedirect = () => {
-      this.setState({
-        redirect: true
-      })
-    }
-    
-    renderRedirect = () => {
-      if (this.state.redirect) {
-        return <Redirect to={{ pathname: "/apostasDisponiveis", state: {evento: this.state.evento } }} />
-      }
     }
 
     render() {
+
+      if (this.state.redirectE) {
+        return <Redirect to={{ pathname: "/apostas_disponiveis", state: {evento: this.state.evento }}} />
+      }
+
+      if (this.state.redirectH) {
+        return <Redirect to={{pathname: "/historico"}} />
+      }
+
       const evento =  this.state.evento;
       return (
         <List.Item>
@@ -38,11 +36,21 @@ class Evento extends PureComponent {
                     </div>
                   </TableCell>
                   <TableCell>
-                    {this.renderRedirect()}
-                    <div className="right floated">
+                    <div className="right floated content">
+                      <button 
+                        className="ui icon button"
+                        disabled={(localStorage.getItem('userType') === 'normal')}
+                        onClick={() => this.setState({
+                          redirectH: true
+                        })}
+                      >
+                        <i className="history icon"></i>
+                      </button>
                       <button
                         className="ui orange right labeled icon button"
-                        onClick = {() => this.setRedirect() }
+                        onClick = {() => this.setState({
+                          redirectE: true
+                        })}
                       >
                         <i className="angle right icon"></i>
                         Apostar

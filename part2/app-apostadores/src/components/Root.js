@@ -18,6 +18,8 @@ import Notificacoes from './Notificacoes';
 import ApostasDisponiveis from './ApostasDisponiveis'
 import Apostar from './Apostar'
 import Vip from './Vip';
+import EventosEquipa from './EventosEquipa';
+import Historico from './Historico';
 
 const FindRoute = ({ component: Component, ...rest }) => (
     <Route
@@ -39,8 +41,6 @@ const Root = () => {
             <React.Fragment>
                 <Header userType={'normal'} />
                 <Switch>
-                    <FindRoute exact path="/" component={Eventos} />
-                    <FindRoute exact path="/apostasDisponiveis" component={ApostasDisponiveis} />
                     <FindRoute exact path="/apostar" component={Apostar} />
                     <FindRoute exact path="/home" component={Eventos} />
                     <FindRoute exact path="/equipas" component={Equipas} />
@@ -48,6 +48,9 @@ const Root = () => {
                     <FindRoute exact path="/perfil" component={Perfil} />
                     <FindRoute exact path="/notificacoes" component={Notificacoes} />
                     <FindRoute exact path="/vip" component={Vip} />
+                    <FindRoute exact path="/apostas_disponiveis" component={ApostasDisponiveis} />
+                    <FindRoute exact path="/eventos_equipa" component={EventosEquipa} />
+                    <Redirect from="/" to="/home" />
                 </Switch>
             </React.Fragment>
         ),
@@ -55,14 +58,16 @@ const Root = () => {
             <React.Fragment>
                 <Header userType={'vip'} />
                 <Switch>
-                    <FindRoute exact path="/" component={Eventos} />
-                    <FindRoute exact path="/apostasDisponiveis" component={ApostasDisponiveis} />
                     <FindRoute exact path="/apostar" component={Apostar} />
                     <FindRoute exact path="/home" component={Eventos} />
                     <FindRoute exact path="/equipas" component={Equipas} />
                     <FindRoute exact path="/apostas" component={Apostas} />
                     <FindRoute exact path="/perfil" component={Perfil} />
                     <FindRoute exact path="/notificacoes" component={Notificacoes} />
+                    <FindRoute exact path="/apostas_disponiveis" component={ApostasDisponiveis} />
+                    <FindRoute exact path="/eventos_equipa" component={EventosEquipa} />
+                    <FindRoute exact path="/historico" component={Historico} />
+                    <Redirect from="/" to="/home"/>
                 </Switch>
             </React.Fragment>
         ),

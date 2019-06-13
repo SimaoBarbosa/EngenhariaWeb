@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Header } from 'semantic-ui-react';
 import { getTodasCompeticoes, getTodasEquipas } from './../services/Api';
 import _ from 'lodash';
+import { Redirect } from 'react-router-dom';
 
 class Equipas extends Component {
 
@@ -14,8 +15,11 @@ class Equipas extends Component {
             equipas: [],
             equipas_f: [],
             text_c: '',
-            text_e: ''
-        };
+            text_e: '',
+            redirectE: false,
+            redirectH: false,
+            equipa: {} 
+        }
     }
 
     // equipas
@@ -77,6 +81,15 @@ class Equipas extends Component {
     }
 
     render() {
+
+        if (this.state.redirectE){
+            return <Redirect to={{ pathname: "/eventos_equipa", state: {equipa: this.state.equipa}}} />
+        }
+
+        if (this.state.redirectH){
+            return <Redirect to={{ pathname: "/historico"}}/>
+        }
+
         return (
             <div className="ui stackable grid container center aligned">
                 <div className="eight wide column">
@@ -139,10 +152,22 @@ class Equipas extends Component {
                                 this.state.equipas_f.map((e) =>
                                     <div key={e.id_equipa} className="item">
                                         <div className="right floated content">
-
+                                            <button 
+                                                className="ui icon button"
+                                                disabled={(localStorage.getItem('userType') === 'normal')}
+                                                onClick={() => this.setState({
+                                                    equipa: e,
+                                                    redirectH: true
+                                                })}
+                                            >
+                                              <i className="history icon"></i>
+                                            </button>
                                             <button
                                                 className="ui orange right labeled icon button"
-                                                onClick={() => console.log(e.id_equipa)}
+                                                onClick={() => this.setState({
+                                                    equipa: e,
+                                                    redirectE: true
+                                                })}
                                             >
                                                 <i className="angle right icon"></i>
                                                 Eventos
