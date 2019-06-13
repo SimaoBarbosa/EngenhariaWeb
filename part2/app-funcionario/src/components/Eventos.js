@@ -219,7 +219,7 @@ class Eventos extends PureComponent {
                 </div>
                     <div className="twelve wide column" >  
                     <div hidden={this.state.hideEventos} >   
-                        <EventosDiv id_fase={this.state.id_fase} id_competicao={this.state.id_competicao} />
+                        <EventosDiv id_fase={this.state.id_fase} id_competicao={this.state.id_competicao}  history={this.props.history}/>
                     </div>
                     <div hidden={this.state.hideDesportos} >   
                         <DesportosDiv data={this.state.data} />

@@ -21,17 +21,22 @@ class EventosDiv extends PureComponent {
     }
     
     setRedirect = () => {
+        this.props.history.push("/criarEvento", {
+            id_fase: this.state.id_fase,
+            id_competicao :  this.state.id_competicao
+        } )
+
         this.setState({
           redirect: true
         })
     }
       
     renderRedirect = () => {
+        console.log("HISTORY EVENTOS DIV");
+        
+        console.log(this.props.history);
+        
         if (this.state.redirect) {
-            return <Redirect to={{ pathname: "/criarEvento", state: {
-                id_fase: this.state.id_fase,
-                id_competicao :  this.state.id_competicao
-            } }} />
         }
     }
 
@@ -80,7 +85,7 @@ class EventosDiv extends PureComponent {
                         <div className="ui stacked segment left aligned">
                             <div className="ui list">
                                 {eventos.map(evento => ( 
-                                    <Evento evento={evento}  key={evento.id_evento} />
+                                    <Evento evento={evento}  key={evento.id_evento} history={this.props.history} />
                                 ))}
                             </div>
                         </div>
