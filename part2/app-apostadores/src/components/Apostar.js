@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {criar_aposta_concreta} from '../services/Api'
+import {criar_aposta_concreta,criar_aposta_concretaVIP} from '../services/Api'
 import {Redirect } from 'react-router-dom';
 import {getInformacoesUser} from '../services/Api'
 import { Header } from 'semantic-ui-react';
@@ -42,27 +42,52 @@ class Apostar extends Component {
         console.log("body:");
         console.log(body);
 
-        criar_aposta_concreta(body)
-        .then(async res=>{
-            console.log("SIIIII")
-            console.log(res);
-            await this.setState({
-                message: 'Aposta realizada com sucesso!',
-                error: ''
+        if(userType==='normal') {
+            criar_aposta_concreta(body)
+            .then(async res=>{
+                console.log("SIIIII")
+                console.log(res);
+                await this.setState({
+                    message: 'Aposta realizada com sucesso!',
+                    error: ''
+                })
+                console.log("YAAAAAA")
+                await sleep(3000)
+                this.setState({
+                    redirect: true
+                }) 
+                                
             })
-            console.log("YAAAAAA")
-            await sleep(3000)
-            this.setState({
-                redirect: true
-            }) 
-                             
-        })
-        .catch(err => {
-            this.setState({
-                message: '',
-                error: 'Não foi possível realizar a aposta'
+            .catch(err => {
+                this.setState({
+                    message: '',
+                    error: 'Não foi possível realizar a aposta'
+                })
             })
-        })
+        }
+        else{
+            criar_aposta_concretaVIP(body)
+            .then(async res=>{
+                console.log("SIIIII")
+                console.log(res);
+                await this.setState({
+                    message: 'Aposta realizada com sucesso!',
+                    error: ''
+                })
+                console.log("YAAAAAA")
+                await sleep(3000)
+                this.setState({
+                    redirect: true
+                }) 
+                                
+            })
+            .catch(err => {
+                this.setState({
+                    message: '',
+                    error: 'Não foi possível realizar a aposta'
+                })
+            })
+        }
 
     }
     renderRedirect = () => {

@@ -116,3 +116,7 @@ export const apostasOfEvent = (vip,available,id_evento) => (
 export const criar_aposta_concreta = (body) => (
   jsonFetch(generateUrl(BASE_URL, '/api_users/apostas/create'), { method: 'post', body })
 );
+
+export const criar_aposta_concretaVIP = (body) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_users/apostas/createVIP'), { method: 'post', body })
+);
