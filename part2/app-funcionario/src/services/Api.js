@@ -160,3 +160,19 @@ export const endAposta= (body) => (
 export const updateOdd= (body) => (
   jsonFetch(generateUrl(BASE_URL, '/api_eventos/apostasDisponiveis/updateOdd'), { method: 'post' , body})
 );
+
+export const allApostadores= () => (
+  jsonFetch(generateUrl(BASE_URL, '/api_users/users/apostadores'), { method: 'get' })
+);
+
+export const removeUser = (id) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_users/users/delete/'+id),{method:'post'}) 
+);
+
+export const makeUserVip= (id) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_users/users/vip/'+id),{method:'post'}) 
+);
+
+export const makeUserNormal= (id) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_users/users/normal/'+id),{method:'post'}) 
+);

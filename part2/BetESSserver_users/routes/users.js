@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 const UserController = require('./../controllers/userController');
 const mw = require('../auth/auth_middlewares');
-
 // check login values
 router.post('/login', async (req, res) => {
   UserController.checkLogin(req.body.user, req.body.password).then(l => {
@@ -15,6 +14,7 @@ router.post('/login', async (req, res) => {
 
 // get all users
 router.get('/', mw.verifyFuncionario, async (req, res) => {
+
   UserController.find().then(users => {
     res.send(users);
   })
@@ -22,6 +22,18 @@ router.get('/', mw.verifyFuncionario, async (req, res) => {
     res.status(500).send(err);
   });
 });
+
+// get all apostadores
+router.get('/apostadores', mw.verifyFuncionario, async (req, res) => {
+
+  UserController.findApostadores().then(users => {
+    res.send(users);
+  })
+  .catch(err => {
+    res.status(500).send(err);
+  });
+});
+
 
 // get specific user
 router.get('/:oid', mw.verifyProprioApostador, async (req, res) => {

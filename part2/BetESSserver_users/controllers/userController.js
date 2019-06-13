@@ -1,4 +1,6 @@
 var models = require('../models/index')
+var Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 // check login
 module.exports.checkLogin = async (user, password) => {
@@ -33,6 +35,17 @@ module.exports.checkLogin = async (user, password) => {
 // get all users
 module.exports.find = seletores => {
     return models.user.findAll(seletores);
+}
+
+// get all apostadores
+module.exports.findApostadores = () => {
+    return models.user.findAll({
+        where:{
+           group :{ 
+            [Op.in]: [1,3] 
+           } 
+        }
+    });
 }
 
 // get specific user

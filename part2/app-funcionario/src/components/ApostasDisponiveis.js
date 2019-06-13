@@ -154,6 +154,11 @@ class ApostasDisponiveis extends Component {
                             disabled={this.state.action!==2}>
                         Confirmar Odds
                     </button>
+                    <button className="ui button black" 
+                            onClick = {() => this.setState({action:0}) }
+                            disabled={this.state.action===0}>
+                        Cancelar
+                    </button>
                 </Container>
                 <br></br>
                 <br></br>

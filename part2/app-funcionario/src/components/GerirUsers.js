@@ -1,22 +1,153 @@
 import React, {Component} from 'react';
-import { Container, Header } from 'semantic-ui-react';
-
+import { Button, Header } from 'semantic-ui-react';
+import {allApostadores,removeUser,makeUserVip,makeUserNormal} from '../services/Api'
 class GerirUsers extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-
+            users:[],
+            vips:[],
+            normais:[],
+            searchtext :""
         };
     }
 
+    componentDidMount(){
+        allApostadores()
+        .then(users=>{
+            const vips = this.state.vips
+            const normais = this.state.normais
+            users.forEach(user => {
+                if(user.group===3)
+                    vips.push(user)
+                else
+                    normais.push(user)
+            });
+            
+            this.setState({
+                users : users,
+                vips :vips,
+                normais :normais
+            })
+        })
+        .catch(err=>console.log("erro a carregar users "+ err))
+        
+    }
+    delete(id){
+        removeUser(id)
+        .then(res=>{
+            console.log(res);
+            window.location.reload()
+        })
+        .catch(err=>alert(err))
+    }
+    makeVip(id){
+        makeUserVip(id)
+        .then(res=>{
+            console.log(res);
+            window.location.reload()
+        })
+        .catch(err=>alert(err))
+    }
+    makeNormal(id){
+        makeUserNormal(id)
+        .then(res=>{
+            console.log(res);
+            window.location.reload()
+        })
+        .catch(err=>alert(err))
+    }
+
+    changeFilter(value){
+        this.setState({searchtext:value})
+    }
     render() {
+        const vips=[]
+        const normais = []
+        const filter = this.state.searchtext
+        this.state.vips.forEach(user=>{
+            if( user.username.toUpperCase().includes(filter.toUpperCase())  ||
+                user.email.toUpperCase().includes(filter.toUpperCase()) 
+            )
+            vips.push(user)
+        })
+        this.state.normais.forEach(user=>{
+            if( user.username.toUpperCase().includes(filter.toUpperCase())  ||
+                user.email.toUpperCase().includes(filter.toUpperCase()) 
+            )
+            normais.push(user)
+        })
+
         return (
-            <Container text={true} textAlign={'center'}>
-                <Header>Gerir Users</Header>
-                <Header>{this.props.location.pathname}</Header>
-            </Container>
+            <div>
+                <br></br><br></br>
+                <div className="ui stackable  container center aligned">
+                    <div className="ui icon input">
+                        <input 
+                            className="prompt"
+                            type="text"
+                            placeholder="Procurar utilizador ..."
+                            value={this.state.searchtext}
+                            onChange={({ target: {value}}) => this.changeFilter(value)}
+                        />
+                        <i className="search icon"></i>
+                    </div>
+                </div>
+                <div className="ui stackable grid container center aligned">
+                    <div className="twelve wide column">
+                        <Header style={{marginTop: "40px"}} color='orange' size='huge'>Utilizadores Normais</Header>
+                        <div className="ui stacked segment left aligned">
+                            <div className="ui list">
+                                    {
+                                        normais.map((user) => 
+                                            <div key={user.oid} className="item">
+                                                <div className="right floated content">
+                                                    <Button icon='trash' onClick={() => this.delete(user.oid)}/>
+                                                </div>
+                                                <div className="right floated content">
+                                                    <Button  color="orange" onClick={() => this.makeVip(user.oid)}>Tornar VIP</Button>
+                                                </div>
+                                                <div className="content">
+                                                        <Header color='red' as='h5'>{user.username}</Header>
+                                                    <div className="description">{user.email}</div>
+                                                </div>
+                                                <hr></hr>
+                                            </div>
+                                        ) 
+                                    }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="ui stackable grid container center aligned">
+                    <div className="twelve wide column">
+                        <Header style={{marginTop: "40px"}} color='orange' size='huge'>Utilizadores VIP</Header>
+                        <div className="ui stacked segment left aligned">
+                            <div className="ui list">
+                                    {
+                                        vips.map((user) => 
+                                            <div key={user.oid} className="item">
+                                                <div className="right floated content">
+                                                    <Button icon='trash' onClick={() => this.delete(user.oid)}/>
+                                                </div>
+                                                <div className="right floated content">
+                                                    <Button color="black" onClick={() => this.makeNormal(user.oid)}>Tirar VIP</Button>
+                                                </div>
+                                                <div className="content">
+                                                        <Header color='red' as='h5'>{user.username}</Header>
+                                                    <div className="description">{user.email}</div>
+                                                </div>
+                                                <hr></hr>
+                                            </div>
+                                        ) 
+                                    }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         );
     }
 }
