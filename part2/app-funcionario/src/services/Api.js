@@ -152,3 +152,11 @@ export const createAddOpcao= (body) => (
 export const makeAvailable= (idAposta) => (
   jsonFetch(generateUrl(BASE_URL, '/api_eventos/apostasDisponiveis/makeAvailable/'+idAposta), { method: 'post' })
 );
+
+export const endAposta= (body) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/apostasDisponiveis/end'), { method: 'post' , body})
+);
+
+export const updateOdd= (body) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/apostasDisponiveis/updateOdd'), { method: 'post' , body})
+);

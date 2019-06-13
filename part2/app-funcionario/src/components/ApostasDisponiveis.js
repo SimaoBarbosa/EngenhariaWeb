@@ -9,10 +9,6 @@ class ApostasDisponiveis extends Component {
 
     constructor(props) {
         super(props);
-        console.log(props);
-        
-        console.log("evento:");
-        console.log(this.props.location.state.evento);
         
         let evento ={}
         if(this.props.location.state.evento) evento=this.props.location.state.evento;
@@ -23,7 +19,8 @@ class ApostasDisponiveis extends Component {
             vip:false,
             odd:"",
             opcao:"",
-            opcoes : []
+            opcoes : [],
+            action : 0
         };
     }
     saveNovaOpcao(value){
@@ -94,13 +91,14 @@ class ApostasDisponiveis extends Component {
           }
         
     }
+
     previewNovaAposta(){
         let vip = this.state.vip ? "VIP" : "" 
-     //   if(this.state.opcoes.length>0)
+        if(this.state.nome!=="" || this.state.opcoes.length>0 )
         return (
             <List.Item>
             <div className="item">
-              <Table>
+              <Table color={"black" } inverted >
                 <TableBody>
                   <TableRow>
                     <TableCell>
@@ -141,6 +139,21 @@ class ApostasDisponiveis extends Component {
                     <Header as='h4'>
                         Data: {evento.datahora.data}, Hora: {evento.datahora.hora}
                     </Header>
+                    <button onClick = {() => this.setState({action:1})}
+                            disabled={this.state.action!==0}
+                            className="ui button red" >
+                        Terminar Aposta
+                    </button>
+                    <button onClick = {() => this.setState({action:2})}
+                            disabled={this.state.action!==0}
+                            className="ui button blue">
+                        Mudar Odds
+                    </button>
+                    <button className="ui button green" 
+                            onClick = {() => this.setState({action:3}) }
+                            disabled={this.state.action!==2}>
+                        Confirmar Odds
+                    </button>
                 </Container>
                 <br></br>
                 <br></br>
@@ -149,7 +162,7 @@ class ApostasDisponiveis extends Component {
                     <div className="ui stacked segment left aligned">
                     <div className="ui list">
                         {apostas.map(aposta => ( 
-                            <ApostaDisponivel aposta={aposta} evento={evento}  key={aposta.id_aposta_disponivel} />
+                            <ApostaDisponivel aposta={aposta} evento={evento}  key={aposta.id_aposta_disponivel} history={this.props.history} action={this.state.action} />
                         ))}
                         {this.previewNovaAposta()}
                     </div>
@@ -185,7 +198,7 @@ class ApostasDisponiveis extends Component {
                             </div>
                             <div className="ui right labeled input" >
                                     <div className="ui basic label center">Odd</div>
-                                    <input type="number" step="0.1"  placeholder="Odd" value={this.state.odd} onChange={({target: {value}}) => this.saveNovaOdd(value) } />
+                                    <input type="number" step="0.01"  placeholder="Odd" value={this.state.odd} onChange={({target: {value}}) => this.saveNovaOdd(value) } />
                                     
                             </div>
                             <button disabled={this.state.opcao==="" || this.state.odd==="" || this.state.odd<=0  } className="ui button" onClick={() => this.addOpcao() }  >

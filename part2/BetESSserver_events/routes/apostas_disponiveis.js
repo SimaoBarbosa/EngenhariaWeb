@@ -69,13 +69,21 @@ router.get('/ofEvento/:vip/:available/:idevento', async (req, res) => {
 // -> id_opcao       -- id of option
 // -> odd            -- float with odd 
 router.post('/updateOdd', mw.verifyFuncionario, async (req, res) => {
+  
+  
   let id_opcao = req.body.id_opcao;
   let odd = req.body.odd;
+  console.log("OPCAOO:"+id_opcao);
+  console.log("OOD:"+odd);
   ApostasController.updateOdd(id_opcao,odd)
   .then(response => {
+    console.log("SUCESSSS");
+    
     res.send("Number of affected rows:"+response);
   })
   .catch(err=>{
+      console.log("ERRROR"+err);
+      
       res.status(500).send(err);
   })
 });
