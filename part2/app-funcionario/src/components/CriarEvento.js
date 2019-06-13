@@ -148,7 +148,7 @@ class CriarEvento extends PureComponent {
                                     <div className="ui basic label center">Hora</div>
                                     <input type="time" placeholder="Hora"  onChange={({target: {value}}) => this.saveHora(value) } />
                             </div>
-                            <button disabled={this.state.nome==="" || this.state.data==="" ||this.state.hora===""}
+                            <button disabled={this.state.nome==="" || this.state.data==="" ||this.state.hora===""||this.state.equipasAdded.length<2}
                                   className="ui button" onClick = {() => this.criarEvento() }  >
                                         Criar Novo Evento
                             </button>
