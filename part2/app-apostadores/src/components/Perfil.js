@@ -146,6 +146,7 @@ class Perfil extends Component {
                             <Header color='red' as='h4'>{this.state.error}</Header>
                             <Header color='green' as='h4'>{this.state.message}</Header>
                             <button
+                                disabled={this.state.quantia==="" || this.state.quantia<=0}
                                 className="ui fluid button orange"
                                 type="submit"
                                 color="orange"

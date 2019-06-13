@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react';
 import { List,Table , TableCell, TableRow,TableBody, Header } from 'semantic-ui-react';
-import {Redirect } from 'react-router-dom';
 class Evento extends PureComponent {
 
     constructor(props) {

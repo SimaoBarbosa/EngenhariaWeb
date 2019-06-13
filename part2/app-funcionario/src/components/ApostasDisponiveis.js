@@ -185,7 +185,7 @@ class ApostasDisponiveis extends Component {
                             </div>
                             <div className="ui right labeled input" >
                                     <div className="ui basic label center">Odd</div>
-                                    <input type="number" placeholder="Odd" value={this.state.odd} onChange={({target: {value}}) => this.saveNovaOdd(value) } />
+                                    <input type="number" step="0.1"  placeholder="Odd" value={this.state.odd} onChange={({target: {value}}) => this.saveNovaOdd(value) } />
                                     
                             </div>
                             <button disabled={this.state.opcao==="" || this.state.odd==="" || this.state.odd<=0  } className="ui button" onClick={() => this.addOpcao() }  >

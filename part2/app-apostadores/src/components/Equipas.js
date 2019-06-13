@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { Header } from 'semantic-ui-react';
 import { getTodasCompeticoes, getTodasEquipas } from './../services/Api';
 import _ from 'lodash';
-import { Redirect } from 'react-router-dom';
 
 class Equipas extends Component {
 

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { Header,List,Table , TableCell, TableRow,TableBody } from 'semantic-ui-react';
-import {Redirect } from 'react-router-dom';
 
 class ApostaDisponivel extends Component {
 

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { Header, List, Table, TableCell, TableRow, TableBody } from 'semantic-ui-react';
 import { getEventosEquipa } from '../services/Api'
-import { Redirect } from 'react-router-dom';
 
 class EventosEquipa extends Component {
 

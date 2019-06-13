@@ -144,7 +144,7 @@ class Apostar extends Component {
                       <label className="ui label">$</label>
                       <input type="number" placeholder="Quantia a apostar"  onChange={({target: {value}}) => this.saveQuantia(value) } />
                       <button 
-                        disabled={this.state.saldo<this.state.quantia || this.state.quantia===0}
+                        disabled={this.state.saldo<this.state.quantia || this.state.quantia<=0 || this.state.quantia===""}
                         className="ui orange right labeled icon button"
                         onClick = {() => this.apostar()}
                       >

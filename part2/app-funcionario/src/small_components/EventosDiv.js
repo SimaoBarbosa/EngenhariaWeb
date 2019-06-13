@@ -2,7 +2,6 @@ import React, {PureComponent} from 'react';
 import Evento from './Evento'
 import {allEvents} from '../services/Api'
 import {Header} from 'semantic-ui-react';
-import {Redirect } from 'react-router-dom';
 
 class EventosDiv extends PureComponent {
 
