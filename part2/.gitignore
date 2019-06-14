@@ -1,2 +1,5 @@
 BetESSserver_events/node_modules/*
 BetESSserver_users/node_modules/*
+api-gateway/node_modules/*
+app-apostador/node_modules/*
+app-funcionario/node_modules/*
