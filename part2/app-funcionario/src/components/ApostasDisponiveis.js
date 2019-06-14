@@ -124,10 +124,11 @@ class ApostasDisponiveis extends Component {
           </List.Item>
         );
     }
- //   reload = async () => {
     async reload(){
-            await sleep(2000)
-            window.location.reload()
+            sleep(2000).then(()=>{
+                console.log("donesleep");
+                window.location.reload()
+            })
     }
 
     
