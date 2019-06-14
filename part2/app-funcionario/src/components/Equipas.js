@@ -96,9 +96,11 @@ class Equipas extends Component {
         })
     }
     equipasNotC = (equipasC,id_competicao)=>{
+        if(!equipasC) equipasC=[]
         let equipas_not_c=[]
         this.state.equipas.forEach(equipa=>{
             let contains=false
+
             equipasC.forEach(eqC=>{
                 if(equipa.id_equipa===eqC.id_equipa){
                     contains=true
@@ -121,6 +123,7 @@ class Equipas extends Component {
         let allComps = this.state.competicoes
         allComps.forEach(comp=>{
             if(comp.id_competicao===id_competicao)
+            if(!comp.equipas) comp.equipas = []
             var filteredEquipasComp = comp.equipas.filter(function(el) { return el.id_equipa !== equipa.id_equipa; }); 
             comp.equipas = filteredEquipasComp
         })
@@ -140,6 +143,7 @@ class Equipas extends Component {
         .catch(err=>console.log("ERRO:"+err))
         let allComps = this.state.competicoes
         allComps.forEach(comp=>{
+            if(!comp.equipas) comp.equipas = []
             if(comp.id_competicao===id_competicao)
                 comp.equipas.push(equipa)
         })
