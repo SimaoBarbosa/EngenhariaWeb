@@ -39,12 +39,6 @@ class ApostaDisponivel extends Component {
           })
     }
   
-
-    renderRedirect = () => {
-      if (this.state.redirect) {
-
-      }
-    }
     saveNovaOpcao(value,opcao){
         let novasOpcoes = this.state.novasOpcoes
         novasOpcoes[opcao.id_opcao] =value
@@ -100,7 +94,6 @@ class ApostaDisponivel extends Component {
           <List.Item>
           {this.mudarOdds()}
           <div className="item">
-          {this.renderRedirect()}
             <Table>
               <TableBody>
                 <TableRow>

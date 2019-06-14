@@ -3,7 +3,15 @@ DROP DATABASE IF EXISTS betess_users;
 
 CREATE DATABASE betess_users;
 
+
 USE betess_users;
+
+
+ALTER DATABASE betess_users
+
+CHARACTER SET = utf8mb4
+
+COLLATE = utf8mb4_unicode_ci;
 
 -- User [User]
 create table `user` (
