@@ -38,8 +38,18 @@ class DesportosDiv extends PureComponent {
         .catch(err=>alert(err))
     }
     render() {
-        const data = this.state.data ?  this.state.data : []
         
+        let nomeExiste = false
+        const data = this.state.data ?  this.state.data : []
+
+        data.forEach(desporto=>{
+            if(desporto.nome.toUpperCase()===this.state.nome.toUpperCase()){
+                console.log("existe "+desporto.nome);
+                nomeExiste = true
+            }
+        })
+
+
         return (
             <div>
                 <div className="ui column stackable center page grid">
@@ -63,7 +73,7 @@ class DesportosDiv extends PureComponent {
                                     <div className="ui basic label center">=></div>
                                     <input type="text" placeholder="Nome do Desporto"  onChange={({target: {value}}) => this.saveNome(value) } />
                                 </div>
-                                <button  disabled={ this.state.nome===""} className="ui button" onClick = {() => this.criarDesporto() }  >
+                                <button  disabled={ this.state.nome==="" || nomeExiste} className="ui button" onClick = {() => this.criarDesporto() }  >
                                             Criar Desporto
                                 </button>
                                 </div>

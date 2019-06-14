@@ -68,6 +68,14 @@ class CompsDiv extends PureComponent {
             }
                 
         });
+
+        let nomeExiste = false
+        competicoes.forEach(comp=>{
+            if(comp.nome.toUpperCase()===this.state.nome.toUpperCase()){
+                console.log("existe "+comp.nome);
+                nomeExiste = true
+            }
+        })
         
         return (
             <div>
@@ -92,7 +100,7 @@ class CompsDiv extends PureComponent {
                                     <div className="ui basic label center">=></div>
                                     <input type="text" placeholder="Nome da Competição"  onChange={({target: {value}}) => this.saveNome(value) } />
                                 </div>
-                                <button  disabled={ this.state.nome===""} className="ui button" onClick = {() => this.criarCompeticao() }  >
+                                <button  disabled={ this.state.nome==="" || nomeExiste} className="ui button" onClick = {() => this.criarCompeticao() }  >
                                             Adicionar Competição
                                 </button>
                                 </div>

@@ -69,7 +69,14 @@ class FasesDiv extends PureComponent {
                 });
     
         });
-            
+        
+        let nomeExiste = false
+        fases.forEach(fase=>{
+            if(fase.nome.toUpperCase()===this.state.nome.toUpperCase()){
+                console.log("existe "+fase.nome);
+                nomeExiste = true
+            }
+        })
         
         return (
             <div>
@@ -94,7 +101,7 @@ class FasesDiv extends PureComponent {
                                     <div className="ui basic label center">=></div>
                                     <input type="text" placeholder="Nome da Nova Fase"  onChange={({target: {value}}) => this.saveNome(value) } />
                                 </div>
-                                <button  disabled={ this.state.nome===""} className="ui button" onClick = {() => this.CriarFase() }  >
+                                <button  disabled={ this.state.nome==="" || nomeExiste} className="ui button" onClick = {() => this.CriarFase() }  >
                                             Adicionar Fase
                                 </button>
                                 </div>
