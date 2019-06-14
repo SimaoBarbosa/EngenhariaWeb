@@ -176,3 +176,24 @@ export const makeUserVip= (id) => (
 export const makeUserNormal= (id) => (
   jsonFetch(generateUrl(BASE_URL, '/api_users/users/normal/'+id),{method:'post'}) 
 );
+
+
+export const getTodasCompeticoes = () => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes'), { method: 'get' })
+);
+
+export const getTodasEquipas = () => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/equipas'), { method: 'get' })
+);
+
+export const addEquipaComp = (id_comp,id_team) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes/addEquipa/'+id_comp+'/'+id_team), { method: 'post' })
+);
+
+export const remEquipaComp = (id_comp,id_team) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/competicoes/removeEquipa/'+id_comp+'/'+id_team), { method: 'post' })
+);
+
+export const createTeam = (body) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/equipas/insert/'), { method: 'post' ,body})
+);
