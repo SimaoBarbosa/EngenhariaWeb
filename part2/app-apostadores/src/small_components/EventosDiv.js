@@ -15,6 +15,7 @@ class EventosDiv extends PureComponent {
             id_competicao:props.data.id_competicao,
             id_fase: props.data.id_fase,
             action:props.data.action,
+            titulo:props.titulo,
             eventos:[],
         };
     }
@@ -32,7 +33,8 @@ class EventosDiv extends PureComponent {
                 id_regiao:props.data.id_regiao,
                 id_competicao:props.data.id_competicao,
                 id_fase: props.data.id_fase,
-                action:props.data.action
+                action:props.data.action,
+                titulo:props.titulo
             })
     }
     
@@ -99,6 +101,7 @@ class EventosDiv extends PureComponent {
                     <div className="wide column">
                         <div className="ui container center aligned">
                             <Header style={{marginTop: "15px"}} color='orange' as='h2'>Lista de Eventos</Header>
+                            <Header style={{marginTop: "15px"}} color='grey' as='h4'>{this.state.titulo}</Header>
                         </div>
                         <div className="ui stacked segment left aligned">
                             <div className="ui list">

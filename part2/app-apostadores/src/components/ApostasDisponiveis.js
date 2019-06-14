@@ -38,7 +38,7 @@ class ApostasDisponiveis extends Component {
     }
 
     render() {
-        const apostas = this.state.apostas;
+        const apostas = this.state.apostas ?  this.state.apostas : []
         const evento = this.state.evento;
         return (
             <div >

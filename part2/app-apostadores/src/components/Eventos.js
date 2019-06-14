@@ -16,7 +16,8 @@ class Eventos extends PureComponent {
             id_regiao:"-1",
             id_competicao:"-1",
             id_fase: "-1",
-            action:-1
+            action:-1,
+            titulo:""
         };
     }
 
@@ -96,13 +97,6 @@ class Eventos extends PureComponent {
         
     }
 
-    changeFase2(props,key){
-        
-        if(props.level===3){
-            this.setState({id_fase:key});
-            //console.log("ID_FASE Eventos:"+this.state.id_fase);
-        }
-    }
     changeFase(props,key){
         console.log("propsParent:");
         console.log(props.parent);
@@ -110,26 +104,37 @@ class Eventos extends PureComponent {
         let key_parent = splittedParent[splittedParent.length-1]
         console.log("Key Parent:");
         console.log(key_parent);
+        
+        let splitted =key.split('/')
+        key = splitted[splitted.length-1]
         console.log("Key");
         console.log(key);
-        
-        
-        
+        console.log(splitted);
+        let titulo = ""
+        let text = true
+        splitted.forEach(elem=>{
+            if(text)  titulo+= titulo!=="" ? " → " + elem : elem
+            text = !text
+        })
+            
+        console.log(titulo);
         
         switch(props.level){
             case 0 :  {
                 this.setState({
                     action:0,
                     id_desporto:key,
+                    titulo:titulo
                 });
                 break;
             }
             case 1 :  {
                 
                 this.setState({
-                    action:1,
+                    action:1,   
                     id_desporto:key_parent,
-                    id_regiao:key
+                    id_regiao:key,
+                    titulo:titulo
                 });
                 
                 break;
@@ -139,6 +144,7 @@ class Eventos extends PureComponent {
                 this.setState({
                     action:2,
                     id_competicao:key,
+                    titulo:titulo
                 });
                 break;
             }
@@ -147,7 +153,8 @@ class Eventos extends PureComponent {
                 this.setState({
                     action:3,
                     id_fase:key,
-                    id_competicao : key_parent
+                    id_competicao : key_parent,
+                    titulo:titulo
                 });
                 break;
             }
@@ -173,8 +180,6 @@ class Eventos extends PureComponent {
                     <TreeMenu 
                         data={sidebar_content} 
                         onClickItem={({ key, label, ...props }) => {
-                            let splitted =key.split('/')
-                            key = splitted[splitted.length-1]
                             this.changeFase(props,key)
                         }}
                         hasSearch={false}
@@ -189,7 +194,7 @@ class Eventos extends PureComponent {
                             id_fase: this.state.id_fase,
                             action:this.state.action
                         }
-                    } history={this.props.history}  />
+                    } history={this.props.history} titulo={this.state.titulo}  />
                 </div>
             </div>
         );

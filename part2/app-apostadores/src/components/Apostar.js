@@ -45,13 +45,19 @@ class Apostar extends Component {
         if(userType==='normal') {
             criar_aposta_concreta(body)
             .then(async res=>{
-                console.log("SIIIII")
                 console.log(res);
-                await this.setState({
-                    message: 'Aposta realizada com sucesso!',
-                    error: ''
-                })
-                console.log("YAAAAAA")
+                if(res.success===null){
+                    await this.setState({
+                        message: 'Aposta realizada com sucesso!',
+                        error: ''
+                    })
+                }
+                else if (res.success===false){
+                    await this.setState({
+                        message: '',
+                        error: res.message
+                    })
+                }
                 await sleep(3000)
                 this.setState({
                     redirect: true
@@ -68,13 +74,19 @@ class Apostar extends Component {
         else{
             criar_aposta_concretaVIP(body)
             .then(async res=>{
-                console.log("SIIIII")
                 console.log(res);
-                await this.setState({
-                    message: 'Aposta realizada com sucesso!',
-                    error: ''
-                })
-                console.log("YAAAAAA")
+                if(res.success===null){
+                    await this.setState({
+                        message: 'Aposta realizada com sucesso!',
+                        error: ''
+                    })
+                }
+                else if (res.success===false){
+                    await this.setState({
+                        message: '',
+                        error: res.message
+                    })
+                }
                 await sleep(3000)
                 this.setState({
                     redirect: true
