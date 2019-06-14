@@ -172,11 +172,11 @@ class ApostasDisponiveis extends Component {
                         {this.previewNovaAposta()}
                     </div>
                     </div>
-                    <div className="ui column stackable center page grid">
+                    <div style={{marginTop: "20px"}} className="ui column stackable center aligned page grid">
                     <div className="wide column">
                         <div>
                             <div className="ui right labeled input" >
-                                    <div className="ui basic label center">Titulo</div>
+                                    <div className="ui basic label center">Título</div>
                                     <input type="text" placeholder="Nova Aposta"  onChange={({target: {value}}) => this.saveTitulo(value) } />
                             </div>
                             <div className="ui right labeled input" >
@@ -194,7 +194,7 @@ class ApostasDisponiveis extends Component {
                     
                 </div>
 
-                <div className="ui column stackable center page grid">
+                <div className="ui column stackable center aligned page grid">
                     <div className="wide column">
                         <div>
                             <div className="ui right labeled input" >
