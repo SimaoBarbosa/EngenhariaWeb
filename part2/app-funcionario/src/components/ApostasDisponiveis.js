@@ -45,35 +45,48 @@ class ApostasDisponiveis extends Component {
         this.setState({
             opcoes:opcoes,
             opcao:"",
-            odd:""
+            odd:"",
+            action:0
         })
     }
-    criarAposta(){
+    async criarAposta(){
         const aposta= {
             titulo: this.state.nome,
             vip:this.state.vip,
             id_evento:this.state.evento.id_evento
         }
-        createApostaDisponivel(aposta)
-        .then(novaAposta=>{
-            this.state.opcoes.forEach(opcao => {
-                const bodyOpcao={
-                    opcao:opcao.opcao,
-                    odd:opcao.odd,
-                    aposta:novaAposta.id_aposta_disponivel
-                }
-                createAddOpcao(bodyOpcao)
-                .catch(err=>alert("Erro a adicionar opcao"+err))
-                
-            });
-            makeAvailable(novaAposta.id_aposta_disponivel)
-            .then(resp=>{
-                console.log("Sucesso")
-                window.location.reload()
-            })
-            .catch(err=>alert("Erro a tornar disponivel"+err))
+        let novaAposta = await createApostaDisponivel(aposta)
+        this.state.opcoes.forEach(async opcao => {
+            const bodyOpcao={
+                opcao:opcao.opcao,
+                odd:opcao.odd,
+                aposta:novaAposta.id_aposta_disponivel
+            }
+            novaAposta.opcoes=[]
+            let novaopcao = await createAddOpcao(bodyOpcao)
+            novaAposta.opcoes.push(novaopcao)
         })
-        .catch(err=>alert("Erro a criar apostaDisp"+err))
+        try {
+            await makeAvailable(novaAposta.id_aposta_disponivel);
+        } catch (error) {
+            this.setState({
+                vip:"",
+                nome:"",
+                opcoes:[]
+            })
+            alert("Erro :"+ error)
+            console.log(error);
+            return;
+             
+        }
+        let apostas = this.state.apostas
+        apostas.push(novaAposta)
+        this.setState({
+            apostas:apostas,
+            vip:"",
+            nome:"",
+            opcoes:[]
+        })
 
     }
     componentDidMount(){    
@@ -96,8 +109,16 @@ class ApostasDisponiveis extends Component {
         let vip = this.state.vip ? "VIP" : "" 
         if(this.state.nome!=="" || this.state.opcoes.length>0 )
         return (
+            <div>
+                
+            <hr></hr><br></br>
+            <div className="ui grid center aligned">
+            <List.Item textAlign={'center'}>
+                <Header as="h3"><b>Preview da nova aposta</b></Header>
+            </List.Item>
+            </div>
+            <br></br>  
             <List.Item>
-            <br></br>
             <div className="item">
               <Table color={"black" } inverted >
                 <TableBody>
@@ -123,6 +144,7 @@ class ApostasDisponiveis extends Component {
               </Table>
             </div>
           </List.Item>
+          </div>
         );
     }
     async reload(){
@@ -206,7 +228,7 @@ class ApostasDisponiveis extends Component {
                                     </div>
                             </div>
                             <button disabled={this.state.nome==="" || this.state.opcoes.length<2 }
-                                  className="ui button" onClick = {() => this.criarAposta() }  >
+                                  className="ui orange button" onClick = {() => this.criarAposta() }  >
                                         Criar Nova Aposta
                             </button>
                         </div>
@@ -226,7 +248,7 @@ class ApostasDisponiveis extends Component {
                                     <input type="number" step="0.01"  placeholder="Odd" value={this.state.odd} onChange={({target: {value}}) => this.saveNovaOdd(value) } />
                                     
                             </div>
-                            <button disabled={this.state.opcao==="" || this.state.odd==="" || this.state.odd<=0  } className="ui button" onClick={() => this.addOpcao() }  >
+                            <button disabled={this.state.opcao==="" || this.state.odd==="" || this.state.odd<=0  } className="ui black button" onClick={() => this.addOpcao() }  >
                                         Adicionar Opção
                             </button>
                         </div>
