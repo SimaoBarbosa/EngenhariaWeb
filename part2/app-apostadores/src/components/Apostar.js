@@ -46,7 +46,7 @@ class Apostar extends Component {
             criar_aposta_concreta(body)
             .then(async res=>{
                 console.log(res);
-                if(res.success===null){
+                if(res.success===undefined||res.sucess===true){
                     await this.setState({
                         message: 'Aposta realizada com sucesso!',
                         error: ''
@@ -75,7 +75,7 @@ class Apostar extends Component {
             criar_aposta_concretaVIP(body)
             .then(async res=>{
                 console.log(res);
-                if(res.success===null){
+                if(res.success===undefined||res.sucess===true){
                     await this.setState({
                         message: 'Aposta realizada com sucesso!',
                         error: ''
