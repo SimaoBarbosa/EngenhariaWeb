@@ -55,15 +55,15 @@ class FasesDiv extends PureComponent {
         let nomeCompeticao = ""
         data.forEach( desporto => {
                 console.log(desporto);
-                regioes = desporto.regioes
-                nomedesporto=desporto.nome
+                regioes = desporto.regioes ? desporto.regioes : []
+                nomedesporto= desporto.nome ? desporto.nome : ""
                 regioes.forEach(reg=>{
-                        nomeregiao=reg.nome
-                        competicoes=reg.competicoes
+                        nomeregiao= reg.nome ? reg.nome : ""
+                        competicoes= reg.competicoes ? reg.competicoes : []
                         competicoes.forEach(comp=>{
                             if(comp.id_competicao.toString()===this.state.id_competicao.toString()){
-                                nomeCompeticao = comp.nome
-                                fases = comp.fases
+                                nomeCompeticao = comp.nome ? comp.nome : ""
+                                fases = comp.fases ? comp.fases : []
                             }
                         })
                 });

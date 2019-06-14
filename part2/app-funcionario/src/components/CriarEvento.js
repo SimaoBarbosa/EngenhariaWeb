@@ -47,7 +47,9 @@ class CriarEvento extends PureComponent {
         const newname =  this.state.nome!=="" ?  this.state.nome + " x " +equipa.nome : equipa.nome
         const oldEquipasAdded = this.state.equipasAdded
         oldEquipasAdded.push(equipa)
-        this.setState({ 
+        let filtered = this.state.equipas.filter(function(el) { return el.id_equipa !== equipa.id_equipa; }); 
+        this.setState({
+            equipas :  filtered,
             equipasAdded :  oldEquipasAdded ,
             nome : newname
         })

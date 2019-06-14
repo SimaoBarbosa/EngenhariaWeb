@@ -40,8 +40,10 @@ class ApostaDisponivel extends Component {
     }
   
     saveNovaOpcao(value,opcao){
+        
         let novasOpcoes = this.state.novasOpcoes
         novasOpcoes[opcao.id_opcao] =value
+        
         this.setState({
             novasOpcoes: novasOpcoes
         })
@@ -56,7 +58,7 @@ class ApostaDisponivel extends Component {
 
                     const bodyOpcao = {
                       id_opcao: parseInt(id_opcao) ,
-                      odd : parseInt(novasOpcoes[id_opcao])
+                      odd : novasOpcoes[id_opcao]
                     }
                     console.log(bodyOpcao);
                     
