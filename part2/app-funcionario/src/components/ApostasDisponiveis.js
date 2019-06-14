@@ -97,6 +97,7 @@ class ApostasDisponiveis extends Component {
         if(this.state.nome!=="" || this.state.opcoes.length>0 )
         return (
             <List.Item>
+            <br></br>
             <div className="item">
               <Table color={"black" } inverted >
                 <TableBody>
@@ -174,12 +175,22 @@ class ApostasDisponiveis extends Component {
                 <Container className="" width={'2'}>
                 <div className="twelve wide column">
                     <div className="ui stacked segment left aligned">
+                    
                     <div className="ui list">
+                    { apostas.length>0 ?
+                        <div>
                         {apostas.map(aposta => ( 
                             <ApostaDisponivel aposta={aposta} evento={evento}  key={aposta.id_aposta_disponivel} history={this.props.history} action={this.state.action} />
                         ))}
+                        </div>
+                        :
+                    <div>
+                        <Header>Sem Apostas disponíveis!</Header>
+                    </div>
+                    }
                         {this.previewNovaAposta()}
                     </div>
+                    
                     </div>
                     <div style={{marginTop: "20px"}} className="ui column stackable center aligned page grid">
                     <div className="wide column">

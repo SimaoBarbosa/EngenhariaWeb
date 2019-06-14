@@ -13,7 +13,8 @@ class ApostaDisponivel extends Component {
             redirect:false,
             opcao:{},
             action:this.props.action,
-            novasOpcoes:{}
+            novasOpcoes:{},
+            deleted:false
         };
     }
 
@@ -25,8 +26,8 @@ class ApostaDisponivel extends Component {
           }
           endAposta(bodyEndBet)
           .then(resp=>{
-            alert("Sucesso");
-            window.location.reload()
+            console.log(resp);
+            this.setState({deleted:true})
           })
           .catch(res=>alert(res))
       }
@@ -98,7 +99,7 @@ class ApostaDisponivel extends Component {
         let vip = aposta.vip ? "VIP" : "" 
         return (
           <List.Item>
-          <div className="item">
+          <div className="item" hidden={this.state.deleted}>
             <Table>
               <TableBody>
                 <TableRow>
