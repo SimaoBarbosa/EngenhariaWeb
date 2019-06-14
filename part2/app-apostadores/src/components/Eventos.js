@@ -12,7 +12,11 @@ class Eventos extends PureComponent {
         this.state = {
             sidebar_content:[],
             data:[],
-            id_fase: "-1"
+            id_desporto:"-1",
+            id_regiao:"-1",
+            id_competicao:"-1",
+            id_fase: "-1",
+            action:-1
         };
     }
 
@@ -39,7 +43,7 @@ class Eventos extends PureComponent {
                     })
                     if(FasesBar.length>0){
                         CompeticoesBar.push({
-                            key: comp.nome,
+                            key: comp.nome + "/"+comp.id_competicao,
                             label: comp.nome,
                             nodes: FasesBar,
                         })
@@ -47,7 +51,7 @@ class Eventos extends PureComponent {
                 })
                 if(CompeticoesBar.length>0){
                     regioesBar.push({
-                        key: regiao.nome,
+                        key: regiao.nome + "/"+regiao.id_regiao ,
                         label: regiao.nome,
                         nodes: CompeticoesBar,
                     })
@@ -55,7 +59,7 @@ class Eventos extends PureComponent {
             })
             if(regioesBar.length>0){
                 sidebar.push({
-                    key: desporto.nome,
+                    key: desporto.nome + "/"+desporto.id_desporto ,
                     label: desporto.nome,
                     nodes: regioesBar,
                 })
@@ -92,11 +96,64 @@ class Eventos extends PureComponent {
         
     }
 
-    changeFase(props,key){
+    changeFase2(props,key){
         
         if(props.level===3){
             this.setState({id_fase:key});
             //console.log("ID_FASE Eventos:"+this.state.id_fase);
+        }
+    }
+    changeFase(props,key){
+        console.log("propsParent:");
+        console.log(props.parent);
+        let splittedParent =props.parent.split('/')
+        let key_parent = splittedParent[splittedParent.length-1]
+        console.log("Key Parent:");
+        console.log(key_parent);
+        console.log("Key");
+        console.log(key);
+        
+        
+        
+        
+        switch(props.level){
+            case 0 :  {
+                this.setState({
+                    action:0,
+                    id_desporto:key,
+                });
+                break;
+            }
+            case 1 :  {
+                
+                this.setState({
+                    action:1,
+                    id_desporto:key_parent,
+                    id_regiao:key
+                });
+                
+                break;
+            }
+            case 2 :  {
+                
+                this.setState({
+                    action:2,
+                    id_competicao:key,
+                });
+                break;
+            }
+            case 3 :  {
+                
+                this.setState({
+                    action:3,
+                    id_fase:key,
+                    id_competicao : key_parent
+                });
+                break;
+            }
+            default:{
+
+            }
         }
     }
 
@@ -124,7 +181,15 @@ class Eventos extends PureComponent {
                     />
                 </div>
                 <div className="twelve wide column">        
-                    <EventosDiv id_fase={this.state.id_fase} history={this.props.history} />
+                    <EventosDiv data={
+                        {
+                            id_desporto:this.state.id_desporto,
+                            id_regiao:this.state.id_regiao,
+                            id_competicao:this.state.id_competicao,
+                            id_fase: this.state.id_fase,
+                            action:this.state.action
+                        }
+                    } history={this.props.history}  />
                 </div>
             </div>
         );

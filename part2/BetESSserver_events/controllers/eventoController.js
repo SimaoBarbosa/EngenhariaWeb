@@ -20,7 +20,10 @@ module.exports.findDisponiveis = () => {
             },
             {
                 association: 'fase', 
-                include: ['competicao']
+                include: {
+                    association:'competicao',
+                    include:['desporto']
+                }
             },
         ]
     });

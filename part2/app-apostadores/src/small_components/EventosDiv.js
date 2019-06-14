@@ -8,17 +8,32 @@ class EventosDiv extends PureComponent {
     constructor(props) {
         super(props);
         
-        let id_fase = -1
-        if(props.id_fase>0) id_fase=props.id_fase
+        
         this.state = {
-            id_fase:id_fase,
+            id_desporto:props.data.id_desporto,
+            id_regiao:props.data.id_regiao,
+            id_competicao:props.data.id_competicao,
+            id_fase: props.data.id_fase,
+            action:props.data.action,
             eventos:[],
         };
     }
     
     componentWillReceiveProps(props) {
-        if(props.id_fase.toString() !== this.props.id_fase.toString())
-            this.setState({id_fase:props.id_fase})
+        if(
+            props.data.id_desporto.toString() !== this.props.data.id_desporto.toString() ||
+            props.data.id_regiao.toString() !== this.props.data.id_regiao.toString() ||
+            props.data.id_competicao.toString() !== this.props.data.id_competicao.toString() ||
+            props.data.id_fase.toString() !== this.props.data.id_fase.toString() ||
+            props.data.action.toString() !== this.props.data.action.toString() 
+        ) 
+            this.setState({
+                id_desporto:props.data.id_desporto,
+                id_regiao:props.data.id_regiao,
+                id_competicao:props.data.id_competicao,
+                id_fase: props.data.id_fase,
+                action:props.data.action
+            })
     }
     
     componentDidMount(){
@@ -30,20 +45,53 @@ class EventosDiv extends PureComponent {
     }
 
     render() {
+        console.log("Action:"+this.state.action);
+        
 
-        //console.log("fase:");
-        //console.log(this.state.id_fase);
-        
         let eventos =[]
-        if(this.state.id_fase.toString()!=="-1"){
-            this.state.eventos.forEach(ev=>{
-                if(ev.fase_id_fase.toString()===this.state.id_fase.toString())
-                    eventos.push(ev);
-            })
+        switch(this.state.action){
+            case -1 :{
+                eventos = this.state.eventos
+                break;
+            }
+            case 0 :{
+                this.state.eventos.forEach(ev=>{
+                    if(ev.fase.competicao.desporto_id_desporto.toString()===this.state.id_desporto.toString())
+                        eventos.push(ev);
+                })
+                break;
+            }
+            case 1 :{
+                this.state.eventos.forEach(ev=>{
+                    if(
+                        ev.fase.competicao.desporto_id_desporto.toString()===this.state.id_desporto.toString()
+                                                        &&
+                        ev.fase.competicao.regiao_id_regiao.toString()===this.state.id_regiao.toString() 
+                    )
+                        eventos.push(ev);
+                })
+                break;
+            }
+            case 2 :{
+                this.state.eventos.forEach(ev=>{
+                    if(ev.fase.competicao_id_competicao.toString()===this.state.id_competicao.toString())
+                        eventos.push(ev);
+                })
+                break;
+            }
+            case 3 :{
+                
+                this.state.eventos.forEach(ev=>{
+                    if(ev.fase_id_fase.toString()===this.state.id_fase.toString())
+                        eventos.push(ev);
+                })
+                break;
+            }
+            default:{
+                console.log("How did i get here?");
+            }
         }
-        else eventos = this.state.eventos
-        //console.log(this.state.eventos);
-        
+
         if(!eventos) eventos = []
         return (
             <div>
