@@ -5,6 +5,14 @@ CREATE DATABASE betess_events;
 
 USE betess_events;
 
+
+ALTER DATABASE betess_events
+
+CHARACTER SET = utf8mb4
+
+COLLATE = utf8mb4_unicode_ci;
+
+
 -- Evento [ent1]
 create table `evento` (
    `id_evento`  integer  not null AUTO_INCREMENT,
@@ -12,14 +20,12 @@ create table `evento` (
   primary key (`id_evento`)
 );
 
-
 -- Equipa [ent2]
 create table `equipa` (
    `id_equipa`  integer  not null AUTO_INCREMENT,
    `nome`  varchar(255),
   primary key (`id_equipa`)
 );
-
 
 -- Competicao [ent3]
 create table `competicao` (
