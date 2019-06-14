@@ -39,23 +39,43 @@ class GerirUsers extends Component {
         removeUser(id)
         .then(res=>{
             console.log(res);
-            window.location.reload()
+            let filteredUsers = this.state.users.filter(function(el) { return el.oid !== id; });
+            let filteredNormais = this.state.normais.filter(function(el) { return el.oid !== id; }); 
+            let filteredVips = this.state.vips.filter(function(el) { return el.oid !== id; }); 
+            this.setState({
+                users:filteredUsers,
+                vips:filteredVips,
+                normais:filteredNormais
+            })
+            
         })
         .catch(err=>alert(err))
     }
-    makeVip(id){
-        makeUserVip(id)
+    makeVip(user){
+        makeUserVip(user.oid)
         .then(res=>{
             console.log(res);
-            window.location.reload()
+            let vips =this.state.vips
+            vips.push(user)
+            let filteredNormais = this.state.normais.filter(function(el) { return el.oid !== user.oid; }); 
+            this.setState({
+                vips:vips,
+                normais:filteredNormais
+            })
         })
         .catch(err=>alert(err))
     }
-    makeNormal(id){
-        makeUserNormal(id)
+    makeNormal(user){
+        makeUserNormal(user.oid)
         .then(res=>{
             console.log(res);
-            window.location.reload()
+            let normais =this.state.normais
+            normais.push(user)
+            let filteredVips = this.state.vips.filter(function(el) { return el.oid !== user.oid; }); 
+            this.setState({
+                vips:filteredVips,
+                normais:normais
+            })
         })
         .catch(err=>alert(err))
     }
@@ -107,7 +127,7 @@ class GerirUsers extends Component {
                                                     <Button icon='trash' onClick={() => this.delete(user.oid)}/>
                                                 </div>
                                                 <div className="right floated content">
-                                                    <Button  color="orange" onClick={() => this.makeVip(user.oid)}>Tornar VIP</Button>
+                                                    <Button  color="orange" onClick={() => this.makeVip(user)}>Tornar VIP</Button>
                                                 </div>
                                                 <div className="content">
                                                         <Header color='red' as='h5'>{user.username}</Header>
@@ -133,7 +153,7 @@ class GerirUsers extends Component {
                                                     <Button icon='trash' onClick={() => this.delete(user.oid)}/>
                                                 </div>
                                                 <div className="right floated content">
-                                                    <Button color="black" onClick={() => this.makeNormal(user.oid)}>Tirar VIP</Button>
+                                                    <Button color="black" onClick={() => this.makeNormal(user)}>Tirar VIP</Button>
                                                 </div>
                                                 <div className="content">
                                                         <Header color='red' as='h5'>{user.username}</Header>
