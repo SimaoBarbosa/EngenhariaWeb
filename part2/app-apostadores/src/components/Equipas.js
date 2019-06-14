@@ -87,8 +87,8 @@ class Equipas extends Component {
         }
 
         if (this.state.redirectH){
-           // return <Redirect to={{ pathname: "/historico"}}/>
-            this.props.history.push( "/historico"   )
+            // return <Redirect to={{ pathname: "/historico"}}/>
+            this.props.history.push( "/historico", {equipas: [this.state.equipa]})
         }
 
         return (

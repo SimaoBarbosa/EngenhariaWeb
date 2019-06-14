@@ -79,7 +79,8 @@ module.exports.getEventosDeEquipaVIP = (equipaId) => {
                 resultado_final: {
                     [Op.gt]:-1
                 }
-            }
+            },
+            include: ['opcoes']
         },
         {
             association: 'fase', 

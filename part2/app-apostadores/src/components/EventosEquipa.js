@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Header, List, Table, TableCell, TableRow, TableBody } from 'semantic-ui-react';
-import { getEventosEquipa } from '../services/Api'
+import { getEventosEquipa, getTeamsOfEvent } from '../services/Api'
 
 class EventosEquipa extends Component {
 
@@ -11,7 +11,9 @@ class EventosEquipa extends Component {
             equipa: this.props.location.state.equipa,
             eventos: [],
             redirect: false,
-            evento: {}
+            evento: {},
+            redirectH: false,
+            equipas: [],
         };
     }
 
@@ -21,6 +23,15 @@ class EventosEquipa extends Component {
         }).catch(err => {
             console.log(err)
         })
+    }
+
+    getTeams(evento){
+      getTeamsOfEvent(evento.id_evento).then(equipas => {
+        this.setState({
+          equipas: equipas.equipas,
+          redirectH: true
+        })
+      })
     }
 
     render() {
@@ -34,6 +45,11 @@ class EventosEquipa extends Component {
             this.props.history.push( "/apostas_disponiveis", {evento: this.state.evento} )
             
         }
+
+        if (this.state.redirectH) {
+       		// return <Redirect to={{pathname: "/historico"}} />
+          	this.props.history.push("/historico", {equipas: this.state.equipas})
+      	}
 
         return (
             <div>
@@ -62,6 +78,13 @@ class EventosEquipa extends Component {
                                                     </TableCell>
                                                     <TableCell>
                                                         <div className="right floated">
+                                                        <button 
+									                        className="ui icon button"
+									                        disabled={(localStorage.getItem('userType') === 'normal')}
+									                        onClick={() => this.getTeams(evento)}
+									                    >
+									                    <i className="history icon"></i>
+									                    </button>
                                                         <button
                                                             className="ui orange right labeled icon button"
                                                             onClick={() => this.setState({
