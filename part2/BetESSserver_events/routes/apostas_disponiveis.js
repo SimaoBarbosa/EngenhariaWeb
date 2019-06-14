@@ -84,7 +84,7 @@ router.post('/updateOdd', mw.verifyFuncionario, async (req, res) => {
   .catch(err=>{
       console.log("ERRROR"+err);
       
-      res.status(500).send(err);
+      res.status(500).send("erro");
   })
 });
 

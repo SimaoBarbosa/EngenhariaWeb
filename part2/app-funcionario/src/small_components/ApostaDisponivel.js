@@ -65,16 +65,20 @@ class ApostaDisponivel extends Component {
                         console.log("novaopcaoresposta:");
                         console.log(resp)
                     })
-                //    .catch(res=>alert(res))
+                    .catch(res=>console.log("ERRO:"+res))
                 }
             }
-            window.location.reload()
+            
         }
     }
     render() {
       
         let color = ""
         
+        if (this.state.action===3) {
+          this.mudarOdds()
+        }
+
         switch(this.state.action){
           case 1:{
             color="red"
@@ -92,7 +96,6 @@ class ApostaDisponivel extends Component {
         let vip = aposta.vip ? "VIP" : "" 
         return (
           <List.Item>
-          {this.mudarOdds()}
           <div className="item">
             <Table>
               <TableBody>

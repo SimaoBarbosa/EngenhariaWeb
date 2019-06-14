@@ -124,7 +124,13 @@ class ApostasDisponiveis extends Component {
           </List.Item>
         );
     }
+ //   reload = async () => {
+    async reload(){
+            await sleep(2000)
+            window.location.reload()
+    }
 
+    
     render() {
         const apostas = this.state.apostas;
         const evento = this.state.evento;
@@ -139,6 +145,7 @@ class ApostasDisponiveis extends Component {
                     <Header as='h4'>
                         Data: {evento.datahora.data}, Hora: {evento.datahora.hora}
                     </Header>
+                    {(this.state.action===3) ? <div><img className="ui small image" alt="Loading" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" /><br></br></div> : <div></div>}
                     <button onClick = {() => this.setState({action:1})}
                             disabled={this.state.action!==0}
                             className="ui button red" >
@@ -149,8 +156,9 @@ class ApostasDisponiveis extends Component {
                             className="ui button blue">
                         Mudar Odds
                     </button>
+                    
                     <button className="ui button green" 
-                            onClick = {() => this.setState({action:3}) }
+                            onClick = {() =>{ this.setState({action:3}) ; this.reload() } }
                             disabled={this.state.action!==2}>
                         Confirmar Odds
                     </button>
@@ -215,10 +223,12 @@ class ApostasDisponiveis extends Component {
                 </div>
                 </div>
                 </Container>
-                
             </div>
           );
     }
+}
+const sleep = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
 
 export default ApostasDisponiveis;
