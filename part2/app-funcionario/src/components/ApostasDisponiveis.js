@@ -148,9 +148,10 @@ class ApostasDisponiveis extends Component {
         );
     }
     async reload(){
-            sleep(2000).then(()=>{
+            sleep(20).then(()=>{
                 console.log("donesleep");
-                window.location.reload()
+                this.setState({action:0})
+            //    window.location.reload()
             })
     }
 
@@ -169,7 +170,6 @@ class ApostasDisponiveis extends Component {
                     <Header as='h4'>
                         Data: {evento.datahora.data}, Hora: {evento.datahora.hora}
                     </Header>
-                    {(this.state.action===3) ? <div><img className="ui small image" alt="Loading" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" /><br></br></div> : <div></div>}
                     <button onClick = {() => this.setState({action:1})}
                             disabled={this.state.action!==0}
                             className="ui button red" >

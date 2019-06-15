@@ -50,29 +50,45 @@ class ApostaDisponivel extends Component {
         })
     }
 
-    mudarOdds(){
+   async mudarOdds(){
         if(this.state.action===3){
-            const novasOpcoes = this.state.novasOpcoes
-            console.log(novasOpcoes);
-            if(Object.keys(novasOpcoes).length >0){
-                for (var id_opcao in novasOpcoes) {
+              let aposta = this.state.aposta
+              let novasOpcoes = this.state.novasOpcoes
+              console.log(novasOpcoes);
+              if(Object.keys(novasOpcoes).length >0){
+                  for (var id_opcao in novasOpcoes) {
 
-                    const bodyOpcao = {
-                      id_opcao: parseInt(id_opcao) ,
-                      odd : novasOpcoes[id_opcao]
-                    }
-                    console.log(bodyOpcao);
-                    
-                    updateOdd(bodyOpcao)
-                    .then(resp=>{
-                        console.log("novaopcaoresposta:");
-                        console.log(resp)
-                    })
-                    .catch(res=>console.log("ERRO:"+res))
+                      let bodyOpcao = {
+                        id_opcao: parseInt(id_opcao) ,
+                        odd : novasOpcoes[id_opcao]
+                      }
+                      try{
+                        await updateOdd(bodyOpcao)
+                      }
+                      catch (err){
+                          console.log(err)
+                      }
+                  
+              }
+              console.log("aqui:");
+              console.log(aposta);
+              
+              this.state.aposta.opcoes.forEach(opcao=>{
+                for (var id_opcao in novasOpcoes) {
+                if(opcao.id_opcao.toString()===id_opcao.toString()){
+                  opcao.odd =novasOpcoes[id_opcao]
                 }
-            }
-            
-        }
+              }
+              })
+              
+              this.setState({
+                aposta:aposta,
+                novasOpcoes:[],
+                action:0
+              })
+              
+          }
+      }
     }
     render() {
       
