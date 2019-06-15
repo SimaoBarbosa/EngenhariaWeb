@@ -203,7 +203,7 @@ class Eventos extends PureComponent {
                         hasSearch={false}
                     />
                     <div className="ui container center aligned">
-                        <button disabled={!this.state.hideDesportos }className="ui button" 
+                        <button disabled={!this.state.hideDesportos }className="ui black button" 
                         onClick = {() => {
                             this.setState({
                                 hideEventos :true,

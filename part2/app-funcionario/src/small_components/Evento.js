@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import { List,Table , TableCell, TableRow,TableBody } from 'semantic-ui-react';
+import {Header, List,Table , TableCell, TableRow,TableBody } from 'semantic-ui-react';
 class Evento extends PureComponent {
 
     constructor(props) {
@@ -36,15 +36,18 @@ class Evento extends PureComponent {
                 <TableRow>
                   <TableCell>
                     <div className="content">
-                        <div className="header">{evento.titulo}</div>
-                        <div className="description">{evento.datahora.data}  {evento.datahora.hora} </div>
+                        <Header as='h3'>{evento.titulo}</Header>
+                        <div style={{marginTop: "5px"}} className="description">{evento.datahora.data}  {evento.datahora.hora} </div>
                     </div>
                   </TableCell>
                   <TableCell>
                     {this.renderRedirect()}
-                    <button className="ui right floated button" onClick = {() => this.setRedirect(1) }  >
-                      Ver Apostas
+                    <div className="right floated content">
+                    <button className="ui orange right labeled icon button" onClick = {() => this.setRedirect(1) }  >
+                       <i className="angle right icon"></i>
+                        Gerir Apostas
                     </button>
+                    </div>
                   </TableCell>
                 </TableRow>
               </TableBody>

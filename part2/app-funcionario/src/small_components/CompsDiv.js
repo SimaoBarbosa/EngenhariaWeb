@@ -97,10 +97,10 @@ class CompsDiv extends PureComponent {
                                 ))}
                                 <div>
                                 <div className="ui right labeled input" >
-                                    <div className="ui basic label center">=></div>
+                                    <div className="ui basic label center">→</div>
                                     <input type="text" placeholder="Nome da Competição"  onChange={({target: {value}}) => this.saveNome(value) } />
                                 </div>
-                                <button  disabled={ this.state.nome==="" || nomeExiste} className="ui button" onClick = {() => this.criarCompeticao() }  >
+                                <button  disabled={ this.state.nome==="" || nomeExiste} className="ui black button" onClick = {() => this.criarCompeticao() }  >
                                             Adicionar Competição
                                 </button>
                                 </div>

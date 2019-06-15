@@ -94,7 +94,7 @@ class EventosDiv extends PureComponent {
                 <div className="ui column stackable center page grid">
                     <div className="wide column">
                         <div hidden={this.state.id_fase<0}>
-                            <button  className="ui button" onClick = {() => this.setRedirect() }  >
+                            <button  className="ui black button" onClick = {() => this.setRedirect() }  >
                                         Criar Novo Evento
                             </button>
                         </div>

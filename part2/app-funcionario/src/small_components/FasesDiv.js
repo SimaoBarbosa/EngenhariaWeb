@@ -98,10 +98,10 @@ class FasesDiv extends PureComponent {
                                 ))}
                                 <div>
                                 <div className="ui right labeled input" >
-                                    <div className="ui basic label center">=></div>
+                                    <div className="ui basic label center">→</div>
                                     <input type="text" placeholder="Nome da Nova Fase"  onChange={({target: {value}}) => this.saveNome(value) } />
                                 </div>
-                                <button  disabled={ this.state.nome==="" || nomeExiste} className="ui button" onClick = {() => this.CriarFase() }  >
+                                <button  disabled={ this.state.nome==="" || nomeExiste} className="ui black button" onClick = {() => this.CriarFase() }  >
                                             Adicionar Fase
                                 </button>
                                 </div>
