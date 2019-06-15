@@ -63,7 +63,7 @@ class Login extends Component {
         return (
             <div className="ui stackable grid container center aligned">
                 <div className="eight wide column">
-                    <Header color='orange' size='huge'>BetESS</Header>
+                    <Header color='orange' size='huge' style={{marginTop: "20px"}}>BetESS</Header>
                     <img
                         src={require("../images/logo.png")}
                         className="ui small centered image"
@@ -97,9 +97,8 @@ class Login extends Component {
                             </div>
                             <Header color='red' as='h4'>{this.state.error}</Header>
                             <button
-                                className="ui fluid button"
+                                className="ui fluid button orange"
                                 type="submit"
-                                color="orange"
                                 onClick={this.handleLoginSubmit.bind(this)}
                             >LOGIN</button>
                         </div>

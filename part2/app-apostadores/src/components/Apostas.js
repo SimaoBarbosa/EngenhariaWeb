@@ -49,7 +49,7 @@ class Apostas extends Component {
         return (
             <div className="ui stackable grid container center aligned">
                 <div className="twelve wide column">
-                    <Header color='orange' as='h3'>Apostas em aberto</Header>
+                    <Header color='orange' as='h3' style={{marginTop: "10px"}}>Apostas em aberto</Header>
                     <div className="ui stacked segment left aligned">
                         <div className="ui list">
 
