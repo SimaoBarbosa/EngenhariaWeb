@@ -4,7 +4,10 @@ import {
     Responsive,
     Button,
     Container,
-    Sidebar, Menu, Icon} from 'semantic-ui-react';
+    Sidebar,
+    Menu,
+    Icon
+} from 'semantic-ui-react';
 import Authentication from "./Authentication";
 import {headerStyle} from "../styles/styles";
 
@@ -32,7 +35,7 @@ const NormalBigMenu = (handleLogout) => {
                 <p>NOTIFICAÇÕES</p>
             </NavLink>
             <NavLink className="ui item" to="/vip">
-                <i className="star outline icon" />
+                <i className="star outline icon small" />
                 <p>VIP</p>
             </NavLink>
             <div className="right menu">
@@ -56,21 +59,27 @@ const NormalSmallMenu = (handleLogout, hideMenu) => {
     return (
         <React.Fragment>
             <NavLink className="ui item" to="/home" onClick={() => hideMenu()}>
+                <i className="home icon" />
                 <p>EVENTOS</p>
             </NavLink>
             <NavLink className="ui item" to="/equipas" onClick={() => hideMenu()}>
+                <i className="search icon" />
                 <p>EQUIPAS</p>
             </NavLink>
             <NavLink className="ui item" to="/apostas" onClick={() => hideMenu()}>
+                <i className="dollar sign icon" />
                 <p>APOSTAS</p>
             </NavLink>
             <NavLink className="ui item" to="/perfil" onClick={() => hideMenu()}>
+                <i className="user icon" />
                 <p>PERFIL</p>
             </NavLink>
             <NavLink className="ui item" to="/notificacoes" onClick={() => hideMenu()}>
+                <i className="bell icon" />
                 <p>NOTIFICAÇÕES</p>
             </NavLink>
             <NavLink className="ui item" to="/vip" onClick={() => hideMenu()}>
+                <i className="star outline icon" />
                 <p>VIP</p>
             </NavLink>
             <div className="right menu">
@@ -137,18 +146,23 @@ const VIPSmallMenu = (handleLogout, hideMenu) => {
     return (
         <React.Fragment>
             <NavLink className="ui item" to="/home" onClick={() => hideMenu()}>
+                <i className="home icon" />
                 <p>EVENTOS</p>
             </NavLink>
             <NavLink className="ui item" to="/equipas" onClick={() => hideMenu()}>
+                <i className="search icon" />
                 <p>EQUIPAS</p>
             </NavLink>
             <NavLink className="ui item" to="/apostas" onClick={() => hideMenu()}>
+                <i className="dollar sign icon" />
                 <p>APOSTAS</p>
             </NavLink>
             <NavLink className="ui item" to="/perfil" onClick={() => hideMenu()}>
+                <i className="user icon" />
                 <p>PERFIL</p>
             </NavLink>
             <NavLink className="ui item" to="/notificacoes" onClick={() => hideMenu()}>
+                <i className="bell icon" />
                 <p>NOTIFICAÇÕES</p>
             </NavLink>
             <div className="right menu">
@@ -229,7 +243,7 @@ class Header extends React.Component {
                     >
                         <Menu.Item
                             position={'right'}
-                            icon={'close' }
+                            icon={'close'}
                             onClick={this.handleHideClick}
                         />
                         {
