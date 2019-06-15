@@ -24,10 +24,19 @@ class Eventos extends PureComponent {
             id_fase: -1,
             id_desporto:-1,
             id_regiao : -1,
-            id_competicao : -1
+            id_competicao : -1,
+            update:0
         };
     }
-
+    handleToUpdate = (data) => {
+        console.log('We pass data from Child to Parent');
+        console.log(data);
+        
+        this.setState({
+            data:data,
+            update: this.state.update+1
+        })
+    }
     treeMenuData(){
         const sidebar=[];
         this.state.data.forEach( desporto =>{
@@ -80,8 +89,7 @@ class Eventos extends PureComponent {
                 })
             }
         } )
-
-        this.setState({sidebar_content:sidebar})
+        return sidebar
     }
     
     componentDidMount(){
@@ -100,7 +108,8 @@ class Eventos extends PureComponent {
                                 .then(fases=>{
                                     comp.fases = fases.fases
                                     this.setState({data:desps})
-                                    this.treeMenuData();
+                                    let sidebar =this.treeMenuData();
+                                    this.setState({sidebar_content:sidebar})
                                 })
                             })
                         })
@@ -183,7 +192,8 @@ class Eventos extends PureComponent {
     }
 
     render() {
-        const sidebar_content=this.state.sidebar_content;
+        
+        const sidebar_content= this.treeMenuData()
 
         return (
             <div className="ui grid">
@@ -222,16 +232,16 @@ class Eventos extends PureComponent {
                         <EventosDiv id_fase={this.state.id_fase} id_competicao={this.state.id_competicao}  history={this.props.history}/>
                     </div>
                     <div hidden={this.state.hideDesportos} >   
-                        <DesportosDiv data={this.state.data} />
+                        <DesportosDiv data={this.state.data} handleToUpdate = {this.handleToUpdate}/>
                     </div>
                     <div hidden={this.state.hideRegioes} >   
-                        <RegioesDiv id_desporto={this.state.id_desporto}  data={this.state.data} />
+                        <RegioesDiv id_desporto={this.state.id_desporto}  data={this.state.data} handleToUpdate = {this.handleToUpdate}/>
                     </div>
                     <div hidden={this.state.hideComps} >   
-                        <CompsDiv id_regiao={this.state.id_regiao} id_desporto={this.state.id_desporto} data={this.state.data}  />
+                        <CompsDiv id_regiao={this.state.id_regiao} id_desporto={this.state.id_desporto} data={this.state.data} handleToUpdate = {this.handleToUpdate} />
                     </div> 
                     <div hidden={this.state.hideFases} >   
-                        <FasesDiv id_competicao={this.state.id_competicao} data={this.state.data} />
+                        <FasesDiv id_competicao={this.state.id_competicao} data={this.state.data} handleToUpdate = {this.handleToUpdate}/>
                     </div> 
                 </div>
             </div>
