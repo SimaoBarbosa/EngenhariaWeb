@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import {createEvento,getEquipasOfComp} from '../services/Api'
 import {Redirect } from 'react-router-dom';
-import {Button, Header} from 'semantic-ui-react';
+import {Button, Header,Popup} from 'semantic-ui-react';
 
 
 class CriarEvento extends PureComponent {
@@ -103,7 +103,9 @@ class CriarEvento extends PureComponent {
                                 {this.state.equipas.map((equipa) => 
                                     <div key={equipa.id_equipa} className="item">
                                         <div className="right floated content">
-                                            <Button icon='add' onClick={() => this.addEquipa(equipa)}/>
+                                        <Popup content="Adicionar equipa ao evento" trigger={
+                                            <Button icon='add' color="orange" onClick={() => this.addEquipa(equipa)}/>
+                                        }/>
                                         </div>
                                         <div className="content">
                                                 <Header color='red' as='h3'>{equipa.nome}</Header>

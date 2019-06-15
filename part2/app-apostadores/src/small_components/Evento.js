@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import { List,Table , TableCell, TableRow,TableBody, Header } from 'semantic-ui-react';
+import {Popup,Button, List,Table , TableCell, TableRow,TableBody, Header } from 'semantic-ui-react';
 import { getTeamsOfEvent } from './../services/Api';
 
 class Evento extends PureComponent {
@@ -49,13 +49,14 @@ class Evento extends PureComponent {
                   </TableCell>
                   <TableCell>
                     <div className="right floated content">
-                      <button 
+                    <Popup content="Ver histórico de resultados" trigger={
+                      <Button 
                         className="ui icon button"
+                        icon="history"
                         disabled={(localStorage.getItem('userType') === 'normal')}
                         onClick={() => this.getTeams()}
-                      >
-                        <i className="history icon"></i>
-                      </button>
+                      />
+                    }/>
                       <button
                         className="ui orange right labeled icon button"
                         onClick = {() => this.setState({

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Header } from 'semantic-ui-react';
+import { Header ,Popup,Button} from 'semantic-ui-react';
 import { getTodasCompeticoes, getTodasEquipas,addEquipaComp ,createTeam,remEquipaComp} from './../services/Api';
 import _ from 'lodash';
 
@@ -267,16 +267,17 @@ class Equipas extends Component {
                                     <div key={e.id_equipa} className="item">
                                         <div className="right floated content">
                                         {(!this.state.verEquipas) ?
-                                            <button
-                                                disabled={!this.state.verEquipas && !this.state.adicionar}
-                                                className="ui orange add icon button"
-                                                onClick={() => this.addEquipa(
-                                                    e,
-                                                    this.state.id_competicao
-                                                )}
-                                            >
-                                                <i className="add icon"></i> 
-                                            </button>
+                                            <Popup content="Adicionar equipa à competição" trigger={
+                                                <Button
+                                                    disabled={!this.state.verEquipas && !this.state.adicionar}
+                                                    icon="add"
+                                                    className="ui orange add icon button"
+                                                    onClick={() => this.addEquipa(
+                                                        e,
+                                                        this.state.id_competicao
+                                                    )}
+                                                />
+                                            }/>
                                             :
                                             <button
                                                 disabled={!this.state.verEquipas && !this.state.adicionar}

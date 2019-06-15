@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Button, Header } from 'semantic-ui-react';
+import { Button, Header,Popup } from 'semantic-ui-react';
 import {allApostadores,removeUser,makeUserVip,makeUserNormal} from '../services/Api'
 class GerirUsers extends Component {
 
@@ -124,10 +124,12 @@ class GerirUsers extends Component {
                                         normais.map((user) => 
                                             <div key={user.oid} className="item">
                                                 <div className="right floated content">
-                                                    <Button icon='trash' onClick={() => this.delete(user.oid)}/>
+                                                    <Popup content="Apagar utilizador" trigger={
+                                                        <Button icon='trash' onClick={() => this.delete(user.oid)}/>}/>
                                                 </div>
                                                 <div className="right floated content">
-                                                    <Button  color="orange" onClick={() => this.makeVip(user)}>Tornar VIP</Button>
+                                                    <Popup content="Tornar VIP" trigger={
+                                                        <Button icon="star" color="orange" onClick={() => this.makeVip(user)}/>}/>
                                                 </div>
                                                 <div className="content">
                                                         <Header color='red' as='h5'>{user.username}</Header>
@@ -150,10 +152,12 @@ class GerirUsers extends Component {
                                         vips.map((user) => 
                                             <div key={user.oid} className="item">
                                                 <div className="right floated content">
-                                                    <Button icon='trash' onClick={() => this.delete(user.oid)}/>
+                                                    <Popup content="Apagar utilizador" trigger={
+                                                        <Button icon='trash' onClick={() => this.delete(user.oid)}/>}/>
                                                 </div>
                                                 <div className="right floated content">
-                                                    <Button color="black" onClick={() => this.makeNormal(user)}>Tirar VIP</Button>
+                                                    <Popup content="Retirar VIP" trigger={
+                                                        <Button icon="star" color="black" onClick={() => this.makeNormal(user)}/>}/>
                                                 </div>
                                                 <div className="content">
                                                         <Header color='red' as='h5'>{user.username}</Header>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Header, List, Table, TableCell, TableRow, TableBody } from 'semantic-ui-react';
+import { Button,Popup,Header, List, Table, TableCell, TableRow, TableBody } from 'semantic-ui-react';
 import { getEventosEquipa, getTeamsOfEvent } from '../services/Api'
 
 class EventosEquipa extends Component {
@@ -78,13 +78,14 @@ class EventosEquipa extends Component {
                                                     </TableCell>
                                                     <TableCell>
                                                         <div className="right floated">
-                                                        <button 
-									                        className="ui icon button"
+                                                        <Popup content="Ver histórico de resultados" trigger={
+                                                        <Button 
+                                                            className="ui icon button"
+                                                            icon="history"
 									                        disabled={(localStorage.getItem('userType') === 'normal')}
 									                        onClick={() => this.getTeams(evento)}
-									                    >
-									                    <i className="history icon"></i>
-									                    </button>
+									                    />
+                                                        }/>
                                                         <button
                                                             className="ui orange right labeled icon button"
                                                             onClick={() => this.setState({

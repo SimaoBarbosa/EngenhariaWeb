@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Header} from 'semantic-ui-react';
+import {Popup,Button, Header} from 'semantic-ui-react';
 import { getNotificacoes, removerNotificacao } from './../services/Api';
 
 class Notificacoes extends Component {
@@ -55,7 +55,9 @@ class Notificacoes extends Component {
                                 this.state.notifications.map((n) => 
                                     <div key={n.id_notificacao} className="item">
                                         <div className="right floated content">
-                                            <Button icon='trash' onClick={() => this.delete(n.id_notificacao)}/>
+                                            <Popup content="Apagar notificação" trigger={
+                                                <Button icon='trash' onClick={() => this.delete(n.id_notificacao)}/>
+                                            }/>
                                         </div>
                                         <i className="bell icon"></i>
                                         <div className="content">

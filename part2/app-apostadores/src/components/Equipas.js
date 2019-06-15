@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Header } from 'semantic-ui-react';
+import { Header,Popup,Button } from 'semantic-ui-react';
 import { getTodasCompeticoes, getTodasEquipas } from './../services/Api';
 import _ from 'lodash';
 
@@ -153,16 +153,17 @@ class Equipas extends Component {
                                 this.state.equipas_f.map((e) =>
                                     <div key={e.id_equipa} className="item">
                                         <div className="right floated content">
-                                            <button 
+                                        <Popup content="Ver histórico de resultados" trigger={
+                                            <Button 
                                                 className="ui icon button"
+                                                icon="history"  
                                                 disabled={(localStorage.getItem('userType') === 'normal')}
                                                 onClick={() => this.setState({
                                                     equipa: e,
                                                     redirectH: true
                                                 })}
-                                            >
-                                              <i className="history icon"></i>
-                                            </button>
+                                            />
+                                        }/>
                                             <button
                                                 className="ui orange right labeled icon button"
                                                 onClick={() => this.setState({
