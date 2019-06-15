@@ -211,14 +211,14 @@ class Equipas extends Component {
                                     <div key={c.id_competicao} className="item">
                                         <div className="right floated content">
                                             <button
-                                                className="ui right labeled icon button"
+                                                className="ui right labeled icon orange button"
                                                 onClick={() => this.equipasNotC(c.equipas,c.id_competicao)}
                                             >
                                                 <i className="add icon"></i>
                                                 Adicionar
                                             </button>
                                             <button
-                                                className="ui right labeled icon button"
+                                                className="ui right labeled icon black button"
                                                 onClick={() => this.equipasC(c.equipas,c.id_competicao)}
                                             >
                                                 <i className="angle right icon"></i>
@@ -253,7 +253,7 @@ class Equipas extends Component {
                     <div className="ui stacked segment left aligned">
                     <div>
                         <div className="ui right labeled input" >
-                            <div className="ui basic label center">=></div>
+                            <div className="ui basic label orange center">→</div>
                             <input type="text" placeholder="Nome da Equipa" onChange={({target: {value}}) => this.setState({ nome_equipa:value}) } />
                         </div>
                         <button  disabled={ this.state.nome_equipa==="" || equipaNomeExiste} className="ui orange button" onClick = {() => this.criarEquipa() }  >

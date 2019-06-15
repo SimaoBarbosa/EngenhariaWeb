@@ -154,11 +154,12 @@ class ApostasDisponiveis extends Component {
             //    window.location.reload()
             })
     }
-
+    
     
     render() {
         const apostas = this.state.apostas;
         const evento = this.state.evento;
+        const blackbutton = this.state.action===1 ? "Confirmar" : "Cancelar"
         console.log(this.state.opcoes);
         
         return (
@@ -170,7 +171,7 @@ class ApostasDisponiveis extends Component {
                     <Header as='h4'>
                         Data: {evento.datahora.data}, Hora: {evento.datahora.hora}
                     </Header>
-                    <button onClick = {() => this.setState({action:1})}
+                    <button onClick = {() => this.setState({action:1})  }
                             disabled={this.state.action!==0}
                             className="ui button red" >
                         Terminar Aposta
@@ -189,7 +190,7 @@ class ApostasDisponiveis extends Component {
                     <button className="ui button black" 
                             onClick = {() => this.setState({action:0}) }
                             disabled={this.state.action===0}>
-                        Cancelar
+                        {blackbutton}
                     </button>
                 </Container>
                 <br></br>

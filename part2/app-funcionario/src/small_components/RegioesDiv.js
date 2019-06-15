@@ -87,10 +87,10 @@ class DesportosDiv extends PureComponent {
                                 ))}
                                 <div>
                                 <div className="ui right labeled input" >
-                                    <div className="ui basic label center">=></div>
+                                    <div className="ui basic label center">→</div>
                                     <input type="text" placeholder="Nome da Região"  onChange={({target: {value}}) => this.saveNome(value) } />
                                 </div>
-                                <button  disabled={ this.state.nome==="" || nomeExiste} className="ui button" onClick = {() => this.criarRegiao() }  >
+                                <button  disabled={ this.state.nome==="" || nomeExiste} className="ui black button" onClick = {() => this.criarRegiao() }  >
                                             Adicionar Região
                                 </button>
                                 </div>
