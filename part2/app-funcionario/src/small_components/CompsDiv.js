@@ -41,12 +41,35 @@ class CompsDiv extends PureComponent {
         console.log(body);
         createCompeticao(body)
         .then(res=>{
-            window.location.reload();
+            let data = this.updateData(res)
+            
+            console.log("DATA:");
+            
+            console.log(data);
+            
+            this.props.handleToUpdate(this.state.data)
+            this.setState({
+                data:data,
+                nome:""
+            })
         })
         .catch(err=>{
-            window.location.reload();
             console.log(err)
         })
+    }
+    updateData(body){
+        const data = this.state.data ?  this.state.data : []
+        data.forEach( desporto => {
+            if(desporto.id_desporto.toString() === this.state.id_desporto.toString()){
+                desporto.regioes.forEach(reg=>{
+                    if(reg.id_regiao.toString() === this.state.id_regiao.toString()){
+                        reg.competicoes.push(body)
+                    }
+                })
+            }
+                
+        });
+        return data
     }
     render() {
         const data = this.state.data ?  this.state.data : []
@@ -98,7 +121,7 @@ class CompsDiv extends PureComponent {
                                 <div>
                                 <div className="ui right labeled input" >
                                     <div className="ui basic label center">→</div>
-                                    <input type="text" placeholder="Nome da Competição"  onChange={({target: {value}}) => this.saveNome(value) } />
+                                    <input type="text" placeholder="Nome da Competição" value={this.state.nome}   onChange={({target: {value}}) => this.saveNome(value) } />
                                 </div>
                                 <button  disabled={ this.state.nome==="" || nomeExiste} className="ui black button" onClick = {() => this.criarCompeticao() }  >
                                             Adicionar Competição

@@ -27,6 +27,7 @@ class ApostaDisponivel extends Component {
           endAposta(bodyEndBet)
           .then(resp=>{
             console.log(resp);
+            this.props.handleToUpdate(0)
             this.setState({deleted:true})
           })
           .catch(res=>alert(res))

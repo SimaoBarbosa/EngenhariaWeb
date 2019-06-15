@@ -154,12 +154,16 @@ class ApostasDisponiveis extends Component {
             //    window.location.reload()
             })
     }
-    
+    handleToUpdateAction = (state) => {
+        console.log('We pass argument from Child to Parent: ' + state);
+        this.setState({action:state})
+    }   
+
     
     render() {
         const apostas = this.state.apostas;
         const evento = this.state.evento;
-        const blackbutton = this.state.action===1 ? "Confirmar" : "Cancelar"
+       // const blackbutton = this.state.action===1 ? "Confirmar" : "Cancelar"
         console.log(this.state.opcoes);
         
         return (
@@ -190,7 +194,7 @@ class ApostasDisponiveis extends Component {
                     <button className="ui button black" 
                             onClick = {() => this.setState({action:0}) }
                             disabled={this.state.action===0}>
-                        {blackbutton}
+                        Cancelar
                     </button>
                 </Container>
                 <br></br>
@@ -203,7 +207,12 @@ class ApostasDisponiveis extends Component {
                     { apostas.length>0 ?
                         <div>
                         {apostas.map(aposta => ( 
-                            <ApostaDisponivel aposta={aposta} evento={evento}  key={aposta.id_aposta_disponivel} history={this.props.history} action={this.state.action} />
+                            <ApostaDisponivel aposta={aposta}
+                                              evento={evento}
+                                              key={aposta.id_aposta_disponivel}
+                                              history={this.props.history}
+                                              action={this.state.action}
+                                              handleToUpdate = {this.handleToUpdateAction} />
                         ))}
                         </div>
                         :

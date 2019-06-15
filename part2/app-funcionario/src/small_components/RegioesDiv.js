@@ -29,6 +29,16 @@ class DesportosDiv extends PureComponent {
         this.setState({nome:value})
     }
 
+    updateData(body){
+        const data = this.state.data ?  this.state.data : []
+        data.forEach( desporto => {
+            if(desporto.id_desporto.toString() === this.state.id_desporto.toString()){
+                desporto.regioes.push(body)
+            }
+                
+        });
+        return data
+    }
     criarRegiao(){
         const body= {
             nome : this.state.nome,
@@ -38,10 +48,22 @@ class DesportosDiv extends PureComponent {
         console.log(body);
         add_create_regiao(body)
         .then(res=>{
-            window.location.reload();
+            console.log("Request response=>")
+            console.log(res);
+            
+            let data = this.updateData(res)
+            
+            console.log("DATA:");
+            
+            console.log(data);
+            
+            this.props.handleToUpdate(this.state.data)
+            this.setState({
+                data:data,
+                nome:""
+            })
         })
         .catch(err=>{
-            window.location.reload();
             console.log(err)
         })
     }
@@ -88,7 +110,7 @@ class DesportosDiv extends PureComponent {
                                 <div>
                                 <div className="ui right labeled input" >
                                     <div className="ui basic label center">→</div>
-                                    <input type="text" placeholder="Nome da Região"  onChange={({target: {value}}) => this.saveNome(value) } />
+                                    <input type="text" placeholder="Nome da Região" value={this.state.nome}  onChange={({target: {value}}) => this.saveNome(value) } />
                                 </div>
                                 <button  disabled={ this.state.nome==="" || nomeExiste} className="ui black button" onClick = {() => this.criarRegiao() }  >
                                             Adicionar Região

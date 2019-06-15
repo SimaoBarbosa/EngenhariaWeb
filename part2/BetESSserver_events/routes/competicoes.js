@@ -161,7 +161,7 @@ router.post('/addOrCreateRegiao', mw.verifyFuncionario , async (req, res) => {
       .then(resp=>{
         
           DesportoController.addRegion(desporto, resp.id_regiao)
-          .then(r => res.send("Sucesso"))
+          .then(r => res.send(resp))
 
         
       })
@@ -169,7 +169,7 @@ router.post('/addOrCreateRegiao', mw.verifyFuncionario , async (req, res) => {
     }
     else{
         DesportoController.addRegion(desporto, regiao.id_regiao)
-        .then(r => res.send("Sucesso"))
+        .then(r => res.send(regiao))
       
     }
   })

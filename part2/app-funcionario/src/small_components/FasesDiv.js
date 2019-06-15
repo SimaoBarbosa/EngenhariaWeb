@@ -29,6 +29,21 @@ class FasesDiv extends PureComponent {
         this.setState({nome:value})
     }
 
+    updateData(body){
+        const data = this.state.data ?  this.state.data : []
+        data.forEach( desporto => {
+            desporto.regioes.forEach(reg=>{
+                    reg.competicoes.forEach(comp=>{
+                        if(comp.id_competicao.toString()===this.state.id_competicao.toString()){
+                            comp.fases.push(body)
+                        }
+                    })
+            });
+
+    });
+        return data
+    }
+
     CriarFase(){
         const body= {
             nome : this.state.nome,
@@ -38,10 +53,19 @@ class FasesDiv extends PureComponent {
         console.log(body);
         createFase(body)
         .then(res=>{
-            window.location.reload();
+            let data = this.updateData(res)
+            
+            console.log("DATA:");
+            
+            console.log(data);
+            
+            this.props.handleToUpdate(this.state.data)
+            this.setState({
+                data:data,
+                nome:""
+            })
         })
         .catch(err=>{
-            window.location.reload();
             console.log(err)
         })
     }
@@ -99,7 +123,7 @@ class FasesDiv extends PureComponent {
                                 <div>
                                 <div className="ui right labeled input" >
                                     <div className="ui basic label center">→</div>
-                                    <input type="text" placeholder="Nome da Nova Fase"  onChange={({target: {value}}) => this.saveNome(value) } />
+                                    <input type="text" placeholder="Nome da Nova Fase" value={this.state.nome}  onChange={({target: {value}}) => this.saveNome(value) } />
                                 </div>
                                 <button  disabled={ this.state.nome==="" || nomeExiste} className="ui black button" onClick = {() => this.CriarFase() }  >
                                             Adicionar Fase
