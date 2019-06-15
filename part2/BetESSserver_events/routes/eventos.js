@@ -16,6 +16,8 @@ router.get('/', async (req, res) => {
 
 // get  the events with apostas disponiveis
 router.get('/disponiveis', async (req, res) => {
+  console.log("TENTATIVA3");
+  
     EventoController.findDisponiveis().then(eventos => {
       res.send(eventos);
     });
@@ -23,6 +25,7 @@ router.get('/disponiveis', async (req, res) => {
 
 // get all the events with more info
 router.get('/info', async (req, res) => {
+  console.log("TENTATIVA INFO 3");
     EventoController.findAllInfo().then(eventos => {
       res.send(eventos);
     });

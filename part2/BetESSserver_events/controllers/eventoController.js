@@ -5,7 +5,11 @@ const Op = Sequelize.Op;
 // get all the events with date and time
 module.exports.findAll = () => {
     return models.evento.findAll({
-        include: ['datahora']
+        include: ['datahora'],
+        order:[
+            [{ model: models.datahora, as: 'datahora' }, 'data', 'ASC'],
+            [{ model: models.datahora, as: 'datahora' }, 'hora', 'ASC']
+        ]
     });
 }
 
@@ -25,6 +29,10 @@ module.exports.findDisponiveis = () => {
                     include:['desporto']
                 }
             },
+        ],
+        order:[
+            [{ model: models.datahora, as: 'datahora' }, 'data', 'ASC'],
+            [{ model: models.datahora, as: 'datahora' }, 'hora', 'ASC']
         ]
     });
 }
@@ -39,6 +47,10 @@ module.exports.findAllInfo = () => {
                 association: 'fase', 
                 include: ['competicao']
             },
+        ],
+        order:[
+            [{ model: models.datahora, as: 'datahora' }, 'data', 'ASC'],
+            [{ model: models.datahora, as: 'datahora' }, 'hora', 'ASC']
         ]
     });
 }
