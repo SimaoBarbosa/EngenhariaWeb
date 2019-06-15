@@ -5,12 +5,30 @@ const ApostasController = require('../controllers/aposta_disponivelController');
 const OpcaoController = require('../controllers/opcaoController');
 const mw = require('../auth/auth_middlewares');
 
+// get opcao by idopcao
+// ------
+// PARAMS
+// idopcao
+router.get('/opcao/:idopcao', async (req, res) => {
+  console.log("OpcaoGet");
+  
+  let id_opcao = req.params.idopcao
+  OpcaoController.getOpcao(id_opcao)
+  .then(resp=>{
+      console.log(resp);
+    
+      res.send(resp)
+  })
+  .catch(err=>res.status(500).send(err))
+
+})
+
 // get  apostas disponiveis
 // ------
 // PARAMS
 // vip       -> int => 0= false, 1=true , else both
 // available -> int => 0= false, 1=true , else both
-router.get('apostas/:vip/:available', async (req, res) => {
+router.get('/apostas/:vip/:available', async (req, res) => {
     let vip = req.params.vip
     let available =  req.params.available
     let seletores = {}

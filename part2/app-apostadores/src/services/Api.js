@@ -128,3 +128,7 @@ export const criar_aposta_concretaVIP = (body) => (
 export const getTeamsOfEvent = (id_evento) => (
   jsonFetch(generateUrl(BASE_URL, '/api_eventos/eventos/equipas/' + id_evento),{method:'get'}) 
 );
+
+export const getOpcao = (id) => (
+  jsonFetch(generateUrl(BASE_URL, '/api_eventos/apostasDisponiveis/opcao/' + id),{method:'get'}) 
+);

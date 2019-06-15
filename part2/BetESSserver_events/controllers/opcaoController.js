@@ -4,3 +4,10 @@ var models = require('../models/index')
 module.exports.create = data => {
     return models.opcao.create(values = data );
 }
+
+//get opcao
+module.exports.getOpcao = idopcao => {
+    return models.opcao.findOne({
+        where:{id_opcao:idopcao}
+    } );
+}

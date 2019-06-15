@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {criar_aposta_concreta,criar_aposta_concretaVIP} from '../services/Api'
 import {Redirect } from 'react-router-dom';
-import {getInformacoesUser} from '../services/Api'
+import {getInformacoesUser,getOpcao} from '../services/Api'
 import { Header } from 'semantic-ui-react';
 
 class Apostar extends Component {
@@ -22,6 +22,7 @@ class Apostar extends Component {
         };
     }
 
+    
     apostar = async () => {
         const userType = localStorage.getItem('userType');      
         if( (this.state.aposta.vip && userType==='normal')){
@@ -39,67 +40,80 @@ class Apostar extends Component {
             nome_evento : this.state.evento.titulo,
             nome_competicao : this.state.evento.fase.competicao.nome
         }
-        console.log("body:");
-        console.log(body);
 
-        if(userType==='normal') {
-            criar_aposta_concreta(body)
-            .then(async res=>{
-                console.log(res);
-                if(res.success===undefined||res.sucess===true){
-                    await this.setState({
-                        message: 'Aposta realizada com sucesso!',
-                        error: ''
+        getOpcao(body.id_opcao)
+        .then(opcao=>{
+            if(opcao.odd.toString()===body.odd_fixada.toString()){
+                if(userType==='normal') {
+                    criar_aposta_concreta(body)
+                    .then(async res=>{
+                        console.log(res);
+                        if(res.success===undefined||res.sucess===true){
+                            await this.setState({
+                                message: 'Aposta realizada com sucesso!',
+                                error: ''
+                            })
+                        }
+                        else if (res.success===false){
+                            await this.setState({
+                                message: '',
+                                error: res.message
+                            })
+                        }
+                        await sleep(3000)
+                        this.setState({
+                            redirect: true
+                        }) 
+                                        
+                    })
+                    .catch(err => {
+                        this.setState({
+                            message: '',
+                            error: 'Não foi possível realizar a aposta'
+                        })
                     })
                 }
-                else if (res.success===false){
-                    await this.setState({
-                        message: '',
-                        error: res.message
+                else{
+                    criar_aposta_concretaVIP(body)
+                    .then(async res=>{
+                        console.log(res);
+                        if(res.success===undefined||res.sucess===true){
+                            await this.setState({
+                                message: 'Aposta realizada com sucesso!',
+                                error: ''
+                            })
+                        }
+                        else if (res.success===false){
+                            await this.setState({
+                                message: '',
+                                error: res.message
+                            })
+                        }
+                        await sleep(3000)
+                        this.setState({
+                            redirect: true
+                        }) 
+                                        
+                    })
+                    .catch(err => {
+                        this.setState({
+                            message: '',
+                            error: 'Não foi possível realizar a aposta'
+                        })
                     })
                 }
-                await sleep(3000)
+            }
+            else{//odd changed
                 this.setState({
-                    redirect: true
-                }) 
-                                
-            })
-            .catch(err => {
-                this.setState({
+                    opcao: opcao,
                     message: '',
-                    error: 'Não foi possível realizar a aposta'
+                    error: 'Ocorreu uma alteração na odd desta opcão'
                 })
-            })
-        }
-        else{
-            criar_aposta_concretaVIP(body)
-            .then(async res=>{
-                console.log(res);
-                if(res.success===undefined||res.sucess===true){
-                    await this.setState({
-                        message: 'Aposta realizada com sucesso!',
-                        error: ''
-                    })
-                }
-                else if (res.success===false){
-                    await this.setState({
-                        message: '',
-                        error: res.message
-                    })
-                }
-                await sleep(3000)
-                this.setState({
-                    redirect: true
-                }) 
-                                
-            })
-            .catch(err => {
-                this.setState({
-                    message: '',
-                    error: 'Não foi possível realizar a aposta'
-                })
-            })
-        }
+            }
+
+        })
+
+
 
     }
     renderRedirect = () => {

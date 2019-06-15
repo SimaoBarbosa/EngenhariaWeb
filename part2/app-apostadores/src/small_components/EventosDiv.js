@@ -45,10 +45,8 @@ class EventosDiv extends PureComponent {
         })
         .catch(err=>console.log(err))
     }
-
     render() {
         console.log("Action:"+this.state.action);
-        
 
         let eventos =[]
         switch(this.state.action){
@@ -116,5 +114,4 @@ class EventosDiv extends PureComponent {
         );
     }
 }
-
 export default EventosDiv;
