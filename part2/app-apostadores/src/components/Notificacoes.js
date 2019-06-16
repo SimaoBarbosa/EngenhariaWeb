@@ -49,7 +49,7 @@ class Notificacoes extends Component {
                     <Header style={{marginTop: "40px"}} color='orange' size='huge'>Notificações de apostas</Header>
                     <Header color='red' as='h4'>{this.state.error}</Header>
                     <div className="ui stacked segment left aligned">
-                        <div className="ui list">
+                        <div className="ui animated list">
 
                             {(this.state.notifications.length > 0) ?
                                 this.state.notifications.map((n) => 
