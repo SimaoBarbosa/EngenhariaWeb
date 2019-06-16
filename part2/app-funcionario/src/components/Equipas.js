@@ -8,7 +8,13 @@ class Equipas extends Component {
 
     constructor(props) {
         super(props);
+        console.log(this.props);
 
+        
+        let id_competicao = this.props.location.state ? this.props.location.state.id_competicao : -1
+        let verEquipas =  this.props.location.state ? true : false
+        console.log(id_competicao);
+        
         this.state = {
             competicoes: [],
             competicoes_f: [],
@@ -20,8 +26,8 @@ class Equipas extends Component {
             text_e: '',
             equipa: {},
             adicionar :false,
-            verEquipas:false,
-            id_competicao:-1,
+            verEquipas:verEquipas,
+            id_competicao:id_competicao,
             nome_equipa : ""
         }
     }

@@ -237,8 +237,8 @@ class Eventos extends PureComponent {
                     <div hidden={this.state.hideRegioes} >   
                         <RegioesDiv id_desporto={this.state.id_desporto}  data={this.state.data} handleToUpdate = {this.handleToUpdate}/>
                     </div>
-                    <div hidden={this.state.hideComps} >   
-                        <CompsDiv id_regiao={this.state.id_regiao} id_desporto={this.state.id_desporto} data={this.state.data} handleToUpdate = {this.handleToUpdate} />
+                    <div hidden={this.state.hideComps} >    
+                        <CompsDiv id_regiao={this.state.id_regiao} id_desporto={this.state.id_desporto} data={this.state.data} handleToUpdate = {this.handleToUpdate}   history={this.props.history}/>
                     </div> 
                     <div hidden={this.state.hideFases} >   
                         <FasesDiv id_competicao={this.state.id_competicao} data={this.state.data} handleToUpdate = {this.handleToUpdate}/>
