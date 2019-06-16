@@ -151,8 +151,8 @@ class Equipas extends Component {
                 comp.equipas.push(equipa)
         })
         let equipas_f = this.state.equipas_f
-        let filteredNotF = this.state.equipas_not_c.filter(function(el) { return el.id_equipa !== equipa.id_equipa; });
-        let filteredNot = equipas_f.filter(function(el) { return el.id_equipa !== equipa.id_equipa; }); 
+        let filteredNot = this.state.equipas_not_c.filter(function(el) { return el.id_equipa !== equipa.id_equipa; });
+        let filteredNotF = equipas_f.filter(function(el) { return el.id_equipa !== equipa.id_equipa; }); 
         if (!filteredNot ) filteredNot = []
         if (!filteredNotF ) filteredNotF = []
         this.setState({
