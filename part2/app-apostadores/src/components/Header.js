@@ -129,7 +129,7 @@ const VIPBigMenu = (handleLogout) => {
                 <div className="item">
                     <div className="ui yellow label">
                         {localStorage.getItem('username')}
-                        <div className="detail">Apostador normal</div>
+                        <div className="detail">Apostador VIP</div>
                     </div>
                 </div>
             </div>

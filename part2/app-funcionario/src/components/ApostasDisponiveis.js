@@ -16,7 +16,7 @@ class ApostasDisponiveis extends Component {
             evento:evento,
             apostas:[],
             nome:"",
-            vip:false,
+            vip: false,
             odd:"",
             opcao:"",
             opcoes : [],
@@ -70,7 +70,7 @@ class ApostasDisponiveis extends Component {
             await makeAvailable(novaAposta.id_aposta_disponivel);
         } catch (error) {
             this.setState({
-                vip:"",
+                vip:false,
                 nome:"",
                 opcoes:[]
             })
@@ -83,7 +83,7 @@ class ApostasDisponiveis extends Component {
         apostas.push(novaAposta)
         this.setState({
             apostas:apostas,
-            vip:"",
+            vip:false,
             nome:"",
             opcoes:[]
         })
@@ -234,7 +234,7 @@ class ApostasDisponiveis extends Component {
                             <div className="ui right labeled input" >
                                     <div className="ui basic label center">VIP</div>
                                     <div className="ui basic label center">
-                                        <Checkbox  onChange={() => this.saveVIP() } />
+                                        <Checkbox checked={this.state.vip} onChange={() => this.saveVIP() } />
                                     </div>
                             </div>
                             <button disabled={this.state.nome==="" || this.state.opcoes.length<2 }
