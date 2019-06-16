@@ -229,7 +229,7 @@ class ApostasDisponiveis extends Component {
                         <div>
                             <div className="ui right labeled input" >
                                     <div className="ui basic label center">Título</div>
-                                    <input type="text" placeholder="Nova Aposta"  onChange={({target: {value}}) => this.saveTitulo(value) } />
+                                    <input value={this.state.nome} type="text" placeholder="Nova Aposta"  onChange={({target: {value}}) => this.saveTitulo(value) } />
                             </div>
                             <div className="ui right labeled input" >
                                     <div className="ui basic label center">VIP</div>
