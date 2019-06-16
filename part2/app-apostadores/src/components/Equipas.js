@@ -17,7 +17,8 @@ class Equipas extends Component {
             text_e: '',
             redirectE: false,
             redirectH: false,
-            equipa: {} 
+            equipa: {},
+            id_competicao:-1
         }
     }
 
@@ -75,8 +76,11 @@ class Equipas extends Component {
         });
     }
 
-    equipasC = (equipas) => {
-        this.setState({equipas_f: equipas})
+    equipasC = (equipas,id_competicao) => {
+        this.setState({
+            equipas_f: equipas,
+            id_competicao: id_competicao
+        })
     }
 
     render() {
@@ -106,7 +110,7 @@ class Equipas extends Component {
                         <i className="search icon"></i>
                     </div>
                     <div className="ui stacked segment left aligned">
-                        <div className="ui middle aligned divided list">
+                        <div className="ui animated middle aligned divided list">
                             
                             {(this.state.competicoes_f.length > 0) ?
                                 this.state.competicoes_f.map((c) =>
@@ -115,16 +119,22 @@ class Equipas extends Component {
 
                                             <button
                                                 className="ui right labeled icon button"
-                                                onClick={() => this.equipasC(c.equipas)}
+                                                onClick={() => this.equipasC(c.equipas,c.id_competicao)}
                                             >
                                                 <i className="angle right icon"></i>
                                                 Ver equipas
                                             </button>
                                             
                                         </div>
+                                        { this.state.id_competicao===c.id_competicao ?
                                         <div className="content">
-                                          <Header as='h3'>{c.nome}</Header>
+                                          <Header as='h2' color="black">{c.nome}</Header>
                                         </div>
+                                        :
+                                        <div className="content">
+                                          <Header as='h4' color="grey">{c.nome}</Header>
+                                        </div>
+                                        }
                                     </div>
                                 ) :
                                 <Header color='grey' as='h3'>Sem competições</Header>
@@ -147,7 +157,7 @@ class Equipas extends Component {
                         <i className="search icon"></i>
                     </div>
                     <div className="ui stacked segment left aligned">
-                        <div className="ui middle aligned divided list">
+                        <div className="ui animated middle aligned divided list">
                             
                             {(this.state.equipas_f.length > 0) ?
                                 this.state.equipas_f.map((e) =>
