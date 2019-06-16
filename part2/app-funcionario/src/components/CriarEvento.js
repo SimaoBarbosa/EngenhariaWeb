@@ -95,10 +95,10 @@ class CriarEvento extends PureComponent {
                 {this.renderRedirect()}
                 <div className="ui stackable grid container center aligned">
                     <div className="nine wide column">
-                        <Header style={{marginTop: "40px"}} color='orange' size='huge'>Equipas da Competiçao</Header>
+                        <Header style={{marginTop: "40px"}} color='orange' size='huge'>Equipas da Competição</Header>
                         <Header color='red' as='h4'>{this.state.error}</Header>
                         <div className="ui stacked segment left aligned">
-                            <div className="ui animated list">
+                            <div className="ui animated list divided">
 
                                 {this.state.equipas.map((equipa) => 
                                     <div key={equipa.id_equipa} className="item">
@@ -108,8 +108,7 @@ class CriarEvento extends PureComponent {
                                         }/>
                                         </div>
                                         <div className="content">
-                                                <Header color='red' as='h3'>{equipa.nome}</Header>
-                                            <div className="description"></div>
+                                            <Header color='red' as='h4'>{equipa.nome}</Header>
                                         </div>
                                     </div>
                                 )}
@@ -120,7 +119,7 @@ class CriarEvento extends PureComponent {
                 </div>
                 <div className="ui stackable grid container center aligned">
                     <div className="nine wide column">
-                        <Header style={{marginTop: "40px"}} color='orange' size='huge'>Equipas adicionadas</Header>
+                        <Header style={{marginTop: "10px"}} color='orange' size='huge'>Equipas adicionadas</Header>
                         <Header color='red' as='h4'>{this.state.error}</Header>
                         <div className="ui stacked segment center aligned">
                             <div className="ui list">
@@ -128,7 +127,7 @@ class CriarEvento extends PureComponent {
                                 {this.state.equipasAdded.map((e) => 
                                     <div key={e.id_equipa} className="item">
                                         <div className="content">
-                                                <Header color='red' as='h2'>{e.nome}</Header>
+                                                <Header color='red' as='h3'>{e.nome}</Header>
                                             <div className="description"></div>
                                         </div>
                                         
@@ -139,24 +138,19 @@ class CriarEvento extends PureComponent {
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div className="ui column stackable center page grid">
-                    <div className="wide column">
-                        <div hidden={this.state.id_fase<0}>
-                            <div className="ui right labeled input" >
-                                    <div className="ui basic label center">Data</div>
-                                    <input type="date" placeholder="Data"  onChange={({target: {value}}) => this.saveData(value) } />
-                            </div>
-                            <div className="ui right labeled input" >
-                                    <div className="ui basic label center">Hora</div>
-                                    <input type="time" placeholder="Hora"  onChange={({target: {value}}) => this.saveHora(value) } />
-                            </div>
-                            <button disabled={this.state.nome==="" || this.state.data==="" ||this.state.hora===""||this.state.equipasAdded.length<2}
-                                  className="ui black button" onClick = {() => this.criarEvento() }  >
-                                        Criar Novo Evento
-                            </button>
+                    <div hidden={this.state.id_fase<0}>
+                        <div className="ui right labeled input" >
+                                <div className="ui basic label center">Data</div>
+                                <input type="date" placeholder="Data"  onChange={({target: {value}}) => this.saveData(value) } />
                         </div>
+                        <div className="ui right labeled input" >
+                                <div className="ui basic label center">Hora</div>
+                                <input type="time" placeholder="Hora"  onChange={({target: {value}}) => this.saveHora(value) } />
+                        </div>
+                        <button disabled={this.state.nome==="" || this.state.data==="" ||this.state.hora===""||this.state.equipasAdded.length<2}
+                              className="ui black button" onClick = {() => this.criarEvento() }  >
+                                    Criar Novo Evento
+                        </button>
                     </div>
                 </div>
             </div>
