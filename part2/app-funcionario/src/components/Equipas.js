@@ -210,11 +210,11 @@ class Equipas extends Component {
                         <i className="search icon"></i>
                     </div>
                     <div className="ui stacked segment left aligned">
-                        <div className="ui middle aligned divided list">
+                        <div className="ui animated middle aligned divided list">
                             
                             {(this.state.competicoes_f.length > 0) ?
                                 this.state.competicoes_f.map((c) =>
-                                    <div key={c.id_competicao} className="item">
+                                    <div key={c.id_competicao} className="ui  item " >
                                         <div className="right floated content">
                                             <button
                                                 className="ui right labeled icon orange button"
@@ -232,9 +232,15 @@ class Equipas extends Component {
                                             </button>
                                             
                                         </div>
+                                        { this.state.id_competicao===c.id_competicao ?
                                         <div className="content">
-                                          <Header as='h3'>{c.nome}</Header>
+                                          <Header as='h2' color="black">{c.nome}</Header>
                                         </div>
+                                        :
+                                        <div className="content">
+                                          <Header as='h4' color="grey">{c.nome}</Header>
+                                        </div>
+                                        }
                                     </div>
                                 ) :
                                 <Header color='grey' as='h3'>Sem competições</Header>
@@ -262,11 +268,13 @@ class Equipas extends Component {
                             <div className="ui basic label orange center">→</div>
                             <input type="text" placeholder="Nome da Equipa" onChange={({target: {value}}) => this.setState({ nome_equipa:value}) } />
                         </div>
-                        <button  disabled={ this.state.nome_equipa==="" || equipaNomeExiste} className="ui orange button" onClick = {() => this.criarEquipa() }  >
+                        <Popup content="Criar Equipa sem competições" trigger={
+                        <Button  disabled={ this.state.nome_equipa==="" || equipaNomeExiste} className="ui orange button" onClick = {() => this.criarEquipa() }  >
                                     Criar Equipa
-                        </button>
+                        </Button>
+                        }/>
                     </div>
-                        <div className="ui middle aligned divided list">
+                        <div className="ui animated middle aligned divided list">
                             
                             {(this.state.equipas_f.length > 0) ?
                                 this.state.equipas_f.map((e) =>
@@ -298,7 +306,7 @@ class Equipas extends Component {
                                         }
                                         </div>
                                         <div className="content">
-                                          <Header as='h3'>{e.nome}</Header>
+                                          <Header as='h4'>{e.nome}</Header>
                                         </div>
                                     </div>
                                 ) :
