@@ -119,7 +119,7 @@ class GerirUsers extends Component {
                     <div className="twelve wide column">
                         <Header style={{marginTop: "40px"}} color='orange' size='huge'>Utilizadores Normais</Header>
                         <div className="ui stacked segment left aligned">
-                            <div className="ui list">
+                            <div className="ui animated list">
                                     {
                                         normais.map((user) => 
                                             <div key={user.oid} className="item">
@@ -147,7 +147,7 @@ class GerirUsers extends Component {
                     <div className="twelve wide column">
                         <Header style={{marginTop: "40px"}} color='orange' size='huge'>Utilizadores VIP</Header>
                         <div className="ui stacked segment left aligned">
-                            <div className="ui list">
+                            <div className="ui animated list">
                                     {
                                         vips.map((user) => 
                                             <div key={user.oid} className="item">

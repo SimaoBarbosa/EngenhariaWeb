@@ -59,7 +59,7 @@ class EventosEquipa extends Component {
                             <Header style={{marginTop: "40px"}} color='orange' as='h2'>Lista de eventos de {this.state.equipa.nome}</Header>
                         </div>
                         <div className="ui stacked segment left aligned">
-                            <div className="ui list">
+                            <div className="ui animated list">
 
                                 {(this.state.eventos.length > 0) ?
                                     this.state.eventos.map(evento => ( 

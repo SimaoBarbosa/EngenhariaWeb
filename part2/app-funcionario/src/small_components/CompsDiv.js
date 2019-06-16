@@ -71,6 +71,11 @@ class CompsDiv extends PureComponent {
         });
         return data
     }
+    gerirEquipas(id_competicao){
+        this.props.history.push("/equipas", {
+            id_competicao : id_competicao
+        } )
+    }
     render() {
         const data = this.state.data ?  this.state.data : []
         let regioes = []
@@ -102,20 +107,28 @@ class CompsDiv extends PureComponent {
         
         return (
             <div>
-                <div className="ui column stackable center page grid">
-                    <div className="seven wide column">
+                <div className="ui stackable grid container center aligned">
+                    <div className="twelve wide column">
                         <div className="ui container center aligned">
                             <Header style={{marginTop: "15px"}} color='orange' as='h2'>Competições de {nomeregiao} de {nomedesporto}</Header>
                         </div>
-                        <div className="ui stacked segment center aligned">
-                            <div className="ui list">
+                        <div className="ui stacked segment left aligned">
+                            <div className="ui animated list">
                                 {competicoes.map(comp => ( 
                                     <div className="item" key={comp.id_competicao}>
-                                        <div className="content">
-                                            <Header color={'olive'}>{comp.nome}</Header>
-                                            <div className="description"> </div>
-                                        </div>
-                                        <hr></hr>
+                                        
+                                            <div className="right floated content">
+                                                <button className="ui orange right labeled icon button" onClick = {() => this.gerirEquipas(comp.id_competicao) }  >
+                                                <i className="angle right icon"></i>
+                                                    Equipas
+                                                </button>
+                                            </div>
+                                            <div className="content">
+                                                <Header color={'olive'}>{comp.nome}</Header>
+                                                <div className="description"><br></br></div>
+                                            </div>
+                                        
+                                    <hr></hr>
                                     </div>
                                 ))}
                                 <div>

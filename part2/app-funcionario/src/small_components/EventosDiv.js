@@ -82,7 +82,7 @@ class EventosDiv extends PureComponent {
                             <Header style={{marginTop: "15px"}} color='orange' as='h2'>Lista de Eventos</Header>
                         </div>
                         <div className="ui stacked segment left aligned">
-                            <div className="ui list">
+                            <div className="ui animated list">
                                 {eventos.map(evento => ( 
                                     <Evento evento={evento}  key={evento.id_evento} history={this.props.history} />
                                 ))}

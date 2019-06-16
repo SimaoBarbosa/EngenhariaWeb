@@ -98,7 +98,7 @@ class CriarEvento extends PureComponent {
                         <Header style={{marginTop: "40px"}} color='orange' size='huge'>Equipas da Competiçao</Header>
                         <Header color='red' as='h4'>{this.state.error}</Header>
                         <div className="ui stacked segment left aligned">
-                            <div className="ui list">
+                            <div className="ui animated list">
 
                                 {this.state.equipas.map((equipa) => 
                                     <div key={equipa.id_equipa} className="item">
