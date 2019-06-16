@@ -6,14 +6,12 @@ import {
     Container,
     Sidebar,
     Menu,
-    Icon,
-    Label
+    Icon
 } from 'semantic-ui-react';
 import Authentication from "./Authentication";
 import {headerStyle} from "../styles/styles";
-import { getNotificacoes } from './../services/Api';
 
-const NormalBigMenu = (handleLogout, noti) => {
+const NormalBigMenu = (handleLogout) => {
     return (
         <React.Fragment>
             <NavLink activeClassName="active" className="ui item" to="/home" >
@@ -33,10 +31,7 @@ const NormalBigMenu = (handleLogout, noti) => {
                 <p>PERFIL</p>
             </NavLink>
             <NavLink className="ui item" to="/notificacoes">
-            	{(noti > 0) && <Label circular color='orange'>
-        			{noti}
-      			</Label>}
-            	<i className="bell icon" />
+                <i className="bell icon" />
                 <p>NOTIFICAÇÕES</p>
             </NavLink>
             <NavLink className="ui item" to="/vip">
@@ -60,7 +55,7 @@ const NormalBigMenu = (handleLogout, noti) => {
     );
 };
 
-const NormalSmallMenu = (handleLogout, hideMenu, noti) => {
+const NormalSmallMenu = (handleLogout, hideMenu) => {
     return (
         <React.Fragment>
             <NavLink className="ui item" to="/home" onClick={() => hideMenu()}>
@@ -80,9 +75,6 @@ const NormalSmallMenu = (handleLogout, hideMenu, noti) => {
                 <p>PERFIL</p>
             </NavLink>
             <NavLink className="ui item" to="/notificacoes" onClick={() => hideMenu()}>
-                {(noti > 0) && <Label circular color='orange'>
-        			{noti}
-      			</Label>}
                 <i className="bell icon" />
                 <p>NOTIFICAÇÕES</p>
             </NavLink>
@@ -110,7 +102,7 @@ const DefaultMenu = (hideMenu) => {
     );
 }
 
-const VIPBigMenu = (handleLogout, noti) => {
+const VIPBigMenu = (handleLogout) => {
     return (
         <React.Fragment>
             <NavLink activeClassName="active" className="ui item" to="/home" >
@@ -130,9 +122,6 @@ const VIPBigMenu = (handleLogout, noti) => {
                 <p>PERFIL</p>
             </NavLink>
             <NavLink className="ui item" to="/notificacoes">
-            	{(noti > 0) && <Label circular color='orange'>
-        			{noti}
-      			</Label>}
                 <i className="bell icon" />
                 <p>NOTIFICAÇÕES</p>
             </NavLink>
@@ -153,7 +142,7 @@ const VIPBigMenu = (handleLogout, noti) => {
     );
 };
 
-const VIPSmallMenu = (handleLogout, hideMenu, noti) => {
+const VIPSmallMenu = (handleLogout, hideMenu) => {
     return (
         <React.Fragment>
             <NavLink className="ui item" to="/home" onClick={() => hideMenu()}>
@@ -173,9 +162,6 @@ const VIPSmallMenu = (handleLogout, hideMenu, noti) => {
                 <p>PERFIL</p>
             </NavLink>
             <NavLink className="ui item" to="/notificacoes" onClick={() => hideMenu()}>
-                {(noti > 0) && <Label circular color='orange'>
-        			{noti}
-      			</Label>}
                 <i className="bell icon" />
                 <p>NOTIFICAÇÕES</p>
             </NavLink>
@@ -196,17 +182,8 @@ class Header extends React.Component {
         super(props);
 
         this.state = {
-            visible: false,
-            num_not: '',
+            visible: false
         };
-    }
-
-    componentDidMount(){
-    	if (localStorage.getItem("userType") === 'normal' || localStorage.getItem("userType") === 'normal'){
-    		getNotificacoes().then(response => {
-            	this.setState({num_not: response.length})
-        	})
-    	}
     }
 
     handleLogout = async () => {
@@ -230,11 +207,11 @@ class Header extends React.Component {
         let smallMenu = DefaultMenu(this.handleHideClick.bind(this))
 
         if (localStorage.getItem('userType') === 'normal'){
-            bigMenu = NormalBigMenu(this.handleLogout.bind(this), this.state.num_not)
-            smallMenu = NormalSmallMenu(this.handleLogout.bind(this), this.handleHideClick.bind(this), this.state.num_not)
+            bigMenu = NormalBigMenu(this.handleLogout.bind(this))
+            smallMenu = NormalSmallMenu(this.handleLogout.bind(this), this.handleHideClick.bind(this))
         } else if (localStorage.getItem('userType') === 'vip'){
-            bigMenu = VIPBigMenu(this.handleLogout.bind(this), this.state.num_not)
-            smallMenu = VIPSmallMenu(this.handleLogout.bind(this), this.handleHideClick.bind(this), this.state.num_not)
+            bigMenu = VIPBigMenu(this.handleLogout.bind(this))
+            smallMenu = VIPSmallMenu(this.handleLogout.bind(this), this.handleHideClick.bind(this))
         } 
 
         return (

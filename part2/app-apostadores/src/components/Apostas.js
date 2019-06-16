@@ -67,7 +67,7 @@ class Apostas extends Component {
                                         </div>
                                     </div>
                                 ) :
-                                <Header color='grey' as='h4'>Nada a mostrar</Header>
+                                <Header color='grey' size='h4'>Nada a mostrar</Header>
                             }
                         </div>
                     </div>
@@ -89,7 +89,7 @@ class Apostas extends Component {
                                         </div>
                                     </div>
                                 ) :
-                                <Header color='grey' as='h4'>Nada a mostrar</Header>
+                                <Header color='grey' size='h4'>Nada a mostrar</Header>
                             }
 
                         </div>
@@ -112,7 +112,7 @@ class Apostas extends Component {
                                         </div>
                                     </div>
                                 ) :
-                                <Header color='grey' as='h4'>Nada a mostrar</Header>
+                                <Header color='grey' size='h4'>Nada a mostrar</Header>
                             }
                         </div>
                     </div>
