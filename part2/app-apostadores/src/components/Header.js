@@ -202,7 +202,7 @@ class Header extends React.Component {
     }
 
     componentDidMount(){
-    	if (localStorage.getItem("userType") === 'normal' || localStorage.getItem("userType") === 'vip'){
+    	if (localStorage.getItem("userType") === 'normal' || localStorage.getItem("userType") === 'normal'){
     		getNotificacoes().then(response => {
             	this.setState({num_not: response.length})
         	})
@@ -223,11 +223,6 @@ class Header extends React.Component {
     }
 
     render() {
-        if (localStorage.getItem("userType") === 'normal' || localStorage.getItem("userType") === 'vip'){
-    		getNotificacoes().then(response => {
-            	this.setState({num_not: response.length})
-        	})
-    	}
 
         const {visible} = this.state;
 
