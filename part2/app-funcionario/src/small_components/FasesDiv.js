@@ -105,7 +105,7 @@ class FasesDiv extends PureComponent {
         return (
             <div>
                 <div className="ui column stackable center page grid">
-                    <div className="seven wide column">
+                    <div className="twelve wide column">
                         <div className="ui container center aligned">
                             <Header style={{marginTop: "15px"}} color='orange' as='h2'>Fases de {nomeCompeticao} de {nomeregiao} de {nomedesporto}</Header>
                         </div>
