@@ -128,11 +128,14 @@ class Equipas extends Component {
             comp.equipas = filteredEquipasComp
         })
         let equipas_f = this.state.equipas_f
-        let filteredIn = equipas_f.filter(function(el) { return el.id_equipa !== equipa.id_equipa; }); 
+        let filteredInF = equipas_f.filter(function(el) { return el.id_equipa !== equipa.id_equipa; }); 
+        if (!filteredInF ) filteredInF = []
+        let filteredIn = this.state.equipas_in_c.filter(function(el) { return el.id_equipa !== equipa.id_equipa; }); 
         if (!filteredIn ) filteredIn = []
         this.setState({
             competicoes:allComps,
-            equipas_f : filteredIn
+            equipas_f : filteredInF,
+            equipas_in_c:filteredIn
         })
     }
 
@@ -148,11 +151,14 @@ class Equipas extends Component {
                 comp.equipas.push(equipa)
         })
         let equipas_f = this.state.equipas_f
+        let filteredNotF = this.state.equipas_not_c.filter(function(el) { return el.id_equipa !== equipa.id_equipa; });
         let filteredNot = equipas_f.filter(function(el) { return el.id_equipa !== equipa.id_equipa; }); 
         if (!filteredNot ) filteredNot = []
+        if (!filteredNotF ) filteredNotF = []
         this.setState({
             competicoes:allComps,
-            equipas_f : filteredNot
+            equipas_f : filteredNotF,
+            equipas_not_c:filteredNot
         })
     }
 
