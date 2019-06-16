@@ -80,12 +80,12 @@ class FasesDiv extends PureComponent {
         data.forEach( desporto => {
                 console.log(desporto);
                 regioes = desporto.regioes ? desporto.regioes : []
-                nomedesporto= desporto.nome ? desporto.nome : ""
                 regioes.forEach(reg=>{
-                        nomeregiao= reg.nome ? reg.nome : ""
                         competicoes= reg.competicoes ? reg.competicoes : []
                         competicoes.forEach(comp=>{
                             if(comp.id_competicao.toString()===this.state.id_competicao.toString()){
+                                nomeregiao= reg.nome ? reg.nome : ""
+                                nomedesporto= desporto.nome ? desporto.nome : ""
                                 nomeCompeticao = comp.nome ? comp.nome : ""
                                 fases = comp.fases ? comp.fases : []
                             }
